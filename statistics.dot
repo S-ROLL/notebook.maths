@@ -1,0 +1,47 @@
+graph chuoitracuu {
+node [shape=box, style=rounded, fontname = "sans-serif" fontcolor=gray20]
+edge [fontname = "sans-serif" arrowsize=0.5 arrowhead=vee]
+graph [rankdir="LR"]
+// DATA
+  stt [label="Statistics"]
+  pbblt [label="Probability"]
+  dsbt [label="Distributions"]
+  dscr [label="Discrete"]
+  ctno [label="Continuous"]
+  spl [label="Sampling"]
+  iesm [label="Interval estimate"]
+  hpt [label="Hypothesis test"]
+  bcrt [label="Base characteristic"]
+  bnm [label="Binomial"]
+  ps [label="Poisson"]
+  hpgmt [label="Hyper geometric"]
+  eptvl [label="Expected value \n Variance \n Standard deviation \n Mode \n Med"]
+  rdv [label="Random variables"]
+  bvr [label="Bivariate"]
+  tp [label="Types"]
+  cvra [label="Covariance \n Correlation"]
+  lncb [label="Linear combination"]
+  unf [label="uniform"]
+  nm [label="normal"]
+  epnt [label="exponential"]
+// LINE
+  stt--pbblt
+  pbblt--dsbt
+  pbblt--iesm
+  pbblt--hpt
+  pbblt--spl
+  dscr--{bnm,ps,hpgmt}
+  bcrt--eptvl
+  tp--{dscr,ctno,bvr}
+  dsbt--{bcrt,rdv,tp}
+  bvr--cvra
+  bvr--lncb
+  ctno--unf
+  ctno--nm
+  ctno--epnt
+// DOT
+  { edge [style=dotted fontname = "sans-serif"]
+    nm--bnm
+    epnt--ps
+  }
+}
