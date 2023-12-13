@@ -13,5 +13,6 @@
 - [Complex-Analysis](https://github.com/Bancie/notebook.maths/blob/ff6cb369abe97f88106a6275f431adcb8ce97ff0/Complex-Analysis/ca.ipynb)
 - [Numerical-Methods](https://github.com/Bancie/notebook.maths/blob/521457de064188aef4d590b2244e49f97d4017d2/Numerical-Methods/nm.ipynb)
 - [NCKH](https://github.com/Bancie/notebook.maths/blob/cd8085804ea51d65b8adda5e6a5a70d3fe93ec58/NCKH/nckh.ipynb)
+- [Machine-Learning](https://github.com/Bancie/notebook.maths/blob/1923473faf4a4ffa321eb46f10c88cf6969eb5c9/Machine-Learning/ml.ipynb)
 ---
 [DRIVE](https://drive.google.com/drive/u/1/folders/1HARdf9ZS6k-OPniwOIoeQKNms1sTe28c)
