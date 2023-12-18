@@ -1,4 +1,4 @@
-Prompt: (maximum 10 words)
+Prompt: (maximum 9 words)
 ```
-Make a picture to visualize  these English words: "". With single words single picture.
+Make image example for the meaning of words: "". With single words single example image. fit the frame picture.
 ```
