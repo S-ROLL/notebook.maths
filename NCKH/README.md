@@ -9,7 +9,8 @@
 - [ ] [Cutting-plane method](https://en.wikipedia.org/wiki/Cutting-plane_method)
 - [ ] [Nonlinear programming](https://en.wikipedia.org/wiki/Nonlinear_programming)
 ### Octave
-- Checking O(n)
+- Checking Big-O
+  - $$O(2^n)$$
 ```
 n = 1:100;
 big_o = 2 .^n;
