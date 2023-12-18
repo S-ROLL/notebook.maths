@@ -1,6 +1,7 @@
 ## Important Information
 ### Useful list
 - [Integer programming](https://en.wikipedia.org/wiki/Integer_programming)
+- [Computational complexity theory](https://en.wikipedia.org/wiki/Computational_complexity_theory)
 ### Checking list
 - [ ] [Convex optimization](https://en.wikipedia.org/wiki/Convex_optimization)
 - [ ] [Interior-point method](https://en.wikipedia.org/wiki/Interior-point_method)
