@@ -9,7 +9,7 @@
 <h3></h3>
 
 # Projects
-- [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/2e8641a0cf14ba54ee82dbcac809bdd23cace4b3/Applied-Statistics/as.ipynb)
+- [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/728a4dc1e4d9e1268feeb73ffa30b6d1e1b8d264/Applied-Statistics/as.ipynb)
 - [Complex-Analysis](https://github.com/Bancie/notebook.maths/blob/ff6cb369abe97f88106a6275f431adcb8ce97ff0/Complex-Analysis/ca.ipynb)
 - [Numerical-Methods](https://github.com/Bancie/notebook.maths/blob/521457de064188aef4d590b2244e49f97d4017d2/Numerical-Methods/nm.ipynb)
 - [NCKH](https://github.com/Bancie/notebook.maths/blob/cd8085804ea51d65b8adda5e6a5a70d3fe93ec58/NCKH/nckh.ipynb)
