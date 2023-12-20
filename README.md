@@ -23,14 +23,14 @@
 - [ ] thang du
 - [ ] ung dung
 ## [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/main/Applied-Statistics/as.ipynb)
-- [ ] [ptich de](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
-- [ ] [chapter 3](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
-- [ ] [chapter 4](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
-- [ ] [chapter 5](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
-- [ ] [chapter 6](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
-- [ ] [chapter 7](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
-- [ ] [chapter 8](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
-- [ ] [chapter 9](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
+- [ ] [ptich de]
+- [ ] [chapter 3]
+- [ ] [chapter 4]
+- [ ] [chapter 5]
+- [ ] [chapter 6]
+- [ ] [chapter 7]
+- [ ] [chapter 8]
+- [ ] [chapter 9]
 ## [Numerical-Methods](https://github.com/Bancie/notebook.maths/blob/main/Numerical-Methods/nm.ipynb)
 - [ ] tinh gan dung hpt tt (doc sach)
 - [ ] nhap lieu
