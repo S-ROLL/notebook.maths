@@ -23,14 +23,14 @@
 - [ ] thang du
 - [ ] ung dung
 ## [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/main/Applied-Statistics/as.ipynb)
-- [ ] [ptich de]
-- [ ] [chapter 3]
-- [ ] [chapter 4]
-- [ ] [chapter 5]
-- [ ] [chapter 6]
-- [ ] [chapter 7]
-- [ ] [chapter 8]
-- [ ] [chapter 9]
+- [ ] ptich de
+- [ ] chapter 3
+- [ ] chapter 4
+- [ ] chapter 5
+- [ ] chapter 6
+- [ ] chapter 7
+- [ ] chapter 8
+- [ ] chapter 9
 ## [Numerical-Methods](https://github.com/Bancie/notebook.maths/blob/main/Numerical-Methods/nm.ipynb)
 - [ ] tinh gan dung hpt tt (doc sach)
 - [ ] nhap lieu
