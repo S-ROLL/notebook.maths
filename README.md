@@ -16,7 +16,7 @@
 - [Machine-Learning](https://github.com/Bancie/notebook.maths/blob/main/Machine-Learning/ml.ipynb)
 ---
 ## [Complex-Analysis](https://github.com/Bancie/notebook.maths/blob/main/Complex-Analysis/ca.ipynb)
-- [ ] ham bien so ph
+- [ ] ham bien so phuc
 - [ ] ham chinh hinh
 - [ ] axa phan tt
 - [ ] tp ham phuc
