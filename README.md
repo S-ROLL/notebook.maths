@@ -21,7 +21,7 @@
 - [ ] axa phan tt
 - [ ] tp ham phuc
 - [ ] thang du
-- [ ] dly xac dinh duy nhat
+- [ ] dly xac dinh duy nhat (c/m)
 - [ ] ung dung trong ham thuc
 ## [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/main/Applied-Statistics/as.ipynb)
 - [ ] ptich de
