@@ -24,7 +24,6 @@
 - [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - 7
 - [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - 8
 - [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - 9
-
 ## HBP
 - [ ] hbp - ham bien so ph
 - [ ] hbp - ham chinh hinh
@@ -32,7 +31,6 @@
 - [ ] hbp - tp ham phuc
 - [ ] hbp - thang du
 - [ ] hbp - ung dung
-
 ## GTS
 - [ ] gts - tinh gan dung hpt tt (doc sach)
 - [ ] gts - nhap lieu
