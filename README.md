@@ -16,23 +16,25 @@
 - [Machine-Learning](https://github.com/Bancie/notebook.maths/blob/1923473faf4a4ffa321eb46f10c88cf6969eb5c9/Machine-Learning/ml.ipynb)
 ---
 ## TKUD
-- [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - 3
-- [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - phan tich de thi
-- [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - 4
-- [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - 5
-- [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - 6
-- [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - 7
-- [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - 8
-- [ ] [tkud](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb) - 9
+- [ ] [3](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
+- [ ] [ptich de](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
+- [ ] [4](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
+- [ ] [5](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
+- [ ] [6](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
+- [ ] [7](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
+- [ ] [8](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
+- [ ] [9](https://github.com/Bancie/notebook.maths/blob/2eddeb71c5562585a52fdeef1ff7b71df4163ebd/Applied-Statistics/as.ipynb)
 ## HBP
-- [ ] hbp - ham bien so ph
-- [ ] hbp - ham chinh hinh
-- [ ] hbp - axa phan tt
-- [ ] hbp - tp ham phuc
-- [ ] hbp - thang du
-- [ ] hbp - ung dung
+- [ ] ham bien so ph
+- [ ] ham chinh hinh
+- [ ] axa phan tt
+- [ ] tp ham phuc
+- [ ] thang du
+- [ ] ung dung
 ## GTS
-- [ ] gts - tinh gan dung hpt tt (doc sach)
-- [ ] gts - nhap lieu
+- [ ] tinh gan dung hpt tt (doc sach)
+- [ ] nhap lieu
+## NCKH
+- [ ] cs ly thuyet b&b
 ---
 [DRIVE](https://drive.google.com/drive/u/1/folders/1HARdf9ZS6k-OPniwOIoeQKNms1sTe28c)
