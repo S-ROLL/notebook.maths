@@ -36,7 +36,7 @@
 - [ ] tinh gan dung hpt tt (doc sach)
 - [ ] nhap lieu
 ## [NCKH](https://github.com/Bancie/notebook.maths/blob/main/NCKH/nckh.ipynb)
-- [ ] cs ly thuyet b&b
+- [x] cs ly thuyet b&b
 - [ ] co so lt do phuc tap
 ---
 [SOURCES](https://drive.google.com/drive/u/1/folders/1HARdf9ZS6k-OPniwOIoeQKNms1sTe28c)
