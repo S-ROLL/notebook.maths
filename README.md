@@ -17,7 +17,7 @@
 ---
 ## [Complex-Analysis](https://github.com/Bancie/notebook.maths/blob/main/Complex-Analysis/ca.ipynb)
 - [x] ham bien so phuc
-- [ ] ham chinh hinh
+- [x] ham chinh hinh
 - [ ] axa phan tt
 - [ ] tp ham phuc
 - [ ] thang du
