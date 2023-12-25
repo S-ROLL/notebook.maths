@@ -24,14 +24,12 @@
 - [ ] dly xac dinh duy nhat (c/m)
 - [ ] ung dung trong ham thuc
 ## [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/main/Applied-Statistics/as.ipynb)
-- [ ] ptich de
-- [ ] chapter 3
-- [ ] chapter 4
-- [ ] chapter 5
-- [ ] chapter 6
-- [ ] chapter 7
-- [ ] chapter 8
-- [ ] chapter 9
+- [ ] Kiểm định tỉ lệ tổng thể
+- [ ] Kiểm định giá trị trung bình tổng thể
+- [ ] Kiểm định tính độc lập
+- [ ] So sánh tỉ lệ 2 tổng thể
+- [ ] So sánh 2 giá trị trung bình theo cặp
+- [ ] Phân tích phương sai 1 nhân tố
 ## [Numerical-Methods](https://github.com/Bancie/notebook.maths/blob/main/Numerical-Methods/nm.ipynb)
 - [ ] tinh gan dung hpt tt (doc sach)
 - [ ] nhap lieu
