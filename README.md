@@ -30,6 +30,7 @@
 - [ ] So sánh tỉ lệ 2 tổng thể
 - [ ] So sánh 2 giá trị trung bình theo cặp
 - [ ] Phân tích phương sai 1 nhân tố
+- [ ] Kiểm tra giả thuyết
 ## [Numerical-Methods](https://github.com/Bancie/notebook.maths/blob/main/Numerical-Methods/nm.ipynb)
 - [ ] tinh gan dung hpt tt (doc sach)
 - [ ] nhap lieu
