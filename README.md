@@ -19,8 +19,8 @@
 - [x] ham bien so phuc
 - [x] ham chinh hinh
 - [x] axa phan tt
-- [ ] tp ham phuc
-- [ ] thang du
+- [x] tp ham phuc
+- [x] thang du
 - [ ] dly xac dinh duy nhat (c/m)
 - [ ] ung dung trong ham thuc
 ## [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/main/Applied-Statistics/as.ipynb)
