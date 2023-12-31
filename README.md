@@ -30,6 +30,7 @@
 - [ ] Paired-sample T Test
 - [ ] Compare means/One-way ANOVA (variance)
 - [ ] Independent sample t test
+- [ ] Hypothesis Tests
 ## [Numerical-Methods](https://github.com/Bancie/notebook.maths/blob/main/Numerical-Methods/nm.ipynb)
 - [ ] tinh gan dung hpt tt (doc sach)
 - [x] nhap lieu
