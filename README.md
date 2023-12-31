@@ -24,13 +24,12 @@
 - [ ] dly xac dinh duy nhat (c/m)
 - [ ] ung dung trong ham thuc
 ## [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/main/Applied-Statistics/as.ipynb)
-- [ ] Kiểm định tỉ lệ tổng thể
-- [ ] Kiểm định giá trị trung bình tổng thể
-- [ ] Kiểm định tính độc lập
-- [ ] So sánh tỉ lệ 2 tổng thể
-- [ ] So sánh 2 giá trị trung bình theo cặp
-- [ ] Phân tích phương sai 1 nhân tố
-- [ ] Kiểm tra giả thuyết
+- [ ] Nonparametic Test/Legacy Dialogs/Binomial Test
+- [ ] One-sample T Test
+- [ ] Crosstab/Chi-square
+- [ ] Paired-sample T Test
+- [ ] Compare means/One-way ANOVA (variance)
+- [ ] Independent sample t test
 ## [Numerical-Methods](https://github.com/Bancie/notebook.maths/blob/main/Numerical-Methods/nm.ipynb)
 - [ ] tinh gan dung hpt tt (doc sach)
 - [x] nhap lieu
