@@ -21,7 +21,7 @@
 - [x] axa phan tt
 - [x] tp ham phuc
 - [x] thang du
-- [ ] tp luong giac
+- [x] tp luong giac
 - [ ] tp suy rong
 - [ ] dly xac dinh duy nhat (c/m)
 ## [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/main/Applied-Statistics/as.ipynb)
