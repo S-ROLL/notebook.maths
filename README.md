@@ -21,8 +21,9 @@
 - [x] axa phan tt
 - [x] tp ham phuc
 - [x] thang du
+- [ ] tp luong giac
+- [ ] tp suy rong
 - [ ] dly xac dinh duy nhat (c/m)
-- [ ] ung dung trong ham thuc
 ## [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/main/Applied-Statistics/as.ipynb)
 - [ ] Nonparametic Test/Legacy Dialogs/Binomial Test
 - [ ] One-sample T Test
