@@ -32,7 +32,7 @@
 - [ ] Independent sample t test
 - [ ] Hypothesis Tests
 ## [Numerical-Methods](https://github.com/Bancie/notebook.maths/blob/main/Numerical-Methods/nm.ipynb)
-- [x] tinh gan dung hpt tt (doc sach)
+- [ ] tinh gan dung hpt tt (doc sach)
 - [x] nhap lieu
 ## [NCKH](https://github.com/Bancie/notebook.maths/blob/main/NCKH/nckh.ipynb)
 - [x] cs ly thuyet b&b
