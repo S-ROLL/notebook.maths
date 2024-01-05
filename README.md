@@ -23,7 +23,7 @@
 - [x] tp ham phuc
 - [x] thang du
 - [x] tp luong giac
-- [ ] tp suy rong
+- [x] tp suy rong
 - [x] dly xac dinh duy nhat (c/m)
 ## [Applied-Statistics](https://github.com/Bancie/notebook.maths/blob/main/Applied-Statistics/as.ipynb)
 - [ ] Nonparametic Test/Legacy Dialogs/Binomial Test
