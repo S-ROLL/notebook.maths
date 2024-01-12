@@ -1,18 +1,18 @@
 # Prompt
 ## Vocab
-- step 0
+- step 1
 ```
 Give me 50 English words for the topic about ...
 ```
-- step 1
+- step 2
 ```
 Put the IPA, part of speech, CEFR level and meaning after every single word with first 10 words.
-``
-- step 2
+```
+- step 3
 ```
 Continue 10 words.
 ```
-- return ``step 2`` 3 times
+- return ``step 3`` 3 times
 ## Image
 ```
 Make an example sentence of ... in english and illustrate its example by image.
