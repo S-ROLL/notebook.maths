@@ -3,7 +3,7 @@
 Make an example sentence of ... in english and illustrate its example by image.
 ```
 ```
-Make an English vocabulary list 50 words for the topic about ... and put the IPA after every single word.
+Make an English vocabulary list 10 words for the topic about ... and put the IPA, part of speech, CEFR level and meaning after every single word.
 ```
 # Anki
 - **FRONT**
