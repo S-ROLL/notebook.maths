@@ -24,12 +24,13 @@ Make an example sentence of ... in english and illustrate its example by image.
     - ``image``
     - ``example``
 # gTTS
-```
+```python
 from gtts import gTTS
 x = gTTS('ACB', lang='en')
 x.save('x.mp3')
 ```
-> Where ``x`` is a numbered lists.
+> ``x`` is a numbered lists.
+> ``ACB`` is vocab.
 # Macro for making numbered lists in vim
 1. Type ``1``
 1. On line 1 press ``qw`` to start recording
