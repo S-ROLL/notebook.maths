@@ -8,6 +8,9 @@ Make an image to illustrate this text: "".
 ```
 Make an example sentence of ... in english and illustrate its example by image.
 ```
+```
+Make an English vocabulary list 50 words for the topic about ... and put the IPA after every single word.
+```
 # Anki
 - **FRONT**
   - ``Vocab``
