@@ -1,12 +1,21 @@
 # Prompt
-```
-Make an example sentence of ... in english and illustrate its example by image.
-```
-```
-Make an English vocabulary list 10 words for the topic about ... and put the IPA, part of speech, CEFR level and meaning after every single word.
-```
+## Vocab
+- step 0
 ```
 Give me 50 English words for the topic about ...
+```
+- step 1
+```
+Put the IPA, part of speech, CEFR level and meaning after every single word with first 10 words.
+``
+- step 2
+```
+Continue 10 words.
+```
+- return ``step 2`` 3 times
+## Image
+```
+Make an example sentence of ... in english and illustrate its example by image.
 ```
 # Anki
 - **FRONT**
