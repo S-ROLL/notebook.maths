@@ -1,4 +1,4 @@
-Prompt: (maximum 9 words)
+Prompt: maximum 9 words
 ```
 Make image example for the meaning of words: "". With single words single example image. fit the frame picture.
 ```
@@ -10,17 +10,17 @@ Make an example sentence of ... in english and illustrate its example by image.
 ```
 # Anki
 - **FRONT**
-  - ``Vocab`` (collect)
+  - ``Vocab`` collect
 - **BACK**
-  - (chatGPT) 
+  - chatGPT 
     - ``IPA``
-  - (gTTS)
+  - gTTS
     - ``MP3``
-  - (Cambridge dictionary)
+  - Cambridge dictionary
     - ``Type``
     - ``Level``
     - ``meaning``
-  - (chatGPT)
+  - chatGPT
     - ``image``
     - ``example``
 
