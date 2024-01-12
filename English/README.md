@@ -32,7 +32,7 @@ x.save('x.mp3')
 ## Macro for making numbered lists in vim
 ```
 1. Type ``1``
-1. Press ``qw`` to start recording
+1. On line 1 press ``qw`` to start recording
 1. Execute ``yyp^Ctrl-Aj``
 1. Press ``q`` to stop recording.
 1. Press ``8@a`` to add items 3 to 10.
