@@ -1,4 +1,4 @@
-Prompt: maximum 9 words
+# Prompt
 ```
 Make image example for the meaning of words: "". With single words single example image. fit the frame picture.
 ```
