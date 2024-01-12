@@ -29,12 +29,11 @@ from gtts import gTTS
 x = gTTS('ACB', lang='en')
 x.save('x.mp3')
 ```
+> Where ``x`` is a numbered lists.
 # Macro for making numbered lists in vim
-```
 1. Type ``1``
 1. On line 1 press ``qw`` to start recording
 1. Execute ``yyp^Ctrl-Aj``
 1. Press ``q`` to stop recording.
 1. Press ``8@a`` to add items 3 to 10.
-```
 
