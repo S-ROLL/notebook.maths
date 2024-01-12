@@ -29,7 +29,7 @@ from gtts import gTTS
 x = gTTS('ACB', lang='en')
 x.save('x.mp3')
 ```
-> ``x`` is a numbered lists.
+> ``x`` is a numbered lists. <br/>
 > ``ACB`` is vocab.
 # Macro for making numbered lists in vim
 1. Type ``1``
