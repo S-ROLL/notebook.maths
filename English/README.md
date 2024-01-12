@@ -1,5 +1,5 @@
 # Prompt
-## Vocab
+### Vocab
 - step 1
 ```
 Give me 50 English words for the topic about ...
@@ -13,7 +13,7 @@ Put the IPA, part of speech, CEFR level and meaning after every single word with
 Continue 10 words.
 ```
 - return ``step 3`` 3 times
-## Image
+### Image
 ```
 Make an example sentence of ... in english and illustrate its example by image.
 ```
