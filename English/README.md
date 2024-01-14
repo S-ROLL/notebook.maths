@@ -46,4 +46,10 @@ x.save('x.mp3')
 1. Execute ``yyp^Ctrl-Aj``
 1. Press ``q`` to stop recording.
 1. Press ``8@a`` to add items 3 to 10.
+# Code
+```
+{{cx::ABC}}
+```
+> x = 1,2,...
+> ABC : vocab
 
