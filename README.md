@@ -6,6 +6,8 @@
   - [Numerical-Methods](https://github.com/Bancie/notebook.maths/blob/main/Numerical-Methods/nm.ipynb)
   - [Machine-Learning](https://github.com/Bancie/notebook.maths/blob/main/Machine-Learning/ml.ipynb)
 - [NCKH](https://github.com/Bancie/notebook.maths/blob/main/NCKH/nckh.ipynb)
+- [Code](https://github.com/S-ROLL/notebook.maths/blob/main/Code)
+  - [basic-programming](https://github.com/S-ROLL/notebook.maths/blob/main/Code/basic-prog/basic-programme.ipynb)
 ---
 ## [NCKH](https://github.com/Bancie/notebook.maths/blob/main/NCKH/nckh.ipynb)
 - [ ] co so lt do phuc tap
