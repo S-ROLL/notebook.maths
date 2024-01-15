@@ -8,7 +8,7 @@
 - [NCKH](https://github.com/Bancie/notebook.maths/blob/main/NCKH/nckh.ipynb)
 ---
 ## [NCKH](https://github.com/Bancie/notebook.maths/blob/main/NCKH/nckh.ipynb)
-- [x] cs ly thuyet b&b
 - [ ] co so lt do phuc tap
+- [ ] ung dung
 ---
 [SOURCES](https://drive.google.com/drive/u/1/folders/1HARdf9ZS6k-OPniwOIoeQKNms1sTe28c)
