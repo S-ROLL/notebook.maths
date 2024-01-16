@@ -1,4 +1,21 @@
 ```cpp
+#include<iostream.h>
+#include<math.h>
+int main()
+{
+    int a; // bien a thuoc kieu so nguyen
+    cout<<"Moi ban nhap vao so a: ";
+    cin>>a;
+    int i=-4;
+    int j=-i;
+    double k = i * sqrt(2);
+    cout<<"Gia tri i la: "<<i<<endl;
+    cout<<"Gia tri j la: "<<j<<endl;
+    cout<<"Gia tri k la: "<<k<<endl;
+    return 0;
+}
+```
+```cpp
 #include <iostream>
 #include <iomanip>
 #include <cmath>
