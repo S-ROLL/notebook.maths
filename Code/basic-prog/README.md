@@ -1,3 +1,4 @@
+#CPP
 ```cpp
 #include<iostream.h>
 #include<math.h>
@@ -15,6 +16,7 @@ int main()
     return 0;
 }
 ```
+$f(x)=\frac{1}{x}$ with $x$ ranging from $0$ to $1$ in steps of $0.1$
 ```cpp
 #include <iostream>
 #include <iomanip>
@@ -41,6 +43,7 @@ int main() {
     return 0;
 }
 ```
+$f(x)=2x$ with $x$ ranging from $0$ to $10$ in steps of $1$
 ```cpp
 #include <iostream>
 using namespace std;
