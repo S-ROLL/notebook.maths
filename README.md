@@ -1,3 +1,24 @@
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Display the header of the table
+    cout << " x | 2x " << endl;
+    cout << "-----------" << endl;
+
+    // Loop from 1 to 10
+    for (int x = 1; x <= 10; x++) {
+        // Calculate 2x
+        int y = 2 * x;
+
+        // Display the current values of x and 2x
+        cout << " " << x << " | " << y << endl;
+    }
+
+    return 0;
+}
+```
 # Contents
 - [Maths](https://github.com/S-ROLL/notebook.maths/blob/main/Maths)
   - [Basic](https://github.com/Bancie/notebook.maths/blob/main/Basic-concept/basic.ipynb)
