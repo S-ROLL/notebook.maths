@@ -1,24 +1,19 @@
 #include <iostream>
-#include <iomanip>
-#include <cmath>
+#include <math.h>
+
 using namespace std;
 
-int main() {
-    // Set precision for decimal points
-    cout << fixed << setprecision(2);
+long t
 
-    // Display the header of the table
-    cout << "  x  | f(x) = 1/sqrt(x) " << endl;
-    cout << "-----------------------" << endl;
+int main()
+{
+    cout << "nhap do";
+    cin >> t;
 
-    // Loop from 1 to 10
-    for (int x = 1; x <= 10; x++) {
-        // Calculate 1/sqrt(x)
-        double fx = 1 / sqrt(x);
-
-        // Display the current values of x and f(x)
-        cout << "  " << x << "  | " << fx << endl;
-    }
+    cout << "gio" << t / 3600 ;
+    cout << "phut" << (t%3600)/60;
+    cout << "giay" << t%60;
+    
 
     return 0;
 }
