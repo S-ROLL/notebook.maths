@@ -11,7 +11,7 @@
   - [basic-programming](https://github.com/S-ROLL/notebook.maths/blob/main/Code/basic-prog/basic-programme.ipynb)
 ---
 ## [Measure-Theory](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/Measure/measure.ipynb)
-- [ ] 
+- [ ] Độ đo
 ## [NCKH](https://github.com/S-ROLL/notebook.maths/blob/main/NCKH/nckh.ipynb)
 - [ ] co so lt do phuc tap
 - [ ] ung dung
