@@ -15,7 +15,6 @@
   - [MILP]()
     - [Theory](https://github.com/S-ROLL/notebook.maths/blob/main/NCKH/MILP/theory/nckh.ipynb)
     - [Tests](https://github.com/S-ROLL/notebook.maths/blob/main/NCKH/MILP/tests/test_nckh.ipynb)
----
 ## [Measure-Theory](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/Measure/measure.ipynb)
 - [ ] Độ đo
 ## [NCKH](https://github.com/S-ROLL/notebook.maths/blob/main/NCKH/nckh.ipynb)
