@@ -1,6 +1,6 @@
 # Contents
 - [MATHS](https://github.com/S-ROLL/notebook.maths/blob/main/MATHS)
-  - [Basic formula](https://github.com/S-ROLL/notebook.maths/blob/main/MATHS/BASIC-FORMULA/basic.ipynb)
+  - [Basic formula](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/BASIC-FORMULA/basic.ipynb)
   - [Calculus]()
     - [Complex analysis](https://github.com/S-ROLL/notebook.maths/blob/main/MATHS/CALCULUS/Complex-Analysis/ca.ipynb)
     - [Measure theory](https://github.com/S-ROLL/notebook.maths/blob/main/MATHS/CALCULUS/Measure-theory/measure.ipynb)
