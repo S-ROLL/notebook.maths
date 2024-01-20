@@ -7,6 +7,7 @@
     - [Numerical methods](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/CALCULUS/Numerical-Methods/nm.ipynb)
   - [Logic]()
   - [Number theory]()
+    - [Set theory](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/NUMBER-THEORY/Set-theory/set-theory.ipynb)
   - [Probability]()
     - [Applied statistics](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/PROBABILITY/Applied-Statistics/advance/advance-AS.ipynb)
     - [Machine learning](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/PROBABILITY/Machine-Learning/ml.ipynb)
