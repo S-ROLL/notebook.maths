@@ -14,9 +14,5 @@
     - [Tests](https://github.com/S-ROLL/notebook.maths/blob/main/NCKH/MILP/tests/test_nckh.ipynb)
 
 # Tasks
-## [Measure-Theory](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/Measure/measure.ipynb)
-- [ ] Độ đo
-## [NCKH](https://github.com/S-ROLL/notebook.maths/blob/main/NCKH/nckh.ipynb)
-
 # Bib
 [Drive](https://drive.google.com/drive/u/1/folders/1HARdf9ZS6k-OPniwOIoeQKNms1sTe28c)
