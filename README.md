@@ -10,6 +10,7 @@
   - [Applied statistics](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/PROBABILITY/Applied-Statistics/advance/advance-AS.ipynb)
   - [Machine learning](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/PROBABILITY/Machine-Learning/ml.ipynb)
 - [Optimization]()
+  - [LFP](https://github.com/S-ROLL/notebook.maths/blob/main/NCKH/LFP/theory/LFP.ipynb)
   - [MILP]()
     - [Theory](https://github.com/S-ROLL/notebook.maths/blob/main/NCKH/MILP/theory/nckh.ipynb)
     - [Tests](https://github.com/S-ROLL/notebook.maths/blob/main/NCKH/MILP/tests/test_nckh.ipynb)
