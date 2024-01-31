@@ -1,0 +1,367 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{vietnam}\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage[top=3.5cm, bottom=3.0cm, left=3cm, right=3.0cm]{geometry} 
+\usepackage{color, fancyhdr, graphicx, wrapfig}
+\usepackage[unicode]{hyperref}
+\usepackage[vietnamese]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx} 
+\usepackage{titling}
+\usepackage{secdot}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{array}
+\usetikzlibrary{calc}
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+%\usepackage{refcheck}
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\newtheorem{dn}{Định nghĩa}[chapter]
+\newtheorem{tc}{Tính chất}[chapter]
+\newtheorem{dl}{Định lý}[chapter]
+\newtheorem{md}{Mệnh đề}[chapter]
+\newtheorem{bd}{Bổ đề}[chapter]
+\newtheorem{hq}{Hệ quả}[chapter]
+\newtheorem{nx}{Nhận xét}[chapter]
+\newtheorem{vd}{Ví dụ}[chapter]
+\newtheorem{cy}{Chú ý}[chapter]
+\pagenumbering{roman}\pagestyle{plain}
+%\pagestyle{fancy}
+%\lhead{\it \changefontsizes{11pt}Luận văn thạc sĩ:}
+%\rhead{\it Một số phương pháp vô hướng hóa cơ bản trong tối ưu đa mục tiêu}
+%\lfoot{\it Nguyễn Văn Vân } 			         
+%\rfoot{\it K19.2 trường ĐHSG}
+\renewcommand{\headrulewidth}{1,2pt} 			
+\renewcommand{\footrulewidth}{1,2pt}
+
+\newcommand{\dstc}[2]
+{
+	\newdimen\stringwidth\setbox0=\hbox{#1}
+	\stringwidth=\wd0
+	\hspace*{-\parindent}\hspace*{.5\textwidth}\hspace*{-.5\wd0}#1\hfill #2\bigskip
+	
+}  
+\usepackage{scrextend}
+\fancyhf{}
+\lhead{}
+\chead{\thepage}
+\rhead{}
+\cfoot{}
+\rfoot{}
+\lfoot{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1pt}
+
+%\changefontsizes{13pt}
+
+\begin{document} 
+	\begin{titlepage}
+		\begin{tikzpicture}[remember picture, overlay]
+			\draw[line width = 1.5pt] ($(current page.north west) + (1in,-1in)$) rectangle ($(current page.south east) + (-0.6in,1in)$);
+			
+		\end{tikzpicture}
+		\centering
+		\textbf{ỦY BAN NHÂN DÂN THÀNH PHỐ HỒ CHÍ MINH\smallskip\\
+			TRƯỜNG ĐẠI HỌC SÀI GÒN}\par
+		\rule{5cm}{0.5pt}\par
+		\vspace{2cm}
+		{\Large\textbf{BẰNG \& THƯ}\par}
+		\vspace{4cm}
+		{\Large\textbf{PHƯƠNG PHÁP GIẢI BÀI TOÁN\\ QUY HOẠCH TUYẾN TÍNH  NGUYÊN }\par}
+		\vspace{4cm}
+		\large\textbf{ ĐỀ TÀI NGHIÊN CỨU KHOA HỌC SINH VIÊN}\par		
+		
+		\large{CHUYÊN NGÀNH: TOÁN ỨNG DỤNG}
+		\vspace{1.5cm}
+		
+		\vfill
+		\textbf{Thành phố Hồ Chí Minh, năm 2021}
+	\end{titlepage}
+	\begin{titlingpage}
+		\begin{tikzpicture}[remember picture, overlay]
+			\draw[line width = 1.5pt] ($(current page.north west) + (1in,-1in)$) rectangle ($(current page.south east) + (-1in,1in)$);
+			
+		\end{tikzpicture}
+		\centering
+		\textbf{ỦY BAN NHÂN DÂN THÀNH PHỐ HỒ CHÍ MINH\smallskip\\
+			TRƯỜNG ĐẠI HỌC SÀI GÒN}\par
+		\rule{5cm}{0.5pt}\par
+		\vspace{2cm}
+		{\Large\textbf{BẰNG \& THƯ}\par}
+		\vspace{4cm}
+		{\Large\textbf{PHƯƠNG PHÁP GIẢI BÀI TOÁN QUY HOẠCH TUYẾN TÍNH NGUYÊN}\par}
+		\vspace{4cm}
+		\large\textbf{ĐỀ TÀI NGHIÊN CỨU KHOA HỌC SINH VIÊN}\par		
+		
+		\large{CHUYÊN NGÀNH: TOÁN ỨNG DỤNG}
+		\vspace{1.5cm}
+		
+		\large\textbf{Người hướng dẫn} \par
+		\vspace{2cm}
+		
+		\large\textbf{PGS.TS. TẠ QUANG SƠN}\par
+		
+		%	\includegraphics[height=2cm]{chukynew}
+		\vfill
+		\textbf{Thành phố Hồ Chí Minh, năm 2021}
+	\end{titlingpage}
+	
+	%\large
+	\renewcommand{\baselinestretch}{1.2}
+	\fontsize{13pt}{20pt}\selectfont
+	
+	\chapter*{Lời cam đoan}
+	\thispagestyle{fancy}
+	\addcontentsline{toc}{chapter}{Lời cam đoan}
+	\vspace{1cm}
+	\indent
+	
+	Chúng tôi tên là XXXXX và XXXX, là các  sinh viên lớp...., khoa.... , khóa ....,  thuộc trường Đại học Sài Gòn. 
+	
+	Xin cam đoan rằng: Toàn bộ nội dung được trình bày trong đề tài  này này đều do chúng tôi thực hiện dưới sự hướng dẫn của PGS.TS. Tạ Quang Sơn.
+	Những kết quả nghiên cứu của tác giả khác được sử dụng trong đề tài  đều có trích dẫn đầy đủ. 
+	Chúng tôi xin chịu trách nhiệm nếu có các nội dung sao chép không hợp lệ hoặc vi phạm quy chế đào tạo. 
+	\\
+	\\
+	\\
+	\rightline{{\it {Tp. HCM, tháng XX năm 2024}} \hspace*{0cm}}
+	\rightline{\textbf{Tác giả} \hspace*{2cm}}
+	\\
+	\\
+	\\
+	
+	%\vspace*{1cm}
+	\rightline{\textbf{XXXX}\hspace*{1.2cm}}
+	
+	\chapter*{Lời cảm ơn}
+	\thispagestyle{fancy}
+	\addcontentsline{toc}{chapter}{Lời cảm ơn}
+	\vspace{1cm}
+	\indent
+	
+	Đề tài nghiên cứu khoa học này được hoàn thành tại trường Đại Học Sài Gòn dưới sự hướng dẫn của PGS.TS. Tạ Quang Sơn.   Chúng em xin bày tỏ lòng biết ơn chân thành và sâu sắc về sự tận tâm và nhiệt tình của Thầy trong suốt quá trình thực hiện đề tài này.
+	
+	
+	\bigskip
+	Xin cám ơn Phòng Đào tạo  và Khoa Toán - Ứng dụng, Trường Đại học Sài Gòn, đã tạo nhiều điều kiện thuận lợi, giúp chúng em nâng cao chất lượng và nhiệm vụ học tập qua việc thực hiện đề tài này.
+	\\
+	\\
+	\\
+	\rightline{{\it {Tp. HCM, tháng XX năm 20XX}} \hspace*{0cm}}
+	\rightline{\textbf{Tác giả} \hspace*{2cm}}
+	\\
+	\\
+	
+	%\vspace*{1cm}
+	\rightline{\textbf{XXX} \hspace*{2cm}}
+	\newpage
+	
+	\addcontentsline{toc}{chapter}{Mục lục}
+	\tableofcontents
+	%\thispagestyle{plain}
+	\chapter*{Danh mục các kí hiệu}
+	\thispagestyle{fancy}
+	\addcontentsline{toc}{chapter}{Danh mục các kí hiệu}
+	\begin{longtable}{l l}
+		
+		$\mathbb{R}$ & Tập các số thực\\
+		%$\emptyset $ & Tập rỗng\\
+		$\mathbb{R}^n$ & Không gian Euclide $n$-chiều\\
+
+		
+		$F$ & Tập chấp nhận được của bài toán tối ưu\\
+		$\langle u, v \rangle$ & Tích vô hướng của hai véc tơ $u$ và $v$ trong $\mathbb{R}^n$\\
+		
+		
+	\end{longtable}
+\newpage
+\pagenumbering{arabic} 
+\chapter*{Lời nói đầu}
+\thispagestyle{fancy}
+\addcontentsline{toc}{chapter}{{\bf  Lời nói đầu}\rm}
+\renewcommand{\baselinestretch}{1.2}
+Thực tế cho thấy rằng trong nhiều bài toán tối ưu, nghiệm tìm được mong muốn phải là các số nguyên hoặc một bộ phận nghiệm của bài toán phải là các số nguyên. Điều này có thể thấy ở các bài toán như phân phối hàng hóa, sắp xếp tối ưu nhân lực, bài toán trên mạng, phân luồng giao thông,...
+Đã từng có nhận định về việc tìm nghiệm nguyên của bài toán tối ưu là sau khi tìm được nghiệm tối ưu thì thưc hiện việc làm tròn nghiệm. Cách thức này thường không cho kết quả như mong muốn. Bởi lẽ nghiệm làm tròn có thể không thuộc miền chấp nhận được hoặc  có thể việc làm tròn như thế không chắc đã cho nghiệm tốt nhất như mong muốn. Lý thuyết về việc tìm nghiệm nguyên cho các bài toán tối ưu đáp ứng điều mong đợi nêu trên.
+
+Bài toán tối ưu thường được xem xét dưới dạng 
+$$
+\begin{array}{ll}
+{\rm Min\ (Max)}& f(x)\\
+&x \in F,
+\end{array}
+$$
+trong đó $f(x)$ là hàm mục tiêu tối ưu cần xác định, phụ thuộc vào biến $x$, xác định trên một không gian cho trước và $F$ là tập ràng buộc còn gọi là tập chấp nhận được. Mục tiêu của bài toán là đi tìm $x\in F$ sao cho hàm mục tiêu $f(x)$ đạt giá trị lớn nhất hay bé nhất.
+Vì bài toán Max có thể đưa về bài toán Min và ngược lại, nên trong nhiều trường hợp để xây dựng các thuật toán tìm nghiệm cho bài toán, người ta chỉ cần xét một trong hai dạng nêu trên là đủ.
+
+
+
+Trong đề tài này chúng tôi quan tâm tìm hiểu về nghiệm nguyên cho bài toán có hàm mục tiêu tuyến tính trên tập chấp nhận được xác định bởi các hàm tuyến tính. Bài toán có dạng như sau
+$$
+\begin{array}{ll}
+{\rm Min}&\quad c_1x_1+\ldots+c_nx_n\\
+{\rm s.t.}&\begin{cases}
+a_{11}x_1+\ldots+a_{1n}x_n \le b_1\\
+a_{21}x_1+\ldots+a_{2n}x_n \le b_2\\
+\vdots\\
+a_{m1}x_1+\ldots+a_{mn}x_n \le b_m\\
+x_1, \ldots, x_n \ge 0.
+\end{cases}
+\end{array}
+$$
+Trong đó, $c_i, i=1,...,n$, các hệ số $a_{ij}$ với $i=1,...,m$ và $j=1,...,n$, và $b_i$ với $i=1,...,m$ là các số thực cho trước.
+
+Bằng cách dùng ký hiệu véc tơ và ma trận, bài toán nêu trên được viết dưới dạng 
+$$
+\begin{array}{rl}
+{\rm Min}& \langle c,x \rangle \\
+{\rm s.t.}& 
+\begin{cases}Ax \le b\\
+ x\ge 0.
+ \end{cases}
+\end{array}
+$$
+Trong đó, cho trước $A$ là ma trận có $m$ dòng và $n$ cột, $c$ là véc tơ $n$ chiều và $b$ là véc tơ $m$ chiều. Chú ý rằng, các ràng buộc bất đẳng thức đều có thể biến đổi về ràng buộc đẳng thức. Vì thế trong nội dung của đề tài này, nếu không nói gì thêm, bài toán luôn được xét dưới dạng tổng quát
+$$
+\begin{array}{rl}
+{\rm (IP) \; Min}& \langle c,x \rangle \\
+{\rm s.t.}& 
+\begin{cases}Ax = b\\
+ x\ge 0.
+ \end{cases}
+\end{array}
+$$
+
+Các phương pháp mà đề tài này tìm hiểu là phương pháp sử dụng siêu phẳng cắt Gomory và phương pháp tìm nghiệm nguyên theo kiểu nhánh-cận do Land-Doig đề xuất. 
+
+Nội dung đề tài được tổ chức thành 3 chương trong đó 
+
+Chương 1; Dành để tóm lược lại một số kiến thức về Đại số tuyến tính liên quan đến véc tơ và ma trận. Đồng thời chương này cũng nhắc lại một số kết quả về phương pháp đơn hình khi giải bài toán quy hoạch tuyến tính.
+
+Chương 2: Là phần chính của nội dung đề tài. Trong đó được chia làm hai phần. Phần đầu dành để trình bày phương pháp dùng siêu phẳng cắt Gomory và phần tiếp theo dành để trình bày phương pháp nhánh-cận kiểu Land-Doig. Trong mỗi phần đều có các ví dụ minh họa. Ngoài ra, dựa trên thực tế, khi sử dụng các phương pháp này để giải bài toán Quy hoạch nguyên, đề tài cũng đưa ra những nhận xét về phương pháp.
+
+Phần cuối của đề tài này là Chương 3. Chúng tôi thử áp dụng các phương pháp trên để khảo sát việc tìm nghiệm nguyên cho bài toán dạng phân thức tuyến tính. 
+
+Do lần đầu tham gia tập dượt nghiên cứu khoa học. Các tri thức chọn lọc và trình bày trong nội dung của đề tài này chưa đầy đủ hoặc còn sơ suất. Chúng em kính mong nhận được sự chỉ bảo từ quý thầy cô.
+
+\newpage
+\renewcommand{\baselinestretch}{1.2}
+ 
+\chapter{Một số kiến thức cơ bản về bài toán qui hoạch tuyến tính} 
+Kiến thức trình bày trong chương này, hầu hết được tham khảo từ các tài liệu  \cite{xxx} và \cite{xxx}.
+\section{ Véc tơ, ma trận và các tính chất}
+
+\subsection{ Véc tơ và các phép toán }
+
+\subsection{ Ma trận và các phép toán}
+
+XXXXXXX
+
+\subsection{Các phép biến đổi trên ma trận}
+xxxxxxxxxxxx
+
+\subsection{ Định thức của ma trận và ma trận đảo}
+XXXXXX
+
+
+\section{Một số kiến thức cơ bản về Bài toán tối ưu tuyến tính}
+
+
+\subsection{Bài toán dạng chính tắc và chuẩn tắc}
+
+\subsection{Chuyển bài toán về dạng chính tắc}
+
+\section{Giải bài toán với cơ sở ban đầu}
+
+\subsection{Trường hợp bài toán chưa có cơ sở dạng chính tắc}
+
+\subsubsection{Phương pháp hai pha}
+Khi bài toán chưa có đủ số véc tơ cơ sở
+
+\subsubsection{Phương pháp bài toán M}
+Khi bài toán chưa có đủ số véc tơ cơ sở
+
+\subsection{Giải bài toán khi đã có cơ sở chính tắc}
+Khi bài toán đã có đủ số véc tơ cơ sở
+
+
+\chapter{Bài toán quy hoạch tuyến tính có nghiệm nguyên}
+
+
+\section{Sự cần thiết phải nghiên cứu về bài toán quy hoach có nghiệm nguyên}
+
+-Mô tả bằng các vi dụ
+
+\section{Lý thuyết về cách tìm nghiệm nguyên của bài toán Quy hoạch tuyến tính}
+
+
+\subsection{Sự cần thiết phải có một lý thuyết riêng}
+
+\subsection{Phương pháp Gomory}
+
+\subsubsection{Giới thiệu phương pháp và ý nghĩa}
+
+\subsubsection{Các bước thực hiện của phương pháp}
+
+\subsubsection{Ví dụ minh họa}
+
+
+\subsection{Phương pháp Land-Doig}
+
+\subsubsection{Giới thiệu phương pháp và ý nghĩa}
+
+\subsubsection{Các bước thực hiện của phương pháp}
+
+\subsubsection{Ví dụ minh họa}
+
+\chapter{Mở rộng kết quả cho bài toán dạng phân thức tuyến tính}
+
+
+\chapter*{Kết luận}                         % Chương 3
+\addcontentsline{toc}{chapter}{{\bf  Kết luận}\rm}
+\indent
+\thispagestyle{fancy}
+
+Luận văn này đạt được các vấn đề sau đây:
+
+\begin{itemize}
+	\item 
+	\item 
+	\item
+\end{itemize}
+
+
+
+\begin{thebibliography}{99}
+	\addcontentsline{toc}{chapter}{{\bf  Tài liệu tham khảo}} 
+	\thispagestyle{fancy}
+%	\item[\textbf{\large 1.}] \textbf{\large Tài liệu tham khảo chính thức}
+	
+	%\item[\textbf{\large 1.}] \textbf{\large Tài liệu tham khảo chính thức}
+	
+	
+	%Các tài liệu chính được tôi chọn lựa để tham khảo khi thực hiện luận văn là  tài liệu số \cite{Mat}, \cite{Gab1} và \cite{Gian}. 	Các vấn đề liên quan được chúng tôi khảo cứu trong các tài liệu còn lại.
+	
+	\bibitem{Erik} Erik B. Bajanilov, {\it Linear fractional programming: Theory, Mẹthods, Applications, and Software}, Springer, 2003.
+		
+	\bibitem{Stan} Stancu Minasian, {\it Fractional Programming: Theory, Methods, and Applications}, Kluwer Academic Publishers, 1992.
+	
+
+	
+	
+\end{thebibliography}
+
+\end{document}
+
+
+
+
+
+
+
