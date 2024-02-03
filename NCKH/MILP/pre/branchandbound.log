@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  3 FEB 2024 21:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  3 FEB 2024 21:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1041,4 +1041,168 @@ Dictionary: translator-theorem-dictionary, Language: English
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: float package is lo
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+(./branchandbound.nav) [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+] [2
+
+] (./branchandbound.toc) [3
+
+] [4
+
+]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 108.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 108.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [5
+
+] [6
+
+] [7
+
+] [8
+
+] [9
+
+] [10
+
+] [11
+
+] [12
+
+]
+
+LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <10.95> not available
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 243.
+
+[13
+
+]
+Overfull \hbox (27.01947pt too wide) detected at line 279
+[]
+ []
+
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 279.
+
+[14
+
+]
+Overfull \hbox (9.98611pt too wide) detected at line 316
+[]
+ []
+
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 316.
+
+[15
+
+] [16
+
+] [17
+
+]
+
+LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <10> not available
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 345.
+
+[18
+
+] [19
+
+] [20
+
+] [21
+
+] [22
+
+] [23
+
+] [24
+
+] [25
+
+] [26
+
+] [27
+
+] [28
+
+] [29
+
+] [30
+
+] [31
+
+]
+Overfull \vbox (5.17706pt too high) detected at line 598
+ []
+
+[32
+
+]
+Overfull \hbox (8.6792pt too wide) in paragraph at lines 640--640
+ [] 
+ []
+
+[33
+
+] [34
+
+] [35
+
+] [36
+
+] [37
+
+] [38
+
+] [39
+
+] [40
+
+] [41
+
+] [42
+
+]
+\tf@nav=\write7
+\openout7 = `branchandbound.nav'.
+
+\tf@toc=\write8
+\openout8 = `branchandbound.toc'.
+
+\tf@snm=\write9
+\openout9 = `branchandbound.snm'.
+
+ (./branchandbound.aux)
+ ***********
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-11-09>
+ ***********
+Package rerunfilecheck Info: File `branchandbound.out' has not changed.
+(rerunfilecheck)             Checksum: 84B0CF9D213AFDB0BC56727D843D49C2;474.
+ ) 
+Here is how much of TeX's memory you used:
+ 41101 strings out of 474273
+ 996271 string characters out of 5747713
+ 1970555 words of memory out of 5000000
+ 62468 multiletter control sequences out of 15000+600000
+ 583334 words of font info for 87 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,26n,123p,792b,2068s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnss17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnssi10.pfb>
+Output written on branchandbound.pdf (42 pages, 368095 bytes).
+PDF statistics:
+ 4918 PDF objects out of 5155 (max. 8388607)
+ 2943 compressed objects within 30 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+
