@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1706694011 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/TQS/detai_NCKH_ThuBang/Detai_NCKH_ThuBang.tex" "Detai_NCKH_ThuBang.pdf" "Detai_NCKH_ThuBang" 1706694012 0
-  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/TQS/detai_NCKH_ThuBang/Detai_NCKH_ThuBang.tex" 1706693947 14064 9972ef8e094f76de7594bf2cbf68d749 ""
+["pdflatex"] 1707460594 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/TQS/detai_NCKH_ThuBang/Detai_NCKH_ThuBang.tex" "Detai_NCKH_ThuBang.pdf" "Detai_NCKH_ThuBang" 1707460596 0
+  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/TQS/detai_NCKH_ThuBang/Detai_NCKH_ThuBang.tex" 1707460594 14069 0a828ba385d498973d89430bf1984e2e ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -197,10 +197,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700549885 4694867 edce96ea9fbf5196f445dab10e2fe5bf ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700550044 8213569 7a9a2c5e7e932edbf43ec7dad46550bc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Detai_NCKH_ThuBang.aux" 1706694012 5745 78b58ca03b1e561bb5b7c634df69fe4e "pdflatex"
-  "Detai_NCKH_ThuBang.out" 1706694012 8538 96a7da2d8f7cb0612e79274d6e787394 "pdflatex"
-  "Detai_NCKH_ThuBang.tex" 1706693947 14064 9972ef8e094f76de7594bf2cbf68d749 ""
-  "Detai_NCKH_ThuBang.toc" 1706694012 3621 2689dcdb76945da19e78c1557382a952 "pdflatex"
+  "Detai_NCKH_ThuBang.aux" 1707460596 5745 78b58ca03b1e561bb5b7c634df69fe4e "pdflatex"
+  "Detai_NCKH_ThuBang.out" 1707460596 8538 96a7da2d8f7cb0612e79274d6e787394 "pdflatex"
+  "Detai_NCKH_ThuBang.tex" 1707460594 14069 0a828ba385d498973d89430bf1984e2e ""
+  "Detai_NCKH_ThuBang.toc" 1707460596 3621 2689dcdb76945da19e78c1557382a952 "pdflatex"
   (generated)
   "Detai_NCKH_ThuBang.aux"
   "Detai_NCKH_ThuBang.log"
