@@ -1,0 +1,120 @@
+\documentclass{beamer}
+\mode<presentation>
+\setbeamertemplate{bibliography item}{}
+\usepackage[utf8]{vietnam}
+\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{caption}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary {datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
+\setbeamertemplate{bibliography item}[text]
+\usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
+\newtheorem{dn}{Định nghĩa}[section]
+\newtheorem{dl}{Định lý}[section]
+\newtheorem{tc}{Tính chất}[section]
+\newtheorem{hq}{Hệ quả}[section]
+\newtheorem{bd}{Bổ đề}[section]
+\newtheorem{md}{Mệnh đề}[section]
+\newtheorem{vd}{Ví dụ}[section]
+\newtheorem{nx}{Nhận xét}[section]
+\newcommand{\dom}{\text{{\rm dom}}}
+\newcommand{\epi}{\text{{\rm epi}}}
+\newcommand{\Min}{\text{{\rm Min}}}
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{definitions}[numbered]
+\setbeamertemplate{footline}[frame number]
+\usepackage{algorithm}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{footmisc}
+\usepackage{indentfirst} 
+\usepackage{comment}
+\AtBeginEnvironment{proof}{%
+  \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\usefonttheme{professionalfonts}
+\setbeamercolor{normal text}{bg=white,fg=black}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\beamertemplatetransparentcoveredhigh
+\title[]{\fontsize{13pt}{10pt}\selectfont {\bf \LARGE Tối ưu phân tuyến tính \\ cho nghiệm nguyên}\\}
+\author[]{\bf Nguyễn Chí Bằng \\}
+\small{\date{\today}}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{TÓM TẮT}
+\begin{itemize}
+\item Giới thiệu về bài toán tối ưu phân tuyến tính:
+\begin{itemize}
+\item Cơ sở lý thuyết.
+\item Thuật toán Dinkelbach.
+\end{itemize}
+\item Phương pháp giải bài toán tối ưu phân tuyến tính cho nghiệm nguyên bằng thuật toán nhánh cận (LandDoig).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{NỘI DUNG}
+    \tableofcontents
+\end{frame}
+
+\section{Giới thiệu}
+%FLP-begin
+
+\begin{frame}
+   \center 
+   \huge Giới thiệu bài toán 
+\end{frame}
+
+\begin{frame}{Tối ưu phân tuyến tính (Linear-Fractional Programming)}
+    \begin{equation} \label{H}
+        \begin{split}
+        (F) \quad & Q(x) = \frac{P(x)}{D(x)} \quad \longrightarrow Max \: (Min) \\
+            & \left\{
+            \begin{split}
+            &Ax \leq  b, \\
+            &x \geq 0. \\
+            \end{split}
+            \right.    
+        \end{split}
+    \end{equation}            
+    \begin{itemize} \small
+    \item Trong đó $P(x)=p^Tx+p_0$, với $p^T = (p_1 \: p_2 \: \ldots \: p_n)$ và $D(x)=d^Tx+d_0$, với $d^T = (d_1 \: d_2 \: \ldots \: d_n)$. $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+        b_1 \\
+        b_2 \\
+        \vdots \\
+        b_m
+        \end{pmatrix}$, với $x\in \mathbb{R}^n_+$.
+    \item Bài toán $(F)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính.}
+    \item Tập $S_F:=\{x\in \mathbb{R}^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Bài toán minh hoạ}
+    
+\end{frame}
+
+%FLP-end
+
+\section{Thuật toán Dinkelbach}
+\section{Thuật toán LandDoig - Dinkelbach}
+
+\begin{frame}
+\end{frame}
+
+\end{document}
