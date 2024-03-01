@@ -75,12 +75,10 @@
 
 \section{Giới thiệu}
 %FLP-begin
-
 \begin{frame}
    \center 
    \huge Giới thiệu bài toán 
 \end{frame}
-
 \begin{frame}{Tối ưu phân tuyến tính (Linear-Fractional Programming)}
     \begin{equation} \small \label{F}
         \begin{split}
@@ -104,8 +102,6 @@
     \item $P(x)=p^Tx+p_0$, với $p^T = (p_1 \: p_2 \: \ldots \: p_n)$ và $D(x)=d^Tx+d_0$, với $d^T = (d_1 \: d_2 \: \ldots \: d_n)$ ($D(x)>0, \forall x \in S_F$).
     \end{itemize}
 \end{frame}
-
-
 \begin{frame}{Bài toán minh hoạ}
     \begin{equation}
     \begin{split}
@@ -119,7 +115,6 @@
     \end{split}
     \end{equation}            
 \end{frame}
-
 \begin{frame}{Mối quan hệ với bài toán tối ưu tuyến tính}
 \begin{itemize}
 \item Nếu $d^T=0$ và $d_0=1$, bài toán (F) trở thành bài toán tối ưu tuyến tính (P) và ta gọi (F) là bài toán mở rộng của (P):
@@ -196,15 +191,146 @@ Ta thay bằng hàm $D(x)$ với điều kiện:
 \item Nếu $p_0 - \mu d_0 = 0$ thì $Q(x)=\mu= \text{hằng số} \: (\forall x \in S_F)$, ta bỏ qua bài toán.
 \end{itemize}
 \end{frame}
-
 %FLP-end
-\section{Phương pháp hình học}
 
+%GRAPHICAL-BEGIN
+\section{Phương pháp hình học}
 \begin{frame}
    \center 
    \huge Phương pháp hình học 
 \end{frame}
 
+\begin{frame}{Bài toán trên không gian $\mathbb{R}^2$}
+\begin{equation} \large
+    \begin{split}
+    (F) \quad Q(x) & = \frac{P(x)}{D(x)} = \frac{p_1x_1 + p_2 x_2 + p_0}{d_1x_1+d_2x_2 + d_0}\quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \text{ trong đó } A=m \times 2 \\
+        &x_1, x_2 \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+    \begin{tikzpicture}[scale=1.2]
+    \begin{axis}
+        [
+        xmin=0,xmax=80,
+        ymin=0,ymax=80,
+        xlabel={$x_1$},
+        ylabel={$x_2$},
+        grid style={line width=.1pt, draw=darkgray!50},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        enlargelimits={abs=0},
+        samples=100,
+        domain = -20:20,
+        ]
+        \filldraw[blue!30, pattern=north west lines, pattern color=blue!30, line width=1pt] (30, 25) -- (50, 20) -- (70, 30) -- (70, 50) -- (50, 65) -- (20, 50) -- cycle;
+        \node[blue!50] at (60,40) {\tiny $S_F$};
+    \end{axis}
+    \end{tikzpicture}  
+    \caption{Tập nghiệm minh hoạ của bài toán (F)}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+Đặt $Q(x)=K$, với K là một giá trị thực, ta được:
+\begin{equation} \label{pt0}
+(p_1-Kd_1)x_1+(p_2-Kd_2)x_2+(p_0-Kd_0) = 0
+\end{equation}
+\begin{equation} \label{pt1}
+\implies
+\left\{ \large
+\begin{array}{rcr}
+p_1x_1+p_2x_2+p_0 &=& 0 \\
+d_1x_1+d_2x_2+d_0 &=& 0 \\
+\end{array}
+\right.
+\end{equation}
+\begin{itemize}
+\item $Q(x)=K$ là đường mức quét qua tập $S_F$, đến khi gặp \textsl{cực điểm} thì ở đó ta nhận được giá trị $K$ là giá trị tối ưu của bài toán (F).
+\item Ta xác định được điểm cố định $F$ là nghiệm của phương trình \eqref{pt0}, nói cách khác, điểm cố định $F$ là điểm giao của 2 đường thẳng $P(x)=0$ và $D(x)=0$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+    \begin{tikzpicture}[scale=1.2]
+    \begin{axis}
+        [
+        xmin=-10,xmax=80,
+        ymin=-10,ymax=80,
+        xlabel={$x_1$},
+        ylabel={$x_2$},
+        grid style={line width=.1pt, draw=darkgray!50},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        enlargelimits={abs=0},
+        samples=100,
+        domain = -20:20,
+        ]
+        \filldraw[blue!30, pattern=north west lines, pattern color=blue!30, line width=1pt] (30, 25) -- (50, 20) -- (70, 30) -- (70, 50) -- (50, 65) -- (20, 50) -- cycle;
+        \node[blue!50] at (60,40) {\tiny $S_F$};
+        \node at (20, 25) {\small $F$};
+        \node at (20,19.5) {\large \textbullet};
+        \node at (55, -7) {\tiny $D(x)=0$};
+        \node at (55, 70) {\tiny $P(x)=0$};
+        \draw (15, 10) -- (50, 80);
+        \draw (10, 25) -- (70, -7);
+    \end{axis}
+    \end{tikzpicture}  
+    \caption{Minh hoạ điểm cố định $F$}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+    \begin{tikzpicture}[scale=1.2]
+    \begin{axis}
+        [
+        xmin=-10,xmax=80,
+        ymin=-10,ymax=80,
+        xlabel={$x_1$},
+        ylabel={$x_2$},
+        grid style={line width=.1pt, draw=darkgray!50},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        enlargelimits={abs=0},
+        samples=100,
+        domain = -20:20,
+        ]
+        \filldraw[blue!30, pattern=north west lines, pattern color=blue!30, line width=1pt] (30, 25) -- (50, 20) -- (70, 30) -- (70, 50) -- (50, 65) -- (20, 50) -- cycle;
+        \node[blue!50] at (60,40) {\tiny $S_F$};
+        \node at (20, 25) {\small $F$};
+        \node at (20,19.5) {\large \textbullet};
+        \node at (55, -7) {\tiny $D(x)=0$};
+        \node[rotate=60] at (42, 70) {\tiny $P(x)=0$};
+        \draw (15, 10) -- (50, 80);
+        \draw (10, 25) -- (70, -7);
+        \draw[blue] (5, 19) -- (80, 20);
+        \draw[blue] (20, 11) -- (20, 72);
+        \draw [red] (6, 7) -- (77, 73);
+        \node at (65, 15) {\tiny \color{blue} $Q(x)= Min$};
+        \node[rotate=90] at (15, 60) {\tiny \color{blue} $Q(x)= Max$};
+        \node[rotate=35] at (70, 60) {\tiny \color{red} $Q(x)=K$};
+    \end{axis}
+    \end{tikzpicture}  
+    \caption{Minh hoạ đường mức $Q(x)=K$}
+    \end{figure}
+\end{frame}
+
+%GRAPHICAL-END
 \section{Thuật toán Dinkelbach}
 
 \begin{frame}
