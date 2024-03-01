@@ -13,16 +13,31 @@
 \headcommand {\beamer@framepages {5}{5}}
 \headcommand {\slideentry {1}{0}{3}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\beamer@sectionpages {4}{6}}
-\headcommand {\beamer@subsectionpages {4}{6}}
-\headcommand {\sectionentry {2}{Thuật toán Dinkelbach}{7}{Thuật toán Dinkelbach}{0}}
-\headcommand {\beamer@sectionpages {7}{6}}
-\headcommand {\beamer@subsectionpages {7}{6}}
-\headcommand {\sectionentry {3}{Thuật toán LandDoig - Dinkelbach}{7}{Thuật toán LandDoig - Dinkelbach}{0}}
-\headcommand {\slideentry {3}{0}{1}{7/7}{}{0}}
+\headcommand {\slideentry {1}{0}{4}{7/7}{}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@partpages {1}{7}}
-\headcommand {\beamer@subsectionpages {7}{7}}
-\headcommand {\beamer@sectionpages {7}{7}}
-\headcommand {\beamer@documentpages {7}}
-\headcommand {\gdef \inserttotalframenumber {7}}
+\headcommand {\slideentry {1}{0}{5}{8/8}{}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {1}{0}{6}{9/9}{}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@sectionpages {4}{9}}
+\headcommand {\beamer@subsectionpages {4}{9}}
+\headcommand {\sectionentry {2}{Phương pháp hình học}{10}{Phương pháp hình học}{0}}
+\headcommand {\slideentry {2}{0}{1}{10/10}{}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@sectionpages {10}{10}}
+\headcommand {\beamer@subsectionpages {10}{10}}
+\headcommand {\sectionentry {3}{Thuật toán Dinkelbach}{11}{Thuật toán Dinkelbach}{0}}
+\headcommand {\slideentry {3}{0}{1}{11/11}{}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@sectionpages {11}{11}}
+\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\sectionentry {4}{Thuật toán LandDoig - Dinkelbach}{12}{Thuật toán LandDoig - Dinkelbach}{0}}
+\headcommand {\slideentry {4}{0}{1}{12/12}{}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {4}{0}{2}{13/13}{}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\beamer@partpages {1}{13}}
+\headcommand {\beamer@subsectionpages {12}{13}}
+\headcommand {\beamer@sectionpages {12}{13}}
+\headcommand {\beamer@documentpages {13}}
+\headcommand {\gdef \inserttotalframenumber {13}}

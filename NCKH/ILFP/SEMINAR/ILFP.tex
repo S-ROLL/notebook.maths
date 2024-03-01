@@ -57,9 +57,10 @@
 \end{frame}
 
 \begin{frame}{TÓM TẮT}
+\Large
 \begin{itemize}
 \item Giới thiệu về bài toán tối ưu phân tuyến tính:
-\begin{itemize}
+\begin{itemize} \Large
 \item Cơ sở lý thuyết.
 \item Thuật toán Dinkelbach.
 \end{itemize}
@@ -81,9 +82,9 @@
 \end{frame}
 
 \begin{frame}{Tối ưu phân tuyến tính (Linear-Fractional Programming)}
-    \begin{equation} \label{H}
+    \begin{equation} \small \label{F}
         \begin{split}
-        (F) \quad & Q(x) = \frac{P(x)}{D(x)} \quad \longrightarrow Max \: (Min) \\
+        (F) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
             & \left\{
             \begin{split}
             &Ax \leq  b, \\
@@ -93,26 +94,130 @@
         \end{split}
     \end{equation}            
     \begin{itemize} \small
-    \item Trong đó $P(x)=p^Tx+p_0$, với $p^T = (p_1 \: p_2 \: \ldots \: p_n)$ và $D(x)=d^Tx+d_0$, với $d^T = (d_1 \: d_2 \: \ldots \: d_n)$. $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+    \item Bài toán $(F)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính.}
+    \item Trong đó $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
         b_1 \\
         b_2 \\
         \vdots \\
         b_m
-        \end{pmatrix}$, với $x\in \mathbb{R}^n_+$.
-    \item Bài toán $(F)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính.}
-    \item Tập $S_F:=\{x\in \mathbb{R}^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính.
+        \end{pmatrix}$, với $x\in \mathbb{R}^n_+$. Tập $S_F:=\{x\in \mathbb{R}^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính. 
+    \item $P(x)=p^Tx+p_0$, với $p^T = (p_1 \: p_2 \: \ldots \: p_n)$ và $D(x)=d^Tx+d_0$, với $d^T = (d_1 \: d_2 \: \ldots \: d_n)$ ($D(x)>0, \forall x \in S_F$).
     \end{itemize}
 \end{frame}
 
 
 \begin{frame}{Bài toán minh hoạ}
-    
+    \begin{equation}
+    \begin{split}
+    \quad Q(x) & = \frac{4x_1+2x_2-6}{3x_1+2x_2-5} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        & x_1 + x_2 \geq 6 \\
+        & x_1 + 2x_2 \leq 12 \\
+        &x_1, x_2 \geq 0. \\
+        \end{split}\right.    
+    \end{split}
+    \end{equation}            
+\end{frame}
+
+\begin{frame}{Mối quan hệ với bài toán tối ưu tuyến tính}
+\begin{itemize}
+\item Nếu $d^T=0$ và $d_0=1$, bài toán (F) trở thành bài toán tối ưu tuyến tính (P) và ta gọi (F) là bài toán mở rộng của (P):
+\begin{equation} \small \label{P}
+    \begin{split}
+    (P) \quad P(x) & = p^Tx+p_0 \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+\item Nếu $d^T=0$ và $d_0 \neq 0$, ta thu được bài toán tuyến tính (Q):
+\begin{equation} \small \label{Q}
+    \begin{split}
+    (Q) \quad Q(x) & = \frac{p^T}{d_0}x+\frac{p_0}{d_0}=\frac{P(x)}{d_0} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{itemize}
+\item Ngược lại nếu $p^T=0$ và $p_0 \neq 0$:
+\begin{equation} \small \label{Q}
+    \begin{split}
+    (Q) \quad Q(x) & = \frac{p_0}{d^Tx+d_0} = \frac{p_0}{D(x)} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+Tương tự bài toán:
+\begin{equation} \small \label{Q}
+    \begin{split}
+    (Q) \quad Q(x) & = \frac{d^Tx+d_0}{p_0} = \frac{D(x)}{p_0} \quad \longrightarrow Min \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+\item Nếu $p^T$ và $d^T$ phụ thuộc tuyến tính, khi đó tồn tại $\mu \neq 0$ và $p^T=\mu d^T$, ta thu được hàm:
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{equation} \label{Q}
+    \begin{split}
+    (Q) \quad Q(x) & = \frac{\mu d^Tx + p_0}{d^Tx+d_0} = \mu + \frac{p_0-\mu d_0}{d^Tx+d_0} \quad \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+Ta thay bằng hàm $D(x)$ với điều kiện:
+\begin{itemize}
+\item Nếu $p_0 - \mu d_0 > 0$, $D(x) \longrightarrow Min$.
+\item Nếu $p_0 - \mu d_0 < 0$, $D(x) \longrightarrow Max$.
+\item Nếu $p_0 - \mu d_0 = 0$ thì $Q(x)=\mu= \text{hằng số} \: (\forall x \in S_F)$, ta bỏ qua bài toán.
+\end{itemize}
 \end{frame}
 
 %FLP-end
+\section{Phương pháp hình học}
+
+\begin{frame}
+   \center 
+   \huge Phương pháp hình học 
+\end{frame}
 
 \section{Thuật toán Dinkelbach}
+
+\begin{frame}
+   \center 
+   \huge Thuật toán Dinkelbach
+\end{frame}
+
 \section{Thuật toán LandDoig - Dinkelbach}
+
+\begin{frame}
+   \center 
+   \huge Thuật toán LandDoig - Dinkelbach
+\end{frame}
 
 \begin{frame}
 \end{frame}
