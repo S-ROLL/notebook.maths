@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1709316901 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/ILFP/SEMINAR/ILFP.tex" "ILFP.pdf" "ILFP" 1709316906 0
-  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/ILFP/SEMINAR/ILFP.tex" 1709316901 11274 66d8c4a6ba4631e472eed8c93c68c5f2 ""
+["pdflatex"] 1709331549 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/ILFP/SEMINAR/ILFP.tex" "ILFP.pdf" "ILFP" 1709331557 0
+  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/ILFP/SEMINAR/ILFP.tex" 1709331542 18158 9347c9fa7e3d1fd85362ed959460d956 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcss1200.tfm" 1136768653 1536 809a177113b9dd743dafe00d0870078f ""
@@ -44,6 +44,8 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb" 1215737283 95792 fb800ffa2babe7bd5fafc1817d8f1313 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnss10.pfb" 1647811568 35693 3124518d35473eaa1bca73156ad625e7 ""
@@ -308,11 +310,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700549885 4694867 edce96ea9fbf5196f445dab10e2fe5bf ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700550044 8213569 7a9a2c5e7e932edbf43ec7dad46550bc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "ILFP.aux" 1709316905 4767 5bbd8680247540db1a9a9b2ffa95389c "pdflatex"
-  "ILFP.nav" 1709316905 2583 5a44f160a3fce7cbbbbb197724261017 "pdflatex"
-  "ILFP.out" 1709316905 650 500c8aadf878d2c80a9e549b659cd3da "pdflatex"
-  "ILFP.tex" 1709316901 11274 66d8c4a6ba4631e472eed8c93c68c5f2 ""
-  "ILFP.toc" 1709316905 246 c1fd47fa641fba62b779ba55c81945b8 "pdflatex"
+  "ILFP.aux" 1709331557 6385 ea854b1a7023d136bec42a254a7b1dbe "pdflatex"
+  "ILFP.nav" 1709331557 3597 d6d05ea97cb9cc1c824576438ed9821b "pdflatex"
+  "ILFP.out" 1709331557 650 500c8aadf878d2c80a9e549b659cd3da "pdflatex"
+  "ILFP.tex" 1709331542 18158 9347c9fa7e3d1fd85362ed959460d956 ""
+  "ILFP.toc" 1709331557 246 cc7b4870e47fb8fe2f17c8fb901c4baf "pdflatex"
   (generated)
   "ILFP.aux"
   "ILFP.log"

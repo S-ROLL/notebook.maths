@@ -1,4 +1,4 @@
 \beamer@sectionintoc {1}{Giới thiệu}{4}{0}{1}
 \beamer@sectionintoc {2}{Phương pháp hình học}{10}{0}{2}
-\beamer@sectionintoc {3}{Thuật toán Dinkelbach}{16}{0}{3}
-\beamer@sectionintoc {4}{Thuật toán LandDoig - Dinkelbach}{17}{0}{4}
+\beamer@sectionintoc {3}{Thuật toán Dinkelbach}{21}{0}{3}
+\beamer@sectionintoc {4}{Thuật toán LandDoig - Dinkelbach}{28}{0}{4}
