@@ -413,7 +413,46 @@ A =
 \begin{equation}
 \text{det}(A) = \sum _{\sigma \in S_n} \text{sgn} (\sigma) \prod _{i=1}^n a_{i,\sigma (i)}.
 \end{equation}
+\item Ta có thể viết định thức của ma trận $A$ dưới dạng
+\begin{equation*}
+\text{det} A =
+\begin{vmatrix}
+	a_{11} & a_{12} & \cdots & a_{1n} \\
+	a_{21} & a_{22} & \cdots & a_{2n} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	a_{n1} & a_{n2} & \cdots & a_{nn} 
+\end{vmatrix}.
+\end{equation*}
+\item Áp dụng vào ma trận vuông cấp 1, ta có:
+\begin{equation}
+\text{det}[a]=a.
+\end{equation}
+\item Áp dụng vào ma trận vuông cấp 2, ta có:
+\begin{equation}
+\text{det} \begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix} = \begin{vmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}.
+\end{equation}
 \end{itemize}
+Ma trận vuông $B$ được gọi là ma trận đảo của $A$ nếu $AB=BA=I$.
+
+\textbf{Ví dụ.} Cho hai ma trận
+\begin{equation*}
+A = \begin{pmatrix}
+	1 & -2 \\
+	1 & -1
+	\end{pmatrix}
+\text{ và }
+B = \begin{pmatrix}
+	-1 & 2 \\
+	-1 & 1
+	\end{pmatrix},
+\end{equation*}
+\hspace*{2cm} ta có $AB=BA=I$.
 \section{Một số kiến thức cơ bản về Bài toán tối ưu tuyến tính}
 
 \subsection{Bài toán dạng chính tắc và chuẩn tắc}
