@@ -258,18 +258,162 @@ Kiến thức trình bày trong chương này, hầu hết được tham khảo 
 \section{ Véc tơ, ma trận và các tính chất}
 
 \subsection{ Véc tơ và các phép toán }
+\begin{itemize}
+\item Ký hiệu vector $x \in \mathbb{R}^n,$
+\begin{equation*}
+x=(x_1,x_2,\ldots,x_n).
+\end{equation*}
+Trong đó $x_i \in \mathbb{R}$ với $i=1,2,\ldots,n$.
+\item Các phép toán:
+\begin{equation*}
+\begin{split}
+x + y &= (x_1 + y_1, x_2 + y_2 , \ldots , x_n +y_n) \\
+\lambda x &= (\lambda x_1 , \lambda x_2 , \ldots , \lambda x_n).
+\end{split}
+\end{equation*}
+Trong đó $x, \: y \in \mathbb{R}^n$ và $\lambda \in \mathbb{R}$.
+\item Thứ tự vector: 
+\begin{equation*}
+\begin{split}
+x \leq y & \Leftrightarrow x_i \leq y_i, \\
+x < y & \Leftrightarrow x_i < y_i, \\
+x = y & \Leftrightarrow x_i = y_i. \\
+\end{split}
+\end{equation*}
+Trong đó $i=1,2,\ldots,n$.
+\item Vector đơn vị: $(1,0,\ldots,0),\:(0,1,\ldots,0) , \ldots , (0,0,\ldots,1)$.
+\item Vector $0$: $0=(0,0,\ldots,0)$. 
+\end{itemize}
 
 \subsection{ Ma trận và các phép toán}
+\begin{itemize}
+\item Ký hiệu $A$ là ma trận $m\times n$, trong đó $A=(a_{ij})$ và $i=1,2,\ldots,m$, $j=1,2,\ldots,n$. $A_i$ chỉ dòng thứ $i$ của ma trận $A$ và $A_j$ chỉ cột thứ $j$ của ma trận $A$.
+\item $A$ là ma trận vuông khi $m=n$.
+\item Ma trận cột:
+\begin{equation*}
+A = \begin{bmatrix}
+        a_1 \\
+        a_2 \\
+        \vdots \\
+        a_n
+	\end{bmatrix}.
+\end{equation*}
+\item Ma trận dòng:
+\begin{equation*}
+A^T = \begin{bmatrix}
+	a_1 & a_2 & \cdots & a_n
+	\end{bmatrix}.
+\end{equation*}
+\item Ma trận đơn vị:
+\begin{equation*}
+I = \begin{bmatrix}
+        1 & 0 & \cdots & 0 \\
+		0 & 1 & \cdots & 0 \\
+		\vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & \cdots & 1
+	\end{bmatrix}.
+\end{equation*}
+\item Cộng ma trận: $A, \: B$ là ma trận $m\times n$,
+\begin{equation*}
+A + B = (a_{ij}+b_{ij}).
+\end{equation*}
+Trong đó $i=1,2,\ldots,m$ và $j=1,2,\ldots,n$.
+\item Nhân với 1 số: $A, \: B$ là ma trận $m\times n$,
+\begin{equation*}
+\lambda A = (\lambda a_{ij}).
+\end{equation*}
+Trong đó $i=1,2,\ldots,m$ và $j=1,2,\ldots,n$.
+\item Với ma trận dòng
+\begin{equation*}
+A^T = \begin{bmatrix}
+	a_1 & a_2 & \cdots & a_n
+	\end{bmatrix}.
+\end{equation*}
+và ma trận cột
+\begin{equation*}
+B = \begin{bmatrix}
+        b_1 \\
+        b_2 \\
+        \vdots \\
+        b_n
+	\end{bmatrix}.
+\end{equation*}
+Ta có tích hai ma trận
+\begin{equation*}
+A\times B = a_1b_1 + a_2b_2 + \ldots + a_nb_n.
+\end{equation*}
+\item Tích của ma trận $A$ cấp $m \times p$ với ma trận $B$ cấp $p \times n$ ta được ma trận $C$ cấp $m \times n$:
+\begin{equation*}
+C = \begin{bmatrix}
+        A_1B^1 & A_1B^2 & \cdots & A_1B^n  \\
+		A_2B^1 & A_2B^2 & \cdots & A_2B^n \\
+		\vdots & \vdots & \ddots & \vdots \\
+		A_mB^1 & A_mB^2 & \cdots & A_mB^n
+	\end{bmatrix}.
+\end{equation*}
+\item Hệ phương trình
+\begin{equation*}
+\left\{\begin{split}
+\begin{matrix}
+& a_{11}x_1 & + & a_{12}x_2 & + & \cdots & + & a_{1n}x_n & = & b_1 \\
+& a_{21}x_1 & + & a_{22}x_2 & + & \cdots & + & a_{2n}x_n & = & b_2 \\
+&&&&& \vdots \\
+& a_{m1}x_1 & + & a_{m2}x_2 & + & \cdots & + & a_{mn}x_n & = & b_m \\
+\end{matrix},
+\end{split}\right.  
+\end{equation*}
+có thể viết lại thành
+\begin{equation}
+\begin{bmatrix}
+	a_{11} & a_{12} & \cdots & a_{1n} \\
+	a_{21} & a_{22} & \cdots & a_{2n} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	a_{m1} & a_{m2} & \cdots & a_{mn} 
+\end{bmatrix}
+\begin{bmatrix}
+	x_1 \\
+	x_2 \\
+	\vdots \\
+	x_m
+\end{bmatrix}
+=
+\begin{bmatrix}
+	b_1 \\
+	b_2 \\
+	\vdots \\
+	b_m
+\end{bmatrix}.
+\end{equation}
 
-XXXXXXX
+\end{itemize}
 
 \subsection{Các phép biến đổi trên ma trận}
-xxxxxxxxxxxx
+\begin{itemize}
+\item Các phép biến đổi bao gồm:
+\begin{itemize}
+\item \textbf{Phép đổi hàng.} Đổi chỗ hàng $i$ và hàng $j$ của ma trận, được ký hiệu $h_i \leftrightarrow h_j$.
+\item \textbf{Phép thay thế tỷ lệ.} Nhân hàng $i$ của ma trận với số $\alpha \neq 0$, được ký hiệu $h_i \leftarrow \alpha h_i$.
+\item \textbf{Phép thay thế hàng.} Cộng vào hàng $i$ một bội $k$ lần hàng $j$, được ký hiệu là $h_i \leftarrow h_i + k h_j$, với $j \neq i$.
+\end{itemize}
+\end{itemize}
 
 \subsection{ Định thức của ma trận và ma trận đảo}
-XXXXXX
-
-
+Cho ma trận vuông cấp $n$:
+\begin{equation*}
+A =
+\begin{bmatrix}
+	a_{11} & a_{12} & \cdots & a_{1n} \\
+	a_{21} & a_{22} & \cdots & a_{2n} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	a_{n1} & a_{n2} & \cdots & a_{nn} 
+\end{bmatrix}
+\end{equation*}
+\begin{itemize}
+\item Định thức của ma trận $A$ được tính theo công thức:
+\begin{equation}
+\text{det}(A) = \sum _{\sigma \in S_n} \text{sgn} (\sigma) \prod _{i=1}^n a_{i,\sigma (i)}.
+\end{equation}
+\end{itemize}
 \section{Một số kiến thức cơ bản về Bài toán tối ưu tuyến tính}
 
 \subsection{Bài toán dạng chính tắc và chuẩn tắc}
@@ -426,8 +570,6 @@ Từ bài toán dạng chính tắc
 \end{enumerate}
 Từ đây, bài toán \eqref{2.1} được giải với $u_0$ cơ sở chấp nhận được vừa tìm.
 
-\textbf{Ví dụ minh hoạ} \\
-
 \subsubsection{Phương pháp bài toán M}
 Đối với các bài toán quy hoạch tuyến tính nhưng không đủ số vector cơ sở. Ta thêm vào 1 ẩn giả ở ràng buộc và $Mx_4$ vào hàm mục tiêu với $M$ là số dương rất lớn (đối với bài toán Min). Từ đó ta dẫn đến được dạng bài toán quy hoạch tuyến tính M.
 
@@ -456,8 +598,6 @@ Với M là số thực dương lớn tuỳ ý, các ẩn $x_{n+i} , i=\overline
 	\begin{cy}
 		Đối với bài toán M, $\Delta_j$ có dạng $\Delta_j=\alpha_j+\beta_jM$. Vì thế dòng thứ $m+1$ của bảng đơn hình, ta nên tách thành hai dòng ghi $\alpha _j$ và $\beta_j$. Để đánh giá $\Delta_j$ ta cần chú ý tới $B_j$, sau đó mới chú ý đến $\alpha_j$.
 	\end{cy} 
-
-\textbf{Ví dụ minh hoạ}       
 
 \subsection{Giải bài toán khi đã có cơ sở chính tắc}
 Khi bài toán đã có đủ số véc tơ cơ sở

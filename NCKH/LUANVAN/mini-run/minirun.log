@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  9 MAR 2024 18:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  9 MAR 2024 20:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -781,14 +781,7 @@ LaTeX Warning: Command \@footnotemark  has changed.
 File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count328
 \l__pdf_internal_box=\box73
-) (./minirun.aux
-
-LaTeX Warning: Label `F' multiply defined.
-
-
-LaTeX Warning: Label `F' multiply defined.
-
-)
+) (./minirun.aux)
 \openout1 = `minirun.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
@@ -870,31 +863,6 @@ Package hyperref Info: Link coloring OFF on input line 59.
 \@outlinefile=\write4
 \openout4 = `minirun.out'.
 
-LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <6> on input line 66.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 66.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 66.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 80.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 103.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 117.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -905,39 +873,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[2] (./minirun.aux)
+] (./minirun.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `minirun.out' has not changed.
-(rerunfilecheck)             Checksum: BB855C9A2D88C1F3DCDA0BD264DC0D88;529.
+(rerunfilecheck)             Checksum: 4C76EA23DE309CBA8A379A8D60D5D926;302.
  ) 
 Here is how much of TeX's memory you used:
- 24509 strings out of 474273
- 447409 string characters out of 5747713
- 1948555 words of memory out of 5000000
- 46250 multiletter control sequences out of 15000+600000
- 571845 words of font info for 72 fonts, out of 8000000 for 9000
+ 24407 strings out of 474273
+ 445647 string characters out of 5747713
+ 1926555 words of memory out of 5000000
+ 46184 multiletter control sequences out of 15000+600000
+ 561292 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,22n,107p,617b,558s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb>
-Output written on minirun.pdf (2 pages, 131780 bytes).
+ 108i,11n,107p,617b,460s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb>
+Output written on minirun.pdf (1 page, 16251 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
- 29 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
