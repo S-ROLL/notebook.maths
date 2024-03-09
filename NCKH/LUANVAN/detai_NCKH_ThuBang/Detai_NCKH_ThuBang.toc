@@ -12,24 +12,24 @@
 \contentsline {subsection}{\numberline {1.1.4} Định thức của ma trận và ma trận đảo}{4}{subsection.1.1.4}%
 \contentsline {section}{\numberline {1.2}Một số kiến thức cơ bản về Bài toán tối ưu tuyến tính}{5}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Bài toán dạng chính tắc và chuẩn tắc}{5}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Chuyển bài toán về dạng chính tắc}{5}{subsection.1.2.2}%
-\contentsline {section}{\numberline {1.3}Giải bài toán với cơ sở ban đầu}{5}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Trường hợp bài toán chưa có cơ sở dạng chính tắc}{5}{subsection.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.1.1}Phương pháp hai pha}{5}{subsubsection.1.3.1.1}%
-\contentsline {subsubsection}{\numberline {1.3.1.2}Phương pháp bài toán M}{6}{subsubsection.1.3.1.2}%
-\contentsline {subsection}{\numberline {1.3.2}Giải bài toán khi đã có cơ sở chính tắc}{7}{subsection.1.3.2}%
-\contentsline {chapter}{\numberline {2}Bài toán quy hoạch tuyến tính có nghiệm nguyên}{8}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Sự cần thiết phải nghiên cứu về bài toán quy hoach có nghiệm nguyên}{8}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Lý thuyết về cách tìm nghiệm nguyên của bài toán Quy hoạch tuyến tính}{8}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Sự cần thiết phải có một lý thuyết riêng}{8}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Phương pháp Gomory}{8}{subsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.2.1}Giới thiệu phương pháp và ý nghĩa}{8}{subsubsection.2.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2.2}Các bước thực hiện của phương pháp}{8}{subsubsection.2.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.2.3}Ví dụ minh họa}{8}{subsubsection.2.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.3}Phương pháp Land-Doig}{8}{subsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.1}Giới thiệu phương pháp và ý nghĩa}{8}{subsubsection.2.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.2.3.2}Các bước thực hiện của phương pháp}{8}{subsubsection.2.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.2.3.3}Ví dụ minh họa}{8}{subsubsection.2.2.3.3}%
-\contentsline {chapter}{\numberline {3}Mở rộng kết quả cho bài toán dạng phân thức tuyến tính}{9}{chapter.3}%
-\contentsline {chapter}{{\bf Kết luận}\rm }{10}{chapter*.6}%
-\contentsline {chapter}{{\bf Tài liệu tham khảo}}{11}{chapter*.7}%
+\contentsline {subsection}{\numberline {1.2.2}Chuyển bài toán về dạng chính tắc}{6}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Giải bài toán với cơ sở ban đầu}{7}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Trường hợp bài toán chưa có cơ sở dạng chính tắc}{7}{subsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.1.1}Phương pháp hai pha}{7}{subsubsection.1.3.1.1}%
+\contentsline {subsubsection}{\numberline {1.3.1.2}Phương pháp bài toán M}{8}{subsubsection.1.3.1.2}%
+\contentsline {subsection}{\numberline {1.3.2}Giải bài toán khi đã có cơ sở chính tắc}{9}{subsection.1.3.2}%
+\contentsline {chapter}{\numberline {2}Bài toán quy hoạch tuyến tính có nghiệm nguyên}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Sự cần thiết phải nghiên cứu về bài toán quy hoach có nghiệm nguyên}{10}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Lý thuyết về cách tìm nghiệm nguyên của bài toán Quy hoạch tuyến tính}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Sự cần thiết phải có một lý thuyết riêng}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Phương pháp Gomory}{10}{subsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.1}Giới thiệu phương pháp và ý nghĩa}{10}{subsubsection.2.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2.2}Các bước thực hiện của phương pháp}{10}{subsubsection.2.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.3}Ví dụ minh họa}{10}{subsubsection.2.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Phương pháp Land-Doig}{10}{subsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Giới thiệu phương pháp và ý nghĩa}{10}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2}Các bước thực hiện của phương pháp}{10}{subsubsection.2.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.3.3}Ví dụ minh họa}{10}{subsubsection.2.2.3.3}%
+\contentsline {chapter}{\numberline {3}Mở rộng kết quả cho bài toán dạng phân thức tuyến tính}{11}{chapter.3}%
+\contentsline {chapter}{{\bf Kết luận}\rm }{12}{chapter*.6}%
+\contentsline {chapter}{{\bf Tài liệu tham khảo}}{13}{chapter*.7}%

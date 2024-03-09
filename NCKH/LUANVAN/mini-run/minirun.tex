@@ -1,0 +1,171 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{vietnam}\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage[top=3.5cm, bottom=3.0cm, left=3cm, right=3.0cm]{geometry} 
+\usepackage{color, fancyhdr, graphicx, wrapfig}
+\usepackage[unicode]{hyperref}
+\usepackage[vietnamese]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx} 
+\usepackage{titling}
+\usepackage{secdot}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{array}
+\usetikzlibrary{calc}
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+%\usepackage{refcheck}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\newtheorem{dn}{Định nghĩa}[chapter]
+\newtheorem{tc}{Tính chất}[chapter]
+\newtheorem{dl}{Định lý}[chapter]
+\newtheorem{md}{Mệnh đề}[chapter]
+\newtheorem{bd}{Bổ đề}[chapter]
+\newtheorem{hq}{Hệ quả}[chapter]
+\newtheorem{nx}{Nhận xét}[chapter]
+\newtheorem{vd}{Ví dụ}[chapter]
+\newtheorem{cy}{Chú ý}[chapter]
+\pagenumbering{roman}\pagestyle{plain}
+%\pagestyle{fancy}
+%\lhead{\it \changefontsizes{11pt}Luận văn thạc sĩ:}
+%\rhead{\it Một số phương pháp vô hướng hóa cơ bản trong tối ưu đa mục tiêu}
+%\lfoot{\it Nguyễn Văn Vân } 			         
+%\rfoot{\it K19.2 trường ĐHSG}
+\renewcommand{\headrulewidth}{1,2pt} 			
+\renewcommand{\footrulewidth}{1,2pt}
+\newcommand{\dstc}[2]
+{
+	\newdimen\stringwidth\setbox0=\hbox{#1}
+	\stringwidth=\wd0
+	\hspace*{-\parindent}\hspace*{.5\textwidth}\hspace*{-.5\wd0}#1\hfill #2\bigskip
+	
+}  
+\usepackage{scrextend}
+\fancyhf{}
+\lhead{}
+\chead{\thepage}
+\rhead{}
+\cfoot{}
+\rfoot{}
+\lfoot{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1pt}
+\begin{document} 
+
+\subsection{Bài toán dạng chính tắc và chuẩn tắc}
+\begin{itemize}
+    \item \textbf{Bài toán dạng chính tắc}
+    
+    Ta có bài toán dạng:
+    \begin{equation} \small \label{F}
+        \begin{split}
+        f(x) & = c^Tx \quad \longrightarrow \text{Min} \\
+            & \left\{
+            \begin{split}
+            & \sum _{j=1}^n a_{ij} x_j = b_i, \: i=1,2,\ldots,m \\
+            & x_j \geq 0, \: j=1,2,\ldots,n.
+            \end{split}
+            \right.    
+        \end{split}
+    \end{equation}
+
+    Thì ta gọi bài toán trên có dạng chính tắc và có thể viết lại dưới dạng:
+
+    \begin{equation} \small \label{chinhtac}
+        \begin{split}
+        (P) \quad \text{Min } & f(x) = c^Tx \\
+            & \left\{
+            \begin{split}
+            & Ax=b, \\
+            & x_j \geq 0.
+            \end{split}
+            \right.    
+        \end{split}
+    \end{equation}
+
+    Trong đó $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+        b_1 \\
+        b_2 \\
+        \vdots \\
+        b_m
+        \end{pmatrix}$ và $c^T=(c_1 \: c_2 \: \ldots \: c_n)$.
+
+    \item \textbf{Bài toán dạng chuẩn tắc}
+    
+    Nếu bài toán có dạng:
+
+    \begin{equation} \small \label{F}
+        \begin{split}
+        f(x) & = c^Tx \quad \longrightarrow \text{Min} \\
+            & \left\{
+            \begin{split}
+            & \sum _{j=1}^n a_{ij} x_j \geq b_i, \: i=1,2,\ldots,m \\
+            & x_j \geq 0, \: j=1,2,\ldots,n.
+            \end{split}
+            \right.    
+        \end{split}
+    \end{equation}
+
+    Thì ta gọi bài toán trên có dạng chuẩn tắc và có thể viết lại dưới dạng:
+
+    \begin{equation} \small \label{F}
+        \begin{split}
+        (P) \quad \text{Min } & f(x) = c^Tx \\
+            & \left\{
+            \begin{split}
+            & Ax \geq b, \\
+            & x_j \geq 0.
+            \end{split}
+            \right.    
+        \end{split}
+    \end{equation}
+
+    Tương tự $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+        b_1 \\
+        b_2 \\
+        \vdots \\
+        b_m
+        \end{pmatrix}$ và $c^T=(c_1 \: c_2 \: \ldots \: c_n)$.
+
+\end{itemize}
+
+\subsection{Chuyển bài toán về dạng chính tắc}
+
+Để thuận tiện, ta chỉ xét dạng bài toán quy hoạch tuyến tính tổng quát là \textbf{dạng chính tắc} và bất kỳ bài toán nào cũng có thể đưa về dạng chính tắc.
+
+\begin{itemize}
+\item \textbf{Phương pháp đưa về dạng chính tắc:}
+    \begin{itemize}
+    \item Bài toán $\max f(x) \longrightarrow -\min [-f(x)]$.
+    \item Bằng cách thêm ẩn phụ $x_{n+i}$ tương ứng có hệ số trong hàm mục tiêu là $c_{n+i}=0$, ta có thể đưa bất đẳng thức 
+    \begin{equation*}
+    \sum _{j=1}^n a_{ij} x_j \geq b_i
+    \end{equation*}
+    hoặc
+    \begin{equation*}
+    \sum _{j=1}^n a_{ij} x_j \leq b_i
+    \end{equation*}
+    lần lượt thành đẳng thức
+    \begin{equation*}
+    \sum _{j=1}^n a_{ij} x_j - x_{n+i} = b_i
+    \end{equation*}
+    hoặc
+    \begin{equation*}
+    \sum _{j=1}^n a_{ij} x_j + x_{n+i} = b_i
+    \end{equation*}
+    \item Nếu tồn tại bất kỳ $x_k$ không có ràng buộc thì ta viết
+    \begin{equation*}
+    x_k = x_k^{'} - x_k^{''}
+    \end{equation*}
+    với $x_k^{'} \geq 0$ và $x_k^{''} \geq 0$.
+    \end{itemize}
+\end{itemize}
+Kể từ đây, ta chỉ quan tâm bài toán \eqref{chinhtac}.
+
+\end{document}
