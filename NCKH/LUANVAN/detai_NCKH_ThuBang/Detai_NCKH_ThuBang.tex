@@ -72,9 +72,9 @@
 			TRƯỜNG ĐẠI HỌC SÀI GÒN}\par
 		\rule{5cm}{0.5pt}\par
 		\vspace{2cm}
-		{\Large\textbf{CHÍ BẰNG \& THƯ}\par}
+		{\Large\textbf{ĐỖ NGỌC MINH THƯ \\ NGUYỄN CHÍ BẰNG}\par}
 		\vspace{4cm}
-		{\Large\textbf{PHƯƠNG PHÁP GIẢI BÀI TOÁN\\ QUY HOẠCH TUYẾN TÍNH  NGUYÊN }\par}
+		{\Large\textbf{PHƯƠNG PHÁP GIẢI BÀI TOÁN\\ TỐI ƯU TUYẾN TÍNH NGUYÊN }\par}
 		\vspace{4cm}
 		\large\textbf{ ĐỀ TÀI NGHIÊN CỨU KHOA HỌC SINH VIÊN}\par		
 		
@@ -94,9 +94,9 @@
 			TRƯỜNG ĐẠI HỌC SÀI GÒN}\par
 		\rule{5cm}{0.5pt}\par
 		\vspace{2cm}
-		{\Large\textbf{BẰNG \& THƯ}\par}
+		{\Large\textbf{ĐỖ NGỌC MINH THƯ \\ NGUYỄN CHÍ BẰNG}\par}
 		\vspace{4cm}
-		{\Large\textbf{PHƯƠNG PHÁP GIẢI BÀI TOÁN QUY HOẠCH TUYẾN TÍNH NGUYÊN}\par}
+		{\Large\textbf{PHƯƠNG PHÁP GIẢI BÀI TOÁN \\ TỐI ƯU TUYẾN TÍNH NGUYÊN}\par}
 		\vspace{4cm}
 		\large\textbf{ĐỀ TÀI NGHIÊN CỨU KHOA HỌC SINH VIÊN}\par		
 		
@@ -123,7 +123,7 @@
 	\vspace{1cm}
 	\indent
 	
-	Chúng tôi tên là XXXXX và XXXX, là các  sinh viên lớp...., khoa.... , khóa ....,  thuộc trường Đại học Sài Gòn. 
+	Chúng tôi tên là Đỗ Ngọc Minh Thư và Nguyễn Chí Bằng, là các  sinh viên lớp DTU1221, khoa Toán - Ứng dụng , khóa 2022-2026,  thuộc trường Đại học Sài Gòn. 
 	
 	Xin cam đoan rằng: Toàn bộ nội dung được trình bày trong đề tài  này này đều do chúng tôi thực hiện dưới sự hướng dẫn của PGS.TS. Tạ Quang Sơn.
 	Những kết quả nghiên cứu của tác giả khác được sử dụng trong đề tài  đều có trích dẫn đầy đủ. 
@@ -131,14 +131,14 @@
 	\\
 	\\
 	\\
-	\rightline{{\it {Tp. HCM, tháng XX năm 2024}} \hspace*{0cm}}
+	\rightline{{\it {Tp. HCM, tháng ... năm 2024}} \hspace*{0cm}}
 	\rightline{\textbf{Tác giả} \hspace*{2cm}}
 	\\
 	\\
 	\\
 	
 	%\vspace*{1cm}
-	\rightline{\textbf{XXXX}\hspace*{1.2cm}}
+	\rightline{\textbf{Đỗ Ngọc Minh Thư}\hspace*{0.75cm}}
 	
 	\chapter*{Lời cảm ơn}
 	\thispagestyle{fancy}
@@ -154,13 +154,13 @@
 	\\
 	\\
 	\\
-	\rightline{{\it {Tp. HCM, tháng XX năm 20XX}} \hspace*{0cm}}
+	\rightline{{\it {Tp. HCM, tháng ... năm 2024}} \hspace*{0cm}}
 	\rightline{\textbf{Tác giả} \hspace*{2cm}}
 	\\
 	\\
 	
-	%\vspace*{1cm}
-	\rightline{\textbf{XXX} \hspace*{2cm}}
+	\vspace{1cm}
+	\rightline{\textbf{Đỗ Ngọc Minh Thư} \hspace*{0.75cm}}
 	\newpage
 	
 	\addcontentsline{toc}{chapter}{Mục lục}
@@ -253,7 +253,7 @@ Do lần đầu tham gia tập dượt nghiên cứu khoa học. Các tri thức
 \newpage
 \renewcommand{\baselinestretch}{1.2}
  
-\chapter{Một số kiến thức cơ bản về bài toán qui hoạch tuyến tính} 
+\chapter{Một số kiến thức cơ bản về bài toán quy hoạch tuyến tính} 
 Kiến thức trình bày trong chương này, hầu hết được tham khảo từ các tài liệu  \cite{xxx} và \cite{xxx}.
 \section{ Véc tơ, ma trận và các tính chất}
 
@@ -282,10 +282,77 @@ XXXXXX
 \subsection{Trường hợp bài toán chưa có cơ sở dạng chính tắc}
 
 \subsubsection{Phương pháp hai pha}
-Khi bài toán chưa có đủ số véc tơ cơ sở
+Nếu 1 bài toán quy hoạch tuyến tính có hệ ràng buộc theo dạng
+	\begin{equation}
+		\begin{split}
+			Ax &\leq b \\
+			x &\geq c
+		\end{split}
+	\end{equation}
+Mà $b \geq 0$ thì có thể biến đổi hệ ràng buộc của bài toán dạng chính tắc bằng cách thêm vào hàng thứ $i$ của hệ nói trên ẩn $y_i$. Hệ được viết lại:
+	\begin{equation}
+		\begin{split}
+			Ax+y&=b\\
+			x,y &> 0
+		\end{split}
+	\end{equation}
+Khi đó ta có ngay một phương án xuất phát $(0,\overline{\rm y})$ với $\overline{\rm y_i} = b_i ; i=1,2,\ldots,m$. \\
+Thực chất các ẩn $y_i$ là các ẩn giả tạo, bởi lẽ trong miền xác định của bài toán không cần đến các biến này. Ý tưởng này được áp dụng cho bài toán dạng chính tăc để tìm phương án cực biên ban đầu như sau: \\
+Từ bài toán dạng chính tắc
+	\begin{equation} \label{2.1}
+		\begin{split}
+			Min \: f(x) &= \langle c,x \rangle \\
+			Ax &= b \\
+			x &\geq 0
+		\end{split}
+	\end{equation} 
+	\begin{equation} \label{2.2}
+		\begin{split}
+			\text{Ta xét } Min \: \sum_{i=1}^my \\
+			Ax+y&=b \\
+			x,y &\geq 0
+		\end{split}
+	\end{equation}
+\begin{enumerate}
+	\item[$\blacksquare$] Nếu bài toán \eqref{2.1} có $x_0$ chấp nhận được thì bài toán \eqref{2.2} đạt giá trị tối ưu với $u_0 \: y=0$\\
+	\item[$\blacksquare$] Nếu bài toán \eqref{2.1} ta có $u_0$ chấp nhận được tức là $A_x\neq 0$ với mọi $x \geq 0$ thì bài toán \eqref{2.2} sẽ có $u_0$ chấp nhận được với $y\neq 0$ tức là giá trị tối ưu của bài toán \eqref{2.2} là số dương.
+	\item[$\blacksquare$] Dùng thuật toán đơn hình cho bài toán \eqref{2.2} ở mỗi bước của thuật giải ta nhận được $u_0$ chấp nhận được.
+	\item[$\blacksquare$] Nếu đến bước mà bài toán có giá trị tối ưu $=0$ thì ta sẽ nhận được $u_0$ cơ bản chấp nhận được cuối cùng với các ẩn $y_i=0 , i=1,2,\ldots,m$. \\
+\end{enumerate}
+Từ đây, bài toán \eqref{2.1} được giải với $u_0$ cơ sở chấp nhận được vừa tìm.
+
+\textbf{Ví dụ minh hoạ} \\
 
 \subsubsection{Phương pháp bài toán M}
-Khi bài toán chưa có đủ số véc tơ cơ sở
+Đối với các bài toán quy hoạch tuyến tính nhưng không đủ số vector cơ sở. Ta thêm vào 1 ẩn giả ở ràng buộc và $Mx_4$ vào hàm mục tiêu với $M$ là số dương rất lớn (đối với bài toán Min). Từ đó ta dẫn đến được dạng bài toán quy hoạch tuyến tính M.
+
+Giả sử ta có bài toán có ma trận $A$ chưa xác định được hệ cơ sở
+	\begin{equation} \label{*}
+		\begin{split}
+			Min \: \sum_{j=1}^n c_jx_j \\
+			\sum_{j=1}^n a_{ij}x_j&=b_i , i = \overline{\rm 1,m} \\
+			x_j &\geq 0 , j = \overline{\rm 1,n} \\
+		\end{split}
+	\end{equation}
+Từ đó ta xét BT có ẩn giả tạo sau (gọi là BTM) \eqref{**}
+	\begin{equation} \label{**}
+		\begin{split}
+			Min \: \sum_{j=1}^n c_jx_j+M \\
+			\sum_{j=1}^n a_{ij}x_j + x_{n+i}&=b_i , i = \overline{\rm 1,m} \\
+			x_j &\geq 0 , j= \overline{\rm 1,{n+m}}
+		\end{split}
+	\end{equation}
+Với M là số thực dương lớn tuỳ ý, các ẩn $x_{n+i} , i=\overline{\rm 1,m}$ là các ẩn giả tạo. Việc đưa các ẩn giả tạo nhằm tạo ra 1 cơ sở. Vì vậy, không nhất thiết phải có đủ $m$ ẩn giả tạo.
+	\begin{dl}
+		Với M đủ lớn thì
+		\item BT \eqref{*}  có PATU X khi và chỉ khi BT \eqref{**} có PATU $\overline{\rm X} = (X,0)$.
+		\item Nếu BT \eqref{**} có PATU $\overline{\rm X}$ mà trong đó có chứa $x_{m+i}>0$ thì tập PATU của BT \eqref{*} là rỗng.
+	\end{dl}
+	\begin{cy}
+		Đối với bài toán M, $\Delta_j$ có dạng $\Delta_j=\alpha_j+\beta_jM$. Vì thế dòng thứ $m+1$ của bảng đơn hình, ta nên tách thành hai dòng ghi $\alpha _j$ và $\beta_j$. Để đánh giá $\Delta_j$ ta cần chú ý tới $B_j$, sau đó mới chú ý đến $\alpha_j$.
+	\end{cy} 
+
+\textbf{Ví dụ minh hoạ}       
 
 \subsection{Giải bài toán khi đã có cơ sở chính tắc}
 Khi bài toán đã có đủ số véc tơ cơ sở
