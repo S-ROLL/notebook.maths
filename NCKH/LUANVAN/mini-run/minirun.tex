@@ -79,15 +79,6 @@ Tập $S$ được gọi là \textbf{tập lồi} nếu $S$ thoả điều kiệ
 \end{itemize}
 \end{dn}
 
-\begin{figure}
-	\centering
-	\subfigure[]{\includegraphics[width=0.2\textwidth]{vuong2.pdf}} 
-	\subfigure[]{\includegraphics[width=0.15\textwidth]{lom.pdf}} 
-	\subfigure[]{\includegraphics[width=0.15\textwidth]{tron.pdf}} 
-	\subfigure[]{\includegraphics[width=0.15\textwidth]{duc lo.pdf}} 
-	\caption{(a) Tập lồi (b) Tập lõm (c) Tập lồi (d) Tập lõm}
-	\label{fig:foobar}
-\end{figure}
 
 \begin{dn}[Cực điểm]
 Với bất kỳ tập $S$, điểm $P \in S$ được gọi là \textbf{cực điểm} nếu thoả các điều kiện:
@@ -113,6 +104,15 @@ a_1x_1 + a_2x_2 + \ldots + a_nx_n = c
 \end{equation*}
 trong đó $c$ là một hằng số và $a_1,a_2,\ldots,a_n \neq 0$.
 \end{dn}
+\begin{figure}
+	\centering
+	\subfigure[]{\includegraphics[width=0.2\textwidth]{vuong2.pdf}} 
+	\subfigure[]{\includegraphics[width=0.15\textwidth]{lom.pdf}} 
+	\subfigure[]{\includegraphics[width=0.15\textwidth]{tron.pdf}} 
+	\subfigure[]{\includegraphics[width=0.15\textwidth]{duc lo.pdf}} 
+	\caption{(a) Tập lồi (b) Tập lõm (c) Tập lồi (d) Tập lõm}
+	\label{fig:foobar}
+\end{figure}
 
 \subsubsection*{Bài toán trong không gian $\mathbb{R}^2$}
 
@@ -136,7 +136,9 @@ Trong đó $A$ là ma trận $m\times 2$, $b=\begin{pmatrix}
 
 
 \begin{itemize}
-\item \textbf{Tập phương án chấp nhận được của bài toán}
+\item \textbf{Tập nghiệm của bài toán}
+
+Ta có bài toán minh hoạ sau:
 \begin{equation}
 	\begin{split}
 	(P) \quad & f(x) = 3x_1 + 2x_2 \longrightarrow Max \\
@@ -148,9 +150,32 @@ Trong đó $A$ là ma trận $m\times 2$, $b=\begin{pmatrix}
 		\end{split}\right.    
 	\end{split}
 \end{equation}
-\item \textbf{Phương án tối ưu của bài toán}
+Với từng ràng buộc, ta có thể biểu thị trên đồ thị bằng từng đường thẳng tương ứng, ví dụ, ràng buộc
+\begin{equation*}
+x_1 + x_2 \leq 7
+\end{equation*}
+tương ứng với mặt phẳng bên dưới đường thẳng $CD$ trong hình 2.
+\begin{equation*}
+	2x_1 + x_2 \leq 10
+\end{equation*}
+tương ứng với mặt phẳng bên dưới đường thẳng $AB$.
+\begin{equation*}
+	x_1 \leq 4
+	\end{equation*}
+tương ứng với mặt phẳng bên trái đường thẳng $EG$. Tập nghiệm của bài toán là đa giác $OCKGE$ được biểu thị trong đồ thị hình 2.
 
-\begin{figure}[!htb]
+\item \textbf{Phương án tối ưu của bài toán}
+\begin{itemize}
+\item Để tìm phương án tối ưu của bài toán ta thiết lập phương thay đổi của hàm mục tiêu
+\begin{equation*}
+f(x)=c_1x_1+c_2x_2,
+\end{equation*}
+trong đó phương trình mô tả họ đường thẳng phụ thuộc theo tham số $f(x)$ với pháp vector $v=(c_1,c_2)$, giá trị $f(x)$ tăng hoặc giảm theo một hướng của vector v.
+\item Từ phương trình hàm mục tiêu ta thiết lập các đường mức.
+\item Tịnh tiến song song các đường mức theo chiều tăng nếu Max hoặc giảm nếu Min để tìm phương án tối ưu của bài toán. (Hình 3)
+\end{itemize}
+
+\begin{figure}[!htb]\label{hinh2}
     \begin{minipage}{0.48\textwidth}
             \center
             \begin{tikzpicture}
@@ -244,7 +269,11 @@ Trong đó $A$ là ma trận $m\times 2$, $b=\begin{pmatrix}
 \subsubsection*{Các trường hợp đặc biệt}
 \begin{itemize}
 \item \textbf{Vô nghiệm}
+
+Trường hợp bài toán có các ràng buộc không cùng tạo ra miền nghiệm của bài toán, xem Hình 4. thì bài toán được gọi là vô nghiệm.
 \item \textbf{Vô số nghiệm}
+
+Trường hợp bài toán có đường mức được tạo ra từ phương trình hàm mục tiêu song song với cực biên của tập nghiệm, bài toán cho ra vô số nghiệm. (Hình 5)
 \begin{figure}[!htb]
     \begin{minipage}{0.48\textwidth}
     \center
@@ -330,6 +359,8 @@ Trong đó $A$ là ma trận $m\times 2$, $b=\begin{pmatrix}
     \end{minipage}
 \end{figure}
 \item \textbf{Giá trị tối ưu đạt vô hạn}
+
+Trường hợp miền nghiệm của bài toán là một tập mở đồng thời pháp vector cho chiều vô hạn thì bài toán có giá trị tối ưu đạt vô cực. (Hình 6)
 \begin{figure}
     \center
     \begin{tikzpicture}

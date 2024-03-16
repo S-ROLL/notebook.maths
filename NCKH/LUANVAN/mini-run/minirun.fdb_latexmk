@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1710532091 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/LUANVAN/mini-run/minirun.tex" "minirun.pdf" "minirun" 1710532093 0
-  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/LUANVAN/mini-run/minirun.tex" 1710532088 12504 2cbba4300f058ef207b8a05f25179c1a ""
+["pdflatex"] 1710559312 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/LUANVAN/mini-run/minirun.tex" "minirun.pdf" "minirun" 1710559315 0
+  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/LUANVAN/mini-run/minirun.tex" 1710559312 14360 2fbac17ac33d00fa5bdce499172be388 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -283,9 +283,9 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "duc lo.pdf" 1710529361 13283 ad525835478f57be31ced3c1ef3d79f6 ""
   "lom.pdf" 1710529361 13221 17cf17de846936b03572ce9109f7f892 ""
-  "minirun.aux" 1710532093 2705 02891f2f8e7384b74f31a7ee61411f87 "pdflatex"
-  "minirun.out" 1710532093 174 257797c4b9491cd08e20fea60c0ae8f1 "pdflatex"
-  "minirun.tex" 1710532088 12504 2cbba4300f058ef207b8a05f25179c1a ""
+  "minirun.aux" 1710559314 2866 7bd821896a1414e9f932dcc3bb9e5e17 "pdflatex"
+  "minirun.out" 1710559314 174 257797c4b9491cd08e20fea60c0ae8f1 "pdflatex"
+  "minirun.tex" 1710559312 14360 2fbac17ac33d00fa5bdce499172be388 ""
   "tron.pdf" 1710529361 3548 67d79f400f382d6fc40bed677ec958df ""
   "vuong2.pdf" 1710529361 21301 7e45490e039098f5761b14a35b9142f0 ""
   (generated)
