@@ -1,0 +1,25 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{pst-node}
+\usetikzlibrary{arrows, positioning}
+\usepackage{pgfgantt}
+\begin{document}
+
+\begin{ganttchart}[
+    hgrid,
+    vgrid,
+    y unit title=.5cm,
+    title/.style={draw=none, fill=none},
+    include title in canvas=false
+]{1}{11}
+\gantttitlelist{1,...,11}{1} \\
+\ganttbar{$j_1$}{1}{4} \\
+\ganttlinkedbar{$j_2$}{5}{6} \\
+%\ganttlinkedmilestone{$d_1$}{6} \\
+\ganttlinkedbar{$j_3$}{7}{11}
+\end{ganttchart}
+
+
+
+\end{document}

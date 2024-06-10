@@ -1,0 +1,17 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {chapter}{Mục lục}{i}{Doc-Start}%
+\contentsline {chapter}{Danh mục các kí hiệu}{ii}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Giới thiệu}{iii}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Vấn đề}{iii}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Ví dụ minh hoạ}{iii}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Phương pháp}{iv}{chapter.2}%
+\contentsline {section}{\numberline {2.1}EDD}{iv}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Lmax}{iv}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Tmax}{iv}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}SPT}{iv}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}1}{iv}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}tong quat}{iv}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}release date}{iv}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}preemptive}{iv}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}non-preemptive}{iv}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Kết luận}{v}{chapter.3}%
