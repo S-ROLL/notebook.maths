@@ -154,7 +154,7 @@
 \section{Vấn đề}
 \section{Ví dụ minh hoạ}
 \chapter{Phương pháp xử lý bài toán lập lịch cho máy đơn}
-Chương 2 tập trung vào các phương pháp lập lịch cho máy đơn. Ở phần đầu của chương (2.1.) sẽ giới thiệu các phương pháp lập lịch với giả định bài toán ở trạng thái tĩnh, tức tất cả các công việc đều có thể bắt đầu cùng lúc tại thời điểm $t = 0$. Trong đó, phương pháp sắp xếp theo thứ tự là phương pháp cơ bản nhất. Tiếp theo là phương pháp ưu tiên đáo hạn (EDD - Earliest Due Date) và cuối cùng là phương pháp quá trình ngắn nhất tập trung vào việc tối thiểu hóa tổng thời gian hoàn thành (SPT - Shortest Process Time) và tổng thời gian hoàn thành có trọng số (WSPT - Weighted Shortest Process Time).
+Chương 2 tập trung vào các phương pháp lập lịch cho máy đơn. Ở phần đầu của chương (2.1.) sẽ giới thiệu các phương pháp lập lịch với giả định bài toán ở trạng thái tĩnh, tức tất cả các công việc đều có thể bắt đầu cùng lúc tại thời điểm $t = 0$. Trong đó, phương pháp sắp xếp theo thứ tự công việc là phương pháp cơ bản nhất. Tiếp theo là phương pháp ưu tiên đáo hạn (EDD - Earliest Due Date) và cuối cùng là phương pháp quá trình ngắn nhất tập trung vào việc tối thiểu hóa tổng thời gian hoàn thành (SPT - Shortest Process Time) và tổng thời gian hoàn thành có trọng số (WSPT - Weighted Shortest Process Time).
 
 Phần thứ hai của chương (2.2.) sẽ xem xét các bài toán phức tạp hơn, nơi tồn tại các công việc có thời điểm sẵn sàng không đồng nhất. Điều này làm cho bài toán mang tính thực tế hơn trong các quy trình sản xuất khi các công việc thường không bắt đầu một cách đồng thời. Trong đó ta sẽ tập trung vào hai phương pháp chính, bao gồm: Phương pháp không ngắt quãng (non-preemptive) và phương pháp ngắt quãng (preemptive). Trong đó phương pháp ngắt quãng cho ta sự linh hoạt cao hơn trong quá trình lập lịch.
 
@@ -163,12 +163,92 @@ Những phương pháp này sẽ giúp các nhà quản lý sản xuất hay chu
 Phần lớn kiến thức của chương được tham khảo từ tài liệu XXX
 
 \section{Bài toán trạng thái tĩnh ($r_j \equiv 0$)}
-Bài toán tĩnh trong lập lịch máy đơn là một trong những bài toán cơ bản và quan trọng nhất trong lĩnh vực quản lý thời gian và tối ưu hóa quy trình. Đặc điểm của bài toán tĩnh là thời điểm sẵn sàng $r_j$ của các công việc đều đồng nhất tại $t=0$, hay $\forall r_j \equiv 0$, trong đó $j=\overline{1,n}$ và ký hiệu $r_j$ lúc này không tồn tại trong trường $\beta$ của bài toán.
+Bài toán tĩnh trong lập lịch cho máy đơn là một trong những bài toán cơ bản và quan trọng trong lĩnh vực quản lý thời gian và tối ưu hóa quy trình. Đặc điểm của bài toán tĩnh là thời điểm sẵn sàng $r_j$ của các công việc đều đồng nhất tại $t=0$, hay $r_j = 0, \: \forall j=\overline{1,n}$ và ký hiệu $r_j$ lúc này không tồn tại trong trường $\beta$ của bài toán.
 
-Trong bối cảnh bài toán ở trạng thái tĩnh, phương pháp sắp xếp theo thứ tự sẽ được trình bày như một cách cơ bản cho bước đầu tiếp cận các phương pháp lập lịch tối ưu hơn. Ở các phương pháp lập lịch tối ưu hơn, các công việc sẽ được sắp xếp sao cho tối thiểu hoá một hàm mục tiêu nhất định, trong đó bao gồm các dạng bài toán: Tối thiểu độ đáo hạn cực đại ($1\|L_{\max}$) hay độ trễ cực đại ($1\|T_{\max}$), tối thiểu tổng thời gian hoàn thành ($1\|\sum C_j$) và tối thiểu tổng thời gian hoàn thành có trọng số ($1\|\sum w_j C_j$).
+Trong bối cảnh bài toán ở trạng thái tĩnh, phương pháp sắp xếp theo thứ tự công việc sẽ được trình bày như một cách cơ bản cho bước đầu tiếp cận các phương pháp lập lịch tối ưu hơn. Ở các phương pháp lập lịch tối ưu hơn, các công việc sẽ được sắp xếp sao cho tối thiểu hoá một hàm mục tiêu nhất định, trong đó bao gồm các dạng bài toán: Tối thiểu độ đáo hạn cực đại ($1\|L_{\max}$) hay độ trễ cực đại ($1\|T_{\max}$), tối thiểu tổng thời gian hoàn thành ($1\|\sum C_j$) và tối thiểu tổng thời gian hoàn thành có trọng số ($1\|\sum w_j C_j$).
 
-Bài toán tĩnh cung cấp một nền tảng lý thuyết vững chắc giúp phát triển các phương pháp xử lý các bài toán phức tạp hơn, đồng thời là bước đầu tiên quan trọng trong việc nghiên cứu và ứng dụng các thuật toán tối ưu hóa trong quản lý thời gian và tối ưu hoá quy trình.
-\subsection{Phương pháp sắp xếp theo thứ tự}
+Bài toán tĩnh cung cấp một nền tảng lý thuyết vững chắc giúp phát triển các phương pháp xử lý những dạng bài toán lập lịch phức tạp hơn, đồng thời là bước đầu tiên và quan trọng trong việc nghiên cứu và ứng dụng các thuật toán tối ưu trong lĩnh vực quản lý thời gian và tối ưu hoá quy trình.
+\subsection{Phương pháp sắp xếp theo thứ tự công việc}
+Phương pháp sắp xếp theo thứ tự công việc trong lập lịch cho máy đơn là một phương pháp cơ bản và dễ hiểu. Bằng cách dựa trên số thứ tự công việc được định sẵn, nguyên lý của phương pháp là sắp xếp các công việc sao cho thứ tự của công việc được sắp theo hướng tăng dần hoặc giảm dần.
+
+\begin{vd}
+	Minh hoạ trường hợp bài toán với $n=4$ được sắp xếp theo thứ tự giảm dần:
+	\begin{table}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c |} 
+		 \hline
+		 Công việc ($j$) & 4 & 3 & 2 & 1 \\
+		 \hline\hline
+		 $p_j$ & 2 & 5 & 1 & 3 \\
+		 $d_j$ & 6 & 9 & 8 & 3 \\
+		 \hline
+		 \end{tabular}
+	\end{table}
+\end{vd}
+	
+\begin{vd}
+	Minh hoạ trường hợp bài toán với $n=4$ được sắp xếp theo thứ tự tăng dần:
+	\begin{table}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c |} 
+		 \hline
+		 Công việc ($j$) & 1 & 2 & 3 & 4 \\
+		 \hline\hline
+		 $p_j$ & 3 & 1 & 5 & 2 \\
+		 $d_j$ & 3 & 8 & 9 & 6 \\
+		 \hline
+		 \end{tabular}
+	\end{table}
+
+	Từ $p_j$ cho sẵn, ta có thể dễ dàng xác định được các phần tử $C_j, \: S_j, \: W_j, \: F_j, \: L_j, \: T_j, \: E_j$ và thu được bảng sau
+\begin{table}[h!]
+		\centering
+		 \begin{tabular}{|c || c c c c c c c c c c|}
+		 \hline
+		 Công việc ($j$) & $r_j$ & $p_j$ & $d_j$ & $C_j$ & $S_j$ & $W_j$ & $F_j$ & $L_j$ & $T_j$ & $E_j$ \\
+		 \hline
+		 1 & 0 & 3 & 3 & 3 & 0 & 0 & 3 & 0 & 0 & 0 \\
+		 \hline
+		 2 & 0 & 1 & 8 & 4 & 3 & 3 & 4 & -4 & 0 & 4 \\
+		 \hline
+		 3 & 0 & 5 & 9 & 9 & 4 & 4 & 9 & 0 & 0 & 0 \\
+		 \hline
+		 4 & 0 & 2 & 6 & 11 & 9 & 9 & 11 & 5 & 5 & 0 \\
+		 \hline
+		 \end{tabular}
+	\end{table}
+\end{vd}
+
+
+Vì bài toán ở trạng thái tĩnh nên hiển nhiên $r_j = 0, \: \forall j=\overline{1,4}$. Từ đây ta có thể xác định được
+\begin{equation*}
+C_{\max} = \sum_{j=1}^4 p_j = 11,
+\end{equation*}
+
+\begin{equation*}
+	L_{\max} = \max _{1 \leq j \leq 4} \{L_j, 0\} = 5.
+\end{equation*}
+Ta tính được trung bình thời gian chờ là
+\begin{equation*}
+\overline{W} = \frac{\sum_{j=1}^4 W_j}{4} = 4,
+\end{equation*}
+trung bình chu trình là
+\begin{equation*}
+\overline{F} = \frac{\sum_{j=1}^4 F_j}{4} = 6.75,
+\end{equation*}
+trung bình độ đáo hạn là
+\begin{equation*}
+\overline{L} = \frac{\sum_{j=1}^4 L_j}{4} = 0.25,
+\end{equation*}
+trung bình độ trễ là
+\begin{equation*}
+\overline{T} = \frac{\sum_{j=1}^4 T_j}{4} = 1.25,
+\end{equation*}
+và trung bình độ sớm là
+\begin{equation*}
+\overline{E} = \frac{\sum_{j=1}^4 E_j}{4} = 1.
+\end{equation*}
+
 \subsection{Phương pháp ưu tiên đáo hạn}
 \subsubsection*{Tối thiểu độ đáo hạn cực đại ($1 \| L_{\max}$)}
 \subsubsection*{Tối thiểu độ trễ cực đại ($1 \| T_{\max}$)}
