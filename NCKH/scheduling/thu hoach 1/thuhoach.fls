@@ -290,12 +290,16 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
 INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
 INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/ltablex/ltablex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/ltablex/ltablex.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/longtable.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/longtable.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/indentfirst.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/indentfirst.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/exscale.sty
@@ -407,8 +411,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/mathtools/mhsetup.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/mathtools/mhsetup.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/ncctools/nccmath.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/ncctools/nccmath.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrextend.sty

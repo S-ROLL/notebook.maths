@@ -11,6 +11,8 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{pgfgantt}
+\usepackage{tabularx}
+\usepackage{ltablex}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -59,7 +61,6 @@
 \usepackage{tabularx}
 \usepackage{nccmath}
 \usetikzlibrary{calc}
-\usepackage{longtable}
 \usepackage{indentfirst}
 \usepackage{fancyhdr}
 \usepackage{exscale,relsize,makeidx}
@@ -117,62 +118,35 @@
 	\chapter*{Danh mục ký hiệu và ý nghĩa}
 	\thispagestyle{fancy}
 	\addcontentsline{toc}{chapter}{Danh mục các kí hiệu}
-	\begin{longtable}{l l}
-		$\alpha | \beta | \gamma$ & Ký hiệu dùng để nhận dạng loại bài toán. Trong đó $\alpha$ chỉ số lượng máy \\
-		& cần lập lịch, trường hợp cho máy đơn ta ký hiệu $\alpha = 1$, tức $1| \beta | \gamma$. Ký hiệu $\beta$ \\
-		& chỉ đặc tính hay kiểu ràng buộc của bài toán. Ký hiệu $\gamma$ chỉ hàm mục tiêu \\
-		& cần tối ưu. \\
+	\begin{tabularx}{\linewidth}{ c  X }
+		$\alpha | \beta | \gamma$ & Ký hiệu dùng để nhận dạng loại bài toán. Trong đó $\alpha$ chỉ số lượng máy cần lập lịch, trường hợp cho máy đơn ta ký hiệu $\alpha = 1$, tức $1| \beta | \gamma$. Ký hiệu $\beta$ chỉ đặc tính hay kiểu ràng buộc của bài toán. Ký hiệu $\gamma$ chỉ hàm mục tiêu cần tối ưu. \\
 		\\
-		$p_j$ & Khoảng thời gian xử lý (processing time) của công việc thứ $j$, tức từ thời điểm \\
-		& công việc bắt đầu đến thời điểm công việc hoàn thành. \\
-		\\
-		$r_j$ & Thời điểm phát hành (release time) công việc thứ $j$. Nếu $r_j$ xuất hiện trong \\
-		& trường $\beta$ của bài toán, đồng nghĩa công việc thứ $j$ sẽ không được phép bắt đầu \\
-		& trước thời điểm phát hành $r_j$ ($S_j \geq r_j$), ngược lại, nếu $r_j$ không xuất hiện trong \\
-		& trường $\beta$ của bài toán, các công việc sẽ được phép bất đầu tại bất kỳ thời điểm \\
-		& nào. \\
-		\\
-		$C_j$ & Thời điểm hoàn thành (completion time) của công việc thứ $j$. \\
-		\\
-		$S_j$ & Thời điểm bắt đầu (starting time) của công việc thứ $j$, được định nghĩa \\
-		& bằng công thức $S_j = \max (C_{j-1}, r_j)$. \\
-		\\
-		$W_j$ & Thời gian chờ (waiting time) của công việc thứ $j$, tức khoảng thời gian \\
-		& kể từ thời điểm công việc được phát hành cho đến thời điểm bắt đầu \\
-		& công việc, được định nghĩa bằng công thức $W_j = C_j - p_j - r_j = S_j - r_j$. \\
-		\\
-		$F_j$ & Chu trình (flow time) của công việt thứ $j$, tức khoảng thời gian kể từ \\
-		& thời điểm công việc được phát hành cho đến khi hoàn thành, được định \\
-		& nghĩa bằng công thức $F_j = C_j - r_j = W_j + p_j$. \\
-		\\
-		$w_j$ & Trọng số (weight) của công việc thứ $j$, tức mức độ ưu tiên của công việc thứ $j$. \\
+		$p_j$ & Khoảng thời gian xử lý (processing time) của công việc thứ $j$, tức từ thời điểm bắt đầu công việc đến thời điểm hoàn thành công việc. \\
 		\\
 		$d_j$ & Thời điểm đáo hạn (due date) của công việc thứ $j$. \\
 		\\
-		$L_j$ & Mức độ trễ (lateness) của công việc thứ $j$, được định nghĩa là độ dài từ $d_j$ đến $C_j$, xác định bằng công thức $L_j=C_j-d_j$. Từ đây có thể thấy, nếu $L_j < 0$ thì công việc đã hoàn thành sớm hơn thời điểm đáo hạn, nếu $L_j > 0$ thì công việc đã hoàn thành muộn hơn thời điểm đáo hạn. \\
+		$C_j$ & Thời điểm hoàn thành (completion time) của công việc thứ $j$. \\
 		\\
-		$T_j$ & Thời gian muộn (tardiness) của công việc thứ $j$. \\
+		$S_j$ & Thời điểm bắt đầu (starting time) của công việc thứ $j$, được định nghĩa bằng công thức $S_j = \max (C_{j-1}, r_j)$. \\
 		\\
-		$E_j$ & Thời gian sớm (earliness) của công việc thứ $j$. \\
+		$W_j$ & Thời gian chờ (waiting time) của công việc thứ $j$, tức khoảng thời gian kể từ thời điểm công việc được phát hành cho đến thời điểm bắt đầu công việc, được định nghĩa bằng công thức $W_j = C_j - p_j - r_j = S_j - r_j$. \\
 		\\
-		$prec$ & Bài toán tồn tại ràng buộc có thứ tự (precedence constraint). \\
-		& Nếu $prec$ xuất hiện trong trường $\beta$ của bài toán, đồng nghĩa tồn tại những \\
-		& công việc đòi hỏi phải hoàn thành trước khi công việc khác được bắt đầu, \\
-		& hay còn gọi là công việc tiền nhiệm (predecessor) và công việc kế nhiệm \\
-		&(successor). Nếu trường hợp bài toán có mỗi công việc tồn tại tối đa một \\
-		& tiền nhiệm và một kế nhiệm, bài toán có ràng buộc dạng dây chuyền (chains). \\
-		& Trường hợp có tối đa một kế nhiệm, bài toán có ràng buộc dạng in-tree. \\
-		& Trường hợp có tối đa một tiền nhiệm, bài toán có ràng buộc dạng out-tree. \\
-		& Ngược lại, nếu $prec$ không xuất hiện trong trường $\beta$ của bài toán, bài toàn sẽ\\
-		& được phép có các thứ tự công việc được sắp tự do. \\
+		$r_j$ & Thời điểm phát hành (release time) công việc thứ $j$. Nếu $r_j$ xuất hiện trong trường $\beta$ của bài toán, đồng nghĩa công việc thứ $j$ sẽ không được phép bắt đầu trước thời điểm phát hành $r_j$ ($S_j \geq r_j$), ngược lại, nếu $r_j$ không xuất hiện trong trường $\beta$ của bài toán, các công việc sẽ được phép bất đầu tại bất kỳ thời điểm nào. \\
 		\\
-		$prmp$ & Bài toán tồn tại tính ưu tiên ngắt (preemption), thường được \\
-		& sử dụng khi có sự xuất hiện của $r_j \neq 0$. Nếu $prmp$ xuất hiện trong trường $\beta$ \\
-		& của bài toán thì công việc sẽ được phép ngắt quãng tại bất kỳ thời điểm nào \\
-		& để ưu tiên cho công việc khác nhằm mục đích tối ưu hàm mục tiêu của bài toán. \\
-		& Ngược lại, nếu $prmp$ không xuất hiện trong trường $\beta$ của bài toán, các công việc \\
-		& sẽ không được phép ngắt quãng. \\
-	\end{longtable}
+		$F_j$ & Chu trình (flow time) của công việt thứ $j$, tức khoảng thời gian kể từ thời điểm công việc được phát hành cho đến khi hoàn thành, được định nghĩa bằng công thức $F_j = C_j - r_j = W_j + p_j$. \\
+		\\
+		$w_j$ & Trọng số (weight) của công việc thứ $j$, tức mức độ ưu tiên của công việc thứ $j$. \\
+		\\
+		$L_j$ & Mức độ đáo hạn (lateness) của công việc thứ $j$, được định nghĩa là độ dài từ $d_j$ đến $C_j$, xác định bằng công thức $L_j=C_j-d_j$. Từ đây có thể thấy, nếu $L_j < 0$ thì công việc đã hoàn thành sớm hơn thời điểm đáo hạn, nếu $L_j > 0$ thì công việc đã hoàn thành muộn hơn thời điểm đáo hạn. \\
+		\\
+		$T_j$ & Mức độ muộn (tardiness) của công việc thứ $j$, là thang đo mức độ muộn của công việc thứ $j$ được định nghĩa thông qua $L_j$. Nếu $L_j \leq 0$ thì $T_j=0$, ngược lại nếu $L_j > 0$ thì $T_j = L_j$, hay $T_j=\max (L_j,0)$. \\
+		\\
+		$E_j$ & Mức độ sớm (earliness) của công việc thứ $j$, là thang đo mức độ sớm của công việc thứ $j$ được định nghĩa thông qua $L_j$. Nếu $L_j \geq 0$ thì $E_j=0$, ngược lại nếu $L_j < 0$ thì $E_j = L_j$, hay $E_j=\max (|L_j|,0)$. \\
+		\\
+		$prec$ & Bài toán tồn tại ràng buộc có thứ tự (precedence constraint). Nếu $prec$ xuất hiện trong trường $\beta$ của bài toán, đồng nghĩa tồn tại những công việc đòi hỏi phải hoàn thành trước khi công việc khác được bắt đầu, hay còn gọi là công việc tiền nhiệm (predecessor) và công việc kế nhiệm (successor). Nếu trường hợp bài toán có mỗi công việc tồn tại tối đa một tiền nhiệm và một kế nhiệm, bài toán có ràng buộc dạng dây chuyền (chains). Trường hợp có tối đa một kế nhiệm, bài toán có ràng buộc dạng in-tree. Trường hợp có tối đa một tiền nhiệm, bài toán có ràng buộc dạng out-tree. Ngược lại, nếu $prec$ không xuất hiện trong trường $\beta$ của bài toán, bài toàn sẽ được phép có các thứ tự công việc được sắp tự do. \\
+		\\
+		$prmp$ & Bài toán tồn tại tính ưu tiên ngắt (preemption), thường được sử dụng khi có sự xuất hiện của $r_j \neq 0$. Nếu $prmp$ xuất hiện trong trường $\beta$ của bài toán thì công việc sẽ được phép ngắt quãng tại bất kỳ thời điểm nào để ưu tiên cho công việc khác nhằm mục đích tối ưu hàm mục tiêu của bài toán. Ngược lại, nếu $prmp$ không xuất hiện trong trường $\beta$ của bài toán, các công việc sẽ không được phép ngắt quãng. \\
+	\end{tabularx}
 \newpage
 
 \chapter{Giới thiệu}
