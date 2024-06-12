@@ -154,12 +154,20 @@
 \section{Vấn đề}
 \section{Ví dụ minh hoạ}
 \chapter{Phương pháp xử lý bài toán lập lịch cho máy đơn}
+Chương 2 tập trung vào các phương pháp lập lịch cho máy đơn. Ở phần đầu của chương (2.1.) sẽ giới thiệu các phương pháp lập lịch với giả định bài toán ở trạng thái tĩnh, tức tất cả các công việc đều có thể bắt đầu cùng lúc tại thời điểm $t = 0$. Trong đó, phương pháp sắp xếp theo thứ tự là phương pháp cơ bản nhất. Tiếp theo là phương pháp ưu tiên đáo hạn (EDD - Earliest Due Date) và cuối cùng là phương pháp quá trình ngắn nhất tập trung vào việc tối thiểu hóa tổng thời gian hoàn thành (SPT - Shortest Process Time) và tổng thời gian hoàn thành có trọng số (WSPT - Weighted Shortest Process Time).
+
+Phần thứ hai của chương (2.2.) sẽ xem xét các bài toán phức tạp hơn, nơi tồn tại các công việc có thời gian khởi công không đồng nhất. Điều này làm cho bài toán mang tính thực tế hơn trong các quy trình sản xuất khi các công việc thường không bắt đầu một cách đồng thời. Trong đó ta sẽ tập trung vào hai phương pháp chính, bao gồm: Phương pháp không ngắt quãng (non-preemptive) và phương pháp ngắt quãng (preemptive). Trong đó phương pháp ngắt quãng cho ta sự linh hoạt cao hơn trong quá trình lập lịch.
+
+Những phương pháp này sẽ giúp các nhà quản lý sản xuất hay chuyên gia tối ưu hóa quy trình tìm được những giải pháp hiệu quả giúp cải thiện hiệu suất và giảm thiểu chi phí trong quá trình sản xuất một các tốt nhất.
+
+Phần lớn kiến thức của chương được tham khảo từ tài liệu XXX
+
 \section{Bài toán tĩnh ($r_j \equiv 0$)}
 \subsection{Phương pháp sắp xếp theo thứ tự}
-\subsection{Phương pháp ưu tiên đáo hạn (EDD)}
+\subsection{Phương pháp ưu tiên đáo hạn}
 \subsubsection*{Tối thiểu độ đáo hạn cực đại ($1 \| L_{\max}$)}
 \subsubsection*{Tối thiểu độ trễ cực đại ($1 \| T_{\max}$)}
-\subsection{Phương pháp quá trình ngắn nhất (SPT/WSPT)}
+\subsection{Phương pháp quá trình ngắn nhất}
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$)}
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành có trọng số ($1 \| \sum w_j C_j$)}
 \section{Bài toán tồn tại ngày khởi công ($r_j \neq 0$)}
