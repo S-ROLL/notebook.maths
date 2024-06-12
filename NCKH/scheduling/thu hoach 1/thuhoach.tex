@@ -127,6 +127,8 @@
 		\\
 		$C_j$ & Thời điểm hoàn thành (completion time) của công việc thứ $j$. \\
 		\\
+		$C_{\max}$ & Tổng thời gian hoàn thành (makespan) của toàn bộ công việc, được tính bằng công thức $C_{\max} = \sum_{j=1}^n p_j$. \\
+		\\
 		$S_j$ & Thời điểm bắt đầu (starting time) của công việc thứ $j$, được định nghĩa bằng công thức $S_j = \max (C_{j-1}, r_j)$. \\
 		\\
 		$r_j$ & Thời điểm sẵn sàng (release time) của công việc thứ $j$. Nếu $r_j$ xuất hiện trong trường $\beta$ của bài toán, đồng nghĩa công việc thứ $j$ sẽ không được phép bắt đầu trước thời điểm sẵn sàng $r_j$ ($S_j \geq r_j$), ngược lại, nếu $r_j$ không xuất hiện trong trường $\beta$ của bài toán, các công việc sẽ được phép bất đầu tại bất kỳ thời điểm nào. \\
@@ -217,8 +219,6 @@ Phương pháp sắp xếp theo thứ tự công việc trong lập lịch cho m
 		 \hline
 		 \end{tabular}
 	\end{table}
-\end{vd}
-
 
 Vì bài toán ở trạng thái tĩnh nên hiển nhiên $r_j = 0, \: \forall j=\overline{1,4}$. Từ đây ta có thể xác định được
 \begin{equation*}
@@ -226,8 +226,13 @@ C_{\max} = \sum_{j=1}^4 p_j = 11,
 \end{equation*}
 
 \begin{equation*}
-	L_{\max} = \max _{1 \leq j \leq 4} \{L_j, 0\} = 5.
+	L_{\max} = \max _{1 \leq j \leq 4} \{L_j, 0\} = 5,
 \end{equation*}
+và
+\begin{equation*}
+	T_{\max} = \max _{1 \leq j \leq 4} \{T_j, 0\} = 5.
+\end{equation*}
+
 Ta tính được trung bình thời gian chờ là
 \begin{equation*}
 \overline{W} = \frac{\sum_{j=1}^4 W_j}{4} = 4,
@@ -248,8 +253,16 @@ và trung bình độ sớm là
 \begin{equation*}
 \overline{E} = \frac{\sum_{j=1}^4 E_j}{4} = 1.
 \end{equation*}
+\end{vd}
 
+Từ lý thuyết và ví dụ minh hoạ trên có thể thấy phương pháp sắp xếp theo thứ tự công việc không yêu cầu tính toán quá phức tạp. Tuy nhiên, còn tồn tại nhiều hạn chế, phương pháp sắp xếp theo thứ tự công việc không xem xét đến các yếu tố cần được tối ưu như độ đáo hạn, độ trễ hay thời gian hoàn thành, do đó có thể không đạt được điều kiện tối ưu như mong muốn và không mang lại hiệu quả cao trong ứng dụng.
+
+Do đó, ta sẽ tập trung vào các phương pháp có khả năng cải thiện mô hình hiệu quả hơn bằng cách tối thiểu độ đáo hạn cực đại $L_{\max}$ ( hay độ trễ cực đại $T_{\max}$) hoặc phương pháp giúp tối thiểu tổng thời gian hoàn thành $C_{\max}$.
 \subsection{Phương pháp ưu tiên đáo hạn}
+Phương pháp ưu tiên đáo hạn hay còn gọi là phương pháp EDD (Earliest Due Date) là một trong những phương pháp phổ biến và hiệu quả trong lập lịch cho máy đơn với mục đích giúp tối thiểu hoá độ đáo hạn cực đại $L_{\max}$ hay độ trễ cực đại $T_{\max}$.
+
+Nguyên lý của phương pháp ưu tiên đáo hạn là ưu tiên các công việc có thời điểm đáo hạn nhỏ nhất, từ đó sắp xếp các công việc theo thứ tự từ thời điểm đáo hạn nhỏ nhất đến thời điểm đáo hạn lớn nhất. Mục đích giúp đảm bảo các công việc có thời điểm đáo hạn gần nhất được hoàn thành trước, hạn chế khả năng các công việc bị trễ.
+
 \subsubsection*{Tối thiểu độ đáo hạn cực đại ($1 \| L_{\max}$)}
 \subsubsection*{Tối thiểu độ trễ cực đại ($1 \| T_{\max}$)}
 \subsection{Phương pháp quá trình ngắn nhất}

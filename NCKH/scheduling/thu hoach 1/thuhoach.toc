@@ -8,7 +8,7 @@
 \contentsline {section}{\numberline {2.1}Bài toán trạng thái tĩnh ($r_j \equiv 0$)}{2}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Phương pháp sắp xếp theo thứ tự công việc}{3}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Phương pháp ưu tiên đáo hạn}{4}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Phương pháp quá trình ngắn nhất}{4}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}{4}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Phương pháp không ngắt quãng ($1 | r_j | \DOTSB \sum@ \slimits@ C_j$)}{4}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Phương pháp ngắt quãng ($1 | r_j, \: prmp | \DOTSB \sum@ \slimits@ C_j$)}{4}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.1.3}Phương pháp quá trình ngắn nhất}{5}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}{5}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Phương pháp không ngắt quãng ($1 | r_j | \DOTSB \sum@ \slimits@ C_j$)}{5}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Phương pháp ngắt quãng ($1 | r_j, \: prmp | \DOTSB \sum@ \slimits@ C_j$)}{5}{subsection.2.2.2}%
