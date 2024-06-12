@@ -261,10 +261,97 @@ Do đó, ta sẽ tập trung vào các phương pháp có khả năng cải thi�
 \subsection{Phương pháp ưu tiên đáo hạn}
 Phương pháp ưu tiên đáo hạn hay còn gọi là phương pháp EDD (Earliest Due Date) là một trong những phương pháp phổ biến và hiệu quả trong lập lịch cho máy đơn với mục đích giúp tối thiểu hoá độ đáo hạn cực đại $L_{\max}$ hay độ trễ cực đại $T_{\max}$.
 
-Nguyên lý của phương pháp ưu tiên đáo hạn là ưu tiên các công việc có thời điểm đáo hạn nhỏ nhất, từ đó sắp xếp các công việc theo thứ tự từ thời điểm đáo hạn nhỏ nhất đến thời điểm đáo hạn lớn nhất. Mục đích giúp đảm bảo các công việc có thời điểm đáo hạn gần nhất được hoàn thành trước, hạn chế khả năng các công việc bị trễ.
+Nguyên lý của phương pháp ưu tiên đáo hạn là ưu tiên các công việc có thời điểm đáo hạn nhỏ nhất, từ đó sắp xếp các công việc theo thứ tự từ thời điểm đáo hạn nhỏ nhất đến thời điểm đáo hạn lớn nhất. Mục đích giúp đảm bảo các công việc có thời điểm đáo hạn nhỏ nhất được hoàn thành trước, hạn chế khả năng các công việc bị trễ, từ đó tối thiểu được độ đáo hạn cực đại $L_{\max}$ và độ trễ cực đại $T_{\max}$.
 
 \subsubsection*{Tối thiểu độ đáo hạn cực đại ($1 \| L_{\max}$)}
+Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục tiêu $L_{\max}$ bằng cách sử dụng phương pháp ưu tiên đáo hạn, giả sử ta có giải pháp ban đầu như sau
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 & 5 \\
+	\hline\hline
+	$p_j$ & 8 & 10 & 15 & 9 & 5 \\
+	$C_j$ & 8 & 18 & 33 & 42 & 47 \\
+	$d_j$ & 30 & 9 & 23 & 3 & 11 \\
+	$L_j$ & -22 & 9 & 10 & 39 & 36 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta có
+\begin{equation*}
+	L_{\max} = \max _{1 \leq j \leq 5} \{L_j, 0\} = 39,
+\end{equation*}
+
+Sử dụng phương pháp ưu tiên đáo hạn ta được
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 4 & 2 & 5 & 3 & 1 \\
+	\hline\hline
+	$p_j$ & 9 & 10 & 5 & 15 & 8 \\
+	$C_j$ & 9 & 19 & 24 & 39 & 47 \\
+	$d_j$ & 3 & 9 & 11 & 23 & 30 \\
+	$L_j$ & 6 & 10 & 13 & 16 & 17 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Ta nhận được
+\begin{equation*}
+	L_{\max} = \max _{1 \leq j \leq 5} \{L_j, 0\} = 17.
+\end{equation*}
+
+Vậy để tối thiểu hàm mục tiêu $L_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $4-2-5-3-1$.
+
 \subsubsection*{Tối thiểu độ trễ cực đại ($1 \| T_{\max}$)}
+Tương tự với hàm mục tiêu $L_{\max}$ với $T_j=\max (L_j,0)$, ta cũng dễ dàng tối thiểu hàm mục tiêu $T_{\max}$ bằng cách sử dụng phương pháp ưu tiên đáo hạn như sau, với giải pháp ban đầu
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 & 5 \\
+	\hline\hline
+	$p_j$ & 8 & 10 & 15 & 9 & 5 \\
+	$C_j$ & 8 & 18 & 33 & 42 & 47 \\
+	$d_j$ & 30 & 9 & 23 & 3 & 11 \\
+	$L_j$ & -22 & 9 & 10 & 39 & 36 \\
+	$T_j$ & 0 & 9 & 10 & 39 & 36 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta có
+\begin{equation*}
+	T_{\max} = \max _{1 \leq j \leq 5} \{T_j, 0\} = 39,
+\end{equation*}
+
+Sử dụng phương pháp ưu tiên đáo hạn ta được
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 4 & 2 & 5 & 3 & 1 \\
+	\hline\hline
+	$p_j$ & 9 & 10 & 5 & 15 & 8 \\
+	$C_j$ & 9 & 19 & 24 & 39 & 47 \\
+	$d_j$ & 3 & 9 & 11 & 23 & 30 \\
+	$L_j$ & 6 & 10 & 13 & 16 & 17 \\
+	$T_j$ & 6 & 10 & 13 & 16 & 17 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Ta nhận được
+\begin{equation*}
+	T_{\max} = \max _{1 \leq j \leq 5} \{T_j, 0\} = 17.
+\end{equation*}
+
+Vậy để tối thiểu hàm mục tiêu $T_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $4-2-5-3-1$.
 \subsection{Phương pháp quá trình ngắn nhất}
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$)}
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành có trọng số ($1 \| \sum w_j C_j$)}
