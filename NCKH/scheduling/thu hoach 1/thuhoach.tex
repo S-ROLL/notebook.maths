@@ -129,11 +129,11 @@
 		\\
 		$S_j$ & Thời điểm bắt đầu (starting time) của công việc thứ $j$, được định nghĩa bằng công thức $S_j = \max (C_{j-1}, r_j)$. \\
 		\\
-		$r_j$ & Thời điểm khởi công (release time) công việc thứ $j$. Nếu $r_j$ xuất hiện trong trường $\beta$ của bài toán, đồng nghĩa công việc thứ $j$ sẽ không được phép bắt đầu trước thời điểm khởi công $r_j$ ($S_j \geq r_j$), ngược lại, nếu $r_j$ không xuất hiện trong trường $\beta$ của bài toán, các công việc sẽ được phép bất đầu tại bất kỳ thời điểm nào. \\
+		$r_j$ & Thời điểm sẵn sàng (release time) của công việc thứ $j$. Nếu $r_j$ xuất hiện trong trường $\beta$ của bài toán, đồng nghĩa công việc thứ $j$ sẽ không được phép bắt đầu trước thời điểm sẵn sàng $r_j$ ($S_j \geq r_j$), ngược lại, nếu $r_j$ không xuất hiện trong trường $\beta$ của bài toán, các công việc sẽ được phép bất đầu tại bất kỳ thời điểm nào. \\
 		\\
-		$W_j$ & Thời gian chờ (waiting time) của công việc thứ $j$, tức khoảng thời gian kể từ thời điểm công việc được khởi công cho đến thời điểm bắt đầu công việc, được định nghĩa bằng công thức $W_j = C_j - p_j - r_j = S_j - r_j$. \\
+		$W_j$ & Thời gian chờ (waiting time) của công việc thứ $j$, tức khoảng thời gian kể từ thời điểm công việc đã sẵn sàng cho đến thời điểm bắt đầu công việc, được định nghĩa bằng công thức $W_j = C_j - p_j - r_j = S_j - r_j$. \\
 		\\
-		$F_j$ & Chu trình (flow time) của công việt thứ $j$, tức khoảng thời gian kể từ thời điểm công việc được khởi công cho đến khi hoàn thành, được định nghĩa bằng công thức $F_j = C_j - r_j = W_j + p_j$. \\
+		$F_j$ & Chu trình (flow time) của công việt thứ $j$, tức khoảng thời gian kể từ thời điểm công việc đã sẵn sàng cho đến khi hoàn thành, được định nghĩa bằng công thức $F_j = C_j - r_j = W_j + p_j$. \\
 		\\
 		$w_j$ & Trọng số (weight) của công việc thứ $j$, tức mức độ ưu tiên của công việc thứ $j$. \\
 		\\
@@ -156,13 +156,18 @@
 \chapter{Phương pháp xử lý bài toán lập lịch cho máy đơn}
 Chương 2 tập trung vào các phương pháp lập lịch cho máy đơn. Ở phần đầu của chương (2.1.) sẽ giới thiệu các phương pháp lập lịch với giả định bài toán ở trạng thái tĩnh, tức tất cả các công việc đều có thể bắt đầu cùng lúc tại thời điểm $t = 0$. Trong đó, phương pháp sắp xếp theo thứ tự là phương pháp cơ bản nhất. Tiếp theo là phương pháp ưu tiên đáo hạn (EDD - Earliest Due Date) và cuối cùng là phương pháp quá trình ngắn nhất tập trung vào việc tối thiểu hóa tổng thời gian hoàn thành (SPT - Shortest Process Time) và tổng thời gian hoàn thành có trọng số (WSPT - Weighted Shortest Process Time).
 
-Phần thứ hai của chương (2.2.) sẽ xem xét các bài toán phức tạp hơn, nơi tồn tại các công việc có thời gian khởi công không đồng nhất. Điều này làm cho bài toán mang tính thực tế hơn trong các quy trình sản xuất khi các công việc thường không bắt đầu một cách đồng thời. Trong đó ta sẽ tập trung vào hai phương pháp chính, bao gồm: Phương pháp không ngắt quãng (non-preemptive) và phương pháp ngắt quãng (preemptive). Trong đó phương pháp ngắt quãng cho ta sự linh hoạt cao hơn trong quá trình lập lịch.
+Phần thứ hai của chương (2.2.) sẽ xem xét các bài toán phức tạp hơn, nơi tồn tại các công việc có thời điểm sẵn sàng không đồng nhất. Điều này làm cho bài toán mang tính thực tế hơn trong các quy trình sản xuất khi các công việc thường không bắt đầu một cách đồng thời. Trong đó ta sẽ tập trung vào hai phương pháp chính, bao gồm: Phương pháp không ngắt quãng (non-preemptive) và phương pháp ngắt quãng (preemptive). Trong đó phương pháp ngắt quãng cho ta sự linh hoạt cao hơn trong quá trình lập lịch.
 
 Những phương pháp này sẽ giúp các nhà quản lý sản xuất hay chuyên gia tối ưu hóa quy trình tìm được những giải pháp hiệu quả giúp cải thiện hiệu suất và giảm thiểu chi phí trong quá trình sản xuất một các tốt nhất.
 
 Phần lớn kiến thức của chương được tham khảo từ tài liệu XXX
 
-\section{Bài toán tĩnh ($r_j \equiv 0$)}
+\section{Bài toán trạng thái tĩnh ($r_j \equiv 0$)}
+Bài toán tĩnh trong lập lịch máy đơn là một trong những bài toán cơ bản và quan trọng nhất trong lĩnh vực quản lý thời gian và tối ưu hóa quy trình. Đặc điểm của bài toán tĩnh là thời điểm sẵn sàng $r_j$ của các công việc đều đồng nhất tại $t=0$, hay $\forall r_j \equiv 0$, trong đó $j=\overline{1,n}$ và ký hiệu $r_j$ lúc này không tồn tại trong trường $\beta$ của bài toán.
+
+Trong bối cảnh bài toán ở trạng thái tĩnh, phương pháp sắp xếp theo thứ tự sẽ được trình bày như một cách cơ bản cho bước đầu tiếp cận các phương pháp lập lịch tối ưu hơn. Ở các phương pháp lập lịch tối ưu hơn, các công việc sẽ được sắp xếp sao cho tối thiểu hoá một hàm mục tiêu nhất định, trong đó bao gồm các dạng bài toán: Tối thiểu độ đáo hạn cực đại ($1\|L_{\max}$) hay độ trễ cực đại ($1\|T_{\max}$), tối thiểu tổng thời gian hoàn thành ($1\|\sum C_j$) và tối thiểu tổng thời gian hoàn thành có trọng số ($1\|\sum w_j C_j$).
+
+Bài toán tĩnh cung cấp một nền tảng lý thuyết vững chắc giúp phát triển các phương pháp xử lý các bài toán phức tạp hơn, đồng thời là bước đầu tiên quan trọng trong việc nghiên cứu và ứng dụng các thuật toán tối ưu hóa trong quản lý thời gian và tối ưu hoá quy trình.
 \subsection{Phương pháp sắp xếp theo thứ tự}
 \subsection{Phương pháp ưu tiên đáo hạn}
 \subsubsection*{Tối thiểu độ đáo hạn cực đại ($1 \| L_{\max}$)}
@@ -170,7 +175,7 @@ Phần lớn kiến thức của chương được tham khảo từ tài liệu 
 \subsection{Phương pháp quá trình ngắn nhất}
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$)}
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành có trọng số ($1 \| \sum w_j C_j$)}
-\section{Bài toán tồn tại ngày khởi công ($r_j \neq 0$)}
+\section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
 \subsection{Phương pháp không ngắt quãng ($1 | r_j | \sum C_j$)}
 \subsection{Phương pháp ngắt quãng ($1 | r_j, \: prmp | \sum C_j$)}
 \end{document}
