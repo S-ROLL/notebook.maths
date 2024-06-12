@@ -5,13 +5,14 @@
 \contentsline {section}{\numberline {1.1}Vấn đề}{iv}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Ví dụ minh hoạ}{iv}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Phương pháp}{v}{chapter.2}%
-\contentsline {section}{\numberline {2.1}EDD}{v}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Lmax}{v}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Tmax}{v}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}SPT}{v}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}1}{v}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}tong quat}{v}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}release date}{v}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}preemptive}{v}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}non-preemptive}{v}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.1}Sap thu tu}{v}{section.2.1}%
+\contentsline {section}{\numberline {2.2}EDD}{v}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Lmax}{v}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Tmax}{v}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}SPT}{v}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}1}{v}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}tong quat}{v}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}release date}{v}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}preemptive}{v}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}non-preemptive}{v}{subsection.2.4.2}%
 \contentsline {chapter}{\numberline {3}Kết luận}{vi}{chapter.3}%
