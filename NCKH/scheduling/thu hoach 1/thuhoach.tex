@@ -121,6 +121,8 @@
 	\begin{tabularx}{\linewidth}{ c  X }
 		$\alpha | \beta | \gamma$ & Ký hiệu dùng để nhận dạng loại bài toán. Trong đó $\alpha$ chỉ số lượng máy cần lập lịch, trường hợp cho máy đơn ta ký hiệu $\alpha = 1$, tức $1| \beta | \gamma$. Ký hiệu $\beta$ chỉ đặc tính hay kiểu ràng buộc của bài toán. Ký hiệu $\gamma$ chỉ hàm mục tiêu cần tối ưu. \\
 		\\
+		$J_{ij}$ & Công việc (job) thứ $j$ của máy thứ $i$, trong trường hợp đơn máy thì $i=1$, kể từ đây ta chỉ ký hiệu $J_j$. \\
+		\\
 		$p_j$ & Khoảng thời gian xử lý (processing time) của công việc thứ $j$ hay quá trình của công việc thứ $j$, tức từ thời điểm bắt đầu công việc đến thời điểm hoàn thành công việc. \\
 		\\
 		$d_j$ & Thời điểm đáo hạn (due date) của công việc thứ $j$. \\
@@ -357,7 +359,7 @@ Một cách tiếp cận tối ưu khác của phương pháp lập lịch cho m
 
 Ý tưởng của cả hai phương pháp là tập trung vào việc tối thiểu hoá trung bình thời gian chờ $\overline{W}$, đồng thời tối thiểu hoá tổng thời gian hoàn thành $\sum C_j$ hoặc $\sum w_j C_j$ nếu bài toán có tồn tại trọng số $w_j$, bằng cách ưu tiên các công việc có khoảng thời gian xử lý ngắn nhất sẽ được thực hiện trước. 
 
-\subsubsection*{Tối thiểu tổng thời gian hoàn thành có trọng số ($1 \| \sum w_j C_j$)}
+\subsubsection*{Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$) và tổng thời gian hoàn thành có trọng số ($1 \| \sum w_j C_j$)}
 Ta có thể dễ dàng nhận thấy bài toán $1 \| \sum C_j$ chính là trường hợp đặc biệt của bài toán $1 \| \sum w_j C_j$ với trọng số $w_j=1$. Do đó đồng nghĩa phương pháp quá trình ngắn nhất chính là phương pháp quá trình ngắn nhất có trọng số $w_j=1$. Kể từ đây, ta chỉ cần tập trung vào bài toán $1\| \sum w_j C_j$.
 
 \begin{dl}[Quy tắc quá trình ngắn nhất có trọng số]
@@ -428,7 +430,37 @@ Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ư
 		Từ đây ta dễ dàng nhận thấy nếu trường hợp bài toán có trọng số là $1$ thì $p_j>p_k$ sẽ tối thiểu tổng thời gian hoàn thành.
 \end{proof}
 
-\subsubsection*{Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$)}
+\subsubsection*{Tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự ($1 | prec | \sum w_j C_j$)}
+Bài toán tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự, ký hiệu là $1|prec|\sum w_j C_j$, là một trong những bài toán quan trọng trong lý thuyết lập lịch cho máy đơn và là bài toán mở rộng thêm ràng buộc có thứ tự của bài toán tối thiểu tổng thời gian hoàn thành có trọng số thông thường.
+
+Bài toán $1|prec|\sum w_j C_j$ tồn tại những công việc đòi hỏi phải hoàn thành trước khi công việc khác được bắt đầu, hay còn gọi là công việc tiền nhiệm (predecessor) và công việc kế nhiệm (successor). Ở đây, ta chỉ quan tâm dạng dây chuyền (chains), tức trường hợp bài toán có mỗi công việc tồn tại tối đa một tiền nhiệm và một kế nhiệm.
+
+\begin{dn}
+Cho một tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$) cần được xử lý trên một máy đơn thì lúc này ta nhận được hệ số $p$ ($p$-factor) được định nghĩa bằng công thức sau
+\begin{equation}
+	\underset{1 \leq j \leq n}{p\text{-factor}} = \frac{\sum_{j=1}^n w_j}{\sum_{j=1}^n p_j}
+\end{equation}
+\end{dn}
+
+Giả sử trên tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$), trong đó tồn tại dây chuyền $I$ với
+\begin{equation*}
+1 - 2 - \ldots - k
+\end{equation*}
+và dây chuyền $II$ với
+\begin{equation*}
+k+1 - k+2 - \ldots - n.
+\end{equation*}
+Thì ta nhận được $p$-factor của dây chuyền $I$ là
+\begin{equation}
+	\underset{1 \leq j \leq k}{p\text{-factor}} = \frac{\sum_{j=1}^k w_j}{\sum_{j=1}^k p_j}
+\end{equation}
+và $p$-factor của dây chuyền $II$ là
+\begin{equation}
+	\underset{k+1 \leq j \leq n}{p\text{-factor}} = \frac{\sum_{j=k+1}^n w_j}{\sum_{j=k+1}^n p_j}
+\end{equation}
+
+
+
 \section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
 \subsection{Phương pháp không ngắt quãng ($1 | r_j | \sum C_j$)}
 \subsection{Phương pháp ngắt quãng ($1 | r_j, \: prmp | \sum C_j$)}

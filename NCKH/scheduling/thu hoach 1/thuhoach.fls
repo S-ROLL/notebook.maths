@@ -500,6 +500,10 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnti12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnti8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnti7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr6.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
