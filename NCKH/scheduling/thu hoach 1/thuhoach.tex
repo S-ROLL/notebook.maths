@@ -414,7 +414,7 @@ Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ư
 		S > S'
 	\end{equation}
 	Từ \eqref{S}, \eqref{S'} và \eqref{s>s'} ta được
-        \begin{equation*} \label{baitoannguyenhet}
+        \begin{equation*}
         \begin{array}{c c c c}
 		& w_j(t+p_j) + w_k(t+p_j+p_k) &>& w_k(t+p_k) + w_j(t+p_k+p_j) \\
 		\\
@@ -456,8 +456,73 @@ Thì ta nhận được $p$-factor của dây chuyền $I$ là
 \end{equation}
 và $p$-factor của dây chuyền $II$ là
 \begin{equation}
-	\underset{k+1 \leq j \leq n}{p\text{-factor}} = \frac{\sum_{j=k+1}^n w_j}{\sum_{j=k+1}^n p_j}
+	\underset{k+1 \leq j \leq n}{p\text{-factor}} = \frac{\sum_{j=k+1}^n w_j}{\sum_{j=k+1}^n p_j}.
 \end{equation}
+Từ đây, ta có định lý sau
+\begin{dl}
+	Nếu $\underset{1 \leq j \leq k}{p\text{-factor}} > \underset{k+1 \leq j \leq n}{p\text{-factor}}$ thì phương pháp sắp xếp tối ưu của bài toán sẽ bắt đầu từ dây chuyền $I$ rồi đến dây chuyền $II$ và ngược lại.
+\end{dl}
+
+\begin{proof}
+	Đặt $S_I$ là tổng thời gian hoàn thành có trọng số của dây chuyền thứ $I$ với
+	\begin{equation}
+		S_I = w_1 p_1 + w_2 p_2 + \ldots + w_k \sum_{j=1}^k p_j
+	\end{equation}
+	và $S_{II}$ là tổng thời gian hoàn thành có trọng số của dây chuyền thứ $II$ với
+	\begin{equation}
+		S_{II} = w_{k+1} \sum_{j=1}^{k+1} p_j + \ldots + w_n \sum_{j=1}^{n} p_j
+	\end{equation}
+	Ta gọi tổng thời gian hoàn thành có trọng số ban đầu là $S_A$ với
+	\begin{equation} \label{SA}
+		S_A = S_I + S_{II} = w_1 p_1 + w_2 (p_1 + p_2) + \ldots + w_k \sum_{j=1}^k p_j + w_{k+1} \sum_{j=1}^{k+1} p_j + w_{k+2} \sum_{j=1}^{k+2} p_j + \ldots + w_n \sum_{j=1}^{n} p_j
+	\end{equation}
+	Hoán đổi vị trí của $S_I$ và $S_{II}$ trên sơ đồ Gantt ta được
+	\begin{equation}
+		S_I^{'} = w_{k+1} p_{k+1} + w_{k+2}(p_{k+1} + p_{k+2}) + \ldots + w_n \sum_{j=k+1}^{n} p_j
+	\end{equation}
+	và
+	\begin{equation}
+		S_{II}^{'} = w_1(\sum_{j=k+1}^{n}p_j+p_1) + w_2(\sum_{j=k+1}^{n}p_j+p_1+p_2) + \ldots + w_k\sum_{j=1}^{n} p_j
+	\end{equation}
+	Ta gọi tổng thời gian hoàn thành có trọng số sau khi hoán đổi là $S_B$ với
+	\begin{equation} \label{SB}
+		\begin{array}{c c c}
+		S_B &=& S_I^{'} + S_{II}^{'} \\
+		&=& w_{k+1} p_{k+1} + w_{k+2}(p_{k+1} + p_{k+2}) + \ldots + w_n \sum_{j=k+1}^{n} p_j \\
+		&& + w_1(\sum_{j=k+1}^{n}p_j+p_1) + w_2(\sum_{j=k+1}^{n}p_j+p_1+p_2) + \ldots + w_k\sum_{j=1}^{n} p_j
+		\end{array}
+	\end{equation}
+	Vì mục tiêu là tối thiểu hoá tổng thời gian hoàn thành của bài toán, vậy nên bắt buộc
+	\begin{equation} \label{SA<SB}
+		S_A < S_B
+	\end{equation}
+	Từ \eqref{SA}, \eqref{SB} và \eqref{SA<SB} ta được
+	\begin{equation*}
+	\begin{array}{c c c c}
+	& w_1 p_1 + w_2 (p_1 + p_2)  && w_{k+1} p_{k+1} + w_{k+2}(p_{k+1} + p_{k+2}) \\
+
+	& + \ldots + w_k \sum_{j=1}^k p_j + w_{k+1} \sum_{j=1}^{k+1} p_j &<& + \ldots + w_n \sum_{j=k+1}^{n} p_j \\
+	
+	&+ w_{k+2} \sum_{j=1}^{k+2} p_j  + \ldots + w_n \sum_{j=1}^{n} p_j && + w_1(\sum_{j=k+1}^{n}p_j+p_1) \\
+
+	&&& + w_2(\sum_{j=k+1}^{n}p_j+p_1+p_2)\\
+
+	&&& + \ldots + w_k\sum_{j=1}^{n} p_j \\
+	\\
+	\Leftrightarrow & -(w_1 \sum_{j=k+1}^{n}p_j + \ldots + w_k \sum_{j=k+1}^{n}p_j) &<& 0 \\
+	&+ w_{k+1} \sum_{j=1}^{k}p_j + \ldots + w_n \sum_{j=1}^{k}p_j && \\
+	\\
+	\Leftrightarrow & -(\sum_{j=1}^{k}w_j \sum_{j=k+1}^{n}p_j) + \sum_{j=k+1}^{n}w_j\sum_{j=1}^{k}p_j &<& 0 \\
+	\\
+	\Leftrightarrow & \sum_{j=k+1}^{n}w_j\sum_{j=1}^{k}p_j &<& \sum_{j=1}^{k}w_j \sum_{j=k+1}^{n}p_j \\
+	\\
+	\Leftrightarrow & \scalebox{1.5}{$\frac{\sum_{j=k+1}^{n}w_j}{\sum_{j=k+1}^{n}p_j}$} &<& \scalebox{1.5}{$\frac{\sum_{j=1}^{k}w_j}{\sum_{j=1}^{k}p_j}$} \\
+	\\
+	\Leftrightarrow & \underset{k+1 \leq j \leq n}{p\text{-factor}} &<& \underset{1 \leq j \leq k}{p\text{-factor}} \\
+	\end{array}
+	\end{equation*}
+	Vậy nếu muốn $S_A < S_B$ thì $\underset{1 \leq j \leq k}{p\text{-factor}} > \underset{k+1 \leq j \leq n}{p\text{-factor}}$ (đpcm).
+\end{proof}
 
 
 
