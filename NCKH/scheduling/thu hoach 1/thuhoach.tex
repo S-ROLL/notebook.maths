@@ -436,9 +436,9 @@ Bài toán tối thiểu tổng thời gian hoàn thành có trọng số với 
 Bài toán $1|prec|\sum w_j C_j$ tồn tại những công việc đòi hỏi phải hoàn thành trước khi công việc khác được bắt đầu, hay còn gọi là công việc tiền nhiệm (predecessor) và công việc kế nhiệm (successor). Ở đây, ta chỉ quan tâm dạng dây chuyền (chains), tức trường hợp bài toán có mỗi công việc tồn tại tối đa một tiền nhiệm và một kế nhiệm.
 
 \begin{dn}
-Cho một tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$) cần được xử lý trên một máy đơn thì lúc này ta nhận được $p$-factor (hệ số $p$) được định nghĩa bằng công thức sau
+Cho một tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$) cần được xử lý trên một máy đơn thì lúc này ta nhận được hệ số $p$ ($p$-factor) được định nghĩa bằng công thức sau
 \begin{equation}
-	\underset{1 \leq j \leq n}{p\text{-factor}} = \frac{\sum_{j=1}^n w_j}{\sum_{j=1}^n p_j}
+	\underset{1 \leq j \leq n}{\text{hệ số }p} = \frac{\sum_{j=1}^n w_j}{\sum_{j=1}^n p_j}
 \end{equation}
 \end{dn}
 
@@ -450,17 +450,17 @@ và dây chuyền $II$ với
 \begin{equation*}
 k+1 - k+2 - \ldots - n.
 \end{equation*}
-Thì ta nhận được $p$-factor của dây chuyền $I$ là
+Thì ta nhận được hệ số $p$ của dây chuyền $I$ là
 \begin{equation}
-	\underset{1 \leq j \leq k}{p\text{-factor}} = \frac{\sum_{j=1}^k w_j}{\sum_{j=1}^k p_j}
+	\underset{1 \leq j \leq k}{\text{hệ số }p} = \frac{\sum_{j=1}^k w_j}{\sum_{j=1}^k p_j}
 \end{equation}
-và $p$-factor của dây chuyền $II$ là
+và hệ số $p$ của dây chuyền $II$ là
 \begin{equation}
-	\underset{k+1 \leq j \leq n}{p\text{-factor}} = \frac{\sum_{j=k+1}^n w_j}{\sum_{j=k+1}^n p_j}.
+	\underset{k+1 \leq j \leq n}{\text{hệ số }p} = \frac{\sum_{j=k+1}^n w_j}{\sum_{j=k+1}^n p_j}.
 \end{equation}
 Từ đây, ta có định lý sau
 \begin{dl} \label{daychuyen}
-	Nếu $\underset{1 \leq j \leq k}{p\text{-factor}} > \underset{k+1 \leq j \leq n}{p\text{-factor}}$ thì phương pháp sắp xếp tối ưu của bài toán sẽ bắt đầu từ dây chuyền $I$ rồi đến dây chuyền $II$ và ngược lại.
+	Nếu $\underset{1 \leq j \leq k}{\text{hệ số }p} > \underset{k+1 \leq j \leq n}{\text{hệ số }p}$ thì phương pháp sắp xếp tối ưu của bài toán sẽ bắt đầu từ dây chuyền $I$ rồi đến dây chuyền $II$ và ngược lại.
 \end{dl}
 
 \begin{proof}
@@ -518,33 +518,39 @@ Từ đây, ta có định lý sau
 	\\
 	\Leftrightarrow & \scalebox{1.5}{$\frac{\sum_{j=k+1}^{n}w_j}{\sum_{j=k+1}^{n}p_j}$} &<& \scalebox{1.5}{$\frac{\sum_{j=1}^{k}w_j}{\sum_{j=1}^{k}p_j}$} \\
 	\\
-	\Leftrightarrow & \underset{k+1 \leq j \leq n}{p\text{-factor}} &<& \underset{1 \leq j \leq k}{p\text{-factor}} \\
+	\Leftrightarrow & \underset{k+1 \leq j \leq n}{\text{hệ số }p} &<& \underset{1 \leq j \leq k}{\text{hệ số }p} \\
 	\end{array}
 	\end{equation*}
-	Vậy nếu muốn $S_A < S_B$ thì $\underset{1 \leq j \leq k}{p\text{-factor}} > \underset{k+1 \leq j \leq n}{p\text{-factor}}$ (đpcm).
+	Vậy nếu muốn $S_A < S_B$ thì $\underset{1 \leq j \leq k}{\text{hệ số }p} > \underset{k+1 \leq j \leq n}{\text{hệ số }p}$ (đpcm).
 \end{proof}
 
-Do đặc tính của bài toán $1|prec|\sum w_jC_j$ cho phép ta có thể chuyển giao qua lại giữa các dây chuyền miễn vẫn đảm bảo ràng buộc thứ tự của các công việc. Từ đặc tính này ta có thể cải thiện định lý \eqref{daychuyen} giúp cho ra giải pháp tối ưu hơn bằng cách tiếp tục phân nhỏ các dây chuyền có sẵn giúp tìm ra $p$-factor tối ưu trên mỗi dây chuyền.
+Do đặc tính của bài toán $1|prec|\sum w_jC_j$ cho phép ta có thể chuyển giao qua lại giữa các dây chuyền miễn vẫn đảm bảo ràng buộc thứ tự của các công việc. Từ đặc tính này ta có thể cải thiện định lý \eqref{daychuyen} giúp cho ra giải pháp tối ưu hơn.
 
-Giả sử ta có dây chuyền $I$ với
-\begin{equation*}
-1 - 2 - \ldots - k,
-\end{equation*}
-Ta nhận được định lý sau
-\begin{dn}[$p$-factor tối ưu]
-Ta gọi $\underset{1 \leq j \leq l^*}{p\text{-factor}}$ là $p$-factor tối ưu của dây chuyền $1-2-\ldots -k$, ký hiệu $p(1,\ldots,k)$, nếu
+Ý tưởng cải thiện là tiếp tục phân nhỏ các dây chuyền sẵn có, từ đó tìm ra hệ số $p$ tối ưu trên mỗi dây chuyền, đánh giá các giá trị của hệ số $p$ tối ưu sẽ giúp ta chuyển giao qua lại giữa các dây chuyền một cách hiệu quả từ đó tối thiểu hoá thời gian hoàn thành.
+
+\begin{dn}[hệ số $p$ tối ưu]
+Ta gọi $\underset{1 \leq j \leq l^*}{\text{hệ số }p}$ là hệ số $p$ tối ưu của dây chuyền $1-2-\ldots -k$, ký hiệu $p(1,\ldots,k)$, được định nghĩa bằng công thức sau
 \begin{equation}
-	\underset{1 \leq j \leq l^*}{p\text{-factor}}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl).
+	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl).
 \end{equation}
-Tương tự với dây chuyền còn lại.
+Tương tự với các dây chuyền còn lại.
 \end{dn}
 
+Giả sử trên tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$), trong đó tồn tại dây chuyền $I$ với
+\begin{equation*}
+1 - 2 - \ldots - k
+\end{equation*}
+và dây chuyền $II$ với
+\begin{equation*}
+k+1 - k+2 - \ldots - n.
+\end{equation*}
+Ta có định lý sau
 \begin{dl}[Tính bất định]
-	Nếu ta xác định được $p(1,\ldots,k)$ từ nhánh $I$ thì $1,\ldots,l^*$ là chuỗi công việc tối ưu trên nhánh $I$ và chuỗi kế nhiệm phải là chuỗi công việc $p(k+1,\ldots,n)$ của nhánh $II$. 
+	Nếu ta xác định được $p(1,\ldots,k)$ từ dây chuyền $I$ thì $1,\ldots,l^*$ chính là chuỗi công việc tối ưu của dây chuyền $I$ và chuỗi kế nhiệm phải là chuỗi công việc $p(k+1,\ldots,n)$ của dây chuyền $II$. 
 \end{dl}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
