@@ -426,9 +426,48 @@ Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ư
         \end{array}
         \end{equation*}
 		Vậy nếu muốn $S'<S$ thì \scalebox{1.3}{$\frac{w_j}{p_j}$} < \scalebox{1.3}{$\frac{w_k}{p_k}$} hay \scalebox{1.3}{$\frac{p_j}{w_j}$} > \scalebox{1.3}{$\frac{p_k}{w_k}$} (đpcm).
-
-		Từ đây ta dễ dàng nhận thấy nếu trường hợp bài toán có trọng số là $1$ thì $p_j>p_k$ sẽ tối thiểu tổng thời gian hoàn thành.
 \end{proof}
+
+\begin{vd}[Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$)]
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 \\
+	\hline\hline
+	$p_j$ & 12 & 4 & 9 & 10 \\
+	$C_j$ & 12 & 16 & 25 & 35 \\
+	$W_j$ & 0 & 12 & 16 & 25 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta có bảng công việc sau
+
+Từ đây ta có
+\begin{equation*}
+\overline{W}=\frac{\sum_{j=1}^{4}W_j}{4} = 13.25.
+\end{equation*}
+Áp dụng quy tắc quá trình ngắn nhất có trọng số với trọng số $w_j=1$, ta được bảng công việc sau
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+	\hline
+	Công việc ($j$) & 2 & 3 & 4 & 1 \\
+	\hline\hline
+	$p_j$ & 4 & 9 & 10 & 12 \\
+	$C_j$ & 4 & 13 & 23 & 35 \\
+	$W_j$ & 0 & 4 & 13 & 23 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Ta có
+\begin{equation*}
+\overline{W}=\frac{\sum_{j=1}^{4}W_j}{4} = 10.
+\end{equation*}
+
+Vậy để tối thiểu hàm mục tiêu $\sum C_j$ hay $C_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $2-3-4-1$.
+\end{vd}
 
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự ($1 | prec | \sum w_j C_j$)}
 Bài toán tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự, ký hiệu là $1|prec|\sum w_j C_j$, là một trong những bài toán quan trọng trong lý thuyết lập lịch cho máy đơn và là bài toán mở rộng thêm ràng buộc có thứ tự của bài toán tối thiểu tổng thời gian hoàn thành có trọng số thông thường.
@@ -615,6 +654,10 @@ Ta có định lý sau
 	Từ \eqref{1}, \eqref{8} và \eqref{9} $\implies$ vô lý. \\
 	Vậy luôn tồn tại $S'<S$ hoặc $S''<S$ (đpcm).
 \end{proof}
+
+\begin{vd}[Tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự ($1 | prec | \sum w_j C_j$)]
+
+\end{vd}
 
 \section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
 Bài toán lập lịch máy đơn với thời điểm sẵn sàng không đồng nhất là một dạng bài toán có ràng buộc phức tạp nhưng lại vô cùng quan trọng trong thực tế. Trong dạng này, mỗi công việc có một thời điểm sẵn sàng $r_j$ khác nhau, tức các công việc lúc này không thể được sắp xếp một cách tự do mà phải thoả điều kiện sao cho thời điểm bắt đầu công việc thứ $j$ không được sớm hơn thời điểm sẵn sàng cho trước. Điều này thêm vào một lớp phức tạp cho quá trình lập lịch, đòi hỏi phải xem xét không chỉ thứ tự thực hiện các công việc mà còn cả thời điểm bắt đầu sao cho khả thi.
