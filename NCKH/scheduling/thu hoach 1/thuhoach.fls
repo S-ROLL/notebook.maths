@@ -426,9 +426,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrlogo.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrlogo.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/footmisc/footmisc.sty
-INPUT ./thuhoach.aux
-INPUT ./thuhoach.aux
-INPUT thuhoach.aux
 OUTPUT thuhoach.aux
 INPUT /usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -438,14 +435,8 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.st
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-INPUT ./thuhoach.out
-INPUT ./thuhoach.out
-INPUT thuhoach.out
-INPUT thuhoach.out
-OUTPUT thuhoach.pdf
-INPUT ./thuhoach.out
-INPUT ./thuhoach.out
 OUTPUT thuhoach.out
+OUTPUT thuhoach.pdf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr17.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr17.tfm
@@ -453,10 +444,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr17.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
-INPUT ./thuhoach.toc
-INPUT ./thuhoach.toc
-INPUT thuhoach.toc
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
+OUTPUT thuhoach.toc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
@@ -486,7 +474,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm
-OUTPUT thuhoach.toc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
@@ -500,6 +487,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnti12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
@@ -510,12 +498,14 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr8.tfm
 INPUT thuhoach.aux
 INPUT ./thuhoach.out
 INPUT ./thuhoach.out
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
@@ -525,4 +515,5 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb

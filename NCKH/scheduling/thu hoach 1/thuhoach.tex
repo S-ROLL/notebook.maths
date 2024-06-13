@@ -353,8 +353,72 @@ Ta nhận được
 
 Vậy để tối thiểu hàm mục tiêu $T_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $4-2-5-3-1$.
 \subsection{Phương pháp quá trình ngắn nhất}
-\subsubsection*{Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$)}
+Một cách tiếp cận tối ưu khác của phương pháp lập lịch cho máy đơn có thể kể đến là phương pháp quá trình ngắn nhất hay còn gọi là phương pháp SPT (Shortest Process Time) và phương pháp quá trình ngắn nhất có trọng số hay còn gọi là phương pháp WSPT (Weighted Shortest Process Time).
+
+Ý tưởng của cả hai phương pháp là tập trung vào việc tối thiểu hoá trung bình thời gian chờ $\overline{W}$, đồng thời tối thiểu hoá tổng thời gian hoàn thành $\sum C_j$ hoặc $\sum w_j C_j$ nếu bài toán có tồn tại trọng số $w_j$, bằng cách ưu tiên các công việc có khoảng thời gian xử lý ngắn nhất sẽ được thực hiện trước. 
+
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành có trọng số ($1 \| \sum w_j C_j$)}
+Ta có thể dễ dàng nhận thấy bài toán $1 \| \sum C_j$ chính là trường hợp đặc biệt của bài toán $1 \| \sum w_j C_j$ với trọng số $w_j=1$. Do đó đồng nghĩa phương pháp quá trình ngắn nhất chính là phương pháp quá trình ngắn nhất có trọng số $w_j=1$. Kể từ đây, ta chỉ cần tập trung vào bài toán $1\| \sum w_j C_j$.
+
+\begin{dl}[Quy tắc quá trình ngắn nhất có trọng số]
+Với $k_j = \frac{w_j}{p_j}$ (hay $k_j=\frac{p_j}{w_j}$), nếu bài toán chưa tối ưu thì việc sắp xếp các công việc theo thứ tự giảm dần (hay tăng dần) theo giá trị $k_j$ sẽ giúp bài toán tối thiểu được hàm mục tiêu $\sum w_j C_j$.
+\end{dl}
+
+\begin{dl}
+	Phương pháp quá trình ngắn nhất và phương pháp quá trình ngắn nhất có trọng số lần lượt là phương pháp tối ưu cho dạng bài toán $1 \| \sum C_j$ và $1 \| \sum w_j C_j$.
+\end{dl}
+
+\begin{cm}
+	Ta gọi tổng thời gian hoàn thành có trọng số là $S$, ta đặt
+	\begin{equation} \label{S}
+		S = w_j C_j + w_k C_k = w_j(t+p_j) + w_k(t+p_j+p_k),
+	\end{equation}
+	trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$, tức phương án của bài toán lúc này là $j - k$. Ta xem bảng bên dưới
+	
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c |} 
+		 \hline
+		 Công việc & j & k \\
+		 \hline\hline
+		 $p$ & $p_j$ & $p_k$ \\
+		 $C$ & $C_j$ & $C_k$ \\
+		 \hline
+		 \end{tabular}
+	\caption{Phương án $j - k$ của bài toán.}
+	\end{figure}
+	
+	giả sử ta cần sắp xếp vị trí công việc với nhau bằng cách tráo đổi vị trí thì ta nhận được
+	\begin{equation} \label{S'}
+		S' = w_k(t+p_k) + w_j(t+p_k+p_j)
+	\end{equation}
+	với phương án là $k-j$ và thu bảng công việc như sau
+	
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c |} 
+		 \hline
+		 Công việc & k & j \\
+		 \hline\hline
+		 $p$ & $p_k$ & $p_j$ \\
+		 $C$ & $C_k$ & $C_j$ \\
+		 \hline
+		 \end{tabular}
+	\caption{Phương án $k - j$ của bài toán.}
+	\end{figure}
+
+	Mục đích của phương pháp là tối thiểu hoá tổng thời gian hoàn thành của bài toán, vậy nên
+	\begin{equation} \label{s>s'}
+		S > S'
+	\end{equation}
+	Từ \eqref{S}, \eqref{S'} và \eqref{s>s'} ta được
+	\begin{split}
+		w_j C_j + w_k C_k &= w_j(t+p_j) + w_k(t+p_j+p_k) > w_k(t+p_k) + w_j(t+p_k+p_j) \\
+		\Leftrightarrow w_k p_j &> w_j p_k \\
+	\end{split}
+\end{cm}
+
+\subsubsection*{Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$)}
 \section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
 \subsection{Phương pháp không ngắt quãng ($1 | r_j | \sum C_j$)}
 \subsection{Phương pháp ngắt quãng ($1 | r_j, \: prmp | \sum C_j$)}
