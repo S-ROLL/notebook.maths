@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex thuhoach"] 1718303114 "thuhoach.aux" "thuhoach.bbl" "thuhoach" 1718303117 0
+["bibtex thuhoach"] 1718303114 "thuhoach.aux" "thuhoach.bbl" "thuhoach" 1718303683 0
   "./tailieu.bib" 1718303110 2111 3dd17d8de8e6f9e8280d510d58f7c432 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "thuhoach.aux" 1718303117 6066 9674172d1380b3b319c20b60fcaeeeda "pdflatex"
+  "thuhoach.aux" 1718303683 6066 9674172d1380b3b319c20b60fcaeeeda "pdflatex"
   (generated)
   "thuhoach.bbl"
   "thuhoach.blg"
   (rewritten before read)
-["pdflatex"] 1718303114 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" "thuhoach.pdf" "thuhoach" 1718303117 0
-  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" 1718302631 46152 da4617a49f050e9ee6195e252ce85ad3 ""
+["pdflatex"] 1718303680 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" "thuhoach.pdf" "thuhoach" 1718303683 0
+  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" 1718303679 46180 eb4403a1947f20695eba0574d6d82448 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -304,11 +304,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700549885 4694867 edce96ea9fbf5196f445dab10e2fe5bf ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700550044 8213569 7a9a2c5e7e932edbf43ec7dad46550bc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "thuhoach.aux" 1718303117 6066 9674172d1380b3b319c20b60fcaeeeda "pdflatex"
+  "thuhoach.aux" 1718303683 6066 9674172d1380b3b319c20b60fcaeeeda "pdflatex"
   "thuhoach.bbl" 1718303114 825 a01df62f5c2f9b32781d5f708d5f424b "bibtex thuhoach"
-  "thuhoach.out" 1718303117 3025 e7afa86ad268434593e9997dacbceb0d "pdflatex"
-  "thuhoach.tex" 1718302631 46152 da4617a49f050e9ee6195e252ce85ad3 ""
-  "thuhoach.toc" 1718303117 1275 8a6176e261a5c288ec93e124b2730330 "pdflatex"
+  "thuhoach.out" 1718303683 3025 e7afa86ad268434593e9997dacbceb0d "pdflatex"
+  "thuhoach.tex" 1718303679 46180 eb4403a1947f20695eba0574d6d82448 ""
+  "thuhoach.toc" 1718303683 1275 8a6176e261a5c288ec93e124b2730330 "pdflatex"
   (generated)
   "thuhoach.aux"
   "thuhoach.log"
