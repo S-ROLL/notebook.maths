@@ -622,6 +622,9 @@ Bài toán lập lịch máy đơn với thời điểm sẵn sàng không đồ
 Có hai phương pháp tiếp cận hiệu quả, đó là phương pháp không ngắt quãng (non-preemptive) và phương pháp ngắt quãng (preemptive). Trong đó, phương pháp ngắt quãng cho thấy sự hiệu quả và linh hoạt hơn khi áp dụng vào thực tiễn, cũng như đưa ra giải pháp tối ưu hơn.
 
 \subsection{Phương pháp không ngắt quãng ($1 | r_j | \sum C_j$)}
+Nguyên lý của phương pháp không ngắt quãng dựa trên phương pháp ưu tiên đáo hạn và xử lý các thời điểm sẵn sàng $r_j$ bằng các quãng nghỉ nhàn rỗi, từ đó cộng dồn và làm tăng tổng thời gian hoàn thành.
+
+Ưu điểm của phương pháp là dễ triển khai và đơn giản nhưng nhược điểm và hạn chế của phương pháp đó là khiến cho tổng thời gian hoàn thành tăng, từ đó giảm hiệu suất tổng thể.
 \begin{vd}
 Minh hoạ trường hợp bài toán toán với $n=4$ sử dụng phương pháp không ngắt quãng.
 \begin{table}[h!]
