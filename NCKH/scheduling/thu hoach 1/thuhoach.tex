@@ -656,9 +656,110 @@ Ta có định lý sau
 \end{proof}
 
 \begin{vd}[Tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự ($1 | prec | \sum w_j C_j$)]
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c | c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 & 5 \\
+	\hline\hline
+	$p_j$ & 5 & 18 & 19 & 3 & 14 \\
+	$w_j$ & 13 & 14 & 6 & 7 & 10 \\
+	\hline
+	\end{tabular}
+\end{table}
+trong đó dây chuyền thứ $I$ là $$1-2-3$$ và dây chuyền thứ $II$ là $$4-5.$$
+ta xác hệ số $p$ của dây chuyền thứ nhất bằng công thức $$\text{Hệ số }p=\frac{\sum w_j}{\sum p_j}$$
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c |} 
+	\hline
+	Chuỗi $I$ & 1 & 1-2 & 1-2-3 \\
+	\hline\hline
+	Hệ số $p$ & 2.6 & 1.17 & 0.78 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta có chuỗi $I$ có $$
+	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl)=2.6.$$
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c |} 
+	\hline
+	Chuỗi $II$ & 4 & 4-5 \\
+	\hline\hline
+	Hệ số $p$ & 2.33 & 1 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta có chuỗi $II$ có $$
+	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl)=2.33.$$
+
+Vì $2.6>2.3$ nên ta chọn chuỗi $I$ với 1.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c |} 
+	\hline
+	Chuỗi $I$ & 2 & 2-3 \\
+	\hline\hline
+	Hệ số $p$ & 0.77 & 0.54 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta có chuỗi $I$ có $$
+	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl)=0.77.$$
+
+Tiếp tục so với chuỗi $II$ ta có $2.33>0.77$ nên ta chọn chuỗi $II$ với 4.
+Ta được chuỗi $$1-4-\ldots-\ldots-\ldots$$
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c |} 
+	\hline
+	Chuỗi $II$ & 5 \\
+	\hline\hline
+	Hệ số $p$ & 0.71 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Ta có chuỗi $II$ có $$
+	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl)=0.71.$$
+
+Ta so với chuỗi $I$ được $0.77>0.71$ nên ta chọn chuỗi $I$ với 2. Ta được chuỗi $$1-4-2-\ldots-\ldots$$
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c |} 
+	\hline
+	Chuỗi $I$ & 3 \\
+	\hline\hline
+	Hệ số $p$ & 0.31 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta so với chuỗi $II$ được $0.71>0.31$ nên ta chọn chuỗi $II$ với 5. Ta được chuỗi $$1-4-2-5-\ldots$$
+
+Vì không còn công việc nào nên vị trí cuối cùng là công việc 3.
+
+Vậy phương án tối ưu của bài toán là $$1-4-2-5-3$$
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 4 & 2 & 5 & 3 \\
+	\hline\hline
+	$p_j$ & 5 & 3 & 18 & 14 & 19 \\
+	$C_j$ & 5 & 8 & 26 & 40 & 59 \\
+	$w_j$ & 13 & 7 & 14 & 10 & 6 \\
+	\hline
+	\end{tabular}
+\end{table}
 
 \end{vd}
-
 \section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
 Bài toán lập lịch máy đơn với thời điểm sẵn sàng không đồng nhất là một dạng bài toán có ràng buộc phức tạp nhưng lại vô cùng quan trọng trong thực tế. Trong dạng này, mỗi công việc có một thời điểm sẵn sàng $r_j$ khác nhau, tức các công việc lúc này không thể được sắp xếp một cách tự do mà phải thoả điều kiện sao cho thời điểm bắt đầu công việc thứ $j$ không được sớm hơn thời điểm sẵn sàng cho trước. Điều này thêm vào một lớp phức tạp cho quá trình lập lịch, đòi hỏi phải xem xét không chỉ thứ tự thực hiện các công việc mà còn cả thời điểm bắt đầu sao cho khả thi.
 
