@@ -361,14 +361,14 @@ Một cách tiếp cận tối ưu khác của phương pháp lập lịch cho m
 Ta có thể dễ dàng nhận thấy bài toán $1 \| \sum C_j$ chính là trường hợp đặc biệt của bài toán $1 \| \sum w_j C_j$ với trọng số $w_j=1$. Do đó đồng nghĩa phương pháp quá trình ngắn nhất chính là phương pháp quá trình ngắn nhất có trọng số $w_j=1$. Kể từ đây, ta chỉ cần tập trung vào bài toán $1\| \sum w_j C_j$.
 
 \begin{dl}[Quy tắc quá trình ngắn nhất có trọng số]
-Với $k_j = \frac{w_j}{p_j}$ (hay $k_j=\frac{p_j}{w_j}$), nếu bài toán chưa tối ưu thì việc sắp xếp các công việc theo thứ tự giảm dần (hay tăng dần) theo giá trị $k_j$ sẽ giúp bài toán tối thiểu được hàm mục tiêu $\sum w_j C_j$.
+Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ưu thì việc sắp xếp các công việc theo thứ tự giảm dần (hay tăng dần) theo giá trị $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$) sẽ giúp bài toán tối thiểu được hàm mục tiêu $\sum w_j C_j$.
 \end{dl}
 
 \begin{dl}
 	Phương pháp quá trình ngắn nhất và phương pháp quá trình ngắn nhất có trọng số lần lượt là phương pháp tối ưu cho dạng bài toán $1 \| \sum C_j$ và $1 \| \sum w_j C_j$.
 \end{dl}
 
-\begin{cm}
+\begin{proof}
 	Ta gọi tổng thời gian hoàn thành có trọng số là $S$, ta đặt
 	\begin{equation} \label{S}
 		S = w_j C_j + w_k C_k = w_j(t+p_j) + w_k(t+p_j+p_k),
@@ -412,11 +412,21 @@ Với $k_j = \frac{w_j}{p_j}$ (hay $k_j=\frac{p_j}{w_j}$), nếu bài toán chư
 		S > S'
 	\end{equation}
 	Từ \eqref{S}, \eqref{S'} và \eqref{s>s'} ta được
-	\begin{split}
-		w_j C_j + w_k C_k &= w_j(t+p_j) + w_k(t+p_j+p_k) > w_k(t+p_k) + w_j(t+p_k+p_j) \\
-		\Leftrightarrow w_k p_j &> w_j p_k \\
-	\end{split}
-\end{cm}
+        \begin{equation*} \label{baitoannguyenhet}
+        \begin{array}{c c c c}
+		& w_j(t+p_j) + w_k(t+p_j+p_k) &>& w_k(t+p_k) + w_j(t+p_k+p_j) \\
+		\\
+		\Leftrightarrow & w_jt + w_jp_j + w_kt + w_k p_j + w_kp_k &>& w_k t + w_k p_k + w_j t + w_j p_k + w_j p_j \\
+		\\
+		\Leftrightarrow & w_k p_j &>& w_j p_k \\
+		\\
+		\Leftrightarrow & \scalebox{1.5}{$\frac{w_k}{p_k}$} &>& \scalebox{1.5}{$\frac{w_j}{p_j}$} \\
+        \end{array}
+        \end{equation*}
+		Vậy nếu muốn $S'<S$ thì \scalebox{1.3}{$\frac{w_j}{p_j}$} < \scalebox{1.3}{$\frac{w_k}{p_k}$} hay \scalebox{1.3}{$\frac{p_j}{w_j}$} > \scalebox{1.3}{$\frac{p_k}{w_k}$} (đpcm).
+
+		Từ đây ta dễ dàng nhận thấy nếu trường hợp bài toán có trọng số là $1$ thì $p_j>p_k$ sẽ tối thiểu tổng thời gian hoàn thành.
+\end{proof}
 
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$)}
 \section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
