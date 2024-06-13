@@ -514,6 +514,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr10.tfm
 INPUT thuhoach.aux
 INPUT ./thuhoach.out
 INPUT ./thuhoach.out
@@ -531,6 +532,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb
