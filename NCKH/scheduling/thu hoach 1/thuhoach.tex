@@ -459,7 +459,7 @@ và $p$-factor của dây chuyền $II$ là
 	\underset{k+1 \leq j \leq n}{p\text{-factor}} = \frac{\sum_{j=k+1}^n w_j}{\sum_{j=k+1}^n p_j}.
 \end{equation}
 Từ đây, ta có định lý sau
-\begin{dl}
+\begin{dl} \label{daychuyen}
 	Nếu $\underset{1 \leq j \leq k}{p\text{-factor}} > \underset{k+1 \leq j \leq n}{p\text{-factor}}$ thì phương pháp sắp xếp tối ưu của bài toán sẽ bắt đầu từ dây chuyền $I$ rồi đến dây chuyền $II$ và ngược lại.
 \end{dl}
 
@@ -524,8 +524,28 @@ Từ đây, ta có định lý sau
 	Vậy nếu muốn $S_A < S_B$ thì $\underset{1 \leq j \leq k}{p\text{-factor}} > \underset{k+1 \leq j \leq n}{p\text{-factor}}$ (đpcm).
 \end{proof}
 
+Do đặc tính của bài toán $1|prec|\sum w_jC_j$ cho phép ta có thể chuyển giao qua lại giữa các dây chuyền miễn vẫn đảm bảo ràng buộc thứ tự của các công việc. Từ đặc tính này ta có thể cải thiện định lý \eqref{daychuyen} giúp cho ra giải pháp tối ưu hơn bằng cách tiếp tục phân nhỏ các dây chuyền có sẵn giúp tìm ra $p$-factor tối ưu trên mỗi dây chuyền.
 
+Giả sử ta có dây chuyền $I$ với
+\begin{equation*}
+1 - 2 - \ldots - k,
+\end{equation*}
+Ta nhận được định lý sau
+\begin{dn}[$p$-factor tối ưu]
+Ta gọi $\underset{1 \leq j \leq l^*}{p\text{-factor}}$ là $p$-factor tối ưu của dây chuyền $1-2-\ldots -k$, ký hiệu $p(1,\ldots,k)$, nếu
+\begin{equation}
+	\underset{1 \leq j \leq l^*}{p\text{-factor}}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl).
+\end{equation}
+Tương tự với dây chuyền còn lại.
+\end{dn}
 
+\begin{dl}[Tính bất định]
+	Nếu ta xác định được $p(1,\ldots,k)$ từ nhánh $I$ thì $1,\ldots,l^*$ là chuỗi công việc tối ưu trên nhánh $I$ và chuỗi kế nhiệm phải là chuỗi công việc $p(k+1,\ldots,n)$ của nhánh $II$. 
+\end{dl}
+
+\begin{proof}
+	
+\end{proof}
 
 \section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
 \subsection{Phương pháp không ngắt quãng ($1 | r_j | \sum C_j$)}
