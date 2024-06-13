@@ -1,7 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1718290472 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" "thuhoach.pdf" "thuhoach" 1718290474 0
-  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" 1718290472 36726 e7322e4f013922cba6c2c488e4d6cdd2 ""
+["pdflatex"] 1718293933 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" "thuhoach.pdf" "thuhoach" 1718293936 0
+  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" 1718293933 40292 6daed68aa05e5bb2e315cf4c572b0f99 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -45,6 +47,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1248133631 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1215737283 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb" 1647811568 41089 cd085a6112214f1ec9535fe0d1ee127f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb" 1647811568 41608 f55c1a79be39d4e7ed224ba660d7353d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb" 1647811568 40319 02110ade360715fbba33c66db50ef607 ""
@@ -292,10 +295,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700549885 4694867 edce96ea9fbf5196f445dab10e2fe5bf ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700550044 8213569 7a9a2c5e7e932edbf43ec7dad46550bc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "thuhoach.aux" 1718290474 5444 4015f45b0a6b18dc850e21490fedfe58 "pdflatex"
-  "thuhoach.out" 1718290474 3235 b22ae6d684c108c853f1f6001650d3d8 "pdflatex"
-  "thuhoach.tex" 1718290472 36726 e7322e4f013922cba6c2c488e4d6cdd2 ""
-  "thuhoach.toc" 1718290474 1414 90a1aed7a96fb06e6fa0f968127e6228 "pdflatex"
+  "thuhoach.aux" 1718293936 5878 aea97e42eb19c930536edd89f1d1bdf1 "pdflatex"
+  "thuhoach.out" 1718293936 3235 b22ae6d684c108c853f1f6001650d3d8 "pdflatex"
+  "thuhoach.tex" 1718293933 40292 6daed68aa05e5bb2e315cf4c572b0f99 ""
+  "thuhoach.toc" 1718293936 1414 46270c0b502d9a0babaf7903a961f4ce "pdflatex"
   (generated)
   "thuhoach.aux"
   "thuhoach.log"

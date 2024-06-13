@@ -622,11 +622,11 @@ Bài toán lập lịch máy đơn với thời điểm sẵn sàng không đồ
 Có hai phương pháp tiếp cận hiệu quả, đó là phương pháp không ngắt quãng (non-preemptive) và phương pháp ngắt quãng (preemptive). Trong đó, phương pháp ngắt quãng cho thấy sự hiệu quả và linh hoạt hơn khi áp dụng vào thực tiễn, cũng như đưa ra giải pháp tối ưu hơn.
 
 \subsection{Phương pháp không ngắt quãng ($1 | r_j | \sum C_j$)}
-Nguyên lý của phương pháp không ngắt quãng dựa trên phương pháp ưu tiên đáo hạn và xử lý các thời điểm sẵn sàng $r_j$ bằng các quãng nghỉ nhàn rỗi, từ đó cộng dồn và làm tăng tổng thời gian hoàn thành.
+Nguyên lý của phương pháp không ngắt quãng dựa trên phương pháp ưu tiên đáo hạn và xử lý các thời điểm sẵn sàng $r_j$ bằng các quãng nghỉ nhàn rỗi, từ đó cộng dồn và làm tăng tổng thời gian hoàn thành $C_{\max}$.
 
-Ưu điểm của phương pháp là dễ triển khai và đơn giản nhưng nhược điểm và hạn chế của phương pháp đó là khiến cho tổng thời gian hoàn thành tăng, từ đó giảm hiệu suất tổng thể.
-\begin{vd}
-Minh hoạ trường hợp bài toán toán với $n=4$ sử dụng phương pháp không ngắt quãng.
+Ưu điểm của phương pháp là dễ triển khai và đơn giản nhưng nhược điểm và hạn chế của phương pháp khiến cho tổng thời gian hoàn thành $C_{\max}$ tăng, từ đó giảm hiệu suất tổng thể.
+\begin{vd} \label{kongatquang}
+Minh hoạ trường hợp bài toán toán với $n=4$ áp dụng phương pháp không ngắt quãng.
 \begin{table}[h!]
 	\centering
 		\begin{tabular}{|c | c c c c |} 
@@ -637,7 +637,7 @@ Minh hoạ trường hợp bài toán toán với $n=4$ sử dụng phương ph�
 		\hline
 		$d_j$ & 3 & 8 & 9 & 6 \\
 		\hline
-		$r_j$ & 0 & 3 & 7 & 3 \\
+		$r_j$ & 0 & 7 & 3 & 3 \\
 		\hline
 		\end{tabular}
 \end{table}
@@ -651,14 +651,18 @@ Sử dụng phương pháp ưu tiên đáo hạn ta được phương án sau
 		\hline\hline
 		$p_j$ & 3 & 2 & 1 & 5 \\
 		\hline
+		$C_j$ & 3 & 5 & 6 & 11 \\
+		\hline
 		$d_j$ & 3 & 6 & 8 & 9 \\
 		\hline
-		$r_j$ & 0 & 3 & 3 & 7 \\
+		$r_j$ & 0 & 3 & 7 & 3 \\
+		\hline
+		$L_j$ & 0 & -1 & -2 & 2 \\
 		\hline
 		\end{tabular}
 \end{table}
 
-Ta có hình minh hoạ sau
+Ta có hình minh hoạ sơ đồ Gantt sau
 \begin{figure}[h!]
 \centering
 \begin{ganttchart}[
@@ -671,10 +675,10 @@ Ta có hình minh hoạ sau
 \gantttitlelist{0,...,11}{1} \\
 \ganttmilestone{$r_1$}{0} \\
 \ganttlinkedbar{$J_1$}{1}{3} \\
-\ganttlinkedmilestone{$r_2,\:r_4$}{3} \\
+\ganttlinkedmilestone{$r_3,\:r_4$}{3} \\
 \ganttlinkedbar{$J_4$}{4}{5} \\
 \ganttlinkedbar{$J_2$}{6}{6} \\
-\ganttlinkedmilestone{$r_3$}{7} \\
+\ganttlinkedmilestone{$r_2$}{7} \\
 \ganttlinkedbar{$J_3$}{7}{11}
 \end{ganttchart}
 \caption{Sơ đồ Gantt của bài toán khi chưa áp dụng phương pháp không ngắt quãng}
@@ -687,22 +691,61 @@ Ta có hình minh hoạ sau
     y unit title=.5cm,
     title/.style={draw=none, fill=none},
     include title in canvas=false
-]{0}{12}
-\gantttitlelist{0,...,12}{1} \\
+]{0}{13}
+\gantttitlelist{0,...,13}{1} \\
 \ganttmilestone{$r_1$}{0} \\
 \ganttlinkedbar{$J_1$}{1}{3} \\
-\ganttlinkedmilestone{$r_2,\:r_4$}{3} \\
+\ganttlinkedmilestone{$r_3,\:r_4$}{3} \\
 \ganttlinkedbar{$J_4$}{4}{5} \\
-\ganttlinkedbar{$J_2$}{6}{6} \\
-\ganttlinkedmilestone{$r_3$}{7} \\
-\ganttlinkedbar{$J_3$}{8}{12}
+\ganttlinkedbar{$J_2$}{8}{8} \\
+\ganttlinkedmilestone{$r_2$}{7} \\
+\ganttlinkedbar{$J_3$}{9}{13}
 \ganttvrule{}{7}
-\ganttvrule{}{6}
+\ganttvrule{}{5}
 \end{ganttchart}
 \caption{Sơ đồ Gantt của bài toán khi đã áp dụng phương pháp không ngắt quãng}
 \end{figure}
-
 \end{vd}
 
+Từ ví dụ minh hoạ ta có thể thấy, công việc thứ $2$ được bắt đầu ở thời điểm $7$, trong khi đó khoảng thời gian từ $5$ đến $7$ trống và cộng dồn khiến $C_{\max}$ từ $11$ tăng lên $13$ và $L_{\max}$ tăng từ $2$ lên $4$.
+
 \subsection{Phương pháp ngắt quãng ($1 | r_j, \: prmp | \sum C_j$)}
+Phương pháp ngắt quãng (preemptive) là một phương pháp cho phép tạm dừng công việc hiện tại để thực hiện một công việc khác có độ ưu tiên cao hơn. Sau khi công việc ưu tiên cao được hoàn thành, công việc bị tạm dừng sẽ tiếp tục được xử lý từ điểm dừng đã được ghi nhớ trước đó.
+
+Phương pháp này cải thiện điểm hạn chế của phương pháp không ngắt quãng bằng cách cho phép các công việc khác có thể lắp đầy khoảng thời gian rỗi, từ đó giúp tối thiểu hoá tổng thời gian hoàn thành hay độ đáo hạn cực đại và mang lại nhiều ứng dụng trong thực tiễn, nơi công việc có thể được sắp xếp một cách linh hoạt.
+
+Từ ví dụ \eqref{kongatquang}, ta có thể áp dụng phương pháp ngắt quãng để cải thiện giải pháp như sau
+\begin{itemize}
+\item $t=0:$ Công việc thứ 1 sẵn sàng, bắt đầu xử lý tại $t=0$ và hoàn thành công việc tại thời điểm $t=3$.
+\item $t=3:$ Công việc thứ 3 và 4 sẵn sàng, vì 4 có thứ tự ưu tiên cao hơn nên công việc thứ 4 bắt đầu xử lý tại $t=3$ và hoàn thành công việc tại $t=5$.
+\item $t=5:$ Lúc này đến công việc thứ 2 nhưng vì thời điểm sẵn sàng $r_2=7$ vì thế ta bỏ qua và tiếp tục công việc có mức độ ưu tiên tiếp theo. Công việc thứ 1 và thứ 4 đã hoàn thành, công việc ưu tiên tiếp theo là công việc thứ 3. Công việc thứ 3 bắt đầu xử lý tại $t=5$ và tạm dừng tại $t=7$ nhường chỗ cho công việc có mức độ ưu tiên cao hơn là công việc thứ 2.
+\item $t=7:$ Công việc thứ 2 sẵn sàng, bắt đầu xử lý tại $t=7$ và hoàn thành tại $t=8$.
+\item $t=8:$ công việc thứ 2 đã hoàn thành, ta tiếp tục xử lý công việc thứ 3, vì công việc thứ 3 đã bắt đầu tại $t=5$ và tạm dừng tại $t=7$, vậy còn lại 3 đơn vị thời gian cần xử lý còn lại. Ta bắt đầu công việc thứ 3 tại $t=8$ và hoàn thành công việc thứ 3 tại $t=11$.
+\item $t=11:$ Tất cả công việc đã hoàn thành và thuật toán dừng.
+\end{itemize}
+
+Lúc này giải pháp tối ưu của bài toán là $C_{\max}=11$ và $L_{\max}=2$, mang lại kết quả tối ưu hơn phương pháp không ngắt quãng với $C_{\max}=13$ và $L_{\max}=4$.
+\begin{figure}[h!]
+\centering
+\begin{ganttchart}[
+    hgrid,
+    vgrid,
+    y unit title=.5cm,
+    title/.style={draw=none, fill=none},
+    include title in canvas=false
+]{0}{11}
+\gantttitlelist{0,...,11}{1} \\
+\ganttmilestone{$r_1$}{0} \\
+\ganttlinkedbar{$J_1$}{1}{3} \\
+\ganttlinkedmilestone{$r_3,\:r_4$}{3} \\
+\ganttlinkedbar{$J_4$}{4}{5} \\
+\ganttlinkedbar{$J_3$}{6}{7} \\
+\ganttlinkedbar{$J_2$}{8}{8} \\
+\ganttlinkedmilestone{$r_2$}{7} \\
+\ganttlinkedbar{$J_3$}{9}{11}
+\ganttvrule{}{7}
+\ganttvrule{}{5}
+\end{ganttchart}
+\caption{Sơ đồ Gantt của bài toán khi đã áp dụng phương pháp không ngắt quãng}
+\end{figure}
 \end{document}
