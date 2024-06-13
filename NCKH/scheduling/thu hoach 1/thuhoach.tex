@@ -436,7 +436,7 @@ Bài toán tối thiểu tổng thời gian hoàn thành có trọng số với 
 Bài toán $1|prec|\sum w_j C_j$ tồn tại những công việc đòi hỏi phải hoàn thành trước khi công việc khác được bắt đầu, hay còn gọi là công việc tiền nhiệm (predecessor) và công việc kế nhiệm (successor). Ở đây, ta chỉ quan tâm dạng dây chuyền (chains), tức trường hợp bài toán có mỗi công việc tồn tại tối đa một tiền nhiệm và một kế nhiệm.
 
 \begin{dn}
-Cho một tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$) cần được xử lý trên một máy đơn thì lúc này ta nhận được hệ số $p$ ($p$-factor) được định nghĩa bằng công thức sau
+Cho một tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$) cần được xử lý trên một máy đơn thì lúc này ta nhận được $p$-factor (hệ số $p$) được định nghĩa bằng công thức sau
 \begin{equation}
 	\underset{1 \leq j \leq n}{p\text{-factor}} = \frac{\sum_{j=1}^n w_j}{\sum_{j=1}^n p_j}
 \end{equation}
@@ -458,6 +458,7 @@ và $p$-factor của dây chuyền $II$ là
 \begin{equation}
 	\underset{k+1 \leq j \leq n}{p\text{-factor}} = \frac{\sum_{j=k+1}^n w_j}{\sum_{j=k+1}^n p_j}
 \end{equation}
+
 
 
 
