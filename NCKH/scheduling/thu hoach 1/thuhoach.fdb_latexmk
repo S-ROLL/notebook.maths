@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1718277693 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" "thuhoach.pdf" "thuhoach" 1718277695 0
-  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" 1718277693 30582 33f75fff9172ab09cd214ac910a9b79e ""
+["pdflatex"] 1718282415 "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" "thuhoach.pdf" "thuhoach" 1718282417 0
+  "/Users/chibangnguyen/Documents/notebook.math.sroll/NCKH/scheduling/thu hoach 1/thuhoach.tex" 1718282414 33177 d5e67aab01bcdee725c0f283b5ddb4b8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -290,10 +290,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700549885 4694867 edce96ea9fbf5196f445dab10e2fe5bf ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700550044 8213569 7a9a2c5e7e932edbf43ec7dad46550bc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "thuhoach.aux" 1718277695 4318 5b38741b30aabaa0172db8944a75cf6c "pdflatex"
-  "thuhoach.out" 1718277695 3235 b22ae6d684c108c853f1f6001650d3d8 "pdflatex"
-  "thuhoach.tex" 1718277693 30582 33f75fff9172ab09cd214ac910a9b79e ""
-  "thuhoach.toc" 1718277695 1414 3fcf26dbd1f2a8e1558a8567e88aaa60 "pdflatex"
+  "thuhoach.aux" 1718282417 4805 9bf9d62949aaf02ceb7df264a5bcb4e1 "pdflatex"
+  "thuhoach.out" 1718282417 3235 b22ae6d684c108c853f1f6001650d3d8 "pdflatex"
+  "thuhoach.tex" 1718282414 33177 d5e67aab01bcdee725c0f283b5ddb4b8 ""
+  "thuhoach.toc" 1718282417 1414 1504e6e49d7cc91ca529ffc5e6c73b36 "pdflatex"
   (generated)
   "thuhoach.aux"
   "thuhoach.log"

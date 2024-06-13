@@ -521,7 +521,7 @@ Từ đây, ta có định lý sau
 	\Leftrightarrow & \underset{k+1 \leq j \leq n}{\text{hệ số }p} &<& \underset{1 \leq j \leq k}{\text{hệ số }p} \\
 	\end{array}
 	\end{equation*}
-	Vậy nếu muốn $S_A < S_B$ thì $\underset{1 \leq j \leq k}{\text{hệ số }p} > \underset{k+1 \leq j \leq n}{\text{hệ số }p}$ (đpcm).
+	Vậy nếu $\underset{1 \leq j \leq k}{\text{hệ số }p} > \underset{k+1 \leq j \leq n}{\text{hệ số }p}$ thì $S_A<S_B$ nên bắt đầu từ dây chuyền $I$ rồi đến dây chuyền $II$ là giải pháp tối ưu. (đpcm).
 \end{proof}
 
 Do đặc tính của bài toán $1|prec|\sum w_jC_j$ cho phép ta có thể chuyển giao qua lại giữa các dây chuyền miễn vẫn đảm bảo ràng buộc thứ tự của các công việc. Từ đặc tính này ta có thể cải thiện định lý \eqref{daychuyen} giúp cho ra giải pháp tối ưu hơn.
@@ -550,7 +550,70 @@ Ta có định lý sau
 \end{dl}
 
 \begin{proof}
-
+	Giả sử ta có dây chuyền $S$ có thứ tự công việc là 
+	\begin{equation*}
+	1,\ldots,u,v,u+1,\ldots,l^*
+	\end{equation*}
+	trong đó $v$ là phần tử của dây chuyền khác.
+	Ta có dây chuyền $S'$ với chuỗi công việc
+	\begin{equation*}
+		v,1,\ldots,l^*
+	\end{equation*}
+	và $S''$ với chuỗi công việc
+	\begin{equation*}
+		1,\ldots,l^*,v
+	\end{equation*}
+	Do ta có $1,\ldots,u,u+1,\ldots,l^*$ là chuỗi công việc tối ưu, vì thế
+	\begin{equation} \label{1}
+		\sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggl) > \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggl)
+	\end{equation}
+	TH1.
+	Nếu $S' < S$ và $S''>S$ thì lần lượt có các bất đẳng thức sau
+	\begin{equation} \label{2}
+		\frac{w_v}{p_v} > \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	và
+	\begin{equation} \label{3}
+		\frac{w_v}{p_v} > \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	Từ \eqref{1}, \eqref{2} và \eqref{3} ta được
+	\begin{equation}
+		\frac{w_v}{p_v} > \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggl) > \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggl) \quad \text{(thoả).}
+	\end{equation}
+	TH2.
+	Nếu $S' > S$ và $S'' < S$ thì lần lượt có các bất đẳng thức sau
+	\begin{equation} \label{4}
+		\frac{w_v}{p_v} < \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	và
+	\begin{equation} \label{5}
+		\frac{w_v}{p_v} < \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	Từ \eqref{1}, \eqref{4} và \eqref{5} ta được
+	\begin{equation}
+		 \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggl) > \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggl) > \frac{w_v}{p_v} \quad \text{(thoả).}
+	\end{equation}
+	TH3.
+	Nếu $S' > S$ và $S'' > S$ thì lần lượt có các bất đẳng thức sau
+	\begin{equation} \label{6}
+		\frac{w_v}{p_v} < \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	và
+	\begin{equation} \label{7}
+		\frac{w_v}{p_v} > \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	Từ \eqref{1}, \eqref{6} và \eqref{7} $\implies$ vô lý. \\
+	TH4.
+	Nếu $S' < S$ và $S'' < S$ thì lần lượt có các bất đẳng thức sau
+	\begin{equation} \label{8}
+		\frac{w_v}{p_v} > \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	và
+	\begin{equation} \label{9}
+		\frac{w_v}{p_v} < \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	Từ \eqref{1}, \eqref{8} và \eqref{9} $\implies$ vô lý. \\
+	Vậy luôn tồn tại $S'<S$ hoặc $S''<S$ (đpcm).
 \end{proof}
 
 \section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
