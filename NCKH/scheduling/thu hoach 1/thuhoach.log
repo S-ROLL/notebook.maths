@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  14 JUN 2024 01:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  14 JUN 2024 11:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1292,19 +1292,19 @@ Ch\uhorn \ohorn ng 1.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 190.
+(hyperref)                removing `math shift' on input line 189.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 190.
+(hyperref)                removing `subscript' on input line 189.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\equiv' on input line 190.
+(hyperref)                removing `\equiv' on input line 189.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 190.
+(hyperref)                removing `math shift' on input line 189.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1313,7 +1313,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (3.94417pt too wide) in paragraph at lines 228--245
+Overfull \hbox (3.94417pt too wide) in paragraph at lines 227--244
 []\T5/cmr/m/it/12 Tø $\OML/cmm/m/it/12 p[]$ \T5/cmr/m/it/12 cho s®n, ta câ thº d¹ d ng x¡c ^^_ành ^^_÷ñc c¡c ph¦n tû $\OML/cmm/m/it/12 C[];  S[];  W[];  F[];  L[];  T[];  E[]$
  []
 
@@ -1366,13 +1366,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [7]
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 499.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 498.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 505.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 504.
 
 
-Overfull \hbox (27.41563pt too wide) detected at line 538
+Overfull \hbox (27.41563pt too wide) detected at line 537
 [][][]\OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 w[]p[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 w[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 p[]\OT1/cmr/m/n/12 ) + [] + \OML/cmm/m/it/12 w[] [] p[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 w[] [] p[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 w[] [] p[] \OT1/cmr/m/n/12 + [] + \OML/cmm/m/it/12 w[] [] p[]
  []
 
@@ -1384,7 +1384,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8]
-Overfull \hbox (12.25912pt too wide) detected at line 583
+Overfull \hbox (12.25912pt too wide) detected at line 582
 []
  []
 
@@ -1397,7 +1397,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [9]
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 599.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 598.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1434,45 +1434,45 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 784.
+(hyperref)                removing `math shift' on input line 789.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 784.
+(hyperref)                removing `subscript' on input line 789.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\not' on input line 784.
+(hyperref)                removing `\not' on input line 789.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 784.
+(hyperref)                removing `math shift' on input line 789.
 
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7> on input line 789.
+(Font)              <7> on input line 794.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 789.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 789.
+(hyperref)                removing `math shift' on input line 794.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sum@' on input line 789.
+(hyperref)                removing `subscript' on input line 794.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\slimits@' on input line 789.
+(hyperref)                removing `\sum@' on input line 794.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 789.
+(hyperref)                removing `\slimits@' on input line 794.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 789.
+(hyperref)                removing `subscript' on input line 794.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 794.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1490,36 +1490,36 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 877.
+(hyperref)                removing `math shift' on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 877.
+(hyperref)                removing `subscript' on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 877.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.61018pt
-(hyperref)                removed on input line 877.
+(hyperref)                removed on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sum@' on input line 877.
+(hyperref)                removing `\sum@' on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\slimits@' on input line 877.
+(hyperref)                removing `\slimits@' on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 877.
+(hyperref)                removing `subscript' on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 877.
+(hyperref)                removing `math shift' on input line 882.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1561,9 +1561,9 @@ Here is how much of TeX's memory you used:
  64466 multiletter control sequences out of 15000+600000
  582864 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,107p,1041b,1091s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,13n,107p,1041b,1091s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on thuhoach.pdf (21 pages, 277721 bytes).
+Output written on thuhoach.pdf (21 pages, 278065 bytes).
 PDF statistics:
  392 PDF objects out of 1000 (max. 8388607)
  325 compressed objects within 4 object streams

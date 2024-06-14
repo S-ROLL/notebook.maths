@@ -160,24 +160,23 @@ Vấn đề lập lịch hay còn gọi là quản lý thời gian và tối ưu
 
 Mục tiêu của lập lịch rất đa dạng tuỳ theo nhu cầu của nhà lập lịch. Có thể mục tiêu là giảm thiểu thời gian hoàn thành của nhiệm vụ cuối cùng hoặc giảm thiểu số lượng nhiệm vụ bị trễ so với thời điểm đáo hạn tương ứng của chúng, cả hai là phương pháp cốt lõi sẽ được tập trung trong mục 1.2.
 
-Tuỳ thuộc theo dạng bài toán yêu cầu mà ta sẽ có phương tiếp cận và xử lý khác nhau, các dạng bài toán được giới thiệu được chia theo bảng bên dưới
+Tuỳ thuộc theo dạng bài toán yêu cầu mà ta sẽ có phương tiếp cận và xử lý khác nhau. Ở đây ta chỉ tập trung xử lý cái bài toán cho máy đơn ($\alpha = 1$), các dạng bài toán được giới thiệu được chia theo bảng bên dưới
 \begin{figure}[h!]
 	\centering
 	\begin{tabular}{| c || c| c c c c |} 
 	\hline
-	&&& $\beta$ && \\
+	&&& $\gamma$ && \\
 	\hline\hline
 	&& $\sum C_j \: (C_{\max})$ & $L_{\max}$ & $T_{\max}$ & $\sum w_j C_j$ \\
 	\hline
 	& $\varnothing$ & $1\|\sum C_j$ & $1\|L_{\max}$ & $1\|T_{\max}$ & $1\|\sum w_j C_j$ \\
-	$\alpha$ & $prec$ & $1|prec|\sum C_j$ & $\times$&$\times$ & $1|prec|\sum w_j C_j$ \\
+	$\beta$ & $prec$ & $1|prec|\sum C_j$ & $\times$&$\times$ & $1|prec|\sum w_j C_j$ \\
 	& $r_j$ & $1|r_j|\sum C_j$ &$\times$ &$\times$ &$\times$ \\
 	& $r_j, prmp$ & $1|r_j, prmp|\sum C_j$ &$\times$&$\times$&$\times$ \\
 	\hline
 	\end{tabular}
 	\caption{Bảng liệt kê các dạng bài toán.}
 \end{figure}
-
 
  Ở phần thứ hai của chương (1.2.) sẽ giới thiệu các phương pháp lập lịch với giả định bài toán ở trạng thái tĩnh, tức tất cả các công việc đều có thể bắt đầu cùng lúc tại thời điểm $t = 0$. Trong đó, phương pháp sắp xếp theo thứ tự công việc là phương pháp cơ bản nhất. Tiếp theo là phương pháp ưu tiên đáo hạn (EDD - Earliest Due Date) và cuối cùng là phương pháp quá trình ngắn nhất tập trung vào việc tối thiểu hóa tổng thời gian hoàn thành (SPT - Shortest Process Time) và tổng thời gian hoàn thành có trọng số (WSPT - Weighted Shortest Process Time).
 
@@ -552,7 +551,7 @@ Từ đây, ta có định lý sau
 		&& + w_1(\sum_{j=k+1}^{n}p_j+p_1) + w_2(\sum_{j=k+1}^{n}p_j+p_1+p_2) + \ldots + w_k\sum_{j=1}^{n} p_j
 		\end{array}
 	\end{equation}
-	Vì mục tiêu là tối thiểu hoá tổng thời gian hoàn thành của bài toán, vậy nên bắt buộc
+	Giả sử ta xét trường hợp
 	\begin{equation} \label{SA<SB}
 		S_A < S_B
 	\end{equation}
@@ -581,7 +580,7 @@ Từ đây, ta có định lý sau
 	\Leftrightarrow & \underset{k+1 \leq j \leq n}{\text{hệ số }p} &<& \underset{1 \leq j \leq k}{\text{hệ số }p} \\
 	\end{array}
 	\end{equation*}
-	Vậy nếu $\underset{1 \leq j \leq k}{\text{hệ số }p} > \underset{k+1 \leq j \leq n}{\text{hệ số }p}$ thì $S_A<S_B$ nên bắt đầu từ dây chuyền $I$ rồi đến dây chuyền $II$ là giải pháp tối ưu. (đpcm).
+	Tương tự, xét trường hợp $S_A > S_B$ ta được $\underset{k+1 \leq j \leq n}{\text{hệ số }p} > \underset{1 \leq j \leq k}{\text{hệ số }p}$ (đpcm).
 \end{proof}
 
 Do đặc tính của bài toán $1|prec|\sum w_jC_j$ cho phép ta có thể chuyển giao qua lại giữa các dây chuyền miễn vẫn đảm bảo ràng buộc thứ tự của các công việc. Từ đặc tính này ta có thể cải thiện định lý \eqref{daychuyen} giúp cho ra giải pháp tối ưu hơn.
@@ -776,9 +775,15 @@ Vậy phương án tối ưu của bài toán là $$1-4-2-5-3$$
 	$p_j$ & 5 & 3 & 18 & 14 & 19 \\
 	$C_j$ & 5 & 8 & 26 & 40 & 59 \\
 	$w_j$ & 13 & 7 & 14 & 10 & 6 \\
+	$W_j$ & 0 & 5 & 8 & 26 & 40 \\
 	\hline
 	\end{tabular}
 \end{table}
+
+Và trung bình thời gian chờ
+\begin{equation*}
+\overline{W} = \frac{\sum_{j=1}^5 W_j}{5} = 15.8.
+\end{equation*}
 
 \end{vd}
 \section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
@@ -862,8 +867,8 @@ Ta có hình minh hoạ sơ đồ Gantt sau
 \ganttlinkedbar{$J_1$}{1}{3} \\
 \ganttlinkedmilestone{$r_3,\:r_4$}{3} \\
 \ganttlinkedbar{$J_4$}{4}{5} \\
-\ganttlinkedbar{$J_2$}{8}{8} \\
 \ganttlinkedmilestone{$r_2$}{7} \\
+\ganttlinkedbar{$J_2$}{8}{8} \\
 \ganttlinkedbar{$J_3$}{9}{13}
 \ganttvrule{}{7}
 \ganttvrule{}{5}
@@ -905,8 +910,8 @@ Lúc này giải pháp tối ưu của bài toán là $C_{\max}=11$ và $L_{\max
 \ganttlinkedmilestone{$r_3,\:r_4$}{3} \\
 \ganttlinkedbar{$J_4$}{4}{5} \\
 \ganttlinkedbar{$J_3$}{6}{7} \\
-\ganttlinkedbar{$J_2$}{8}{8} \\
 \ganttlinkedmilestone{$r_2$}{7} \\
+\ganttlinkedbar{$J_2$}{8}{8} \\
 \ganttlinkedbar{$J_3$}{9}{11}
 \ganttvrule{}{7}
 \ganttvrule{}{5}
