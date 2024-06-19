@@ -4,14 +4,14 @@ gantt
     title Bancie's Schedule
     dateFormat DD-MM-YY
     section IELTS
-        (Due date) FINAL EXAM: milestone, 06-07-2025, 0d
+        %(Due date) FINAL EXAM: milestone, 06-07-2025, 0d
 
         %---BASIC IELTS_29---
         (Release date) BASIC IELTS_29: done, milestone, 18-06-24, 0d
         (Due date) BASIC IELTS_29: milestone, 01-08-24, 0d
 
         %---PRONOUNCIATION---
-        
+
 
         %---Inter IELTS_22---
         (Release date) Inter IELTS_22: milestone, 27-08-24, 0d
