@@ -7,15 +7,17 @@ gantt
         %(Due date) FINAL EXAM: milestone, 06-07-2025, 0d
 
         %---BASIC IELTS_29---
-        (Release date) BASIC IELTS_29: done, milestone, 18-06-24, 0d
+        (Release time) BASIC IELTS_29: done, milestone, 18-06-24, 0d
         (Due date) BASIC IELTS_29: milestone, 01-08-24, 0d
 
         %---PRONOUNCIATION---
+        (Release time) PRONOUNCIATION: milestone, 14-06-24, 0d
+
 
 
         %---Inter IELTS_22---
-        (Release date) Inter IELTS_22: milestone, 27-08-24, 0d
-        (Due date) Inter IELTS_22: milestone, 26-10-24, 0d
+        (Release time) INTER IELTS_22: milestone, 27-08-24, 0d
+        (Due date) INTER IELTS_22: milestone, 26-10-24, 0d
 
     section STATISTICS
         DATE: milestone, 01-09-24, 0d
