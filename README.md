@@ -92,6 +92,74 @@ gantt
         r (bt_18): milestone, after r0, 38d
         r (bt_19): milestone, after r0, 41d
         r (bt_20): milestone, after r0, 43d
+
+        %---due date---
+        d (na_15): milestone, after r0, 15d
+        d (na_12): milestone, after r0, 15d
+        d (na_14): milestone, after r0, 15d
+        d (na_13): milestone, after r0, 15d
+        d (na_3): milestone, after r0, 15d
+        d (na_16): milestone, after r0, 15d
+        d (bt_1): milestone, after r0, 2d
+        d (bt_2): milestone, after r0, 4d
+        d (bt_3): milestone, after r0, 6d
+        d (bt_4): milestone, after r0, 9d
+        d (bt_5): milestone, after r0, 11d
+        d (bt_6): milestone, after r0, 13d
+        d (bt_7): milestone, after r0, 16d
+        d (bt_8): milestone, after r0, 18d
+        d (bt_9): milestone, after r0, 20d
+        d (bt_10): milestone, after r0, 23d
+        d (bt_11): milestone, after r0, 25d
+        d (bt_12): milestone, after r0, 27d
+        d (bt_13): milestone, after r0, 30d
+        d (bt_14): milestone, after r0, 32d
+        d (bt_15): milestone, after r0, 34d
+        d (bt_16): milestone, after r0, 37d
+        d (bt_17): milestone, after r0, 39d
+        d (bt_18): milestone, after r0, 41d
+        d (bt_19): milestone, after r0, 44d
+        d (bt_20): milestone, after r0, 46d
+        d (py_1): milestone, after r0, 75d
+        d (py_2): milestone, after r0,  45d
+        d (py_3): milestone, after r0,  45d
+        d (py_4): milestone, after r0,  45d
+        d (py_5): milestone, after r0,  45d
+        d (na_1): milestone, after r0,  15d
+        d (na_2): milestone, after r0,  15d
+        d (na_4): milestone, after r0,  15d
+        d (na_5): milestone, after r0,  15d
+        d (py_6): milestone, after r0,  75d
+        d (py_7): milestone, after r0,  45d
+        d (na_6): milestone, after r0,  15d
+        d (sbe_1): milestone, after r0,  75d
+        d (sbe_2): milestone, after r0,  75d
+        d (sbe_3): milestone, after r0,  75d
+        d (sbe_4): milestone, after r0,  75d
+        d (sbe_5): milestone, after r0,  75d
+        d (sbe_6): milestone, after r0,  75d
+        d (sbe_7): milestone, after r0,  75d
+        d (sbe_8): milestone, after r0,  75d
+        d (sbe_9): milestone, after r0,  75d
+        d (sbe_10): milestone, after r0,  75d
+        d (sbe_11): milestone, after r0,  75d
+        d (sbe_12): milestone, after r0,  75d
+        d (sbe_13): milestone, after r0,  75d
+        d (sbe_14): milestone, after r0,  75d
+        d (sbe_15): milestone, after r0,  75d
+        d (sbe_16): milestone, after r0,  75d
+        d (sbe_17): milestone, after r0,  75d
+        d (sbe_18): milestone, after r0,  75d
+        d (sbe_19): milestone, after r0,  75d
+        d (na_7): milestone, after r0, 15d 
+        d (na_8): milestone, after r0,  15d
+        d (na_9): milestone, after r0,  15d
+        d (py_8): milestone, after r0,  75d
+        d (py_9): milestone, after r0,  45d
+        d (na_10): milestone, after r0,  15d
+        d (na_11): milestone, after r0,  15d
+        d (py_10): milestone, after r0,  75
+        d (sbe_20): milestone, after r0,  75
 ```
 
 
