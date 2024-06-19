@@ -175,25 +175,25 @@ gantt
         na_3: na_3, after na_13, 0.5d
         na_16: na_16, after na_3, 0.7d
         bt_1: bt_1, after na_16, 1d
-        bt_2: bt_2, after bt_1, 1d
-        bt_3: bt_3, after bt_2, 1d
-        bt_4: bt_4, after bt_3, 1d
-        bt_5: bt_5, after bt_4, 1d
-        bt_6: bt_6, after bt_5, 1d
-        bt_7: bt_7, after bt_6, 1d
-        bt_8: bt_8, after bt_7, 1d
-        bt_9: bt_9, after bt_8, 1d
-        bt_10: bt_10, after bt_9, 1d
-        bt_11: bt_11, after bt_10, 1d
-        bt_12: bt_12, after bt_11, 1d
-        bt_13: bt_13, after bt_12, 1d
-        bt_14: bt_14, after bt_13, 1d
-        bt_15: bt_15, after bt_14, 1d
-        bt_16: bt_16, after bt_15, 1d
-        bt_17: bt_17, after bt_16, 1d
-        bt_18: bt_18, after bt_17, 1d
-        bt_19: bt_19, after bt_18, 1d
-        bt_20: bt_20, after bt_19, 1d
+        bt_2: bt_2, after rbt_1, 1d
+        bt_3: bt_3, after rbt_2, 1d
+        bt_4: bt_4, after rbt_3, 1d
+        bt_5: bt_5, after rbt_4, 1d
+        bt_6: bt_6, after rbt_5, 1d
+        bt_7: bt_7, after rbt_6, 1d
+        bt_8: bt_8, after rbt_7, 1d
+        bt_9: bt_9, after rbt_8, 1d
+        bt_10: bt_10, after rbt_9, 1d
+        bt_11: bt_11, after rbt_10, 1d
+        bt_12: bt_12, after rbt_11, 1d
+        bt_13: bt_13, after rbt_12, 1d
+        bt_14: bt_14, after rbt_13, 1d
+        bt_15: bt_15, after rbt_14, 1d
+        bt_16: bt_16, after rbt_15, 1d
+        bt_17: bt_17, after rbt_16, 1d
+        bt_18: bt_18, after rbt_17, 1d
+        bt_19: bt_19, after rbt_18, 1d
+        bt_20: bt_20, after rbt_19, 1d
         py_1: py_1, after bt_20, 0.7d
         py_2: py_2, after py_1, 0.9d
         py_3: py_3, after py_2, 0.9d
@@ -236,25 +236,25 @@ gantt
         sbe_20: sbe_20, after py_10, 1.8d
 
         %---release time---
-        r (bt_2): milestone, after r0, 1d
-        r (bt_3): milestone, after r0, 3d
-        r (bt_4): milestone, after r0, 6d
-        r (bt_5): milestone, after r0, 8d
-        r (bt_6): milestone, after r0, 10d
-        r (bt_7): milestone, after r0, 13d
-        r (bt_8): milestone, after r0, 15d
-        r (bt_9): milestone, after r0, 17d
-        r (bt_10): milestone, after r0, 20d
-        r (bt_11): milestone, after r0, 22d
-        r (bt_12): milestone, after r0, 24d
-        r (bt_13): milestone, after r0, 27d
-        r (bt_14): milestone, after r0, 29d
-        r (bt_15): milestone, after r0, 31d
-        r (bt_16): milestone, after r0, 34d
-        r (bt_17): milestone, after r0, 36d
-        r (bt_18): milestone, after r0, 38d
-        r (bt_19): milestone, after r0, 41d
-        r (bt_20): milestone, after r0, 43d
+        r (bt_2): milestone, rbt_2, after r0, 1d
+        r (bt_3): milestone,rbt_3, after r0, 3d
+        r (bt_4): milestone,rbt_4, after r0, 6d
+        r (bt_5): milestone,rbt_5, after r0, 8d
+        r (bt_6): milestone,rbt_6, after r0, 10d
+        r (bt_7): milestone,rbt_7, after r0, 13d
+        r (bt_8): milestone,rbt_8, after r0, 15d
+        r (bt_9): milestone,rbt_9, after r0, 17d
+        r (bt_10): milestone,rbt_10, after r0, 20d
+        r (bt_11): milestone,rbt_11, after r0, 22d
+        r (bt_12): milestone,rbt_12, after r0, 24d
+        r (bt_13): milestone,rbt_13, after r0, 27d
+        r (bt_14): milestone,rbt_14, after r0, 29d
+        r (bt_15): milestone,rbt_15, after r0, 31d
+        r (bt_16): milestone,rbt_16, after r0, 34d
+        r (bt_17): milestone,rbt_17, after r0, 36d
+        r (bt_18): milestone,rbt_18, after r0, 38d
+        r (bt_19): milestone,rbt_19, after r0, 41d
+        r (bt_20): milestone,rbt_20, after r0, 43d
 
         %---due date---
         d (na_15): milestone, after r0, 15d
