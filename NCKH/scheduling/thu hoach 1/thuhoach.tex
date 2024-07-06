@@ -119,33 +119,33 @@
 	\thispagestyle{fancy}
 	\addcontentsline{toc}{chapter}{Danh mục các kí hiệu}
 	\begin{tabularx}{\linewidth}{ c  X }
-		$\alpha | \beta | \gamma$ & Ký hiệu dùng để nhận dạng loại bài toán. Trong đó $\alpha$ chỉ số lượng máy cần lập lịch, trường hợp cho máy đơn ta ký hiệu $\alpha = 1$, tức $1| \beta | \gamma$. Ký hiệu $\beta$ chỉ đặc tính hay kiểu ràng buộc của bài toán. Ký hiệu $\gamma$ chỉ hàm mục tiêu cần tối ưu. \\
+		$\alpha | \beta | \gamma$ & Ký hiệu dùng để nhận dạng loại bài toán. Trong đó, trường $\alpha$ chỉ số lượng máy cần lập lịch, trường hợp cho máy đơn ta ký hiệu $\alpha = 1$, tức $1| \beta | \gamma$. Trường $\beta$ chỉ đặc tính hay kiểu ràng buộc của bài toán. Trường $\gamma$ chỉ hàm mục tiêu cần tối ưu. \\
 		\\
-		$J_{ij}$ & Công việc (job) thứ $j$ của máy thứ $i$, trong trường hợp đơn máy thì $i=1$, kể từ đây ta chỉ ký hiệu $J_j$. \\
+		$J_{ij}$ & Công việc (job) thứ $j$ được xử lý trên máy thứ $i$, trong trường hợp đơn máy thì $i=1$, kể từ đây ta chỉ ký hiệu $J_j$. \\
 		\\
-		$p_j$ & Khoảng thời gian xử lý (processing time) của công việc thứ $j$ hay quá trình của công việc thứ $j$, tức từ thời điểm bắt đầu công việc đến thời điểm hoàn thành công việc. \\
+		$p_j$ & Khoảng thời gian xử lý (processing time) của công việc thứ $j$ hay quá trình của công việc thứ $j$, tức từ thời điểm bắt đầu xử lý công việc đến thời điểm hoàn thành công việc. \\
 		\\
 		$d_j$ & Thời điểm đáo hạn (due date) của công việc thứ $j$. \\
 		\\
 		$C_j$ & Thời điểm hoàn thành (completion time) của công việc thứ $j$. \\
 		\\
-		$C_{\max}$ & Tổng thời gian hoàn thành (makespan) của toàn bộ công việc, được tính bằng công thức $C_{\max} = \sum_{j=1}^n p_j$. \\
+		$C_{\max}$ & Thời gian hoàn thành tối đa (makespan) của toàn bộ công việc, được tính bằng công thức $C_{\max} = \underset{1 \leq j \leq n}{\max} C_j$. \\
 		\\
 		$S_j$ & Thời điểm bắt đầu (starting time) của công việc thứ $j$, được định nghĩa bằng công thức $S_j = \max (C_{j-1}, r_j)$. \\
 		\\
-		$r_j$ & Thời điểm sẵn sàng (release time) của công việc thứ $j$. Nếu $r_j$ xuất hiện trong trường $\beta$ của bài toán, đồng nghĩa công việc thứ $j$ sẽ không được phép bắt đầu trước thời điểm sẵn sàng $r_j$ ($S_j \geq r_j$), ngược lại, nếu $r_j$ không xuất hiện trong trường $\beta$ của bài toán, các công việc sẽ được phép bất đầu tại bất kỳ thời điểm nào. \\
+		$r_j$ & Thời điểm sẵn sàng (release time) của công việc thứ $j$. Nếu $r_j \neq 0$ thì công việc thứ $j$ sẽ không được phép bắt đầu trước thời điểm sẵn sàng $r_j$ ($S_j \geq r_j$), ngược lại, nếu $r_j = 0$ thì các công việc sẽ được phép bất đầu tại bất kỳ thời điểm nào. \\
 		\\
-		$W_j$ & Thời gian chờ (waiting time) của công việc thứ $j$, tức khoảng thời gian kể từ thời điểm công việc đã sẵn sàng cho đến thời điểm bắt đầu công việc, được định nghĩa bằng công thức $W_j = C_j - p_j - r_j = S_j - r_j$. \\
+		$W_j$ & Thời gian chờ (waiting time) của công việc thứ $j$, tức khoảng thời gian kể từ thời điểm công việc đã sẵn sàng cho đến thời điểm bắt đầu công việc, được định nghĩa bằng công thức $W_j = S_j - r_j = C_j - p_j - r_j$. \\
 		\\
 		$F_j$ & Chu trình (flow time) của công việt thứ $j$, tức khoảng thời gian kể từ thời điểm công việc đã sẵn sàng cho đến khi hoàn thành, được định nghĩa bằng công thức $F_j = C_j - r_j = W_j + p_j$. \\
 		\\
-		$w_j$ & Trọng số (weight) của công việc thứ $j$, tức mức độ ưu tiên của công việc thứ $j$. \\
+		$w_j$ & Trọng số (weight) của công việc thứ $j$, tức mức độ ưu tiên để được xử lý của công việc thứ $j$. \\
 		\\
 		$L_j$ & Độ đáo hạn (lateness) của công việc thứ $j$, được định nghĩa là độ dài từ $d_j$ đến $C_j$, xác định bằng công thức $L_j=C_j-d_j$. Từ đây có thể thấy, nếu $L_j < 0$ thì công việc đã hoàn thành sớm hơn thời điểm đáo hạn, nếu $L_j > 0$ thì công việc đã hoàn thành muộn hơn thời điểm đáo hạn. \\
 		\\
-		$T_j$ & Độ trễ (tardiness) của công việc thứ $j$, là thang đo Độ trễ của công việc thứ $j$ được định nghĩa thông qua $L_j$. Nếu $L_j \leq 0$ thì $T_j=0$, ngược lại nếu $L_j > 0$ thì $T_j = L_j$, hay $T_j=\max (L_j,0)$. \\
+		$T_j$ & Độ trễ (tardiness) của công việc thứ $j$, là thang đo độ trễ của công việc thứ $j$ được định nghĩa thông qua $L_j$. Nếu $L_j \leq 0$ thì $T_j=0$, ngược lại nếu $L_j > 0$ thì $T_j = L_j$, hay $T_j=\max (L_j,0)$. \\
 		\\
-		$E_j$ & Độ sớm (earliness) của công việc thứ $j$, là thang đo Độ sớm của công việc thứ $j$ được định nghĩa thông qua $L_j$. Nếu $L_j \geq 0$ thì $E_j=0$, ngược lại nếu $L_j < 0$ thì $E_j = L_j$, hay $E_j=\max (|L_j|,0)$. \\
+		$E_j$ & Độ sớm (earliness) của công việc thứ $j$, là thang đo độ sớm của công việc thứ $j$ được định nghĩa thông qua $L_j$. Nếu $L_j \geq 0$ thì $E_j=0$, ngược lại nếu $L_j < 0$ thì $E_j = L_j$, hay $E_j=\max (|L_j|,0)$. \\
 		\\
 		$prec$ & Bài toán tồn tại ràng buộc có thứ tự (precedence constraint). Nếu $prec$ xuất hiện trong trường $\beta$ của bài toán thì bài toán tồn tại những công việc đòi hỏi phải hoàn thành trước khi công việc khác được bắt đầu, hay còn gọi là công việc tiền nhiệm (predecessor) và công việc kế nhiệm (successor). Nếu trường hợp bài toán có mỗi công việc tồn tại tối đa một tiền nhiệm và một kế nhiệm, bài toán có ràng buộc dạng dây chuyền (chains). Trường hợp có tối đa một kế nhiệm, bài toán có ràng buộc dạng in-tree. Trường hợp có tối đa một tiền nhiệm, bài toán có ràng buộc dạng out-tree. Ngược lại, nếu $prec$ không xuất hiện trong trường $\beta$ của bài toán, bài toàn được phép có các thứ tự công việc được sắp tự do. \\
 		\\
@@ -155,8 +155,8 @@
 \pagenumbering{arabic} 
 
 \chapter{Giới thiệu bài toán lập lịch cho máy đơn và phương pháp xử lý}
-\section{Vấn đề của bài toán lập lịch}
-Vấn đề lập lịch hay còn gọi là quản lý thời gian và tối ưu hoá quy trình là một lĩnh vực quan trọng trong Vận trù học (Operation research) giúp ra quyết định phân bổ thời gian hợp lý và được sử dụng thường xuyên trong nhiều ngành công nghiệp sản xuất, dịch vụ, khoa học máy tính và trí tuệ nhân tạo. Động cơ của lĩnh vực lập lịch liên quan đến việc phân bổ tài nguyên cho các nhiệm vụ trong các khoảng thời gian nhất định với mục tiêu tối ưu hóa hàm mục tiêu cụ thể.
+\section{Khái quát về bài toán lập lịch}
+Vấn đề lập lịch hay còn gọi là quản lý thời gian và tối ưu hoá quy trình là một lĩnh vực quan trọng trong Vận trù học (Operation research) giúp ra quyết định phân bổ thời gian hợp lý và được sử dụng thường xuyên trong nhiều ngành công nghiệp sản xuất, dịch vụ, khoa học máy tính và trí tuệ nhân tạo. Động cơ của lĩnh vực lập lịch liên quan đến việc phân bổ tài nguyên cho các nhiệm vụ trong các khoảng thời gian nhất định nhằm tối ưu hóa hàm mục tiêu cụ thể.
 
 Mục tiêu của lập lịch rất đa dạng tuỳ theo nhu cầu của nhà lập lịch. Có thể mục tiêu là giảm thiểu thời gian hoàn thành của nhiệm vụ cuối cùng hoặc giảm thiểu số lượng nhiệm vụ bị trễ so với thời điểm đáo hạn tương ứng của chúng, cả hai là phương pháp cốt lõi sẽ được tập trung trong mục 1.2.
 
@@ -178,7 +178,7 @@ Tuỳ thuộc theo dạng bài toán yêu cầu mà ta sẽ có phương tiếp 
 	\caption{Bảng liệt kê các dạng bài toán.}
 \end{figure}
 
- Ở phần thứ hai của chương (1.2.) sẽ giới thiệu các phương pháp lập lịch với giả định bài toán ở trạng thái tĩnh, tức tất cả các công việc đều có thể bắt đầu cùng lúc tại thời điểm $t = 0$. Trong đó, phương pháp sắp xếp theo thứ tự công việc là phương pháp cơ bản nhất. Tiếp theo là phương pháp ưu tiên đáo hạn (EDD - Earliest Due Date) và cuối cùng là phương pháp quá trình ngắn nhất tập trung vào việc tối thiểu hóa tổng thời gian hoàn thành (SPT - Shortest Process Time) và tổng thời gian hoàn thành có trọng số (WSPT - Weighted Shortest Process Time).
+ Ở phần thứ hai của chương (1.2.) sẽ giới thiệu các phương pháp lập lịch với giả định bài toán ở trạng thái tĩnh, tức tất cả các công việc đều có thể bắt đầu cùng lúc tại thời điểm $t = 0$. Trong đó, phương pháp sắp xếp theo thứ tự công việc là phương pháp cơ bản nhất. Tiếp theo là phương pháp ưu tiên đáo hạn (EDD - Earliest Due Date) và cuối cùng là phương pháp thời gian xử lý ngắn nhất tập trung vào việc tối thiểu hóa tổng thời gian hoàn thành (SPT - Shortest Process Time) và tổng thời gian hoàn thành có trọng số (WSPT - Weighted Shortest Process Time).
 
 Phần tiếp theo của chương (1.3.) sẽ xem xét các bài toán phức tạp hơn, nơi tồn tại các công việc có thời điểm sẵn sàng không đồng nhất. Điều này làm cho bài toán mang tính thực tế hơn trong các quy trình sản xuất khi các công việc thường không bắt đầu một cách đồng thời. Trong đó ta sẽ tập trung vào hai phương pháp chính, bao gồm: Phương pháp không ngắt quãng (non-preemptive) và phương pháp ngắt quãng (preemptive). Trong đó phương pháp ngắt quãng cho ta sự linh hoạt cao hơn trong quá trình lập lịch.
 
@@ -186,7 +186,7 @@ Những phương pháp này sẽ giúp các nhà quản lý sản xuất hay chu
 
 Phần lớn kiến thức của chương được tham khảo từ tài liệu \cite{minhhuy}, \cite{inbook}, \cite{pinedo2009planning}, \cite{PMBOK2013}, \cite{PostekZoccaAMPL2024}.
 
-\section{Bài toán trạng thái tĩnh ($r_j \equiv 0$)}
+\section{Bài toán trạng thái tĩnh ($r_j = 0$)}
 Bài toán tĩnh trong lập lịch cho máy đơn là một trong những bài toán cơ bản và quan trọng trong lĩnh vực quản lý thời gian và tối ưu hóa quy trình. Đặc điểm của bài toán tĩnh là thời điểm sẵn sàng $r_j$ của các công việc đều đồng nhất tại $t=0$, hay $r_j = 0, \: \forall j=\overline{1,n}$ và ký hiệu $r_j$ lúc này không tồn tại trong trường $\beta$ của bài toán.
 
 Trong bối cảnh bài toán ở trạng thái tĩnh, phương pháp sắp xếp theo thứ tự công việc sẽ được trình bày như một cách cơ bản cho bước đầu tiếp cận các phương pháp lập lịch tối ưu hơn. Ở các phương pháp lập lịch tối ưu hơn, các công việc sẽ được sắp xếp sao cho tối thiểu hoá một hàm mục tiêu nhất định, trong đó bao gồm các dạng bài toán: Tối thiểu độ đáo hạn cực đại ($1\|L_{\max}$) hay độ trễ cực đại ($1\|T_{\max}$), tối thiểu tổng thời gian hoàn thành ($1\|\sum C_j$) và tối thiểu tổng thời gian hoàn thành có trọng số ($1\|\sum w_j C_j$).
@@ -196,35 +196,38 @@ Bài toán tĩnh cung cấp một nền tảng lý thuyết vững chắc giúp 
 Phương pháp sắp xếp theo thứ tự công việc trong lập lịch cho máy đơn là một phương pháp cơ bản và dễ hiểu. Bằng cách dựa trên số thứ tự công việc được định sẵn, nguyên lý của phương pháp là sắp xếp các công việc sao cho thứ tự của công việc được sắp theo hướng tăng dần hoặc giảm dần.
 
 \begin{vd}
-	Minh hoạ trường hợp bài toán với $n=4$ được sắp xếp theo thứ tự giảm dần:
-	\begin{table}[h!]
-		\centering
-		 \begin{tabular}{|c | c c c c |} 
-		 \hline
-		 Công việc ($j$) & 4 & 3 & 2 & 1 \\
-		 \hline\hline
-		 $p_j$ & 2 & 5 & 1 & 3 \\
-		 $d_j$ & 6 & 9 & 8 & 3 \\
-		 \hline
-		 \end{tabular}
-	\end{table}
+	Minh hoạ trường hợp bài toán với $n=4$ được sắp xếp theo thứ tự giảm dần \eqref{giamdan}.
+	
+	\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+		\hline
+		Công việc ($j$) & 4 & 3 & 2 & 1 \\
+		\hline\hline
+		$p_j$ & 2 & 5 & 1 & 3 \\
+		$d_j$ & 6 & 9 & 8 & 3 \\
+		\hline
+	\end{tabular}
+	\caption{\label{giamdan} Trường hợp bài toán được sắp xếp theo thứ tự giảm dần.}
+	\end{figure}
 \end{vd}
 	
 \begin{vd}
-	Minh hoạ trường hợp bài toán với $n=4$ được sắp xếp theo thứ tự tăng dần:
-	\begin{table}[h!]
-		\centering
-		 \begin{tabular}{|c | c c c c |} 
-		 \hline
-		 Công việc ($j$) & 1 & 2 & 3 & 4 \\
-		 \hline\hline
-		 $p_j$ & 3 & 1 & 5 & 2 \\
-		 $d_j$ & 3 & 8 & 9 & 6 \\
-		 \hline
-		 \end{tabular}
-	\end{table}
+	Minh hoạ trường hợp bài toán với $n=4$ được sắp xếp theo thứ tự tăng dần \eqref{tangdan}.
+	\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+		\hline
+		Công việc ($j$) & 1 & 2 & 3 & 4 \\
+		\hline\hline
+		$p_j$ & 3 & 1 & 5 & 2 \\
+		$d_j$ & 3 & 8 & 9 & 6 \\
+		\hline
+	\end{tabular}
+	\caption{\label{tangdan} Trường hợp bài toán được sắp xếp theo thứ tự tăng dần.}
+	\end{figure}
 
-	Từ $p_j$ cho sẵn, ta có thể dễ dàng xác định được các phần tử $C_j, \: S_j, \: W_j, \: F_j, \: L_j, \: T_j, \: E_j$ và thu được bảng sau
+	Xét \eqref{tangdan} và $p_j$ cho sẵn, ta có thể dễ dàng tính toán được các thông số $C_j, \: S_j, \: W_j, \: F_j, \: L_j, \: T_j, \: E_j$ và thu được bảng sau
 \begin{table}[h!]
 		\centering
 		 \begin{tabular}{|c || c c c c c c c c c c|}
@@ -279,17 +282,33 @@ và trung bình độ sớm là
 
 Từ lý thuyết và ví dụ minh hoạ trên có thể thấy phương pháp sắp xếp theo thứ tự công việc không yêu cầu tính toán quá phức tạp. Tuy nhiên, còn tồn tại nhiều hạn chế, phương pháp sắp xếp theo thứ tự công việc không xem xét đến các yếu tố cần được tối ưu như độ đáo hạn, độ trễ hay thời gian hoàn thành, do đó có thể không đạt được điều kiện tối ưu như mong muốn và không mang lại hiệu quả cao trong ứng dụng.
 
-Do đó, ta sẽ tập trung vào các phương pháp có khả năng cải thiện mô hình hiệu quả hơn bằng cách tối thiểu độ đáo hạn cực đại $L_{\max}$ ( hay độ trễ cực đại $T_{\max}$) hoặc phương pháp giúp tối thiểu tổng thời gian hoàn thành $C_{\max}$.
+Do đó, ta sẽ tập trung vào các phương pháp có khả năng cải thiện mô hình hiệu quả hơn bằng cách tối thiểu độ đáo hạn cực đại $L_{\max}$ ( hay độ trễ cực đại $T_{\max}$) hoặc phương pháp giúp tối thiểu thời gian hoàn thành cực đại $C_{\max}$.
 \subsection{Phương pháp ưu tiên đáo hạn}
-Phương pháp ưu tiên đáo hạn hay còn gọi là phương pháp EDD (Earliest Due Date) là một trong những phương pháp phổ biến và hiệu quả trong lập lịch cho máy đơn với mục đích giúp tối thiểu hoá độ đáo hạn cực đại $L_{\max}$ hay độ trễ cực đại $T_{\max}$.
+Phương pháp ưu tiên đáo hạn, viết tắt là EDD (Earliest Due Date) là một trong những phương pháp phổ biến và hiệu quả trong lập lịch cho máy đơn với mục đích giúp tối thiểu hoá độ đáo hạn cực đại $L_{\max}$ hay độ trễ cực đại $T_{\max}$.
 
-Nguyên lý của phương pháp ưu tiên đáo hạn là ưu tiên các công việc có thời điểm đáo hạn nhỏ nhất, từ đó sắp xếp các công việc theo thứ tự từ thời điểm đáo hạn nhỏ nhất đến thời điểm đáo hạn lớn nhất. Mục đích giúp đảm bảo các công việc có thời điểm đáo hạn nhỏ nhất được hoàn thành trước, hạn chế khả năng các công việc bị trễ, từ đó tối thiểu được độ đáo hạn cực đại $L_{\max}$ và độ trễ cực đại $T_{\max}$.
+Nguyên lý của phương pháp ưu tiên đáo hạn là ưu tiên xử lý các công việc có thời điểm đáo hạn nhỏ nhất, từ đó sắp xếp các công việc theo thứ tự từ thời điểm đáo hạn nhỏ nhất đến thời điểm đáo hạn lớn nhất. Mục đích là giúp đảm bảo các công việc có thời điểm đáo hạn nhỏ nhất được hoàn thành trước, hạn chế khả năng các công việc bị trễ, từ đó tối thiểu được độ đáo hạn cực đại $L_{\max}$ và độ trễ cực đại $T_{\max}$.
 
 \subsubsection*{Tối thiểu độ đáo hạn cực đại ($1 \| L_{\max}$)}
-Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục tiêu $L_{\max}$ bằng cách sử dụng phương pháp ưu tiên đáo hạn, giả sử ta có giải pháp ban đầu như sau
+Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục tiêu $L_{\max}$ bằng cách sử dụng phương pháp ưu tiên đáo hạn.
 
-\begin{table}[h!]
-	\centering
+\begin{vd}
+Giả sử ta có dữ liệu ban đầu như sau \eqref{edd1}.
+\begin{figure}[h!]
+\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 & 5 \\
+	\hline\hline
+	$p_j$ & 8 & 10 & 15 & 9 & 5 \\
+	$d_j$ & 30 & 9 & 23 & 3 & 11 \\
+	\hline
+	\end{tabular}
+	\caption{\label{edd1} Bài toán minh hoạ phương pháp EDD.}
+\end{figure}
+
+Ta dễ dàng tìm được $C_j$ và $L_j$ \eqref{edd2}.
+\begin{figure}[h!]
+\centering
 	\begin{tabular}{|c | c c c c c |} 
 	\hline
 	Công việc ($j$) & 1 & 2 & 3 & 4 & 5 \\
@@ -300,7 +319,9 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	$L_j$ & -22 & 9 & 10 & 39 & 36 \\
 	\hline
 	\end{tabular}
-\end{table}
+	\caption{\label{edd2} Bài toán minh hoạ phương pháp EDD.}
+\end{figure}
+
 Ta có
 \begin{equation*}
 	L_{\max} = \max _{1 \leq j \leq 5} \{L_j, 0\} = 39,
@@ -328,6 +349,7 @@ Ta nhận được
 \end{equation*}
 
 Vậy để tối thiểu hàm mục tiêu $L_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $4-2-5-3-1$.
+\end{vd}
 
 \subsubsection*{Tối thiểu độ trễ cực đại ($1 \| T_{\max}$)}
 Tương tự với hàm mục tiêu $L_{\max}$ với $T_j=\max (L_j,0)$, ta cũng dễ dàng tối thiểu hàm mục tiêu $T_{\max}$ bằng cách sử dụng phương pháp ưu tiên đáo hạn như sau, với giải pháp ban đầu
