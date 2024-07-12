@@ -995,7 +995,7 @@ Sử dụng phương pháp ưu tiên đáo hạn ta được phương án \eqref
 \ganttlinkedmilestone{$r_2$}{7} \\
 \ganttlinkedbar{$J_3$}{7}{11}
 \end{ganttchart}
-\caption{\label{ganttnonprmp} Sơ đồ Gantt của bài toán khi chưa áp dụng phương pháp không ngắt quãng}
+\caption{\label{ganttnonprmp} Sơ đồ Gantt của bài toán khi chưa áp dụng phương pháp không ngắt quãng.}
 \end{figure}
 \begin{figure}[h!]
 \centering
@@ -1017,11 +1017,11 @@ Sử dụng phương pháp ưu tiên đáo hạn ta được phương án \eqref
 \ganttvrule{}{7}
 \ganttvrule{}{5}
 \end{ganttchart}
-\caption{Sơ đồ Gantt của bài toán khi đã áp dụng phương pháp không ngắt quãng}
+\caption{\label{ganttnonprmp2} Sơ đồ Gantt của bài toán khi đã áp dụng phương pháp không ngắt quãng.}
 \end{figure}
 \end{vd}
 
-Từ ví dụ minh hoạ ta có thể thấy, công việc thứ $2$ được bắt đầu ở thời điểm $7$, trong khi đó khoảng thời gian từ $5$ đến $7$ trống và cộng dồn khiến $C_{\max}$ từ $11$ tăng lên $13$ và $L_{\max}$ tăng từ $2$ lên $4$.
+Từ ví dụ minh hoạ ta có thể thấy, công việc thứ $2$ được bắt đầu ở thời điểm $7$, trong khi đó khoảng thời gian từ $5$ đến $7$ trống và cộng dồn khiến $C_{\max}$ từ $11$ tăng lên $13$ và $L_{\max}$ tăng từ $2$ lên $4$. \eqref{ganttnonprmp} \eqref{ganttnonprmp2}
 
 \subsection{Phương pháp ngắt quãng ($1 | r_j, \: prmp | \sum C_j$)}
 Phương pháp ngắt quãng (preemptive) là một phương pháp cho phép tạm dừng công việc hiện tại để thực hiện một công việc khác có độ ưu tiên cao hơn. Sau khi công việc ưu tiên cao được hoàn thành, công việc bị tạm dừng sẽ tiếp tục được xử lý từ điểm dừng đã được ghi nhớ trước đó.
@@ -1038,7 +1038,7 @@ Từ ví dụ \eqref{kongatquang}, ta có thể áp dụng phương pháp ngắt
 \item $t=11:$ Tất cả công việc đã hoàn thành và thuật toán dừng.
 \end{itemize}
 
-Lúc này giải pháp tối ưu của bài toán là $C_{\max}=11$ và $L_{\max}=2$, mang lại kết quả tối ưu hơn phương pháp không ngắt quãng với $C_{\max}=13$ và $L_{\max}=4$.
+Lúc này giải pháp tối ưu của bài toán là $C_{\max}=11$ và $L_{\max}=2$, mang lại kết quả tối ưu hơn phương pháp không ngắt quãng với $C_{\max}=13$ và $L_{\max}=4$. \eqref{ganttprmp}
 \begin{figure}[h!]
 \centering
 \begin{ganttchart}[
@@ -1060,7 +1060,7 @@ Lúc này giải pháp tối ưu của bài toán là $C_{\max}=11$ và $L_{\max
 \ganttvrule{}{7}
 \ganttvrule{}{5}
 \end{ganttchart}
-\caption{Sơ đồ Gantt của bài toán khi đã áp dụng phương pháp không ngắt quãng}
+\caption{\label{ganttprmp}Sơ đồ Gantt của bài toán khi đã áp dụng phương pháp không ngắt quãng.}
 \end{figure}
 
 \nocite{*}
