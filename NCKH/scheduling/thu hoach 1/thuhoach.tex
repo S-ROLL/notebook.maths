@@ -167,7 +167,7 @@ Tuỳ thuộc theo dạng bài toán yêu cầu mà ta sẽ có phương tiếp 
 	\hline
 	&&& $\gamma$ && \\
 	\hline\hline
-	&& $\sum C_j \: (C_{\max})$ & $L_{\max}$ & $T_{\max}$ & $\sum w_j C_j$ \\
+	&& $\sum C_j$ & $L_{\max}$ & $T_{\max}$ & $\sum w_j C_j$ \\
 	\hline
 	& $\varnothing$ & $1\|\sum C_j$ & $1\|L_{\max}$ & $1\|T_{\max}$ & $1\|\sum w_j C_j$ \\
 	$\beta$ & $prec$ & $1|prec|\sum C_j$ & $\times$&$\times$ & $1|prec|\sum w_j C_j$ \\
@@ -282,7 +282,7 @@ và trung bình độ sớm là
 
 Từ lý thuyết và ví dụ minh hoạ trên có thể thấy phương pháp sắp xếp theo thứ tự công việc không yêu cầu tính toán quá phức tạp. Tuy nhiên, còn tồn tại nhiều hạn chế, phương pháp sắp xếp theo thứ tự công việc không xem xét đến các yếu tố cần được tối ưu như độ đáo hạn, độ trễ hay thời gian hoàn thành, do đó có thể không đạt được điều kiện tối ưu như mong muốn và không mang lại hiệu quả cao trong ứng dụng.
 
-Do đó, ta sẽ tập trung vào các phương pháp có khả năng cải thiện mô hình hiệu quả hơn bằng cách tối thiểu độ đáo hạn cực đại $L_{\max}$ ( hay độ trễ cực đại $T_{\max}$) hoặc phương pháp giúp tối thiểu thời gian hoàn thành cực đại $C_{\max}$.
+Do đó, ta sẽ tập trung vào các phương pháp có khả năng cải thiện mô hình hiệu quả hơn bằng cách tối thiểu độ đáo hạn cực đại $L_{\max}$ ( hay độ trễ cực đại $T_{\max}$) hoặc phương pháp giúp tối thiểu hoá tổng thời gian hoàn thành $\sum C$.
 \subsection{Phương pháp ưu tiên đáo hạn}
 Phương pháp ưu tiên đáo hạn, viết tắt là EDD (Earliest Due Date) là một trong những phương pháp phổ biến và hiệu quả trong lập lịch cho máy đơn với mục đích giúp tối thiểu hoá độ đáo hạn cực đại $L_{\max}$ hay độ trễ cực đại $T_{\max}$.
 
@@ -303,7 +303,7 @@ Giả sử ta có dữ liệu ban đầu như sau \eqref{edd1}.
 	$d_j$ & 30 & 9 & 23 & 3 & 11 \\
 	\hline
 	\end{tabular}
-	\caption{\label{edd1} Bài toán minh hoạ phương pháp EDD.}
+	\caption{\label{edd1} Dữ liệu ban đầu của bài toán minh hoạ phương pháp EDD.}
 \end{figure}
 
 Ta dễ dàng tìm được $C_j$ và $L_j$ \eqref{edd2}.
@@ -319,7 +319,7 @@ Ta dễ dàng tìm được $C_j$ và $L_j$ \eqref{edd2}.
 	$L_j$ & -22 & 9 & 10 & 39 & 36 \\
 	\hline
 	\end{tabular}
-	\caption{\label{edd2} Bài toán minh hoạ phương pháp EDD.}
+	\caption{\label{edd2} Dữ liệu bài toán minh hoạ phương pháp EDD.}
 \end{figure}
 
 Ta có
@@ -327,10 +327,10 @@ Ta có
 	L_{\max} = \max _{1 \leq j \leq 5} \{L_j, 0\} = 39,
 \end{equation*}
 
-Sử dụng phương pháp ưu tiên đáo hạn ta được
+Sử dụng phương pháp ưu tiên đáo hạn (EDD) ta được \eqref{edd3}
 
-\begin{table}[h!]
-	\centering
+\begin{figure}[h!]
+\centering
 	\begin{tabular}{|c | c c c c c |} 
 	\hline
 	Công việc ($j$) & 4 & 2 & 5 & 3 & 1 \\
@@ -341,9 +341,10 @@ Sử dụng phương pháp ưu tiên đáo hạn ta được
 	$L_j$ & 6 & 10 & 13 & 16 & 17 \\
 	\hline
 	\end{tabular}
-\end{table}
+	\caption{\label{edd3} Dữ liệu bài toán sau khi áp dụng phương pháp EDD.}
+\end{figure}
 
-Ta nhận được
+Kết quả là
 \begin{equation*}
 	L_{\max} = \max _{1 \leq j \leq 5} \{L_j, 0\} = 17.
 \end{equation*}
@@ -352,7 +353,7 @@ Vậy để tối thiểu hàm mục tiêu $L_{\max}$ thì ta cần sắp xếp 
 \end{vd}
 
 \subsubsection*{Tối thiểu độ trễ cực đại ($1 \| T_{\max}$)}
-Tương tự với hàm mục tiêu $L_{\max}$ với $T_j=\max (L_j,0)$, ta cũng dễ dàng tối thiểu hàm mục tiêu $T_{\max}$ bằng cách sử dụng phương pháp ưu tiên đáo hạn như sau, với giải pháp ban đầu
+Tương tự với hàm mục tiêu $L_{\max}$ với $T_{\max}=\underset{1 \leq j \leq n}{\max} (L_j,0)$, ta cũng dễ dàng tối thiểu hàm mục tiêu $T_{\max}$ bằng cách sử dụng phương pháp ưu tiên đáo hạn như sau, với dữ liệu ban đầu như ở trên, ta tính được
 
 \begin{table}[h!]
 	\centering
@@ -373,7 +374,7 @@ Ta có
 	T_{\max} = \max _{1 \leq j \leq 5} \{T_j, 0\} = 39,
 \end{equation*}
 
-Sử dụng phương pháp ưu tiên đáo hạn ta được
+Trong khi đó, ta sử dụng phương pháp ưu tiên đáo hạn thì
 
 \begin{table}[h!]
 	\centering
@@ -396,43 +397,48 @@ Ta nhận được
 \end{equation*}
 
 Vậy để tối thiểu hàm mục tiêu $T_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $4-2-5-3-1$.
-\subsection{Phương pháp quá trình ngắn nhất}
-Một cách tiếp cận tối ưu khác của phương pháp lập lịch cho máy đơn có thể kể đến là phương pháp quá trình ngắn nhất hay còn gọi là phương pháp SPT (Shortest Process Time) và phương pháp quá trình ngắn nhất có trọng số hay còn gọi là phương pháp WSPT (Weighted Shortest Process Time).
+\subsection{Phương pháp thời gian xử lý ngắn nhất}
+Một cách tiếp cận tối ưu khác của phương pháp lập lịch cho máy đơn có thể kể đến là phương pháp thời gian xử lý ngắn nhất, viết tắt là SPT (Shortest Process Time) và phương pháp thời gian xử lý ngắn nhất có trọng số, viết tắt là WSPT (Weighted Shortest Process Time).
 
 Ý tưởng của cả hai phương pháp là tập trung vào việc tối thiểu hoá trung bình thời gian chờ $\overline{W}$, đồng thời tối thiểu hoá tổng thời gian hoàn thành $\sum C_j$ hoặc $\sum w_j C_j$ nếu bài toán có tồn tại trọng số $w_j$, bằng cách ưu tiên các công việc có khoảng thời gian xử lý ngắn nhất sẽ được thực hiện trước. 
 
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$) và tổng thời gian hoàn thành có trọng số ($1 \| \sum w_j C_j$)}
-Ta có thể dễ dàng nhận thấy bài toán $1 \| \sum C_j$ chính là trường hợp đặc biệt của bài toán $1 \| \sum w_j C_j$ với trọng số $w_j=1$. Do đó đồng nghĩa phương pháp quá trình ngắn nhất chính là phương pháp quá trình ngắn nhất có trọng số $w_j=1$. Kể từ đây, ta chỉ cần tập trung vào bài toán $1\| \sum w_j C_j$.
+Ta có thể dễ dàng nhận thấy bài toán $1 \| \sum C_j$ chính là trường hợp đặc biệt của bài toán $1 \| \sum w_j C_j$ với trọng số $w_j=1$. Do đó đồng nghĩa phương pháp thời gian xử lý ngắn nhất chính là phương pháp thời gian xử lý ngắn nhất có trọng số $w_j=1$. Kể từ đây, ta chỉ cần tập trung vào bài toán $1\| \sum w_j C_j$.
 
-\begin{dl}[Quy tắc quá trình ngắn nhất có trọng số]
+\begin{nx}[Quy tắc thời gian xử lý ngắn nhất có trọng số]
 Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ưu thì việc sắp xếp các công việc theo thứ tự giảm dần (hay tăng dần) theo giá trị $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$) sẽ giúp bài toán tối thiểu được hàm mục tiêu $\sum w_j C_j$.
-\end{dl}
+\end{nx}
 
 \begin{dl}
-	Phương pháp quá trình ngắn nhất và phương pháp quá trình ngắn nhất có trọng số lần lượt là phương pháp tối ưu cho dạng bài toán $1 \| \sum C_j$ và $1 \| \sum w_j C_j$.
+	Phương pháp thời gian xử lý ngắn nhất và phương pháp thời gian xử lý ngắn nhất có trọng số lần lượt là phương pháp tối ưu cho dạng bài toán $1 \| \sum C_j$ và $1 \| \sum w_j C_j$.
 \end{dl}
 
 \begin{proof}
-	Ta gọi tổng thời gian hoàn thành có trọng số là $S$, ta đặt
+	Ta gọi tổng thời gian hoàn thành có trọng số của hai công việc liền kề $j-k$ là $S$, ta đặt
 	\begin{equation} \label{S}
 		S = w_j C_j + w_k C_k = w_j(t+p_j) + w_k(t+p_j+p_k),
 	\end{equation}
-	trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$, tức phương án của bài toán lúc này là $j - k$. Ta xem bảng bên dưới
+	trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$ và thời điểm bắt đầu xử lý công việc $j$ là $t$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk1}
 	
 	\begin{figure}[h!]
 		\centering
-		 \begin{tabular}{|c | c c |} 
+		 \begin{tabular}{|c | c c c c c c c |} 
 		 \hline
-		 Công việc & j & k \\
+		 Công việc & 1 & 2 & $\ldots$ & $j$ & $k$ & $\ldots$ & $n$ \\
 		 \hline\hline
-		 $p$ & $p_j$ & $p_k$ \\
-		 $C$ & $C_j$ & $C_k$ \\
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_j$ & $p_k$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_j$ & $C_k$ & $\ldots$ & $C_n$ \\
 		 \hline
 		 \end{tabular}
-	\caption{Phương án $j - k$ của bài toán.}
+	\caption{\label{jk1}Phương án $j - k$ của bài toán.}
 	\end{figure}
 	
-	giả sử ta cần sắp xếp vị trí công việc với nhau bằng cách tráo đổi vị trí thì ta nhận được
+	Giả sử phương án này thoả phương pháp WSPT, tức là
+	\begin{equation}
+	\frac{w_j}{p_j} \leq \frac{w_k}{p_k}.
+	\end{equation}
+	
+	Giả sử ta cần sắp xếp lại vị trí 2 công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được
 	\begin{equation} \label{S'}
 		S' = w_k(t+p_k) + w_j(t+p_k+p_j)
 	\end{equation}
@@ -440,12 +446,12 @@ Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ư
 	
 	\begin{figure}[h!]
 		\centering
-		 \begin{tabular}{|c | c c |} 
+		 \begin{tabular}{|c | c c c c c c c |} 
 		 \hline
-		 Công việc & k & j \\
+		 Công việc & 1 & 2 & $\ldots$ & $k$ & $j$ & $\ldots$ & $n$ \\
 		 \hline\hline
-		 $p$ & $p_k$ & $p_j$ \\
-		 $C$ & $C_k$ & $C_j$ \\
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_k$ & $p_j$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_k$ & $C_j$ & $\ldots$ & $C_n$ \\
 		 \hline
 		 \end{tabular}
 	\caption{Phương án $k - j$ của bài toán.}
@@ -470,8 +476,10 @@ Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ư
 		Vậy nếu muốn $S'<S$ thì \scalebox{1.3}{$\frac{w_j}{p_j}$} < \scalebox{1.3}{$\frac{w_k}{p_k}$} hay \scalebox{1.3}{$\frac{p_j}{w_j}$} > \scalebox{1.3}{$\frac{p_k}{w_k}$} (đpcm).
 \end{proof}
 
-\begin{vd}[Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$)]
-\begin{table}[h!]
+\begin{vd}[Tối thiểu tổng thời gian hoàn thành có trọng số ($1 \| \sum w_j C_j$)]
+Ta có bảng công việc sau \eqref{vdwspt}
+
+\begin{figure}[h!]
 	\centering
 	\begin{tabular}{|c | c c c c |} 
 	\hline
@@ -482,8 +490,8 @@ Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ư
 	$W_j$ & 0 & 12 & 16 & 25 \\
 	\hline
 	\end{tabular}
-\end{table}
-Ta có bảng công việc sau
+\caption{\label{vdwspt} Dữ liệu bài toán minh hoạ phương pháp WSPT.}
+\end{figure}
 
 Từ đây ta có
 \begin{equation*}
@@ -508,7 +516,7 @@ Ta có
 \overline{W}=\frac{\sum_{j=1}^{4}W_j}{4} = 10.
 \end{equation*}
 
-Vậy để tối thiểu hàm mục tiêu $\sum C_j$ hay $C_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $2-3-4-1$.
+Vậy để tối thiểu hàm mục tiêu $\sum w_j C_j$ thì ta cần sắp xếp công việc theo thứ tự $2-3-4-1$.
 \end{vd}
 
 \subsubsection*{Tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự ($1 | prec | \sum w_j C_j$)}
@@ -525,7 +533,7 @@ Cho một tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$) cần đ
 
 Giả sử trên tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$), trong đó tồn tại dây chuyền $I$ với
 \begin{equation*}
-1 - 2 - \ldots - k
+1 - 2 - \ldots - k,
 \end{equation*}
 và dây chuyền $II$ với
 \begin{equation*}
@@ -533,7 +541,7 @@ k+1 - k+2 - \ldots - n.
 \end{equation*}
 Thì ta nhận được hệ số $p$ của dây chuyền $I$ là
 \begin{equation}
-	\underset{1 \leq j \leq k}{\text{hệ số }p} = \frac{\sum_{j=1}^k w_j}{\sum_{j=1}^k p_j}
+	\underset{1 \leq j \leq k}{\text{hệ số }p} = \frac{\sum_{j=1}^k w_j}{\sum_{j=1}^k p_j},
 \end{equation}
 và hệ số $p$ của dây chuyền $II$ là
 \begin{equation}
@@ -547,11 +555,11 @@ Từ đây, ta có định lý sau
 \begin{proof}
 	Đặt $S_I$ là tổng thời gian hoàn thành có trọng số của dây chuyền thứ $I$ với
 	\begin{equation}
-		S_I = w_1 p_1 + w_2 p_2 + \ldots + w_k \sum_{j=1}^k p_j
+		S_I = w_1 p_1 + w_2 p_2 + \ldots + w_k \sum_{j=1}^k p_j,
 	\end{equation}
 	và $S_{II}$ là tổng thời gian hoàn thành có trọng số của dây chuyền thứ $II$ với
 	\begin{equation}
-		S_{II} = w_{k+1} \sum_{j=1}^{k+1} p_j + \ldots + w_n \sum_{j=1}^{n} p_j
+		S_{II} = w_{k+1} \sum_{j=1}^{k+1} p_j + \ldots + w_n \sum_{j=1}^{n} p_j.
 	\end{equation}
 	Ta gọi tổng thời gian hoàn thành có trọng số ban đầu là $S_A$ với
 	\begin{equation} \label{SA}
@@ -559,11 +567,11 @@ Từ đây, ta có định lý sau
 	\end{equation}
 	Hoán đổi vị trí của $S_I$ và $S_{II}$ trên sơ đồ Gantt ta được
 	\begin{equation}
-		S_I^{'} = w_{k+1} p_{k+1} + w_{k+2}(p_{k+1} + p_{k+2}) + \ldots + w_n \sum_{j=k+1}^{n} p_j
+		S_I^{'} = w_{k+1} p_{k+1} + w_{k+2}(p_{k+1} + p_{k+2}) + \ldots + w_n \sum_{j=k+1}^{n} p_j,
 	\end{equation}
 	và
 	\begin{equation}
-		S_{II}^{'} = w_1(\sum_{j=k+1}^{n}p_j+p_1) + w_2(\sum_{j=k+1}^{n}p_j+p_1+p_2) + \ldots + w_k\sum_{j=1}^{n} p_j
+		S_{II}^{'} = w_1(\sum_{j=k+1}^{n}p_j+p_1) + w_2(\sum_{j=k+1}^{n}p_j+p_1+p_2) + \ldots + w_k\sum_{j=1}^{n} p_j.
 	\end{equation}
 	Ta gọi tổng thời gian hoàn thành có trọng số sau khi hoán đổi là $S_B$ với
 	\begin{equation} \label{SB}
@@ -698,7 +706,9 @@ Ta có định lý sau
 \end{proof}
 
 \begin{vd}[Tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự ($1 | prec | \sum w_j C_j$)]
-\begin{table}[h!]
+Ta có bảng công việc sau \eqref{vdwsptpre}
+
+\begin{figure}[h!]
 	\centering
 	\begin{tabular}{|c | c c c | c c |} 
 	\hline
@@ -708,9 +718,11 @@ Ta có định lý sau
 	$w_j$ & 13 & 14 & 6 & 7 & 10 \\
 	\hline
 	\end{tabular}
-\end{table}
-trong đó dây chuyền thứ $I$ là $$1-2-3$$ và dây chuyền thứ $II$ là $$4-5.$$
-ta xác hệ số $p$ của dây chuyền thứ nhất bằng công thức $$\text{Hệ số }p=\frac{\sum w_j}{\sum p_j}$$
+\caption{\label{vdwsptpre} Dữ liệu minh hoạ bài toán $1 | prec | \sum w_j C_j$.}
+\end{figure}
+
+Trong đó dây chuyền thứ $I$ là $$1-2-3$$ và dây chuyền thứ $II$ là $$4-5.$$
+ta xác định hệ số $p$ của dây chuyền thứ nhất bằng công thức $$\text{Hệ số }p=\frac{\sum w_j}{\sum p_j}$$
 
 \begin{table}[h!]
 	\centering
@@ -738,7 +750,7 @@ Ta có chuỗi $I$ có $$
 Ta có chuỗi $II$ có $$
 	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl)=2.33.$$
 
-Vì $2.6>2.3$ nên ta chọn chuỗi $I$ với 1.
+Vì $2.6>2.3$ nên ta chọn chuỗi $I$ với công việc 1.
 
 \begin{table}[h!]
 	\centering
@@ -819,7 +831,9 @@ Nguyên lý của phương pháp không ngắt quãng dựa trên phương pháp
 Ưu điểm của phương pháp là dễ triển khai và đơn giản nhưng nhược điểm và hạn chế của phương pháp khiến cho tổng thời gian hoàn thành $C_{\max}$ tăng, từ đó giảm hiệu suất tổng thể.
 \begin{vd} \label{kongatquang}
 Minh hoạ trường hợp bài toán toán với $n=4$ áp dụng phương pháp không ngắt quãng.
-\begin{table}[h!]
+Ta có bảng công việc \eqref{vdnonprmp}
+
+\begin{figure}[h!]
 	\centering
 		\begin{tabular}{|c | c c c c |} 
 		\hline
@@ -832,10 +846,11 @@ Minh hoạ trường hợp bài toán toán với $n=4$ áp dụng phương phá
 		$r_j$ & 0 & 7 & 3 & 3 \\
 		\hline
 		\end{tabular}
-\end{table}
+\caption{\label{vdnonprmp} Dữ liệu minh hoạ bài toán không ngắt quãng.}
+\end{figure}
 
-Sử dụng phương pháp ưu tiên đáo hạn ta được phương án sau
-\begin{table}[h!]
+Sử dụng phương pháp ưu tiên đáo hạn ta được phương án \eqref{vdnonprmp2}
+\begin{figure}[h!]
 	\centering
 		\begin{tabular}{|c | c c c c |} 
 		\hline
@@ -852,9 +867,9 @@ Sử dụng phương pháp ưu tiên đáo hạn ta được phương án sau
 		$L_j$ & 0 & -1 & -2 & 2 \\
 		\hline
 		\end{tabular}
-\end{table}
+\caption{\label{vdnonprmp2} Dữ liệu minh hoạ bài toán không ngắt quãng.}
+\end{figure}
 
-Ta có hình minh hoạ sơ đồ Gantt sau
 \begin{figure}[h!]
 \centering
 \begin{ganttchart}[
@@ -873,7 +888,7 @@ Ta có hình minh hoạ sơ đồ Gantt sau
 \ganttlinkedmilestone{$r_2$}{7} \\
 \ganttlinkedbar{$J_3$}{7}{11}
 \end{ganttchart}
-\caption{Sơ đồ Gantt của bài toán khi chưa áp dụng phương pháp không ngắt quãng}
+\caption{\label{ganttnonprmp} Sơ đồ Gantt của bài toán khi chưa áp dụng phương pháp không ngắt quãng}
 \end{figure}
 \begin{figure}[h!]
 \centering
