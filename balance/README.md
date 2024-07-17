@@ -1,4 +1,5 @@
 # Daily Schedule
+## Monday
 ```mermaid
 gantt
     title Daily Routine Schedule
@@ -21,7 +22,14 @@ gantt
     Free Time                :19:30, 2.5h
     Wind Down                :22:00, 0.5h
     Sleep                    :22:30, 6.5h
-
+```
+## Tuesday
+```mermaid
+gantt
+    title Daily Routine Schedule
+    dateFormat  HH:mm
+    axisFormat  %H:%M
+    
     section Tuesday
     Wake up & Exercise       :05:00, 0.5h
     Breakfast                :05:30, 0.5h
@@ -38,7 +46,14 @@ gantt
     Free Time                :20:00, 2h
     Wind Down                :22:00, 0.5h
     Sleep                    :22:30, 6.5h
-
+```
+## Wednesday
+```mermaid
+gantt
+    title Daily Routine Schedule
+    dateFormat  HH:mm
+    axisFormat  %H:%M
+    
     section Wednesday
     Wake up & Exercise       :05:00, 0.5h
     Breakfast                :05:30, 0.5h
@@ -55,7 +70,14 @@ gantt
     Free Time                :19:30, 2.5h
     Wind Down                :22:00, 0.5h
     Sleep                    :22:30, 6.5h
-
+```
+## Thursday
+```mermaid
+gantt
+    title Daily Routine Schedule
+    dateFormat  HH:mm
+    axisFormat  %H:%M
+    
     section Thursday
     Wake up & Exercise       :05:00, 0.5h
     Breakfast                :05:30, 0.5h
@@ -72,7 +94,14 @@ gantt
     Free Time                :20:00, 2h
     Wind Down                :22:00, 0.5h
     Sleep                    :22:30, 6.5h
-
+```
+## Friday
+```mermaid
+gantt
+    title Daily Routine Schedule
+    dateFormat  HH:mm
+    axisFormat  %H:%M
+    
     section Friday
     Wake up & Exercise       :05:00, 0.5h
     Breakfast                :05:30, 0.5h
@@ -89,7 +118,14 @@ gantt
     Free Time                :19:30, 2.5h
     Wind Down                :22:00, 0.5h
     Sleep                    :22:30, 6.5h
-
+```
+## Saturday
+```mermaid
+gantt
+    title Daily Routine Schedule
+    dateFormat  HH:mm
+    axisFormat  %H:%M
+    
     section Saturday
     Wake up & Exercise       :05:00, 0.5h
     Breakfast                :05:30, 0.5h
@@ -106,7 +142,14 @@ gantt
     Free Time                :20:00, 2h
     Wind Down                :22:00, 0.5h
     Sleep                    :22:30, 6.5h
-
+```
+## Sunday
+```mermaid
+gantt
+    title Daily Routine Schedule
+    dateFormat  HH:mm
+    axisFormat  %H:%M
+    
     section Sunday
     Wake up & Exercise       :05:00, 0.5h
     Breakfast                :05:30, 0.5h
