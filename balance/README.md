@@ -1,7 +1,7 @@
-# Daily Schedule
+# <center> Daily Schedule <center/>
 ```mermaid
 gantt
-    title Monday
+    title Monday, Wednesday, Friday
     dateFormat  HH:mm
     axisFormat  %H:%M
     
@@ -15,7 +15,7 @@ gantt
     Dinner & Wash dishes :17:30, 1h
 
     section Personal Time
-    Wake up, Exercise & Breakfast :05:00, 1h
+    Wake up, Exercise, Bath & Breakfast :05:00, 1h
     Free time                     :08:00, 1h
     Free time                     :10:40, 1.33h
     Take a nap                    :13:00, 0.5h
@@ -26,7 +26,7 @@ gantt
 
 ```mermaid
 gantt
-    title Tuesday
+    title Tuesday, Thursday, Saturday
     dateFormat  HH:mm
     axisFormat  %H:%M
     
@@ -42,59 +42,11 @@ gantt
     Room Cleaning            :16:30, 1h
 
     section Personal Time
-    Wake up, Exercise & Breakfast :05:00, 1h
+    Wake up, Exercise, Bath & Breakfast :05:00, 1h
     Break                    :08:00, 0.5h
     Free time                :10:30, 1h
     Take a nap               :12:30, 0.5h
     Free time                :15:00, 1.5h
     Free Time & Checking tasks                :20:00, 1h
     Sleep                    :21:00
-```
-```mermaid
-gantt
-    title Saturday
-    dateFormat  HH:mm
-    axisFormat  %H:%M
-    
-    section Busy Time
-    Wake up & Exercise       :05:00, 0.5h
-    Breakfast                :05:30, 0.5h
-    Deep Work             :06:00, 2h
-    Free Time/Reading        :08:00, 1h
-    Deep Work             :11:00, 1h
-    Cooking & Lunch          :12:00, 1h
-    Deep Work             :13:00, 2h
-    Break                    :15:00, 0.5h
-    Reading                  :15:30, 0.5h
-    Room Cleaning            :19:30, 0.5h
-    English Online Class     : crit, 17:30, 1.5h
-    Dinner                   :19:00, 0.5h
-    Free Time                :20:00, 2h
-    Wind Down                :22:00, 0.5h
-    Sleep                    :22:30, 6.5h
-
-    section Housework Time
-
-    section Personal Time
-```
-## Sunday
-```mermaid
-gantt
-    title Daily Routine Schedule
-    dateFormat  HH:mm
-    axisFormat  %H:%M
-    
-    section Sunday
-    Wake up & Exercise       :05:00, 0.5h
-    Breakfast                :05:30, 0.5h
-    Deep Work             :06:00, 2h
-    Free Time/Reading        :08:00, 1h
-    Deep Work             :11:00, 1h
-    Cooking & Lunch          :12:00, 1h
-    Deep Work             :13:00, 2h
-    Break                    :15:00, 0.5h
-    Reading                  :15:30, 0.5h
-    Free Time                :16:00, 6h
-    Wind Down                :22:00, 0.5h
-    Sleep                    :22:30, 6.5h
 ```
