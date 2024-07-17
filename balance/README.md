@@ -1,8 +1,123 @@
 # Daily Schedule
-## Ngày thường
-| Thời gian | Hoạt động | Mô tả |
-|-----------|----------|-------|
-| 05:00     | Thức dậy  | Báo thức, dậy sớm và vệ sinh sơ bộ.                           |
-| 05:00     | Rèn luyện thể chất   | Thể dục sáng, 15 đến 30 phút. <br/> Sau khi thể dục, thực hiện công việc gấp chăn, vệ sinh cá nhân. |
-| 06:00     | Ăn sáng | Thực hiện công tác chuẩn bị đồ ăn sáng và ăn sáng trong từ 15 đến 20 phút. |
-| 06:40     | Kiểm tra cá nhân  | Kiểm tra danh sách các công việc cần hoàn thành. <br/> Thực hiện các công việc 
+```mermaid
+gantt
+    title Daily Routine Schedule
+    dateFormat  HH:mm
+    axisFormat  %H:%M
+    
+    section Monday
+    Wake up & Exercise       :05:00, 0.5h
+    Breakfast                :05:30, 0.5h
+    Focused Work             :06:00, 2h
+    Free Time/Reading        :08:00, 1h
+    Football Class           :09:00, 1.67h
+    Break                    :10:40, 0.33h
+    Focused Work             :11:00, 1h
+    Cooking & Lunch          :12:00, 1h
+    Focused Work             :13:00, 2h
+    Break                    :15:00, 0.5h
+    Reading                  :15:30, 0.5h
+    Free Time                :16:00, 1.5h
+    Free Time                :19:30, 2.5h
+    Wind Down                :22:00, 0.5h
+    Sleep                    :22:30, 6.5h
+
+    section Tuesday
+    Wake up & Exercise       :05:00, 0.5h
+    Breakfast                :05:30, 0.5h
+    Focused Work             :06:00, 2h
+    Free Time/Reading        :08:00, 1h
+    Focused Work             :11:00, 1h
+    Cooking & Lunch          :12:00, 1h
+    Focused Work             :13:00, 2h
+    Break                    :15:00, 0.5h
+    Reading                  :15:30, 0.5h
+    Room Cleaning            :19:30, 0.5h
+    English Online Class     :17:30, 1.5h
+    Dinner                   :19:00, 0.5h
+    Free Time                :20:00, 2h
+    Wind Down                :22:00, 0.5h
+    Sleep                    :22:30, 6.5h
+
+    section Wednesday
+    Wake up & Exercise       :05:00, 0.5h
+    Breakfast                :05:30, 0.5h
+    Focused Work             :06:00, 2h
+    Free Time/Reading        :08:00, 1h
+    Football Class           :09:00, 1.67h
+    Break                    :10:40, 0.33h
+    Focused Work             :11:00, 1h
+    Cooking & Lunch          :12:00, 1h
+    Focused Work             :13:00, 2h
+    Break                    :15:00, 0.5h
+    Reading                  :15:30, 0.5h
+    Free Time                :16:00, 1.5h
+    Free Time                :19:30, 2.5h
+    Wind Down                :22:00, 0.5h
+    Sleep                    :22:30, 6.5h
+
+    section Thursday
+    Wake up & Exercise       :05:00, 0.5h
+    Breakfast                :05:30, 0.5h
+    Focused Work             :06:00, 2h
+    Free Time/Reading        :08:00, 1h
+    Focused Work             :11:00, 1h
+    Cooking & Lunch          :12:00, 1h
+    Focused Work             :13:00, 2h
+    Break                    :15:00, 0.5h
+    Reading                  :15:30, 0.5h
+    Room Cleaning            :19:30, 0.5h
+    English Online Class     :17:30, 1.5h
+    Dinner                   :19:00, 0.5h
+    Free Time                :20:00, 2h
+    Wind Down                :22:00, 0.5h
+    Sleep                    :22:30, 6.5h
+
+    section Friday
+    Wake up & Exercise       :05:00, 0.5h
+    Breakfast                :05:30, 0.5h
+    Focused Work             :06:00, 2h
+    Free Time/Reading        :08:00, 1h
+    Football Class           :09:00, 1.67h
+    Break                    :10:40, 0.33h
+    Focused Work             :11:00, 1h
+    Cooking & Lunch          :12:00, 1h
+    Focused Work             :13:00, 2h
+    Break                    :15:00, 0.5h
+    Reading                  :15:30, 0.5h
+    Free Time                :16:00, 1.5h
+    Free Time                :19:30, 2.5h
+    Wind Down                :22:00, 0.5h
+    Sleep                    :22:30, 6.5h
+
+    section Saturday
+    Wake up & Exercise       :05:00, 0.5h
+    Breakfast                :05:30, 0.5h
+    Focused Work             :06:00, 2h
+    Free Time/Reading        :08:00, 1h
+    Focused Work             :11:00, 1h
+    Cooking & Lunch          :12:00, 1h
+    Focused Work             :13:00, 2h
+    Break                    :15:00, 0.5h
+    Reading                  :15:30, 0.5h
+    Room Cleaning            :19:30, 0.5h
+    English Online Class     :17:30, 1.5h
+    Dinner                   :19:00, 0.5h
+    Free Time                :20:00, 2h
+    Wind Down                :22:00, 0.5h
+    Sleep                    :22:30, 6.5h
+
+    section Sunday
+    Wake up & Exercise       :05:00, 0.5h
+    Breakfast                :05:30, 0.5h
+    Focused Work             :06:00, 2h
+    Free Time/Reading        :08:00, 1h
+    Focused Work             :11:00, 1h
+    Cooking & Lunch          :12:00, 1h
+    Focused Work             :13:00, 2h
+    Break                    :15:00, 0.5h
+    Reading                  :15:30, 0.5h
+    Free Time                :16:00, 6h
+    Wind Down                :22:00, 0.5h
+    Sleep                    :22:30, 6.5h
+```
