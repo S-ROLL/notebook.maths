@@ -33,7 +33,7 @@ gantt
     section Busy Time
     Deep Work & Reading            :06:00, 2h
     Deep Work             :08:30, 2h
-    Deep Work             :13:00, 2h
+    Deep Work             :13:30, 2h
     English Online Class     : crit, 17:30, 1.5h
 
     section Housework Time
@@ -45,8 +45,8 @@ gantt
     Wake up, Exercise, Bath & Breakfast :05:00, 1h
     Break                    :08:00, 0.5h
     Free time                :10:30, 1h
-    Take a nap               :12:30, 0.5h
-    Free time                :15:00, 1.5h
+    Take a nap & Free time   :12:30, 1h
+    Free time                :15:30, 1h
     Free Time & Checking tasks                :20:00, 1h
     Sleep                    :21:00
 ```
