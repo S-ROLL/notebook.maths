@@ -64,5 +64,5 @@ gantt
 # COMPUTER SCIENCE
 | CONTENT | LINK |
 |---------|---------|
-| **Languages** | - [Python]()|
+| **Languages** | - [C++](https://github.com/S-ROLL/notebook.maths/blob/main/Computer%20science/C%20plus%20plus/nbcpp.ipynb) <br/> - [Python](https://github.com/S-ROLL/notebook.maths/blob/main/Computer%20science/Python/python.ipynb)|
 | **Data structure & Algorithm** | - [Algorithm design](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/Computer-science/Algorithm%20design/algorithm.ipynb) |
