@@ -50,10 +50,6 @@ gantt
     Free Time & Checking tasks                :20:00, 1h
     Sleep                    :21:00
 ```
-# OTHERS
-| LINK | DESCRIPTION |
-|---------|---------|
-| [Drive](https://drive.google.com/drive/u/1/folders/1HARdf9ZS6k-OPniwOIoeQKNms1sTe28c) | Ebooks, references, textbooks,... archived in drive.|
 # MATHEMATICS
 | CONTENT | LINK |
 |---------|---------|
@@ -66,3 +62,7 @@ gantt
 |---------|---------|
 | **Languages** | - [C++](https://github.com/S-ROLL/notebook.maths/blob/main/Computer%20science/C%20plus%20plus/nbcpp.ipynb) <br/> - [Python](https://github.com/S-ROLL/notebook.maths/blob/main/Computer%20science/Python/python.ipynb)|
 | **Data structure & Algorithm** | - [Algorithm design](https://github.com/S-ROLL/notebook.maths/blob/main/Maths/Computer-science/Algorithm%20design/algorithm.ipynb) |
+# OTHERS
+| LINK | DESCRIPTION |
+|---------|---------|
+| [Drive](https://drive.google.com/drive/u/1/folders/1HARdf9ZS6k-OPniwOIoeQKNms1sTe28c) | Ebooks, references, textbooks,... archived in drive.|
