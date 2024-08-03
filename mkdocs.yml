@@ -1,0 +1,112 @@
+site_name: NB.MATHS
+
+nav:
+  - Home: index.md
+  - Maths & CS:
+    - Data science:
+      - Statistics: statistics.md
+      - Machine learning: machinelearning.md
+    - Caculus:
+      - Differential equation: differentialequation.md
+      - Numerical methods: numericalmethods.md
+      - Complex analysis: complexanalysis.md
+      - Measure theory: measuretheory.md
+    - Others:
+      - Formula basis: formulabasis.md
+  - Coding:
+    - Languages:
+      - Python: python.md
+      - C++: cpp.md
+    - Data structure & Algorithm: daanda.md
+
+theme:
+  name: material
+  features:
+     - navigation.tabs
+     - navigation.tabs.sticky
+     - navigation.expand
+     - navigation.path
+     - navigation.indexes
+     - navigation.instant.preview
+     - navigation.sections
+     - navigation.top
+     - search.suggest
+     - search.highlight
+     - content.tabs.link
+     - content.code.annotation
+     - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      primary: teal
+      accent: purple 
+    - scheme: slate 
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode    
+      primary: teal
+      accent: lime
+  font:
+    text: Open Sans
+  logo: Photoroom-20240623_134046.png
+  icon:
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  - stylesheets/extra.css
+
+copyright: |
+  &copy; 2023 <a href="https://web.facebook.com/ngchibangg"  target="_blank" rel="noopener">Bancie Ng</a>
+
+extra:
+  social:
+    - icon: fontawesome/brands/facebook
+      link: https://web.facebook.com/ngchibangg
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/bancie.007/
+    - icon: fontawesome/brands/github
+      link: https://github.com/Bancie
+  
