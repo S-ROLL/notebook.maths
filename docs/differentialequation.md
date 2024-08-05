@@ -1,4 +1,4 @@
-## <h1 style="text-align: center;">Differential equation</h1>
+## <h1 style="text-align: center;">Ordinary differential equation</h1>
 
 ## Sources
 - [gg photos](https://photos.app.goo.gl/9bVpQMPoJxTUQcax7)

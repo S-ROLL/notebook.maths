@@ -2,26 +2,32 @@ site_name: NB.MATHS
 
 nav:
   - Home: index.md
-  - Maths & CS:
-    - Data science:
-      - Statistics: statistics.md
-      - Machine learning: machinelearning.md
+  - Maths:
+    - Formula basis: formulabasis.md
     - Caculus:
-      - Differential equation: differentialequation.md
+      - Base theory:
+        - Measure theory: measuretheory.md
+        - Functional analysis: functionalanalysis.md
+      - PDE:
+        - Ordinary differential equation (ODE): differentialequation.md
       - Numerical methods: numericalmethods.md
       - Complex analysis: complexanalysis.md
-      - Measure theory: measuretheory.md
-    - Others:
-      - Formula basis: formulabasis.md
+  - CS:
+    - Data structure & Algorithm: daanda.md
+  - Data science:
+    - Statistics: statistics.md
+    - Machine learning: machinelearning.md
   - Coding:
     - Languages:
       - Python: python.md
       - C++: cpp.md
-    - Data structure & Algorithm: daanda.md
+    - Technique: 
+      - Open source: opensource.md
 
 theme:
   name: material
   features:
+     - navigation.footer
      - navigation.tabs
      - navigation.tabs.sticky
      - navigation.expand

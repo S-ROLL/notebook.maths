@@ -1,6 +1,6 @@
 ## <h1 style="text-align: center;">BASIC FORMULA</h1>
 
-## DIFFERENTIATION
+## Differentiation
 
 $$
 \begin{split}
@@ -28,7 +28,7 @@ y = y[u(x)] & \Rightarrow y^{'}(x) = y^{'}(u)u^{'}(x) \\
 \end{split}
 $$
 
-## Integral ( do not miss $+C$ )
+## Integral
 
 $$
 \begin{split}
@@ -49,6 +49,9 @@ $$
 \int (ax+b)^{\alpha} &= \frac{1}{a} \frac{(ax+b)^{\alpha +1}}{\alpha +1}  \\
 \end{split}
 $$
+
+!!! warning
+    Do not miss $+C$!
 
 ## Root of trigonometric
 
