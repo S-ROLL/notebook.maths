@@ -1,5 +1,3 @@
-## <h1 style="text-align: center;">BASIC FORMULA</h1>
-
 ## Differentiation
 
 $$

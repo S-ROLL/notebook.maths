@@ -1,32 +1,37 @@
 site_name: NB.MATHS
+site_url: https://s-roll.github.io/notebook.maths/
+site_author: Bang Nguyen
 
 nav:
   - Home: index.md
   - Maths:
-    - Formula basis: formulabasis.md
-    - Caculus:
-      - Base theory:
-        - Measure theory: measuretheory.md
-        - Functional analysis: functionalanalysis.md
-      - PDE:
-        - Ordinary differential equation (ODE): differentialequation.md
-      - Numerical methods: numericalmethods.md
-      - Complex analysis: complexanalysis.md
-  - CS:
-    - Data structure & Algorithm: daanda.md
-  - Data science:
-    - Statistics: statistics.md
-    - Machine learning: machinelearning.md
-  - Coding:
+    - maths/index.md
+    - Theoretical:
+      - Discrete structure: maths/discrete.md
+      - Analysis:
+  #     - Measure theory: maths/measuretheory.md
+        - Functional analysis: maths/functionalanalysis.md
+        - Complex analysis: maths/complexanalysis.md
+    - Applied:
+      - Security:
+        - Cryptography: maths/cryptography.md
+      - Statistics: maths/statistics.md
+      - Numerical methods: maths/numericalmethods.md
+      - Differential equation:
+        - Ordinary: maths/differentialequation.md
+  #     - Machine learning: maths/machinelearning.md
+  - Computer:
+    - Data structure & Algorithm: computer/daanda.md
     - Languages:
-      - Python: python.md
-      - C++: cpp.md
-    - Technique: 
-      - Open source: opensource.md
+      - Python: computer/python.md
+      - C++: computer/cpp.md
+#   - Technique: 
+#     - Open source: computer/opensource.md
 
 theme:
   name: material
   features:
+     - toc.follow
      - navigation.footer
      - navigation.tabs
      - navigation.tabs.sticky
@@ -58,7 +63,9 @@ theme:
   font:
     text: Open Sans
   logo: Photoroom-20240623_134046.png
+  favicon: Photoroom-20240623_134046.png
   icon:
+    logo: logo
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -105,9 +112,10 @@ extra_css:
   - stylesheets/extra.css
 
 copyright: |
-  &copy; 2023 <a href="https://web.facebook.com/ngchibangg"  target="_blank" rel="noopener">Bancie Ng</a>
+  &copy; 2024 <a href="https://web.facebook.com/ngchibangg"  target="_blank" rel="noopener">Bang Nguyen</a>
 
 extra:
+  homepage: https://s-roll.github.io/notebook.maths/
   social:
     - icon: fontawesome/brands/facebook
       link: https://web.facebook.com/ngchibangg
@@ -115,4 +123,3 @@ extra:
       link: https://www.instagram.com/bancie.007/
     - icon: fontawesome/brands/github
       link: https://github.com/Bancie
-  

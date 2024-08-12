@@ -1,10 +1,3 @@
-## <h1 style="text-align: center;">GIẢI TÍCH SỐ</h1>
-
-## Nguồn ôn tập & Tra cứu
-- [Google photos](https://photos.app.goo.gl/L6JDrnBXUGTJhcJa9)
-- [File Bài tập & Đề thi](https://drive.google.com/drive/folders/1PdZhXawBmx79kxpKBRwYbAc_UoxyRS1o?usp=sharing)
-- Numerical Methods for Engineers - Steven .C Chapra & Raymond P .Canale
-
 ## Nội suy
 ### Newton
 

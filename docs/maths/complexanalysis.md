@@ -1,8 +1,3 @@
-## <h1 style="text-align: center;">Complex Analysis</h1>
-
-## Source
-- [Google photos](https://photos.google.com/u/1/share/AF1QipPNFmOnUV-coTDlcV1iEomyIJjX1u2B-XrX32WETZI0f-Vv1oMPXoCpzBV1_FU1gg?key=RVNqUllGOC13WFFvV2MxWXd0NElIYkEwZ2Y3Z0tn)
-
 ## Công thức quan trọng
 
 $$ \large

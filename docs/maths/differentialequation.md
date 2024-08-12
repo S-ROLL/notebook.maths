@@ -1,12 +1,5 @@
-## <h1 style="text-align: center;">Ordinary differential equation</h1>
-
-## Sources
-- [gg photos](https://photos.app.goo.gl/9bVpQMPoJxTUQcax7)
-- [Toán cao cấp 3 (BT)](https://drive.google.com/file/d/1__GpVRaUbKl9lroeDL5Ryz6Z-x4VtpmK/view?usp=share_link)
-- [DIFFERENTIAL EQUATIONS WITH APPLICATIONS & HISTORICAL NOTES - George F. Simmons](https://drive.google.com/file/d/1L689P2wscwgpB8rbs9cU0mBlSncLvVMQ/view?usp=share_link)
-
-# PTVP CẤP 1
-## Tách biến
+## PTVP CẤP 1
+### Tách biến
 
 $$
 f(x)dx = g(y)dy
@@ -21,8 +14,8 @@ $$
 \end{split}
 $$
 
-## Tuyến tính cấp 1
-### Thuần nhất:
+### Tuyến tính cấp 1
+#### Thuần nhất
 
 $$
 y' + p(x)y = 0
@@ -43,7 +36,7 @@ y &= c.e^{-\int p(x)dx}
 \end{split}
 $$
 
-### Không thuần nhất:
+#### Không thuần nhất
 
 $$
 y' + p(x)y = q(x)
@@ -80,7 +73,7 @@ $$\begin{split}
 y &= \Bigg(\int q(x).e^{\int p(x)dx} dx +K \Bigg)e^{-\int p(x)dx} \\
 \end{split}$$
 
-## Bernoulli
+### Bernoulli
 
 $$
 y' + p(x)y = q(x).y^{\alpha}
@@ -104,7 +97,7 @@ $$\begin{split}
 z' + (1-\alpha)p(x).z &= q(x)(1-\alpha)
 \end{split}$$
 
-## Toàn phần
+### Toàn phần
 
 $$
 P(x,y)dx + Q(x,y)dy=0
@@ -120,8 +113,8 @@ u(x,y) &= \int_{x_0}^x P(x,y_0)dx + \int_{y_0}^y Q(x,y)dy+C \\
 u(x,y) &= \int_{x_0}^x P(x,y)dx + \int_{y_0}^y Q(x_0,y)dy+C \\
 \end{split}$$
 
-# PTVP CẤP 2
-## Thuần nhất 
+## PTVP CẤP 2
+### Thuần nhất 
 
 $$y'' + py' + qy = 0$$
 
@@ -135,7 +128,7 @@ $$
 - $\lambda _1 = \lambda _2 = \lambda \implies y = (C_1+x.C_2)e^{\lambda x}$
 - $\lambda _{1,2}=\alpha \pm i \beta \implies y = e^{\alpha x}(C_1.\cos \beta x + C_2.\sin \beta x)$
 
-## Không thuần nhất
+### Không thuần nhất
 
 $$
 y'' + py' + qy = f(x)
@@ -205,7 +198,7 @@ $$
 
 $$\implies y = C_1.y_1(x) + C_2.y_2(x)$$
 
-# HỆ PTVP
+## HỆ PTVP
 
 $$
 \begin{cases}
@@ -216,7 +209,7 @@ y_n' = f_n(x, y_1, y_2, \ldots, y_n) \\
 \end{cases}
 $$
 
-## Thế (khử)
+### Thế (khử)
 
 $$
 \begin{cases}
@@ -231,7 +224,7 @@ $$
 (1) \implies z(y), z'(y) \implies \text{ the vao } (2) \implies z'(y) = y + z(y) \implies \text{ PTVP C2.}
 $$
 
-## Vector riêng 
+### Vector riêng 
 
 $$
 \begin{cases}
@@ -337,8 +330,8 @@ z = C_1 z_1 + C_2 z_2 \\
 \end{cases}
 $$
 
-# ỨNG DỤNG
-## Toả nhiệt, hấp thụ nhiệt
+## ỨNG DỤNG
+### Toả nhiệt, hấp thụ nhiệt
 
 $$
 T(t) = T_{\alpha} + (T_0 - T_{\alpha})e^{-rt}
@@ -349,13 +342,13 @@ $$
     - $T_0$: Nhiệt độ ban đầu.
     - $r$: Hệ số tỉ lệ.
 
-## Rơi tự do
+### Rơi tự do
 
 $$
 mv'=mg-Kv
 $$
 
-## Hỗn hợp
+### Hỗn hợp
 
 $$
 \frac{dy}{dt}= \text{(Tốc độ vào)} - \text{(Tốc độ ra)}

@@ -1,13 +1,4 @@
-## <h1 style="text-align: center;">C/C++</h1>
-
-# Sources
-
-- [PTQ](https://classroom.google.com/c/NjI1MzkyMDM4MDg0)
-- [LLT](https://classroom.google.com/c/NjU0NDYyOTEwODY1)
-[Exercism](https://exercism.org/tracks/cpp)
-[programiz](https://www.programiz.com/cpp-programming/if-else)
-
-# Introduction
+## Introduction
 
 ### Chú thích
 
@@ -84,9 +75,9 @@
     - ``<ĐK>`` : True $\rightarrow$ ``<1>``
     - ``<ĐK>`` : False $\rightarrow$ ``<2>``
 
-# Flow Control
-## Condition
-### if
+## Flow Control
+### Condition
+#### if
 
 ```cpp
 if (condition) {
@@ -100,9 +91,9 @@ if (condition) {
       - If ``condition`` : ``false`` $\rightarrow$ ``body`` is skipped $\rightarrow$ 2.
 2. **Terminate.**
 
-![alt text](<Screenshot 2024-08-03 at 21.06.39.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.06.39.png>)
 
-### if...else
+#### if...else
 
 ```cpp
 if (condition) {
@@ -119,9 +110,9 @@ else {
       - If the ``condition`` : ``false`` $\rightarrow$ ``code_2`` is executed $\rightarrow$ 2.
 2. **Terminate.**
 
-![alt text](<Screenshot 2024-08-03 at 21.08.01.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.08.01.png>)
 
-### if...else...else if
+#### if...else...else if
 
 ```cpp
 if (condition1) {
@@ -144,8 +135,8 @@ else {
       - If ``condition2`` : ``false`` $\rightarrow$ ``code_3`` is executed $\rightarrow$ 3.
 3. **Terminate.**
 
-![alt text](<Screenshot 2024-08-03 at 21.08.40.png>)
-## switch case
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.08.40.png>)
+### switch case
 
 ```cpp
 switch (expression)  {
@@ -170,11 +161,11 @@ switch (expression)  {
       - If ``expression`` : ``no match`` $\rightarrow$ ``body_default`` is executed $\rightarrow$ 2.
 2. **Terminate.**
 
-![alt text](<Screenshot 2024-08-03 at 21.10.43.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.10.43.png>)
 
-## LOOP
+### LOOP
 
-### for
+#### for
 
 ```cpp
 for (initialization; condition; update) {
@@ -190,9 +181,9 @@ for (initialization; condition; update) {
 3. ``update`` $\rightarrow$ 2.
 4. **Terminate.**
 
-![alt text](<Screenshot 2024-08-03 at 21.13.15.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.13.15.png>)
 
-### for (arrays & vectors)
+#### for (arrays & vectors)
 
 ```cpp
 for (variable : collection) {
@@ -200,7 +191,7 @@ for (variable : collection) {
 }
 ```
 
-### while
+#### while
 
 ```cpp
 while (condition) {
@@ -214,9 +205,9 @@ while (condition) {
       - if ``condition`` : ``false`` $\rightarrow$ 2.
 2. **Terminate.**
 
-![alt text](<Screenshot 2024-08-03 at 21.14.29.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.14.29.png>)
 
-### do while
+#### do while
 
 ```cpp
 do {
@@ -232,17 +223,17 @@ while (condition);
       - If ``condition`` : ``false`` $\rightarrow$ 3.
 3. **Terminate.**
 
-![alt text](<Screenshot 2024-08-03 at 21.15.15.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.15.15.png>)
 
-# Syntax
+## Syntax
 
 - ``break;``
 
-![alt text](<Screenshot 2024-08-03 at 21.16.01.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.16.01.png>)
 
 - ``continue;``
 
-![alt text](<Screenshot 2024-08-03 at 21.16.21.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.16.21.png>)
 
 - ``goto``
 
@@ -253,16 +244,16 @@ goto //label;
 //code block;
 ```
 
-![alt text](<Screenshot 2024-08-03 at 21.17.05.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.17.05.png>)
 
-# Functions
+## Functions
 
 - How it works / Parameters / Return statement
 
-![alt text](<Screenshot 2024-08-03 at 21.17.48.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.17.48.png>)
 
-## 4 Methods:
-### 1. No arguments, no return
+### 4 Methods:
+#### 1. No arguments, no return
 
 ```cpp
 void prime();
@@ -288,7 +279,7 @@ void prime() {
 }
 ```
 
-### 2. No arguments, return
+#### 2. No arguments, return
 
 ```cpp
 int prime();
@@ -316,7 +307,7 @@ int prime() {
 }
 ```
 
-### 3. Arguments, no return
+#### 3. Arguments, no return
 
 ```cpp
 void prime(int n);
@@ -343,7 +334,7 @@ void prime(int n) {
 }
 ```
 
-### 4. Arguments, return
+#### 4. Arguments, return
 
 ```cpp
 int prime(int n);
@@ -369,14 +360,14 @@ int prime(int n) {
 }
 ```
 
-## Overloading
-### Different Number & Type
+### Overloading
+#### Different Number & Type
 
-![alt text](<Screenshot 2024-08-03 at 21.19.46.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.19.46.png>)
 
-## Default arguments
+### Default arguments
 
-![alt text](<Screenshot 2024-08-03 at 21.20.31.png>)
+![alt text](<cpp lib/Screenshot 2024-08-03 at 21.20.31.png>)
 
 > Once we provide a default value for a parameter, all subsequent parameters must also have default values.
 
@@ -389,7 +380,7 @@ void add(int a, int b = 3, int c, int d = 4);
 void add(int a, int c, int b = 3, int d = 4);
 ```
 
-## Storage Class
+### Storage Class
 
 - Local Variable
 
@@ -440,4 +431,4 @@ int main() {
 ```
 ``output: 1 2`` instead of ``1 1``.
 
-# Arrays
+## Arrays

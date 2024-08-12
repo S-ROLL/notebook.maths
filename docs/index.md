@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+  - toc
+---
 # Welcome to NB.MATHS! ❤️
 
 **Hey Math & Code Crew!**
@@ -9,11 +14,9 @@ Welcome to your go-to spot for all things math and computer science! I've put to
 - Maths
     - [Formula basis](formulabasis.md)
     - Caculus
-        - Base theory
-            - [Measure theory](measuretheory.md)
-            - [Functional analysis](functionalanalysis.md)
-        - PDE
-            - [Ordinary differential equation (ODE)](differentialequation.md)
+        - [Functional analysis](functionalanalysis.md)
+        - [Measure theory](measuretheory.md)
+        - [Ordinary differential equation (ODE)](differentialequation.md)
         - [Numerical methods](numericalmethods.md)
         - [Complex analysis](complexanalysis.md)
 - CS
