@@ -6,27 +6,38 @@ nav:
   - Home: index.md
   - Maths:
     - maths/index.md
-    - Theoretical:
-      - Discrete structure: maths/discrete.md
+    - Theoreticals:
+      - Discrete structure: maths/theo/discrete.md
       - Analysis:
   #     - Measure theory: maths/measuretheory.md
-        - Functional analysis: maths/functionalanalysis.md
-        - Complex analysis: maths/complexanalysis.md
-    - Applied:
-      - Security:
-        - Cryptography: maths/cryptography.md
-      - Statistics: maths/statistics.md
-      - Numerical methods: maths/numericalmethods.md
+        - Functional analysis: maths/theo/ana/functionalanalysis.md
+        - Complex analysis: maths/theo/ana/complexanalysis.md
+    - Applications:
+      - Cryptography: maths/app/cryptography.md
+      - Statistics: maths/app/statistics.md
+      - Numerical methods: maths/app/numericalmethods.md
       - Differential equation:
-        - Ordinary: maths/differentialequation.md
+        - Ordinary: maths/app/de/ode.md
   #     - Machine learning: maths/machinelearning.md
   - Computer:
-    - Data structure & Algorithm: computer/daanda.md
+    - Data structure & Algorithm: computer/dsa.md
     - Languages:
       - Python: computer/python.md
       - C++: computer/cpp.md
 #   - Technique: 
 #     - Open source: computer/opensource.md
+
+plugins:
+    - search: {}
+    - encryptcontent:
+        title_prefix: ''
+        summary: 'Bạn cần có password để vào được trang này.'
+        placeholder: 'Nhập password'
+        decryption_failure_message: 'Try again!'
+        encryption_info_message: "Vui lòng nhập password vào bên dưới"
+        input_class: 'md-search__form md-search__input'
+        button_class: 'md-search__icon'
+
 
 theme:
   name: material
@@ -62,8 +73,8 @@ theme:
       accent: lime
   font:
     text: Open Sans
-  logo: Photoroom-20240623_134046.png
-  favicon: Photoroom-20240623_134046.png
+  logo: bancie.png
+  favicon: bancie.png
   icon:
     logo: logo
     admonition:
@@ -115,11 +126,9 @@ copyright: |
   &copy; 2024 <a href="https://web.facebook.com/ngchibangg"  target="_blank" rel="noopener">Bang Nguyen</a>
 
 extra:
-  homepage: https://s-roll.github.io/notebook.maths/
+  homepage: https://s-roll.github.io/notebook.language/
   social:
     - icon: fontawesome/brands/facebook
       link: https://web.facebook.com/ngchibangg
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/bancie.007/
-    - icon: fontawesome/brands/github
-      link: https://github.com/Bancie

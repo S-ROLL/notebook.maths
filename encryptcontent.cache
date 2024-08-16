@@ -1,0 +1,5 @@
+kdf_iterations: 10000
+obfuscate: {}
+password:
+  bangdeptrai: 75b99398419f15dd33b123d72fc6cd486918a010ef695eca82a8b1d20ef742cd;98c6e857d3a411605b9f5490ce8c8b9a;2b3fbad8588c10d2748dc2ea3b4e84cfe4cd04020124216ed6dfcef9e69083b3
+userpass: {}
