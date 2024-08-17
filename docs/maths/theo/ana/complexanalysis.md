@@ -84,11 +84,13 @@ $$
 \end{split}
 $$
 
-## CT tich phan Cauchy (Cauchy's Integral Formula) [proof](https://math.libretexts.org/Bookshelves/Analysis/Complex_Variables_with_Applications_(Orloff)/05%3A_Cauchy_Integral_Formula/5.03%3A_Proof_of_Cauchy%27s_integral_formula)
+## CT tich phan Cauchy (Cauchy's Integral Formula) 
 
 $$
 f^{(n)}(z_0)=\frac{n!}{2\pi i}\int_{\gamma D} \frac{f(z)dz}{(z-z_0)^{n+1}}
 $$
+
+<center>[proof](https://math.libretexts.org/Bookshelves/Analysis/Complex_Variables_with_Applications_(Orloff)/05%3A_Cauchy_Integral_Formula/5.03%3A_Proof_of_Cauchy%27s_integral_formula){ .md-button }</center>
 
 ## Khai triển Taylor
 
@@ -112,7 +114,8 @@ c_n &= \frac{f^{(n)}(z_0)}{n!} \\
 \end{split}
 $$
 
-## Thặng dư (Residue)
+## Residue
+### Thặng dư (Residue)
 
 $$
 res[f,z_0]=C_{-1}=\frac{1}{(m-1)!} \lim_{z\rightarrow z_0} [(z-z_0)^mf(z)]^{m-1}
@@ -140,7 +143,7 @@ $$
 C_n \ne 0 \text{ at } \infty , \: n < 0
 $$
 
-## Thặng dư cho tích phân
+### Thặng dư cho tích phân
 
 $$
 \int _{\gamma}f(z)dz = 2\pi i \sum _{k=1}^N res[f,z_k]
@@ -179,7 +182,7 @@ $$
 \end{split}
 $$
 
-- $ \Delta > 0 $
+- $\Delta > 0$
 
 $$
 \left\{ \large
@@ -190,10 +193,10 @@ $$
 \right.
 $$
 
-- $ \Delta = 0 $
+- $\Delta = 0$
 
 $$
 x_1 = x_2 = \frac{-b}{2a}
 $$
 
-- $ \Delta < 0 $ vo nghiem.
+- $\Delta < 0$ vo nghiem.
