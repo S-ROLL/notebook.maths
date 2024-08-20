@@ -7,8 +7,6 @@ nav:
   - Maths:
     - maths/index.md
     - Theoreticals:
-      - Discrete structure: maths/theo/discrete.md
-      - Analysis:
   #     - Measure theory: maths/measuretheory.md
         - Functional analysis: maths/theo/ana/functionalanalysis.md
         - Complex analysis: maths/theo/ana/complexanalysis.md
@@ -20,6 +18,7 @@ nav:
         - Ordinary: maths/app/de/ode.md
   #     - Machine learning: maths/machinelearning.md
   - Computer:
+    - Discrete structure: computer/discrete.md
     - Data structure & Algorithm: computer/dsa.md
     - Languages:
       - Python: computer/python.md
