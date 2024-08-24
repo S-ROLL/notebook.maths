@@ -21,10 +21,11 @@ nav:
     - Discrete structure: computer/discrete.md
     - Data structure & Algorithm: computer/dsa.md
     - Languages:
-      - Python: computer/python.md
-      - C++: computer/cpp.md
-#   - Technique: 
-#     - Open source: computer/opensource.md
+      - Python: computer/python/python.md
+      - C++: computer/cpp/cpp.md
+    - Technique: 
+      - Python package: computer/python/py-package.md
+      #- Open source: computer/opensource.md
 
 plugins:
     - search: {}

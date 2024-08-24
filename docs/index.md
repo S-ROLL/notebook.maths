@@ -25,7 +25,7 @@ Welcome to your go-to spot for all things math and computer science! I've put to
     - [**Discrete structure**](computer/discrete.md)
     - [**Data structure & Algorithm**](computer/dsa.md)
     - [Languages:](#web-mapping)
-        - [Python](computer/python.md)
-        - [C++](computer/cpp.md)
+        - [Python](computer/python/python.md)
+        - [C++](computer/cpp/cpp.md)
 
 Hope this friendly approach is what you're looking for!
