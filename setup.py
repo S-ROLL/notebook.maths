@@ -5,7 +5,7 @@ with open("app/README.md", "r") as f:
     
 setup(
     name="TiLearn",
-    version="0.0.10",
+    version="0.0.20",
     description="Abaisodjoasinvoidnsv",
     package_dir={"": "app"},
     packages=find_packages(where="app"),
