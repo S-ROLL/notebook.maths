@@ -5,5 +5,3 @@ from tilearn.src.tilearn2 import (
 from tilearn.src.tilearn1 import (
     plus,
 )
-
-print(show())
