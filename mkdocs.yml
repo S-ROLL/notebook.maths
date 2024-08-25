@@ -25,6 +25,7 @@ nav:
       - C++: computer/cpp/cpp.md
     - Technique: 
       - Python package: computer/python/py-package.md
+      - Python upgraded: computer/python/py-up.md
       #- Open source: computer/opensource.md
 
 plugins:
