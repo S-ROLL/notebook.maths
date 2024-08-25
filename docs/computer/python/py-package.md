@@ -99,3 +99,13 @@ twine upload dist/*
     ```
     twine upload -r testpypi dist/*
     ```
+
+#### Upgraded
+- Fix & Dev...
+- Delete ``dist`` file. 
+- [Set up time](#setup)
+- [Publish](#pypi-publishing)
+- Done!
+
+!!! tip 
+    Putting ``import`` to ``__init__.py`` for short calling.
