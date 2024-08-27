@@ -26,6 +26,7 @@ nav:
     - Technique: 
       - Python package: computer/python/py-package.md
       - Venv setting: computer/python/py-up.md
+      - Mkdocs setting: computer/mkdocs/mkdocs.md
       #- Open source: computer/opensource.md
 
 plugins:
