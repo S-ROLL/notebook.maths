@@ -2,6 +2,8 @@
 
 https://docs.python.org/3/tutorial/venv.html
 
+https://pip.pypa.io/en/latest/user_guide/#requirements-files
+
 ## Homebrew
 ```
 brew update
