@@ -107,5 +107,9 @@ twine upload dist/*
 - [Publish](#pypi-publishing)
 - Done!
 
+!!! note
+    - In PyPI web, let create an **another** token.
+    - Chose scope: *the project you developing*.
+
 !!! tip 
     Putting ``import`` to ``__init__.py`` for short calling.
