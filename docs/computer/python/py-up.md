@@ -1,4 +1,7 @@
 # Python upgraded step-by-step
+
+https://docs.python.org/3/tutorial/venv.html
+
 ## Homebrew
 ```
 brew update
