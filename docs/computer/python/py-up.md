@@ -42,3 +42,8 @@ source venv/bin/activate
     ```
     python3 --version
     ```
+
+!!! tip
+    ```
+    source venv/bin/activate
+    ```
