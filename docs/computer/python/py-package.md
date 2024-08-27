@@ -7,13 +7,17 @@ run.py
 setup.py
 ```
 ## Setuptool
-### Initial Installation
+### Installation
 ```
 pip install wheel
 ```
 
 ```
 pip install setuptools
+```
+
+```
+pip install twine
 ```
 
 ### File setting
@@ -83,9 +87,6 @@ pip install .
 
 ## PyPI publishing
 ### Check
-```
-pip install twine
-```
 ```
 twine check dist/*
 ```
