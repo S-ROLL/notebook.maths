@@ -4,7 +4,7 @@ x = [['French homework', 6, 3, 6, 8], ['Maths homework', 6, 3, 6, 8], ['IELTS pr
 
 # print(tilearn.show_mytime(x, 30))
 
-scheduling = tilearn.show_mytime(x, 30)
+scheduling = tilearn.show_mytime(x, date=30)
 
 for row in scheduling:
     print(row)
