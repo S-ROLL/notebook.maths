@@ -1,10 +1,10 @@
 import tilearn
 
-x = [['French homework', 6, 3, 6, 8], ['Maths homework', 6, 3, 6, 8], ['IELTS practice', 2, 1, 6, 3], ['Review Maths', 3, 5, 4, 7], ['Study French', 3, 6, 3, 7], ['Housework', 3, 5, 4, 7], ['Coding practice', 2, 1, 6, 3], ['Reading book', 10, 3, 6, 8], ['Piano lesson', 3, 6, 3, 7], ['English homework', 3, 6, 3, 7]]
+data = [['Job 1', 4, 0, 10, 1], ['Job 2', 9, 0, 10, 3], ['Job 3', 6, 0, 10, 2], ['Job 4', 7, 0, 10, 3], ['Job 5', 4, 0, 10, 2], ['Job 6', 5, 0, 10, 1], ['Job 7', 8, 0, 10, 3], ['Job 8', 3, 0, 10, 1], ['Job 9', 2, 0, 10, 1], ['Job 10', 6, 0, 10, 2]]
 
-# print(tilearn.show_mytime(x, 30))
+#print(tilearn.show_mytime(data, 10))
 
-scheduling = tilearn.show_mytime(x, 30)
+schedule = tilearn.show_mytime(data, 10)
 
-for row in scheduling:
+for row in schedule:
     print(row)
