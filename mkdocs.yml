@@ -29,6 +29,8 @@ nav:
       - Mkdocs setting: computer/mkdocs/mkdocs.md
       - Other: computer/other/other.md
       #- Open source: computer/opensource.md
+    - Algorithms:
+      - Ranking: computer/algorithms/ranking.md
 
 plugins:
     - search: {}
