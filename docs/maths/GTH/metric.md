@@ -132,4 +132,43 @@ $(X,d)$ **compắc:**
 
 ## Thu hẹp
 ## Metric tích
+
+$x = (x_1, x_2, \ldots , x_n) \in X$
+
+$y = (y_1, y_2, \ldots , y_n) \in X$
+
+$X = X_1 \times X_2 \times \ldots \times X_n$
+
+$$
+d(x,y) = \sqrt{\sum_{i=1}^n d_i^2 (x_i, y_i)}
+$$
+
+
 ## Ánh xạ liên tục
+
+$(X,d)$
+
+$(Y,d)$
+
+$f : X \to Y$
+
+- $f$ liên tục tại $a \in X$
+    - $\forall \epsilon >0$
+    - $\exists \delta > 0$
+    - $\forall x \in X$
+    - $d_X (x,a) < \delta \Rightarrow d_Y(f(x), f(a)) < \epsilon$
+    
+    *hoặc*
+
+    - $\forall \epsilon >0$
+    - $\exists \delta > 0$
+    - $\forall x \in X$
+    - $x \in B_X(a,\delta) \Rightarrow f(x) \in B_Y(f(a), \epsilon)$
+
+    *hoặc*
+
+    - $\forall (x_n) \subset X$
+    - $x_n \to a \Rightarrow f(x_n) \to f(a)$
+
+- $f$ liên tục trên $X$
+    - $f$ liên tục tại mọi $x \in X$
