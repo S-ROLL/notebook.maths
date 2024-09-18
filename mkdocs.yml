@@ -9,7 +9,9 @@ nav:
     #- Measure theory: maths/measuretheory.md
     - Giải tích hàm:
       - maths/GTH/index.md
-      - Không gian metric: maths/GTH/metric.md
+      - Không gian metric:
+        - Định nghĩa: maths/GTH/metric.md
+        - Kết quả: maths/GTH/metric2.md
     - Lý thuyết mật mã: maths/cryptography.md
     - Cấu trúc rời rạc: maths/discrete.md
     # - Statistics: maths/statistics.md

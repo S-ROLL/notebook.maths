@@ -1,4 +1,4 @@
-# Không gian metric
+# Định nghĩa
 ## Metric
 
 - **TXĐ:** $X \neq \varnothing$
