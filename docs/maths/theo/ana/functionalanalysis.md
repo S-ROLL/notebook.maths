@@ -1,4 +1,0 @@
----
-password: bangdeptrai
----
-# Functional analysis

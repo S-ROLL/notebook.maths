@@ -6,17 +6,15 @@ nav:
   - Home: index.md
   - Maths:
     - maths/index.md
-    - Theoreticals:
-  #     - Measure theory: maths/measuretheory.md
-        - Functional analysis: maths/theo/ana/functionalanalysis.md
-        - Complex analysis: maths/theo/ana/complexanalysis.md
-    - Applications:
-      - Cryptography: maths/app/cryptography.md
-      - Statistics: maths/app/statistics.md
-      - Numerical methods: maths/app/numericalmethods.md
-      - Differential equation:
-        - Ordinary: maths/app/de/ode.md
-  #     - Machine learning: maths/machinelearning.md
+    #- Measure theory: maths/measuretheory.md
+    - Giải tích hàm: maths/functionalanalysis.md
+    - Lý thuyết mật mã: maths/cryptography.md
+    # - Statistics: maths/statistics.md
+    - Giải tích số: maths/numericalmethods.md
+    - Phương trình vi phân: maths/ode.md
+    - Giải tích phức: maths/complexanalysis.md
+    # - Differential equation:
+    #- Machine learning: maths/machinelearning.md
   - Computer:
     - Discrete structure: computer/discrete.md
     - Data structure & Algorithm: computer/dsa.md
