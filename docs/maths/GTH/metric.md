@@ -16,30 +16,29 @@
 
 
 ## Tập
-!!! note
-    - **TXĐ:**
-        - $(X,d)$ là không gian metric
-        - $a \in X$
-        - $r > 0$
-        - $A \subset X$
-    
-    - **Quả cầu mở** (tâm $a$, bán kính $r$) trong $X$:
+- **TXĐ:**
+    - $(X,d)$ là không gian metric
+    - $a \in X$
+    - $r > 0$
+    - $A \subset X$
 
-    $$
-    B(a;r) = \{ x \in X | d(a,x) < r \}
-    $$
+- **Quả cầu mở** (tâm $a$, bán kính $r$) trong $X$:
 
-    - **Quả cầu đóng** (tâm $a$, bán kính $r$) trong $X$:
+$$
+B(a;r) = \{ x \in X | d(a,x) < r \}
+$$
 
-    $$
-    B'(a;r) = \{ x \in X | d(a,x) \leq r \}
-    $$
+- **Quả cầu đóng** (tâm $a$, bán kính $r$) trong $X$:
 
-    - **Mặt cầu** (tâm $a$, bán kính $r$) trong $X$:
+$$
+B'(a;r) = \{ x \in X | d(a,x) \leq r \}
+$$
 
-    $$
-    S(a;r) = \{ x \in X | d(a,x) = r \}
-    $$
+- **Mặt cầu** (tâm $a$, bán kính $r$) trong $X$:
+
+$$
+S(a;r) = \{ x \in X | d(a,x) = r \}
+$$
 
 ### Tập mở
 
