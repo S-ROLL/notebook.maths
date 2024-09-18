@@ -7,8 +7,11 @@ nav:
   - Maths:
     - maths/index.md
     #- Measure theory: maths/measuretheory.md
-    - Giải tích hàm: maths/functionalanalysis.md
+    - Giải tích hàm:
+      - maths/GTH/index.md
+      - Không gian metric: maths/GTH/metric.md
     - Lý thuyết mật mã: maths/cryptography.md
+    - Cấu trúc rời rạc: maths/discrete.md
     # - Statistics: maths/statistics.md
     - Giải tích số: maths/numericalmethods.md
     - Phương trình vi phân: maths/ode.md
@@ -16,7 +19,6 @@ nav:
     # - Differential equation:
     #- Machine learning: maths/machinelearning.md
   - Computer:
-    - Discrete structure: computer/discrete.md
     - Data structure & Algorithm: computer/dsa.md
     - Languages:
       - Python: computer/python/python.md
