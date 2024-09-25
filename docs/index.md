@@ -12,7 +12,7 @@ Welcome to your go-to spot for all things math and computer science! I've put to
 ## Web mapping
 - [Maths](#web-mapping)
     - [Basis formula](maths/index.md)
-    - [**Giải tích hàm**](maths/functionalanalysis.md)
+    - [**Giải tích hàm**](maths/GTH/index.md)
     - [**Lý thuyết mật mã**](maths/cryptography.md)
     - [**Cấu trúc rời rạc**](maths/discrete.md)
     <!-- - [Statistics](maths/statistics.md) -->

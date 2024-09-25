@@ -64,6 +64,14 @@ $$
 - $A$ là **tập đóng** (trong $X$):
     - $X\setminus A$ tập mở.
 
+    hoặc
+
+    - $A = \overline{A}$ (phần dính)
+
+    hoặc
+
+    - $\forall (x_n) \subset A : x_n \to x \in X \Rightarrow x \in A$
+
 ### Tập bị chặn
 
 - **TXĐ:**
