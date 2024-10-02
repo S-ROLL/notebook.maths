@@ -7,12 +7,12 @@
     - $d(x,y) = d(y,x)$
     - $d(x,y) \leq d(x,z) + d(z,y)$
 
-## Định chuẩn
+<!-- ## Định chuẩn
 - **TXĐ:** $(X,+,\cdot)$
 - $\forall x, y \in X$ và $\forall \alpha \in \mathbb{R}:$
     - $\|x \| \geq 0$, $\| x \| = 0 \Leftrightarrow x=0$
     - $\| \alpha x \| = |\alpha | \| x \|$
-    - $\| x + y \| \leq \| x \| + \| y \|$
+    - $\| x + y \| \leq \| x \| + \| y \|$ -->
 
 
 ## Tập
@@ -65,58 +65,50 @@ $$
 
 
 ## Dãy
-$(X,d)$ là không gian metric và $(x_n)$ dãy ptu trong $X$ 
-
 ### Dãy hội tụ
-$(x_n)$ **hội tụ** (trong $X$):
 
-- $\forall \epsilon > 0$
-- $\exists n_0 \in \mathbb{N}: \forall n \geq n_0$
-- $d(x_n, x) < \epsilon$
+| ĐIỀU KIỆN | VẾ TRÁI || VẾ PHẢI |
+|------|------|:------:|------|
+|$(X,d)$ <br/> $(x_n)$|$(x_n)$ **hội tụ** (trong $X$)|$\Leftrightarrow$| $\forall \epsilon > 0$ <br/> $\exists n_0 \in \mathbb{N}: \forall n \geq n_0$ <br/> $d(x_n, x) < \epsilon$|
+|$(X,d)$ <br/> $(x_n)$|$(x_n)$ **hội tụ** (trong $X$)|$\Leftrightarrow$| $\exists x \in X: x_n \to x$ khi $n \to \infty$|
+|$(X,d)$ <br/> $(x_n)$|$(x_n)$ **hội tụ** (trong $X$)|$\Leftrightarrow$| $\exists x \in X: d(x_n, x) \to 0$ khi $n \to \infty$ |
 
 ### Dãy Cauchy
-$(x_n)$ **dãy Cauchy** (trong $X$):
 
-- $\forall \epsilon > 0$
-- $\exists n_0 \in \mathbb{N} : \forall m, n \geq n_0$
-- $d(x_m, x_n) < \epsilon$
+| ĐIỀU KIỆN | VẾ TRÁI || VẾ PHẢI |
+|------|------|:------:|------|
+|$(X,d)$ <br/> $(x_n)$|$(x_n)$ **dãy Cauchy** (trong $X$)|$\Leftrightarrow$| $\forall \epsilon > 0$ <br/> $\exists n_0 \in \mathbb{N} : \forall m, n \geq n_0$ <br/> $d(x_m, x_n) < \epsilon$ |
 
 ### Dãy bị chặn
-$(x_n)$ **dãy bị chặn** (trong $X$):
 
-- $\exists a \in X$
-- $\exists r > 0 : (x_n) \subset B(a;r)$
-
-*hoặc*
-
-- $\forall n \in \mathbb{N}$
-- $x_n \in B(a;r)$
+| ĐIỀU KIỆN | VẾ TRÁI || VẾ PHẢI |
+|------|------|:------:|------|
+|$(X,d)$ <br/> $(x_n)$|$(x_n)$ **dãy bị chặn** (trong $X$)|$\Leftrightarrow$| $\exists a \in X$ <br/> $\exists r > 0 : (x_n) \subset B(a;r)$ |
+|$(X,d)$ <br/> $(x_n)$|$(x_n)$ **dãy bị chặn** (trong $X$)|$\Leftrightarrow$| $\forall n \in \mathbb{N}$ <br/> $x_n \in B(a;r)$ |
 
 ## Đầy đủ
-$(X,d)$ **đầy đủ:**
 
-- $\forall (x_n) \subset X$
-- $(x_n)$ dãy Cauchy $\implies (x_n)$ hội tụ. 
+| ĐIỀU KIỆN | VẾ TRÁI || VẾ PHẢI |
+|------|------|:------:|------|
+| $(X,d)$ | $(X,d)$ **đầy đủ** |$\Leftrightarrow$| $\forall (x_n) \subset X$ <br/> $(x_n)$ dãy Cauchy $\Rightarrow (x_n)$ hội tụ |
 
 !!! tip
     - Lấy $(x_n) \subset X$
     - $(x_n)$ dãy Cauchy
     - C/m $(x_n)$ hội tụ.
 
-
-
 ## Compắc
-$(X,d)$ **compắc:**
 
-- $\forall (x_n) \subset X$
-- $\exists (x_{n_k}) \subset (x_n)$
-- $(x_{n_k})$ hội tụ
+
+| ĐIỀU KIỆN | VẾ TRÁI || VẾ PHẢI |
+|------|------|:------:|------|
+| $(X,d)$ | $(X,d)$ **compắc** | $\Leftrightarrow$ | $\forall (x_n) \subset X$ <br/> $\exists (x_{n_k}) \subset (x_n)$ : $(x_{n_k})$ hội tụ |
 
 !!! tip
     - Lấy $(x_n) \subset X$
     - C/m $(x_n)$ có dãy con $(x_{n_k}) \subset (x_n)$ sao cho $(x_{n_k})$ hội tụ.
 
-## Thu hẹp
+<!-- ## Thu hẹp
 ## Metric tích
 
 $x = (x_1, x_2, \ldots , x_n) \in X$
@@ -157,4 +149,4 @@ $f : X \to Y$
     - $x_n \to a \Rightarrow f(x_n) \to f(a)$
 
 - $f$ liên tục trên $X$
-    - $f$ liên tục tại mọi $x \in X$
+    - $f$ liên tục tại mọi $x \in X$ -->
