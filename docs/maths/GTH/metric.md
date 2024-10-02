@@ -42,48 +42,27 @@ $$
 
 ### Tập mở
 
-- **TXĐ:**
-    - $(X,d)$ là không gian metric
-    - $a \in X$
-    - $r > 0$
-    - $A \subset X$
-
-- $A$ là **tập mở** (trong $X$):
-    - $\forall x \in A$
-    - $\exists r > 0$
-    - $B(x;r) \subset A$
+| ĐIỀU KIỆN | VẾ TRÁI || VẾ PHẢI |
+|------|------|:------:|------|
+| $(X,d)$ <br/> $a \in X$ <br/> $r > 0$ <br/> $A \subset X$ | $A$ là **tập mở** (trong $X$) | $\Leftrightarrow$ | $\forall x \in A$ <br/> $\exists r > 0$ <br/> $B(x;r) \subset A$ |
 
 ### Tập đóng
 
-- **TXĐ:**
-    - $(X,d)$ là không gian metric
-    - $a \in X$
-    - $r > 0$
-    - $A \subset X$
+| ĐIỀU KIỆN | VẾ TRÁI || VẾ PHẢI |
+|------|------|:------:|------|
+| $(X,d)$ <br/> $a \in X$ <br/> $r > 0$ <br/> $A \subset X$ | $A$ là **tập đóng** (trong $X$) | $\Leftrightarrow$ | $X\setminus A$ tập mở |
+| $(X,d)$ <br/> $a \in X$ <br/> $r > 0$ <br/> $A \subset X$ | $A$ là **tập đóng** (trong $X$) | $\Leftrightarrow$ | $A = \overline{A}$ (phần dính) |
+| $(X,d)$ <br/> $a \in X$ <br/> $r > 0$ <br/> $A \subset X$ | $A$ là **tập đóng** (trong $X$) | $\Leftrightarrow$ | $\forall (x_n) \subset A : x_n \to x \in X \Rightarrow x \in A$ |
+| $(X,d)$ <br/> $A \subset Y \subset X$ <br/> $Y$ đóng trong $X$ | $A$ đóng trong $Y$ | $\Leftrightarrow$| $A$ đóng trong $X$|
 
-- $A$ là **tập đóng** (trong $X$):
-    - $X\setminus A$ tập mở.
 
-    hoặc
-
-    - $A = \overline{A}$ (phần dính)
-
-    hoặc
-
-    - $\forall (x_n) \subset A : x_n \to x \in X \Rightarrow x \in A$
 
 ### Tập bị chặn
 
-- **TXĐ:**
-    - $(X,d)$ là không gian metric
-    - $a \in X$
-    - $r > 0$
-    - $A \subset X$
+| ĐIỀU KIỆN | VẾ TRÁI || VẾ PHẢI |
+|------|------|:------:|------|
+| $(X,d)$ <br/> $a \in X$ <br/> $r > 0$ <br/> $A \subset X$ | $A$ là **tập bị chặn** | $\Leftrightarrow$ | $\exists a \in X$ <br/> $\exists r > 0$ <br/> $A \subset B(a;r)$ |
 
-- $A$ là **tập bị chặn**:
-    - $\exists a \in X$
-    - $\exists r > 0$
-    - $A \subset B(a;r)$
 
 ## Dãy
 $(X,d)$ là không gian metric và $(x_n)$ dãy ptu trong $X$ 
