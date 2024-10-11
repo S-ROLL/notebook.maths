@@ -87,12 +87,6 @@ end selectionSort
         #include <iostream>
         using namespace std;
 
-        void swap(int *a, int *b) {
-            int temp = *a;
-            *a = *b;
-            *b = temp;
-        }
-
         void printArray(int array[], int size) {
             for (int i = 0; i < size; i++) {
                 cout << array[i] << " ";
@@ -107,7 +101,7 @@ end selectionSort
                     if (array[j] < array[min_idx])
                         min_idx = j;
                     }
-                    swap(&array[min_idx], &array[i]);
+                    swap(array[min_idx], array[i]);
             }
         }
 
@@ -200,6 +194,97 @@ end insertionSort
         print(data)
         ```
 
+### Quick sort
+Quick sort là một thuật toán sắp xếp chia để trị, hoạt động bằng cách chọn một phần tử gọi là phần tử trụ (pivot) và phân chia danh sách thành hai phần: một phần chứa các phần tử nhỏ hơn hoặc bằng phần tử trụ và một phần chứa các phần tử lớn hơn phần tử trụ, sau đó sắp xếp đệ quy hai phần này.
+
+```py
+quickSort(array, leftmostIndex, rightmostIndex)
+  if (leftmostIndex < rightmostIndex)
+    pivotIndex <- partition(array,leftmostIndex, rightmostIndex)
+    quickSort(array, leftmostIndex, pivotIndex - 1)
+    quickSort(array, pivotIndex, rightmostIndex)
+
+partition(array, leftmostIndex, rightmostIndex)
+  set rightmostIndex as pivotIndex
+  storeIndex <- leftmostIndex - 1
+  for i <- leftmostIndex + 1 to rightmostIndex
+  if element[i] < pivotElement
+    swap element[i] and element[storeIndex]
+    storeIndex++
+  swap pivotElement and element[storeIndex+1]
+return storeIndex + 1
+```
+
+!!! Code
+    === "C++"
+        ```cpp
+        #include <iostream>
+        using namespace std;
+
+        void printArray(int array[], int size) {
+            int i;
+            for (i = 0; i < size; i++)
+                cout << array[i] << " ";
+            cout << endl;
+        }
+
+        int partition(int array[], int low, int high) {
+            int pivot = array[high];
+            int i = (low - 1);
+            for (int j = low; j < high; j++) {
+                if (array[j] <= pivot) {
+                    i++;
+                    swap(array[i], array[j]);
+                }
+            }
+            swap(array[i + 1], array[high]);
+            return (i + 1);
+        }
+
+        void quickSort(int array[], int low, int high) {
+            if (low < high) {
+                int pi = partition(array, low, high);
+                quickSort(array, low, pi - 1);
+                quickSort(array, pi + 1, high);
+            }
+        }
+
+        int main() {
+            int data[] = {8, 7, 6, 1, 0, 9, 2};
+            int n = sizeof(data) / sizeof(data[0]);
+            cout << "Unsorted Array: \n";
+            printArray(data, n);
+            quickSort(data, 0, n - 1);
+            cout << "Sorted array in ascending order: \n";
+            printArray(data, n);
+        }
+        ```
+    === "Python"
+        ```py
+        def partition(array, low, high):
+            pivot = array[high]
+            i = low - 1
+            for j in range(low, high):
+                if array[j] <= pivot:
+                    i = i + 1
+                    (array[i], array[j]) = (array[j], array[i])
+            (array[i + 1], array[high]) = (array[high], array[i + 1])
+            return i + 1
+
+        def quickSort(array, low, high):
+            if low < high:
+                pi = partition(array, low, high)
+                quickSort(array, low, pi - 1)
+                quickSort(array, pi + 1, high)
+
+        data = [8, 7, 2, 1, 0, 9, 6]
+        print("Unsorted Array")
+        print(data)
+        size = len(data)
+        quickSort(data, 0, size - 1)
+        print('Sorted Array in Ascending Order:')
+        print(data)
+        ```
 
 ## Searching
 ### Linear search
@@ -253,3 +338,5 @@ LinearSearch(array, key)
         else:
             print("Element found at index: ", result)
         ```
+
+## Linked list
