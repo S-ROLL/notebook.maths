@@ -340,3 +340,180 @@ LinearSearch(array, key)
         ```
 
 ## Linked list
+```cpp
+struct Node {
+    int data;
+    struct Node *next;
+};
+```
+
+Combo `main`
+```cpp
+int main () {
+    struct Node *a = new Node;
+    struct Node *b = new Node;
+    struct Node *c = new Node;
+
+    a->data = 1;
+    b->data = 2;
+    c->data = 3;
+
+    a->next = b;
+    b->next = c;
+    c->next = NULL;
+
+    struct Node *head = a;
+    // head = insert_at_head(head, 7);
+    // head = insert_at_tail(head, 9);
+    // head = insert_at_position(head, 12, 3);
+    // if (search(head, 7) == 1) {
+    //     cout<<"Co"<<endl;
+    // } else {
+    //     cout<<"Ko"<<endl;
+    // }
+    // bubbleSort(head, 3);
+    print_list(head);
+    return 0;
+}
+```
+
+### Chèn
+#### Chèn đầu
+```cpp
+Node* insert_at_head(Node* head, int data) {
+    Node* new_node = new Node;
+    new_node->data = data;
+    new_node->next = head;
+    return new_node;
+}
+```
+#### Chèn cuối
+```cpp
+Node* insert_at_tail(Node* head, int data) {
+    Node* new_node = new Node;
+    new_node->data = data;
+    new_node->next = NULL;
+    if (head == NULL) {
+        return new_node;
+    }
+    Node* temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = new_node;
+    return head;
+}
+```
+#### Chèn giữa
+```cpp
+Node* insert_at_position(Node* head, int data, int position) {
+    Node* new_node = new Node;
+    new_node->data = data;
+    if (position == 1) {
+        new_node->next = head;
+        return new_node;
+    }
+    Node* temp = head;
+    for (int i = 1; i < position - 1 && temp != NULL; i++) {
+        temp = temp->next;
+    }
+    if (temp == NULL) {
+        cout << "Position out of bounds" << endl;
+        delete new_node;
+        return head;
+    }
+    new_node->next = temp->next;
+    temp->next = new_node;
+    return head;
+}
+```
+### Xoá
+#### Xoá đầu
+```cpp
+Node* delete_head(Node* head) {
+    if (head == NULL) {
+        cout << "List is empty" << endl;
+        return NULL;
+    }
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+    return head;
+}
+```
+#### Xoá cuối
+```cpp
+Node* delete_tail(Node* head) {
+    if (head == NULL) {
+        cout << "List is empty" << endl;
+        return NULL;
+    }
+    if (head->next == NULL) {
+        delete head;
+        return NULL;
+    }
+    Node* temp = head;
+    while (temp->next->next != NULL) {
+        temp = temp->next;
+    }
+    delete temp->next;
+    temp->next = NULL;
+    return head;
+}
+```
+#### Xoá giữa
+```cpp
+Node* delete_at_position(Node* head, int position) {
+    if (head == NULL) {
+        cout << "List is empty" << endl;
+        return NULL;
+    }
+    if (position == 1) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+    Node* temp = head;
+    for (int i = 1; i < position - 1 && temp != NULL; i++) {
+        temp = temp->next;
+    }
+    if (temp == NULL || temp->next == NULL) {
+        cout << "Position out of bounds" << endl;
+        return head;
+    }
+    Node* next = temp->next->next;
+    delete temp->next;
+    temp->next = next;
+    return head;
+}
+```
+### Tìm kiếm
+```cpp
+int search(Node* head, int key) {
+    Node* current = head;
+    while (current != NULL) {
+        if (current->data == key) {
+            return 1;
+        }
+        current = current->next;
+    }
+    return -1;
+}
+```
+### Sắp xếp
+```cpp
+void bubbleSort(Node* head, int size) {
+    for (int step = 0; step < size - 1; ++step) {
+        Node* current = head;
+        for (int i = 0; i < size - step - 1; ++i) {
+            if (current->data > current->next->data) {
+                int temp = current->data;
+                current->data = current->next->data;
+                current->next->data = temp;
+            }
+            current = current->next;
+        }
+    }
+}
+```
