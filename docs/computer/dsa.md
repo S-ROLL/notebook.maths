@@ -482,6 +482,19 @@ int main () {
 }
 ```
 
+### In
+
+```cpp
+void print_list(struct Node* head) {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+    cout << "NULL" << endl;
+}
+```
+
 ### Chèn
 #### Chèn đầu
 ```cpp
