@@ -72,6 +72,20 @@ Qui tắc thay thế: $E \Leftrightarrow F$ thành $E \Leftrightarrow F'$ sao ch
 
 
 ### Quy tắc suy diễn
+| Quy tắc suy diễn | Công thức |
+|-------|-------|
+| Khẳng định | $[(P \to Q) \land P] \to Q$ |
+| Phủ định | $[(P \to Q) \land \overline{Q}] \to \overline{P}$ |
+| Tam đoạn luận | $[(P \to Q) \land (Q \to R)] \to (P \to R)$ |
+| Tam đoạn luận rời | $[(P \lor Q) \land \overline{Q}] \to P$ |
+| Nối liền | $(P \land Q) \to (P \land Q)$ |
+| Đơn giản | $(P \land Q) \to P$ |
+| Mâu thuẫn | $[(P_1 \land \ldots \land P_n) \to h] \Leftrightarrow [(P_1 \land \ldots \land P_n \land \overline{h}) \to 0]$ |
+| C/m theo trường hợp | $[(P \to R) \land (Q \to R)] \to [(P \lor Q) \to R]$ |
+
+Phản ví dụ: để cm sai hay ko là hằng đúng ta chỉ cần chỉ ra 1 phản ví dụ.
+
+
 ### Vị từ lượng từ
 ### Tập hợp
 ### Ánh xạ
