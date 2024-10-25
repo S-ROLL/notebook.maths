@@ -89,4 +89,6 @@ Phản ví dụ: để cm sai hay ko là hằng đúng ta chỉ cần chỉ ra 1
 ### Vị từ lượng từ
 ### Tập hợp
 ### Ánh xạ
+
+
 ### Quy nạp
