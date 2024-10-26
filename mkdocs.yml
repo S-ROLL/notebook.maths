@@ -13,7 +13,11 @@ nav:
         - Định nghĩa: maths/GTH/metric.md
         - Kết quả: maths/GTH/metric2.md
     - Lý thuyết mật mã: maths/cryptography.md
-    - Cấu trúc rời rạc: maths/discrete.md
+    - Cấu trúc rời rạc:
+      - maths/CTRR/index.md
+      - Cơ sở logic: maths/CTRR/cslogic.md
+      - Phép đếm: maths/CTRR/phepdem.md
+      - Quan hệ: maths/CTRR/quanhe.md
     # - Statistics: maths/statistics.md
     - Giải tích số: maths/numericalmethods.md
     - Phương trình vi phân: maths/ode.md

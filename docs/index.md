@@ -14,7 +14,7 @@ Welcome to your go-to spot for all things math and computer science! I've put to
     - [Basis formula](maths/index.md)
     - [**Giải tích hàm**](maths/GTH/index.md)
     - [**Lý thuyết mật mã**](maths/cryptography.md)
-    - [**Cấu trúc rời rạc**](maths/discrete.md)
+    - [**Cấu trúc rời rạc**](maths/CTRR/index.md)
     <!-- - [Statistics](maths/statistics.md) -->
     - [Phương trình vi phân](maths/ode.md)
     - [Giải tích số](maths/numericalmethods.md)

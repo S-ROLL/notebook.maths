@@ -1,22 +1,13 @@
-<!-- ---
-password: bangdeptrai
---- -->
-# Cấu trúc rời rạc
-
-!!! info
-    - Chính: <font size="1">[Drive](https://drive.google.com/drive/folders/1do0QxmXz7fTxBwkDek0evTRqaT48RHe2){ .md-button }</font>
-    - Tham khảo thêm: <font size="1">[Discrete Mathematics and Its Applications](https://www.icloud.com/iclouddrive/0a5tvZJoI9GjZJ7ff_yWErK8g#rosen_discrete_mathematics_and_its_applications_7th_edition){ .md-button }</font>
-
-## Chương I: Cơ sở logic
-### Mệnh đề
-#### Phủ định
+# Chương I: Cơ sở logic
+## Mệnh đề
+### Phủ định
 
 | $P$ | $\overline{P}$ |
 |:-------:|:--------:|
 |   1   |   0    |
 |   0   |   1    |
 
-#### Hội (và)
+### Hội (và)
 | $P$ | $Q$ | $P \land Q$ |
 |:-------:|:-------:|:-----------:|
 |   0   |   0   |     0     |
@@ -24,7 +15,7 @@ password: bangdeptrai
 |   1   |   0   |     0     |
 |   **1**   |   **1**   |     **1**     |
 
-#### Tuyển (hoặc)
+### Tuyển (hoặc)
 | $P$ | $Q$ | $P \lor Q$ |
 |:-------:|:-------:|:-----------:|
 |   **0**   |   **0**   |     **0**     |
@@ -32,7 +23,7 @@ password: bangdeptrai
 |   1   |   0   |     1     |
 |   1   |   1   |     1     |
 
-#### Kéo theo
+### Kéo theo
 | $P$ | $Q$ | $P \to Q$ |
 |:-------:|:-------:|:-----------:|
 |   0   |   0   |     1     |
@@ -40,7 +31,7 @@ password: bangdeptrai
 |   **1**   |   **0**   |     **0**     |
 |   1   |   1   |     1     |
 
-#### Nếu và chỉ nếu
+### Nếu và chỉ nếu
 | $P$ | $Q$ | $P \leftrightarrow Q$ |
 |:-------:|:-------:|:-----------:|
 |   **0**   |   **0**   |     **1**     |
@@ -48,7 +39,7 @@ password: bangdeptrai
 |   1   |   0   |     0     |
 |   **1**   |   **1**   |     **1**     |
 
-### Dạng mệnh đề
+## Dạng mệnh đề
 | Dạng mệnh đề | Ký hiệu | Điều kiện |
 |-------|-------|-----------|
 | Tương đương logic | $E \Leftrightarrow F$ | $E \leftrightarrow F$ hằng đúng |
@@ -71,7 +62,7 @@ Qui tắc thay thế: $E \Leftrightarrow F$ thành $E \Leftrightarrow F'$ sao ch
 | Phép kéo theo | $P \to Q \Leftrightarrow \overline{P} \lor Q \Leftrightarrow \overline{Q} \to \overline{P}$
 
 
-### Quy tắc suy diễn
+## Quy tắc suy diễn
 | Quy tắc suy diễn | Công thức |
 |-------|-------|
 | Khẳng định | $[(P \to Q) \land P] \to Q$ |
@@ -86,9 +77,14 @@ Qui tắc thay thế: $E \Leftrightarrow F$ thành $E \Leftrightarrow F'$ sao ch
 Phản ví dụ: để cm sai hay ko là hằng đúng ta chỉ cần chỉ ra 1 phản ví dụ.
 
 
-### Vị từ lượng từ
-### Tập hợp
-### Ánh xạ
+## Vị từ lượng từ
+## Tập hợp
+## Ánh xạ
+### Phân loại
+#### Đơn ánh
+#### Toàn ánh
+#### Song ánh
+### Tích ánh xạ
 
 
-### Quy nạp
+## Quy nạp
