@@ -9,9 +9,9 @@ nav:
     #- Measure theory: maths/measuretheory.md
     - Giải tích hàm:
       - maths/GTH/index.md
-      - Không gian metric:
-        - Định nghĩa: maths/GTH/metric.md
-        - Kết quả: maths/GTH/metric2.md
+      - Không gian định chuẩn: maths/GTH/dinhchuan.md
+      - Không gian Banach: maths/GTH/banach.md
+      - Không gian Hilbert: maths/GTH/hilbert.md
     - Lý thuyết mật mã: maths/cryptography.md
     - Cấu trúc rời rạc:
       - maths/CTRR/index.md
@@ -24,7 +24,7 @@ nav:
     - Giải tích phức: maths/complexanalysis.md
     # - Differential equation:
     #- Machine learning: maths/machinelearning.md
-  - Computer:
+  - Coding:
     - Data structure & Algorithm: computer/dsa.md
     - Languages:
       - Python: computer/python/python.md
