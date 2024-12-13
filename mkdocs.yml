@@ -37,6 +37,8 @@ nav:
       #- Open source: computer/opensource.md
     - Algorithms:
       - Ranking: computer/algorithms/ranking.md
+  - Practice:
+    - Giải tích hàm: practice/gth.md 
 
 plugins:
     - search: {}
