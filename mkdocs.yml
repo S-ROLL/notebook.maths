@@ -7,21 +7,22 @@ nav:
   - Maths:
     - maths/index.md
     #- Measure theory: maths/measuretheory.md
-    - Giải tích hàm:
-      - maths/GTH/index.md
-      - Không gian định chuẩn: maths/GTH/dinhchuan.md
-      - Không gian Banach: maths/GTH/banach.md
-      - Không gian Hilbert: maths/GTH/hilbert.md
-    - Lý thuyết mật mã: maths/cryptography.md
-    - Cấu trúc rời rạc:
-      - maths/CTRR/index.md
-      - Cơ sở logic: maths/CTRR/cslogic.md
-      - Phép đếm: maths/CTRR/phepdem.md
-      - Quan hệ: maths/CTRR/quanhe.md
+    # - Giải tích hàm:
+    #   - maths/GTH/index.md
+    #   - Không gian định chuẩn: maths/GTH/dinhchuan.md
+    #   - Không gian Banach: maths/GTH/banach.md
+    #   - Không gian Hilbert: maths/GTH/hilbert.md
+    # - Lý thuyết mật mã: maths/cryptography.md
+    # - Cấu trúc rời rạc:
+    #   - maths/CTRR/index.md
+    #   - Cơ sở logic: maths/CTRR/cslogic.md
+    #   - Phép đếm: maths/CTRR/phepdem.md
+    #   - Quan hệ: maths/CTRR/quanhe.md
     # - Statistics: maths/statistics.md
     - Giải tích số: maths/numericalmethods.md
     - Phương trình vi phân: maths/ode.md
     - Giải tích phức: maths/complexanalysis.md
+    - Phép biến đổi tích phân: maths/transfrom.md
     # - Differential equation:
     #- Machine learning: maths/machinelearning.md
   - Coding:
@@ -29,6 +30,8 @@ nav:
     - Languages:
       - Python: computer/python/python.md
       - C++: computer/cpp/cpp.md
+      - JAVA: computer/java/java.md
+      - SQL: computer/SQL/SQL.md
     - Technique: 
       - Python package: computer/python/py-package.md
       - Venv setting: computer/python/py-up.md
