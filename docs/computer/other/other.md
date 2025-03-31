@@ -22,9 +22,7 @@ docker rm <container_id>
 ### Set up new port
 
 ```
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourPassWord@123" \
-  -p 14333:1433 --name sqlserver \
-  -d mcr.microsoft.com/mssql/server
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=VeryStr0ngP@ssw0rd" --name sql -p 1433:1433 -v sql_server:/var/opt/mssql -d --restart=always --hostname sql --platform linux/amd64 -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
 | Field       | Value                  |
