@@ -9,6 +9,7 @@
 \usepackage{titling}
 \usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
 \usepackage{subfigure}
+\usepackage[edges]{forest}
 \usepackage{algorithm2e}
 \usepackage{secdot}
 \usepackage{graphicx}
@@ -128,6 +129,65 @@
 \pagenumbering{arabic} 
 
 \chapter{Descriptive Statistics: Tabular and Graphical Displays}
+
+
+\begin{center}
+\scalebox{0.7}{ 
+\begin{forest}
+for tree={
+    grow'=0,
+    draw,
+    rounded corners,
+    minimum height=2em,
+    text centered,
+    anchor=west,
+    child anchor=west,
+    parent anchor=east,
+    l sep+=10pt,
+    edge path={
+        \noexpand\path [draw, \forestoption{edge}]
+        (!u.parent anchor) -- +(5pt,0) |- (.child anchor)\forestoption{edge label};
+    },
+}
+[\textbf{Data}
+  [\textbf{Categorical Data}
+    [Tabular Displays
+      [Frequency Distribution, draw=none]
+      [Relative Frequency Distribution, draw=none]
+      [Percent Frequency Distribution, draw=none]
+      [Crosstabulation, draw=none]
+    ]
+    [Graphical Displays
+      [Bar Chart, draw=none]
+      [Pie Chart, draw=none]
+      [Side-by-Side Bar Chart, draw=none]
+      [Stacked Bar Chart, draw=none]
+    ]
+  ]
+  [\textbf{Quantitative Data}
+    [Tabular Displays
+      [Frequency Distribution, draw=none]
+      [Relative Frequency Distribution, draw=none]
+      [Percent Frequency Distribution, draw=none]
+      [Cumulative Frequency Distribution, draw=none]
+      [Cumulative Relative Frequency Distribution, draw=none]
+      [Cumulative Percent Frequency Distribution, draw=none]
+      [Crosstabulation, draw=none]
+    ]
+    [Graphical Displays
+      [Dot Plot, draw=none]
+      [Histogram, draw=none]
+      [Stem-and-Leaf Display, draw=none]
+      [Scatter Diagram, draw=none]
+    ]
+  ]
+]
+\end{forest}
+}
+\end{center}
+
+
+
 
 \chapter{Descriptive Statistics: Numerical Measures}
 
