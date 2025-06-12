@@ -1,0 +1,167 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{vietnam}\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage[top=3.5cm, bottom=3.0cm, left=3cm, right=3.0cm]{geometry} 
+\usepackage{color, fancyhdr, graphicx, wrapfig}
+\usepackage[unicode]{hyperref}
+\usepackage[vietnamese]{babel}
+\usepackage{titling}
+\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage{subfigure}
+\usepackage{algorithm2e}
+\usepackage{secdot}
+\usepackage{graphicx}
+\usepackage{tree-dvips}
+\usepackage{qtree}
+\usepackage{booktabs}
+\usepackage{pgfgantt}
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx} 
+\usepackage{titling}
+\usepackage{secdot}
+\usepackage{enumitem}
+\usepackage{forest}
+\usepackage{tikz-qtree}
+\usepackage{array}
+\usetikzlibrary{calc}
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+\usepackage{color, fancyhdr, graphicx, wrapfig}
+\graphicspath{ {figures/} }
+
+\renewcommand{\listfigurename}{List of plots}
+\renewcommand{\listtablename}{List of Tables}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{caption}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[tikz]{ocgx2}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{steal}{RGB}{70,130,180}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{subcaption}
+\usepackage{changepage}
+\usepackage{float}
+\usepackage{pgfplotstable}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{nccmath}
+\usetikzlibrary{calc}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\newtheorem{dn}{Định nghĩa}
+\newtheorem{tc}{Tính chất}
+\newtheorem{dl}{Định lý}
+\newtheorem{md}{Mệnh đề}
+\newtheorem{bd}{Bổ đề}
+\newtheorem{hq}{Hệ quả}
+\newtheorem{nx}{Nhận xét}
+\newtheorem{vd}{Ví dụ}
+\newtheorem{cm}{Chứng minh}
+\newtheorem{cy}{Chú ý}
+\newtheorem{ttoan}{Thuật toán}
+\pagenumbering{roman}\pagestyle{plain}
+\renewcommand{\headrulewidth}{1,2pt} 			
+\renewcommand{\footrulewidth}{1,2pt}
+\newcommand{\dstc}[2]
+{
+	\newdimen\stringwidth\setbox0=\hbox{#1}
+	\stringwidth=\wd0
+	\hspace*{-\parindent}\hspace*{.5\textwidth}\hspace*{-.5\wd0}#1\hfill #2\bigskip
+}  
+\usepackage{scrextend}
+\fancyhf{}
+\lhead{}
+\chead{\thepage}
+\rhead{}
+\cfoot{}
+\rfoot{}
+\lfoot{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1pt}
+\begin{document} 
+    \begin{titlepage}
+	\centering
+    \phantom{}\par
+	\vspace{3cm}
+	{\LARGE\textbf{NOTEBOOK}\par}
+	\vspace{1cm}
+	\rule{5cm}{0.5pt}\par
+	\vspace{1cm}
+		{\LARGE\textbf{STATISTICS}\par}
+	\vspace{1cm}
+	\Large\textbf{Nguyễn Chí Bằng}\par		
+	\vspace{1cm}
+	% \Large{GVHD: TS. Lê Minh Huy}\par		
+	% \vspace{1cm}
+    \today
+    \end{titlepage}
+
+
+	\addcontentsline{toc}{chapter}{Mục lục}
+	\tableofcontents
+
+	\thispagestyle{empty} % Removes header and footer
+	\mbox{}
+\pagenumbering{arabic} 
+
+\chapter{Descriptive Statistics: Tabular and Graphical Displays}
+
+\chapter{Descriptive Statistics: Numerical Measures}
+
+\chapter{Introduction to Probability}
+
+\chapter{Discrete Probability Distributions}
+
+\chapter{Continuous Probability Distributions}
+
+\chapter{Sampling and Sampling Distributions}
+
+\chapter{Interval Estimation}
+
+\chapter{Hypothesis Tests}
+
+\chapter{Inference About Means and Proportions with Two Populations}
+
+\chapter{Inferences About Population Variances}
+
+\chapter{Comparing Multiple Proportions, Test of Independence and Goodness of Fit}
+
+\chapter{Experimental Design and Analysis of Variance}
+
+\chapter{Simple Linear Regression}
+
+\chapter{Multiple Regression}
+
+\chapter{Regression Analysis: Model Building}
+
+\chapter{Time Series Analysis and Forecasting}
+
+\chapter{Nonparametric Methods}
+
+\chapter{Statistical Methods for Quality Control}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{tailieu}
+\end{document}
