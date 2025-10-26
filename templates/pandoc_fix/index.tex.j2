@@ -3,4 +3,7 @@
 ((* block header *))
     ((( super() )))
     \providecommand{\pandocbounded}[1]{#1}
+    \makeatletter
+    \@ifundefined{c@none}{\newcounter{none}}{}
+    \makeatother
 ((* endblock header *))

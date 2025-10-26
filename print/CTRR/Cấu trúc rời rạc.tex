@@ -1,0 +1,1311 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Keep aspect ratio if custom image width or height is specified
+    \setkeys{Gin}{keepaspectratio}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+
+    \usepackage{iftex}
+    \ifPDFTeX
+        \usepackage[T1]{fontenc}
+        \IfFileExists{alphabeta.sty}{
+              \usepackage{alphabeta}
+          }{
+              \usepackage[mathletters]{ucs}
+              \usepackage[utf8x]{inputenc}
+          }
+    \else
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+    \fi
+
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics
+                         % to support a larger range
+    \makeatletter % fix for old versions of grffile with XeLaTeX
+    \@ifpackagelater{grffile}{2019/11/01}
+    {
+      % Do nothing on new versions
+    }
+    {
+      \def\Gread@@xetex#1{%
+        \IfFileExists{"\Gin@base".bb}%
+        {\Gread@eps{\Gin@base.bb}}%
+        {\Gread@@xetex@aux#1}%
+      }
+    }
+    \makeatother
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage{array}     % table support for pandoc >= 2.11.3
+    \usepackage{calc}      % table minipage width calculation for pandoc >= 2.11.1
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{soul}      % strikethrough (\st) support for pandoc >= 3.0.0
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+
+
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{Cấu trúc rời rạc}
+    
+    
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@ges}{\let\PY@bf=\textbf\let\PY@it=\textit}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb.
+    \makeatletter
+        \newbox\Wrappedcontinuationbox
+        \newbox\Wrappedvisiblespacebox
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+        \newcommand*\Wrappedcontinuationindent {3ex }
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+        % Take advantage of the already applied Pygments mark-up to insert
+        % potential linebreaks for TeX processing.
+        %        {, <, #, %, $, ' and ": go to next line.
+        %        _, }, ^, &, >, - and ~: stay at end of broken line.
+        % Use of \textquotesingle for straight quote.
+        \newcommand*\Wrappedbreaksatspecials {%
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+        }
+        % Some characters . , ; ? ! / are not pygmentized.
+        % This macro makes them "active" and they will insert potential linebreaks
+        \newcommand*\Wrappedbreaksatpunct {%
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+            \catcode`\.\active
+            \catcode`\,\active
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active
+            \lccode`\~`\~
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+    
+    \section{Cơ sở Logic}\label{cux1a1-sux1edf-logic}
+
+    \subsection{Phép toán}\label{phuxe9p-touxe1n}
+
+    \subsubsection{Phủ định}\label{phux1ee7-ux111ux1ecbnh}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\(P\) & \(\neg P\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 1 \\
+1 & 0 \\
+\end{longtable}
+}
+
+\subsubsection{Hội (và)}\label{hux1ed9i-vuxe0}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(P\) & \(Q\) & \(P \land Q\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\textbf{1} & \textbf{1} & \textbf{1} \\
+\end{longtable}
+}
+
+\subsubsection{Tuyển (hoặc)}\label{tuyux1ec3n-houx1eb7c}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(P\) & \(Q\) & \(P \lor Q\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{0} & \textbf{0} & \textbf{0} \\
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 1 \\
+\end{longtable}
+}
+
+\subsubsection{Kéo theo}\label{kuxe9o-theo}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(P\) & \(Q\) & \(P \to Q\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 0 & 1 \\
+0 & 1 & 1 \\
+\textbf{1} & \textbf{0} & \textbf{0} \\
+1 & 1 & 1 \\
+\end{longtable}
+}
+
+\subsubsection{Tương đương (Nếu và chỉ
+nếu)}\label{tux1b0ux1a1ng-ux111ux1b0ux1a1ng-nux1ebfu-vuxe0-chux1ec9-nux1ebfu}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(P\) & \(Q\) & \(P \leftrightarrow Q\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{0} & \textbf{0} & \textbf{1} \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\textbf{1} & \textbf{1} & \textbf{1} \\
+\end{longtable}
+}
+
+    \subsection{Dạng mệnh đề}\label{dux1ea1ng-mux1ec7nh-ux111ux1ec1}
+
+    \begin{itemize}
+\item
+  Sơ cấp
+\item
+  Hằng đúng
+\item
+  Hằng sai
+\end{itemize}
+
+    \subsection{Tương đương logic \& Hệ quả
+logic}\label{tux1b0ux1a1ng-ux111ux1b0ux1a1ng-logic-hux1ec7-quux1ea3-logic}
+
+    \subsubsection{Tương đương
+logic}\label{tux1b0ux1a1ng-ux111ux1b0ux1a1ng-logic}
+
+    \begin{itemize}
+\item
+  \(P, \: Q \to\) công thức \(\ldots\)
+\item
+  \(P \Leftrightarrow Q (P \equiv Q, P = Q)\) đgl tương đương logic.
+\item
+  \(P \leftrightarrow Q\) đgl hằng đúng.
+\end{itemize}
+
+    \subsubsection{Hệ quả logic}\label{hux1ec7-quux1ea3-logic}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(P \Rightarrow Q\) đgl hệ quả logic.
+\item
+  \(P \to Q\) đgl hằng đúng.
+\end{itemize}
+
+    \textbf{Note}
+
+\begin{itemize}
+\tightlist
+\item
+  C/m \(P \Rightarrow Q\) \(\to\) c/m \(P \to Q\) chân trị \(1\).
+\end{itemize}
+
+    \subsection{Quy luật logic}\label{quy-luux1eadt-logic}
+
+    {\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Luật}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Công thức}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Phủ định của phủ định & \(\neg \neg P \equiv P\) \\
+De Morgan & \(\neg (P \land Q) \equiv \neg P \lor \neg Q\)
+\(\neg (P \lor Q) \equiv \neg P \land \neg Q\) \\
+Giao hoán & \(P \lor Q \equiv Q \lor P\)
+\(P \land Q \equiv Q \land P\) \\
+Kết hợp & \(P \land (Q \land R) \equiv (P \land Q) \land R\)
+\(P \lor (Q \lor R) \equiv (P \lor Q) \lor R\) \\
+Phân phối & \(P \land (Q \lor R) \equiv (P \land Q) \lor (P \land R)\)
+\(P \lor (Q \land R) \equiv (P \lor Q) \land (P \lor R)\) \\
+Luỹ đẳng & \(P \land P \equiv P\) \(P \lor P \equiv P\) \\
+Trung hoà & \(P \land 1 \equiv P\) \(P \lor 0 \equiv P\) \\
+Phần tử bù & \(P \land \neg P \equiv 0\) \(P \lor \neg P \equiv 1\) \\
+Thống trị & \(P \land 0 \equiv 0\) \(P \lor 1 \equiv 1\) \\
+Hấp thụ & \(P \land (P \lor Q) \equiv P\)
+\(P \lor (P \land Q) \equiv P\) \\
+Phản chứng & \(P \to Q \equiv \neg P \lor Q \equiv \neg Q \to \neg P\)
+\(\neg (P \to Q) \equiv P \land \neg Q\) \\
+\end{longtable}
+}
+
+    \subsection{Quy tắc suy diễn}\label{quy-tux1eafc-suy-diux1ec5n}
+
+    \begin{itemize}
+\tightlist
+\item
+  Khẳng định
+\end{itemize}
+
+\[
+\frac{P \to Q, \: P}{\therefore Q}
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Phủ định
+\end{itemize}
+
+\[
+\frac{P \to Q, \: \neg Q}{\therefore \neg P}
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Tam đoạn luận
+\end{itemize}
+
+\[
+\frac{P \to Q, \: Q \to R}{\therefore P \to R}
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Tam đoạn luận rời
+\end{itemize}
+
+\[
+\frac{P \lor Q, \: \neg Q}{\therefore P}
+\]
+
+or
+
+\[
+\frac{P \lor Q, \: \neg P}{\therefore Q}
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Mâu thuẫn
+\end{itemize}
+
+\[
+P \to Q \equiv (P \land \neg Q) \to 0
+\]
+
+trong đó \(P = P_1 \land P_2 \land \ldots \land P_N\)
+
+    \subsection{Vị từ - lượng
+từ}\label{vux1ecb-tux1eeb---lux1b0ux1ee3ng-tux1eeb}
+
+    \subsubsection{Vị từ}\label{vux1ecb-tux1eeb}
+
+    \(P(x,y,\ldots) \to P(a,b,\ldots)\) có chân trị \(0\) hoặc \(1\).
+
+    \subsubsection{Lượng từ}\label{lux1b0ux1ee3ng-tux1eeb}
+
+    \paragraph{Với mọi}\label{vux1edbi-mux1ecdi}
+
+    \begin{itemize}
+\item
+  \(\forall\) trong đó \(\land\)
+
+  \begin{itemize}
+  \item
+    \textbf{Đúng} với tất cả.
+  \item
+    \textbf{Sai} với một.
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(\neg (\forall x \in A, \: P(x)) \equiv \exists x \in A, \neg P(x)\)
+\end{itemize}
+
+    \paragraph{Tồn tại}\label{tux1ed3n-tux1ea1i}
+
+    \begin{itemize}
+\item
+  \(\exists\) trong đó \(\lor\)
+
+  \begin{itemize}
+  \item
+    \textbf{Đúng} với một.
+  \item
+    \textbf{Sai} với tất cả.
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(\neg (\exists x \in A, \: P(x)) \equiv \forall x \in A, \: \neg P(x)\)
+\end{itemize}
+
+    \paragraph{Đặc biệt hoá phổ
+dụng}\label{ux111ux1eb7c-biux1ec7t-houxe1-phux1ed5-dux1ee5ng}
+
+\paragraph{Tổng quát hoá phổ
+dụng}\label{tux1ed5ng-quuxe1t-houxe1-phux1ed5-dux1ee5ng}
+
+    \subsubsection{Quy tắc suy diễn}\label{quy-tux1eafc-suy-diux1ec5n}
+
+    \paragraph{C/m Phản chứng}\label{cm-phux1ea3n-chux1ee9ng}
+
+\[
+P \Rightarrow Q \equiv (P \land \neg Q) \Rightarrow 0
+\]
+
+    \paragraph{C/m trực tiếp}\label{cm-trux1ef1c-tiux1ebfp}
+
+    \paragraph{C/m theo trường hợp (vét
+cạn)}\label{cm-theo-trux1b0ux1eddng-hux1ee3p-vuxe9t-cux1ea1n}
+
+    \paragraph{C/m gián tiếp (PC)}\label{cm-giuxe1n-tiux1ebfp-pc}
+
+    \(P \Rightarrow Q\) và \(\neg Q \Rightarrow \neg P\)
+
+\$ \neg Q \Rightarrow \neg P \equiv P \Rightarrow Q \$
+
+    \paragraph{C/m quy nạp}\label{cm-quy-nux1ea1p}
+
+    \[
+\frac{P(n_0), \quad \forall n > n_0, \: P(n) \to P(n+1)}{\therefore \forall n \geq n_0, \: P(n)}
+\]
+
+    B1. C/m \(P(n_0)\) đúng
+
+B2. G/s \(n \in \mathbb{N}\) và \(n \geq n_0\), \(P(n)\) đúng. C/m
+\(P(n+1)\) đúng.
+
+\(\Rightarrow \: P(n)\) đúng \(\forall n \geq n_0\)
+
+    \section{Tập hợp - Ánh xạ}\label{tux1eadp-hux1ee3p---uxe1nh-xux1ea1}
+
+    \subsection{Tập hợp}\label{tux1eadp-hux1ee3p}
+
+    \begin{itemize}
+\item
+  Cách diễn tả
+
+  \begin{itemize}
+  \item
+    Bằng lời
+  \item
+    Liệt kê
+  \item
+    Tính chất đặc trưng
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  Lực lượng k/h \(|A|\)
+\end{itemize}
+
+    \begin{itemize}
+\item
+  Tích Descarte
+
+  \begin{itemize}
+  \item
+    2 tập hợp
+  \item
+    Nhiều tập hợp
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  Tập con
+
+  \begin{itemize}
+  \item
+    k/h
+    \(B \subset A \Leftrightarrow \{ \forall x | x \in B \Rightarrow x \in A\}\)
+  \item
+    Tập hợp tập con của \(A\) k/h \(P(A)\)
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Phép toán}\label{phuxe9p-touxe1n}
+
+    \begin{itemize}
+\tightlist
+\item
+  Hợp \(A \cup B = \{ x | x \in A \lor x \in B \}\)
+\item
+  Giao \(A \cap B = \{ x | x \in A \land x \in B \}\)
+\item
+  Hiệu \(A \backslash B = \{ x | x \in A \land x \notin B \}\)
+\item
+  Phần bù \(B \subset A\), k/h \(\overline{B_A}\) or \(\overline{B}\)
+\end{itemize}
+
+    \paragraph{Tính chất}\label{tuxednh-chux1ea5t}
+
+    {\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Luật}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Công thức}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Giao hoán & \(A \cap B = B \cap A\) \(A \cup B = B \cup A\) \\
+Kết hợp & \((A \cap B) \cap C = A \cap (B \cap C)\)
+\((A \cup B) \cup C = A \cup (B \cup C)\) \\
+Phân phối & \(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)
+\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\) \\
+De Morgan & \(\overline{A \cap B} = \overline{A} \cup \overline{B}\)
+\(\overline{A \cup B} = \overline{A} \cap \overline{B}\) \\
+Luỹ đẳng & \(A \cap A = A\) \(A \cup A = A\) \\
+\end{longtable}
+}
+
+    \subsection{Ánh xạ}\label{uxe1nh-xux1ea1}
+
+    Ánh xạ bằng nhau
+
+Ảnh
+
+Ảnh ngược
+
+Tính chất
+
+    \subsubsection{Loại}\label{loux1ea1i}
+
+    \paragraph{Đơn ánh}\label{ux111ux1a1n-uxe1nh}
+
+\begin{itemize}
+\tightlist
+\item
+  Có tối đa 1 nghiệm
+\end{itemize}
+
+\[
+\forall x, x' \in X, x \neq x' \Rightarrow f(x) \neq f(x')
+\]
+
+hay
+
+\[
+\forall x, x' \in X, f(x) \neq f(x') \Rightarrow x \neq x' 
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Không} là đơn ánh (có nhiều hơn 1 nghiệm)
+\end{itemize}
+
+\[
+\exists x, x' \in X, x \neq x' \land f(x) = f(x')
+\]
+
+    \paragraph{Toàn ánh}\label{touxe0n-uxe1nh}
+
+\begin{itemize}
+\tightlist
+\item
+  Luôn có ít nhất 1 nghiệm
+\end{itemize}
+
+\[
+\forall y \in Y, \exists x \in X, y=f(x)
+\]
+
+hay
+
+\[
+\forall y \in Y, f^{-1}(y) \neq \varnothing
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Không} là toàn ánh (Tồn tại vô nghiệm)
+\end{itemize}
+
+\[
+\exists y \in Y, f^{-1} (y) = \varnothing
+\]
+
+hay
+
+\[
+\exists y \in Y, \forall x \in X, y \neq f(x)
+\]
+
+    \paragraph{Song ánh}\label{song-uxe1nh}
+
+\begin{itemize}
+\tightlist
+\item
+  Vừa đơn ánh vừa toàn ánh.
+\end{itemize}
+
+\[
+\forall y \in Y, \exists ! x \in X, y = f(x)
+\]
+
+hay
+
+\[
+\forall y \in Y, f^{-1}(y) \text{ có đúng 1 phần tử}
+\]
+
+    \subsubsection{Ngược}\label{ngux1b0ux1ee3c}
+
+    \[
+f^{-1} : Y \to X \\
+y \mapsto f^{-1} (y) = x, \quad f(x) = y
+\]
+
+    \subsubsection{Hợp}\label{hux1ee3p}
+
+    \[
+h = g \circ f : X \to Y \to Z \\
+x \mapsto f(x) \mapsto g(f(x))
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  Định lý
+\end{itemize}
+
+\(f: X \to Y\) song ánh
+
+\[
+f \circ f^{-1} = I d_Y \\
+f^{-1} \circ f = I d_X
+\]
+
+Trong đó
+
+\begin{itemize}
+\item
+  \(Id_X(x) : X \to X, \quad Id_X(x) = x\)
+\item
+  \(Id_Y(y) : Y \to Y, \quad Id_Y(y) = y\)
+\end{itemize}
+
+    \section{Phương pháp đếm}\label{phux1b0ux1a1ng-phuxe1p-ux111ux1ebfm}
+
+    \subsection{Cơ bản}\label{cux1a1-bux1ea3n}
+
+    \begin{itemize}
+\item
+  Cộng
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Trường hợp
+  \end{itemize}
+\item
+  Nhân
+
+  \begin{itemize}
+  \item
+    Bước
+  \item
+    Thứ tự không quan trọng
+  \item
+    Bắt buộc
+  \end{itemize}
+\item
+  Nguyên lý chuồng bồ câu
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(n\) vật, \(k\) hộp \(\to \lceil \frac{n}{k} \rceil\) vật trong ít
+    nhất 1 hộp.
+  \end{itemize}
+\item
+  Nguyên lý bù trừ
+
+  \begin{itemize}
+  \item
+    \(|A \cup B| = |A| + |B| - |A \cap B|\)
+  \item
+    \(|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C |\)
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Hoán vị - Tổ hợp - Chỉnh
+hợp}\label{houxe1n-vux1ecb---tux1ed5-hux1ee3p---chux1ec9nh-hux1ee3p}
+
+    \begin{itemize}
+\item
+  Hoán vị
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(P_n=n!\)
+  \end{itemize}
+\item
+  Tổ hợp
+
+  \begin{itemize}
+  \item
+    \(C_n^k = \frac{n!}{(n-k)!k!}\)
+  \item
+    Không thứ tự, không lặp lại.
+  \end{itemize}
+\item
+  Chỉnh hợp
+
+  \begin{itemize}
+  \item
+    \(A_n^k = \frac{n!}{(n-k)!}\)
+  \item
+    Có thứ tự, không lặp lại.
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Hoán vị - Tổ hợp - Chỉnh hợp
+(Lặp)}\label{houxe1n-vux1ecb---tux1ed5-hux1ee3p---chux1ec9nh-hux1ee3p-lux1eb7p}
+
+    \begin{itemize}
+\item
+  Hoán vị lặp
+
+  \begin{itemize}
+  \item
+    \(\frac{n!}{n_1!n_2!\ldots n_k!}\)
+  \item
+    Nhóm \(n_1, n_2, \ldots , n_k\).
+  \end{itemize}
+\item
+  Chỉnh hợp lặp
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\overline{A}_n^k = n^k\)
+  \end{itemize}
+\item
+  Tổ hợp lặp
+
+  \begin{itemize}
+  \item
+    \(\overline{C}_n^k = C_{n+(k-1)}^k\)
+  \item
+    Bài toán chia \(k\) vật đồng chất vào \(n\) hộp phân biệt
+
+    \begin{itemize}
+    \item
+      \(x_1+x_2+\ldots + n_n=k\)
+    \item
+      \(k \to\) không phân biệt.
+    \item
+      \(n \to\) phân biệt.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \section{\texorpdfstring{Hệ thức truy hồi \(\&\) Hàm
+sinh}{Hệ thức truy hồi \textbackslash\& Hàm sinh}}\label{hux1ec7-thux1ee9c-truy-hux1ed3i-huxe0m-sinh}
+
+    \subsection{\texorpdfstring{Tuyến tính thuần nhất bậc
+\(k\)}{Tuyến tính thuần nhất bậc k}}\label{tuyux1ebfn-tuxednh-thuux1ea7n-nhux1ea5t-bux1eadc-k}
+
+    (Đề thi sẽ cho (bậc 2, 3 tối đa))
+
+    \[
+a_n = c_1 a_{n-1} + c_2 a_{n-2} + \ldots + c_k a_{n-k}
+\]
+
+    \begin{itemize}
+\item
+  \(a_0=C_0, a_1 = C_1 , \ldots , a_{k-1} = C_{k-1}.\)
+\item
+  Các dạng không phải tuyến tính thuần nhất bậc \(k\):
+
+  \begin{itemize}
+  \item
+    \(H_n = H_{n-1} \textbf{+ 1}\)
+  \item
+    \(A_n = \textbf{n} A_{n-1}\)
+  \item
+    \(B_n = 4B_{n-1} - 3 B_{n-2}^{\textbf{2}}\)
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Phương pháp giải}\label{phux1b0ux1a1ng-phuxe1p-giux1ea3i}
+
+    \paragraph{Phương pháp thế (giải bậc
+1)}\label{phux1b0ux1a1ng-phuxe1p-thux1ebf-giux1ea3i-bux1eadc-1}
+
+    B1. Thay \(a_n\) bởi \(a_{n-1}\), \(a_{n-1}\) bởi
+\(a_{n-2}, \ldots, a_0\) bởi \(C_0 \to\) Thu được công thức trực tiếp
+cho \(a_n\)
+
+B2. Chứng minh tính đúng đắn của công thức \(a_n\)
+
+    \paragraph{Phương pháp phương trình đặc
+trưng}\label{phux1b0ux1a1ng-phuxe1p-phux1b0ux1a1ng-truxecnh-ux111ux1eb7c-trux1b0ng}
+
+    \subparagraph{Bậc 2}\label{bux1eadc-2}
+
+\[
+a_n = c_1 a_{n-1} + c_2 a_{n-2}
+\]
+
+B1. Tính phương trình đặc trưng \(r^2 = c_1 r + c_2 \to\) nghiệm \(r\)
+
+B2. (Check nghiệm)
+
+\begin{itemize}
+\item
+  2 nghiệm phân biệt \(r_1, r_2 \to a_n = d_1 r_1^n + d_2 r_2^n\)
+\item
+  Nghiệm kép \(r_1 \to a_n = (d_1 + d_2 n) r_1^n\) và
+  \(a_0 = C_0, a_1 = C_1\)
+\end{itemize}
+
+B3. Dùng điều kiện đề cho \(a_0, a_1, \ldots \to d_1, d_2\)
+
+B4. Thay \(d_1, d_2\) vào \(a_n\) ở B2 và kết luận.
+
+    \subparagraph{\texorpdfstring{Bậc 3 \((k \geq 3)\) (tỉ lệ thi
+thấp)}{Bậc 3 (k \textbackslash geq 3) (tỉ lệ thi thấp)}}\label{bux1eadc-3-k-geq-3-tux1ec9-lux1ec7-thi-thux1ea5p}
+
+    \[
+a_n = c_1 a_{n-1} + c_2 a_{n-2} + \ldots + c_k a_{n-k}
+\]
+
+    B1. Tính phương trình đặc trưng
+\(r^k = c_1 r^{k-1} + c_2 r^{k-2} + \ldots + c_k\)
+
+B2. (Nghiệm tổng quát)
+
+\begin{itemize}
+\item
+  Nghiệm thực phân biệt
+  \(r_1, r_2, r_k \to a_n = d_1r_1^n + d_2 r_2^n + \ldots + d_kr_k^n\)
+\item
+  \(t\) nghiệm thực phân biệt \(r_1, r_2, \ldots , r_t\) tương ứng với
+  bội \(m_1, m_2, \ldots , m_t\)
+\end{itemize}
+
+\[\to a_n = (d_{10} + d_{11}n + \ldots + d_{1(m_1 -1)}n^{m_1 =1})r_1^n + \ldots + (d_{t0} + d_{t1}n + \ldots + d_{t(m_t -1)}n^{m_t -1})\]
+
+    \section{Quan hệ}\label{quan-hux1ec7}
+
+    \begin{itemize}
+\tightlist
+\item
+  \((a,b) \in \mathcal{R}\)
+\end{itemize}
+
+\[
+a\mathcal{R} b
+\]
+
+\begin{itemize}
+\item
+  \(\mathcal{R} = \{ (a,b) \mid a \text{ là ... } b \}\)
+\item
+  \(\mathcal{R} = \{ (.., ..),(.. , ..), .. \}\)
+\end{itemize}
+
+    \subsection{Các loại quan hệ}\label{cuxe1c-loux1ea1i-quan-hux1ec7}
+
+    \subsubsection{Phản xạ}\label{phux1ea3n-xux1ea1}
+
+    \[
+(a,a) \in \mathcal{R}, \forall a \in A
+\]
+
+\begin{itemize}
+\item
+  Tính chất:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\leq\) Có phản xạ
+  \item
+    \(<\) Không phản xạ
+  \item
+    \(\mid\) (ước) Có phản xạ
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Đối xứng}\label{ux111ux1ed1i-xux1ee9ng}
+
+    \(\forall a, b \in A\)
+
+\[
+a \mathcal{R} b \to b \mathcal{R} a
+\]
+
+    \subsubsection{Phản xứng}\label{phux1ea3n-xux1ee9ng}
+
+    \(\forall a, b \in A\)
+
+\[
+(a \mathcal{R} b) \land (b \mathcal{R} a) \to (a = b)
+\]
+
+    \subsubsection{Bắc cầu}\label{bux1eafc-cux1ea7u}
+
+    \(\forall a, b, c \in A\)
+
+\[
+(a \mathcal{R} b) \land (b \mathcal{R} c) \to a \mathcal{R} c
+\]
+
+    \subsection{Biểu diễn}\label{biux1ec3u-diux1ec5n}
+
+    \(A = \{ 1,2,3,4\}\), \(B = \{ u, v, w\}\),
+\(\mathcal{R} = \{ (1,u), (1,v),(2,w),(3,w),(4,u) \}\)
+
+Cách biểu diễn
+
+\[
+\begin{array}{c|ccc}
+ & u & v & w \\
+\hline
+1 & 1 & 1 & 0 \\
+2 & 0 & 0 & 1 \\
+3 & 0 & 0 & 1 \\
+4 & 1 & 0 & 0 \\
+\end{array}
+\]
+
+    \(A=\{ a_1, a_2, \ldots , a_m \}\),
+\(B = \{ b_1, b_2 , \ldots , b_n \}\),
+\(M_{\mathcal{R}} = [m_{ij}]_{m\times n}\)
+
+\[
+m_{ij} = \begin{cases} 0 \quad (a_i,b_j) \notin \mathcal{R} \\ 1 \quad (a_i,b_j) \in \mathcal{R} \end{cases}
+\]
+
+    \begin{itemize}
+\item
+  \(\mathcal{R}\) quan hệ trên \(A\), k/h \(M_{\mathcal{R}}\)
+\item
+  Các loại quan hệ:
+
+  \begin{itemize}
+  \item
+    Phản xạ \(\to m_{ii} = 1\) (đường chéo chính)
+  \item
+    Đối xứng \(\to m_{ij} = m_{ji}, \forall i,j\)
+  \item
+    Phản xứng \$\to m\_\{ij\} = 0 \lor m\_\{ji\} = 0, \forall i,j, i
+    \neq j \$
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Quan hệ tương
+đương}\label{quan-hux1ec7-tux1b0ux1a1ng-ux111ux1b0ux1a1ng}
+
+    \begin{itemize}
+\item
+  Thoả:
+
+  \begin{itemize}
+  \item
+    Phản xứng
+  \item
+    Đối xứng
+  \item
+    Bắc cầu
+  \end{itemize}
+\item
+  Lớp tương đương, \(\mathcal{R}\) quan hệ tương đương trên
+  \(A, a \in A\) k/h:
+  \([a]_{\mathcal{R}} = \overline{a} = \{ b \in A \mid b \mathcal{R} A \}\)
+\item
+  Định lý:
+
+  \begin{itemize}
+  \item
+    \(a \mathcal{R} b \Rightarrow [a]_{\mathcal{R}} = [b]_{\mathcal{R}}\)
+  \item
+    \([a]_{\mathcal{R}} \neq [b]_{\mathcal{R}} \Rightarrow [a]_{\mathcal{R}} \bigcap [b]_{\mathcal{R}} = \varnothing\)
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Quan hệ thứ tự}\label{quan-hux1ec7-thux1ee9-tux1ef1}
+
+    \begin{itemize}
+\item
+  Thoả:
+
+  \begin{itemize}
+  \item
+    Phản xạ
+  \item
+    Đối xứng
+  \item
+    Bắc cầu
+  \end{itemize}
+\item
+  Tập sắp thứ tự (Poset), k/h: \((A, \prec )\)
+\item
+  Sắp thứ tự:
+
+  \begin{itemize}
+  \item
+    Toàn phần
+  \item
+    Bộ phận
+  \end{itemize}
+\item
+  Trội và Trội trực tiếp
+\item
+  Tối tiểu và Tối đại
+\item
+  Phần tử nhỏ nhất và Phần tử lớn nhất
+\end{itemize}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}
