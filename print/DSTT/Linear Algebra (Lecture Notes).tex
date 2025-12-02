@@ -1,0 +1,3043 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+
+    \usepackage{iftex}
+    \ifPDFTeX
+        \usepackage[T1]{fontenc}
+        \IfFileExists{alphabeta.sty}{
+              \usepackage{alphabeta}
+          }{
+              \usepackage[mathletters]{ucs}
+              \usepackage[utf8x]{inputenc}
+          }
+    \else
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+    \fi
+
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics
+                         % to support a larger range
+    \makeatletter % fix for old versions of grffile with XeLaTeX
+    \@ifpackagelater{grffile}{2019/11/01}
+    {
+      % Do nothing on new versions
+    }
+    {
+      \def\Gread@@xetex#1{%
+        \IfFileExists{"\Gin@base".bb}%
+        {\Gread@eps{\Gin@base.bb}}%
+        {\Gread@@xetex@aux#1}%
+      }
+    }
+    \makeatother
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage{array}     % table support for pandoc >= 2.11.3
+    \usepackage{calc}      % table minipage width calculation for pandoc >= 2.11.1
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{soul}      % strikethrough (\st) support for pandoc >= 3.0.0
+    \usepackage{mathrsfs}
+    
+    % Define pandocbounded command for image inclusion
+    \providecommand{\pandocbounded}[1]{#1}
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+
+
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{Linear Algebra (Lecture Notes)}
+    
+    
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@ges}{\let\PY@bf=\textbf\let\PY@it=\textit}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb.
+    \makeatletter
+        \newbox\Wrappedcontinuationbox
+        \newbox\Wrappedvisiblespacebox
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+        \newcommand*\Wrappedcontinuationindent {3ex }
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+        % Take advantage of the already applied Pygments mark-up to insert
+        % potential linebreaks for TeX processing.
+        %        {, <, #, %, $, ' and ": go to next line.
+        %        _, }, ^, &, >, - and ~: stay at end of broken line.
+        % Use of \textquotesingle for straight quote.
+        \newcommand*\Wrappedbreaksatspecials {%
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+        }
+        % Some characters . , ; ? ! / are not pygmentized.
+        % This macro makes them "active" and they will insert potential linebreaks
+        \newcommand*\Wrappedbreaksatpunct {%
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+            \catcode`\.\active
+            \catcode`\,\active
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active
+            \lccode`\~`\~
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+    
+    \section{Ma trận}\label{ma-trux1eadn}
+
+    Đặt \(\mathbb{K} = \mathbb{Q}, \mathbb{R}, \mathbb{C}\)
+
+và \(\mathbb{N} = \{1, \ldots\}\)
+
+với \(m, n \in \mathbb{N}\)
+
+Ma trận \(m \times n\)
+
+\[
+A = \begin{pmatrix}
+a_{11} & a_{12} & \ldots & a_{1n}
+\\
+a_{21} & a_{22} & \ldots & a_{2n}
+\\
+\vdots & \vdots & \ddots & \vdots
+\\
+a_{m1} & a_{m2} & \ldots & a_{mn}
+\end{pmatrix}
+\]
+
+Trong đó \(a_{ij} \in \mathbb{K}\)
+
+    \subsection{Loại ma trận}\label{loux1ea1i-ma-trux1eadn}
+
+    \begin{itemize}
+\item
+  Ma trận hàng.
+\item
+  Ma trận cột.
+\item
+  Ma trận \(0\).
+\item
+  Ma trận vuông \(\Leftarrow\) đường chéo.
+\item
+  Ma trận bằng nhau.
+\item
+  \(M(m \times n, \mathbb{K}) = M_{m \times n} (\mathbb{K}) = M_{\mathbb{K}}(m \times n) = \{ A = (a_{ij})_{m \times n} | a_{ij} \in \mathbb{K}\}\).
+\item
+  Ma trận tam giác trên và Ma trận tam giác dưới, gọi chung là Ma trận
+  tam giác.
+\item
+  Ma trận đường chéo (vừa là mt tam giác trên và dưới).
+\item
+  Ma trận đơn vị.
+\end{itemize}
+
+    \subsection{Phép toán}\label{phuxe9p-touxe1n}
+
+    \subsubsection{Cộng}\label{cux1ed9ng}
+
+    \[A + B = (a_j + b_j)_{m \times n}\]
+
+    \subsubsection{Nhân}\label{nhuxe2n}
+
+    \paragraph{1 số với ma trận}\label{sux1ed1-vux1edbi-ma-trux1eadn}
+
+    \paragraph{2 ma trận}\label{ma-trux1eadn}
+
+    \[A = (a_{ik})_{m \times n}, \: B = (b_{kj})_{n \times p}\]
+
+\[AB = C = (c_{ij})_{m \times p}\]
+
+\[c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \ldots + a_{in}b_{nj}\]
+
+    \textbf{Thuật toán}
+
+\begin{itemize}
+\item
+  Check cột \(A\) = hàng \(B\):
+
+  \begin{itemize}
+  \item
+    Nếu không \(\to\) không giải được.
+  \item
+    Nếu có \(\to\) Ma trận đầu ra là ma trận (hàng \(A\)) \(\times\)
+    (cột \(B\)) \(\to\) Tính \(c_{ij} =\) giao hàng \(A\) và cột \(B\).
+  \end{itemize}
+\end{itemize}
+
+    \textbf{Note}
+
+\(AB = AC\) và \(A \neq 0\) \(\not\to B = C\).
+
+    \paragraph{Ma trận chuyển vị}\label{ma-trux1eadn-chuyux1ec3n-vux1ecb}
+
+    \[A = (a_{ij})_{m \times n}\]
+
+\[A^T = (a_{ji})_{n \times m}\]
+
+    \subsection{Ma trận bậc thang \& ma trận rút
+gọn}\label{ma-trux1eadn-bux1eadc-thang-ma-trux1eadn-ruxfat-gux1ecdn}
+
+    \subsubsection{Ma trận bậc thang}\label{ma-trux1eadn-bux1eadc-thang}
+
+    \begin{itemize}
+\item
+  Hàng không (nếu có).
+\item
+  Hàng khác không
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Phần tử chính (PTC) \(\to\) PTC bên dưới luôn nằm bên phải PTC bên
+    trên.
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Ma trận rút gọn}\label{ma-trux1eadn-ruxfat-gux1ecdn}
+
+    \begin{itemize}
+\item
+  PTC \(= 1\)
+\item
+  Cột chứa PTC \(\to\) PTC là phần tử \(\neq 0\) duy nhất.
+\end{itemize}
+
+    \subsection{Phép biến đổi}\label{phuxe9p-biux1ebfn-ux111ux1ed5i}
+
+    \begin{itemize}
+\item
+  Phép biến đổi sơ cấp, phép biến đổi hàng
+
+  \begin{itemize}
+  \item
+    Đổi hàng \(h_i \leftrightarrow h_j\)
+  \item
+    Thay thế tỷ lệ \(h_i \leftarrow \alpha h_i\)
+  \item
+    Thay thế hàng \(h_i \leftarrow h_i + k h_j \quad (j \neq i)\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  Tương đương hàng
+
+  \begin{itemize}
+  \item
+    \(A \to \ldots \to B\), \(B \sim A\)
+  \item
+    \(A \sim A\)
+  \item
+    \(A \sim B \to B \sim A\)
+  \item
+    \(A \sim B, B \sim C \to A \sim C\)
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Thuật toán cho số phép toán thực hiện nhỏ
+nhất}\label{thuux1eadt-touxe1n-cho-sux1ed1-phuxe9p-touxe1n-thux1ef1c-hiux1ec7n-nhux1ecf-nhux1ea5t}
+
+    \pandocbounded{\includegraphics[keepaspectratio]{pbdsc_algorithm.png}}
+
+    \subsection{Hạng}\label{hux1ea1ng}
+
+    \[r(A) = \text{rank}(A) \text{ với } A=(a_{ij})_{m \times n}\]
+
+    \begin{itemize}
+\tightlist
+\item
+  Số hàng \(\neq 0\) trong \textbf{dạng rút gọn} (hoặc \textbf{dạng bậc
+  thang}) của \(A\) (\(A \sim\) Dạng rút gọn (bậc thang))
+\end{itemize}
+
+    \[
+0 \leq \text{rank}(A) \leq \min \{ m, n \}
+\]
+
+    \subsection{Ma trận khả nghịch}\label{ma-trux1eadn-khux1ea3-nghux1ecbch}
+
+    \[
+AB = BA = I_n
+\]
+
+    \begin{itemize}
+\item
+  Trong đó, \(A\) là ma trận vuông cấp \(n\)
+\item
+  \(A\) là \textbf{ma trận khả nghịch}.
+\item
+  \(B\) là \textbf{ma trận nghịch đảo} của \(A\).
+\item
+  \(B = A^{-1}\).
+\item
+  Nếu tồn tại \(B\), \(B\) là duy nhất.
+\end{itemize}
+
+    \textbf{Định lý}
+
+\begin{itemize}
+\item
+  \((A^{-1})^{-1} = A\).
+\item
+  \(\alpha A\) khả nghịch và
+  \((\alpha A)^{-1} = \frac{1}{\alpha}A^{-1}\).
+\item
+  \(AB\) khả nghịch và \((AB)^{-1} = B^{-1}A^{-1}\).
+\item
+  \(A^T\) khả nghịch và \((A^T)^{-1} = (A^{-1})^T\).
+\end{itemize}
+
+    \textbf{Note}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(A^k = A.A...A\)
+
+  \begin{itemize}
+  \item
+    \(A^k\) khả nghịch.
+  \item
+    \(A^{-k} = (A^k)^{-1}\).
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Ma trận sơ cấp}\label{ma-trux1eadn-sux1a1-cux1ea5p}
+
+    \begin{itemize}
+\tightlist
+\item
+  Ta thực hiện 1 phép biến đổi sơ cấp trên \(I_n\)
+\end{itemize}
+
+    \[
+I_n \overset{e}{\rightarrow} E
+\]
+
+    \begin{itemize}
+\item
+  \(E\) đgl \textbf{ma trận sơ cấp}
+\item
+  Tồn tại 3 loại ma trận sơ cấp \(E\) tương ứng với 3 loại phép biến đổi
+  sơ cấp.
+\end{itemize}
+
+    \[EA = \overset{e}{\leftarrow}A\]
+
+\begin{itemize}
+\tightlist
+\item
+  Trong đó \(\overset{e}{\leftarrow}A\) là ma trận A sau khi đã thực
+  hiện phép biến đổi sơ cấp \(e\).
+\end{itemize}
+
+    \[A \overset{e_1}{\rightarrow} A_1 \overset{e_2}{\rightarrow} A_2 \ldots \overset{e_k}{\rightarrow} D\]
+
+Ta được
+
+\[
+\begin{split}
+A_1 &= E_1 A \\
+\\
+A_2 &= E_2 A_1 = E_2 E_1 A \\
+& \vdots
+\\
+D &= (E_k \ldots E_1) A
+\end{split}
+\]
+
+Mà \(A\) KN \(\Leftrightarrow \: A \sim I_n\)
+
+Do đó,
+
+\[
+A \overset{e_1}{\rightarrow} \overset{e_2}{\rightarrow} \ldots \overset{e_k}{\rightarrow} I_n
+\]
+
+Vậy
+
+\[
+I_n \overset{e_k}{\rightarrow} \overset{e_{k-1}}{\rightarrow} \ldots \overset{e_1}{\rightarrow} A^{-1}
+\]
+
+Hay
+
+\[
+\begin{split}
+I_n &= (E_1 \ldots E_k) A \\
+\\
+A^{-1} &= (E_1 \ldots E_k) I_n
+\end{split}
+\]
+
+    \subsubsection{Thuật toán tìm ma trận khả
+nghịch}\label{thuux1eadt-touxe1n-tuxecm-ma-trux1eadn-khux1ea3-nghux1ecbch}
+
+    Cho \(A_{n \times n}\)
+
+\begin{itemize}
+\item
+  B1. Thiết lập \((A | I_n)\)
+\item
+  B2.
+  \((A | I_n) \overset{\text{Biến đổi thành ma trận rút gọn}}{\to} (D|B)\)
+
+  \begin{itemize}
+  \item
+    Nếu \(D = I_n\) \(\to A\) khả nghịch và \(A^{-1}=B\).
+  \item
+    Nếu \(D \neq I_n\) \(\to A\) không khả nghịch.
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Tính chất}\label{tuxednh-chux1ea5t}
+
+    \begin{itemize}
+\item
+  \(A \in M(n \times n, \mathbb{K})\)
+\item
+  \(A\) khả nghịch.
+\item
+  \(r(A) = n\).
+\item
+  \(A\) là tích hữu hạn các ma trận sơ cấp
+
+  \begin{itemize}
+  \item
+    \(I_n = (E_1 \ldots E_k) A\)
+  \item
+    \(A = E_{k}^{-1} \ldots E_1^{-1}\)
+  \end{itemize}
+\item
+  \(AX=B\) có nghiệm duy nhất
+  \(\forall B \in M(n \times p, \mathbb{K})\).
+\item
+  \(\exists B\) ma trận vuông cấp \(n\) sao cho \(AB=I_n\).
+\item
+  \(\exists C\) ma trận vuông cấp \(n\) sao cho \(CA = I_n\)
+\item
+  \(A^T\) khả nghịch.
+\end{itemize}
+
+    \section{Định thức}\label{ux111ux1ecbnh-thux1ee9c}
+
+    \subsection{Nền tảng}\label{nux1ec1n-tux1ea3ng}
+
+    \subsubsection{Phép thế}\label{phuxe9p-thux1ebf}
+
+    \begin{itemize}
+\item
+  Cho \(X = \{ 1, 2, \ldots , n \}\)
+\item
+  Song ánh \(\sigma : X \to X\) đgl phép thế bậc \(n\).
+\end{itemize}
+
+\[
+\sigma = 
+\begin{pmatrix}
+1 & 2 & \ldots & n \\
+\sigma(1) & \sigma(2) & \ldots & \sigma(n)
+\end{pmatrix}
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Tập hợp các phép thế bậc \(n\) k/h \(|S_n|=n!\).
+\end{itemize}
+
+\[
+S_n = \{ \sigma : X \to X | \sigma \text{ là song ánh} \}
+\]
+
+\begin{itemize}
+\item
+  Phép thế đơn vị
+\item
+  Phép thế sơ cấp
+\item
+  Cấu trúc
+
+  \begin{itemize}
+  \item
+    Mỗi phép thế đều phân tích được thành tích của các tích độc lập
+  \item
+    Tích phép thế sơ cấp.
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Dấu}\label{dux1ea5u}
+
+    \[
+\text{sgn}(\sigma) = \underset{{1 \leq i < j \leq n}}{\pi} \frac{\sigma (i) - \sigma (j)}{i - j} \quad \in \{ \pm 1 \}
+\]
+
+    \subsubsection{Nghịch thế}\label{nghux1ecbch-thux1ebf}
+
+    \begin{itemize}
+\tightlist
+\item
+  Là số lượng \(\sigma(i) - \sigma (j)\) ngược với \(i - j\) hay số
+  lượng
+\end{itemize}
+
+\[
+\frac{\sigma(i) - \sigma(j)}{i - j} < 0
+\]
+
+\begin{itemize}
+\item
+  Nếu số lượng nghịch thế
+
+  \begin{itemize}
+  \item
+    Chẳn \(\to \text{sgn}(\sigma) = 1\).
+  \item
+    Lẻ \(\to \text{sgn}(\sigma) = -1\).
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Note:} Phép thế sơ cấp là phép thế lẻ.
+\end{itemize}
+
+    \subsection{Công thức}\label{cuxf4ng-thux1ee9c}
+
+    \begin{itemize}
+\tightlist
+\item
+  Cho \(A = (a_{ij})_{n \times n}\)
+\end{itemize}
+
+\[
+\det(A) = |A| = \sum_{\sigma \in S_n} \text{sgn} (\sigma) a_{\sigma (1)1} a_{\sigma (2)2} \ldots a_{\sigma (n) n}
+\]
+
+    \begin{itemize}
+\item
+  Cấp 2
+\item
+  Cấp 3
+\end{itemize}
+
+    \subsection{Tính chất - hệ quả - định
+lý}\label{tuxednh-chux1ea5t---hux1ec7-quux1ea3---ux111ux1ecbnh-luxfd}
+
+    \subsubsection{Tính chất}\label{tuxednh-chux1ea5t}
+
+    \begin{itemize}
+\tightlist
+\item
+  Đa tuyến tính
+\end{itemize}
+
+\[
+\det(A_1 \ldots \alpha A_j + \beta A'_j \ldots A_n) = \alpha \det(A_1 \ldots A_j \ldots A_n) + \beta \det(A_1 \ldots A'_j \ldots A_n)
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Thay phiên
+\end{itemize}
+
+\[
+\det(A_1 \ldots A_i \ldots A_i \ldots A_n) = 0
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Chuẩn hoá
+\end{itemize}
+
+\[
+\det(I_n) = 1
+\]
+
+    \subsubsection{Hệ quả}\label{hux1ec7-quux1ea3}
+
+    \begin{itemize}
+\item
+  \(\det(A_1 \ldots A_i \ldots A_j \ldots A_n) = \det(A_1 \ldots A_i + \alpha A_j \ldots A_j \ldots A_n\).
+\item
+  \(\det(A_1 \ldots A_i \ldots \alpha A_i \ldots A_n) = 0\).
+\item
+  \(\det(A_1 \ldots A_i \ldots A_j \ldots A_n) = - \det(A_1 \ldots A_j \ldots A_i \ldots A_n)\)
+
+  \begin{itemize}
+  \item
+    Đổi chỗ chẳn lần \(\to 1\).
+  \item
+    Đổi chỗ lẻ lần \(\to -1\).
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Định lý}\label{ux111ux1ecbnh-luxfd}
+
+    \begin{itemize}
+\item
+  \(\det(A^T) = \det(A)\).
+\item
+  \(\det(AB) = \det(A) \det(B) = \det(BA)\)
+\item
+  \(A\) khả nghịch \(\Leftrightarrow \det(A) \neq 0\)
+\end{itemize}
+
+\[
+\det(A^{-1}) = \frac{1}{\det(A)}
+\]
+
+    \subsection{Định thức con và phần bù đại
+số}\label{ux111ux1ecbnh-thux1ee9c-con-vuxe0-phux1ea7n-buxf9-ux111ux1ea1i-sux1ed1}
+
+    \(i \leq k \leq n\)
+
+Chọn \(1 \leq i_1 \leq i_2 \leq \ldots \leq i_k \leq n\) và
+\(1 \leq j_1 \leq j_2 \leq \ldots \leq j_k \leq n\)
+
+    \begin{itemize}
+\item
+  \(D_{i_1 \ldots i_k}^{j_1 \ldots j_k}\) là định thức con.
+\item
+  \(\overline{D_{i_1 \ldots i_k}^{j_1 \ldots j_k}}\)
+
+  \begin{itemize}
+  \item
+    Đgl phần bù của \(D_{i_1 \ldots i_k}^{j_1 \ldots j_k}\).
+  \item
+    Ma trận sau khi bỏ hàng \(i_k\) và cột \(j_k\) từ
+    \(D_{i_1 \ldots i_k}^{j_1 \ldots j_k}\).
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  Lấy theo cột, \(1 \leq j_1 \leq j_2 \leq \ldots \leq j_k \leq n\)
+\end{itemize}
+
+\[
+\det (A) = \sum_{1 \leq i_1 \leq i_2 \leq \ldots \leq i_k \leq n} (-1)^{i_1 + \ldots + i_k + j_1 + \ldots + j_k} D_{i_1 \ldots i_k}^{j_1 \ldots j_k} \overline{D_{i_1 \ldots i_k}^{j_1 \ldots j_k}}
+\]
+
+    Với \(k=1\),
+
+\[
+\det(A) = (-1)^{1+j} a_{1j} \overline{D_1^j} + (-1)^{2+j} a_{2j} \overline{D_2^j} + \ldots + (-1)^{n+j} a_{nj} \overline{D_n^j} = \sum_{i=1}^n (-1)^{i+j} a_{ij} \overline{D_i^j}
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  Lấy theo hàng, \(1 \leq i_1 \leq i_2 \leq \ldots \leq i_k \leq n\)
+\end{itemize}
+
+\[
+\det (A) = \sum_{1 \leq j_1 \leq j_2 \leq \ldots \leq j_k \leq n} (-1)^{i_1 + \ldots + i_k + j_1 + \ldots + j_k} D_{i_1 \ldots i_k}^{j_1 \ldots j_k} \overline{D_{i_1 \ldots i_k}^{j_1 \ldots j_k}}
+\]
+
+    Với \(k=1\),
+
+\[
+\det(A) = (-1)^{i+1} a_{i1} \overline{D_i^1} + (-1)^{i+2} a_{i2} \overline{D_i^2} + \ldots + (-1)^{i+n} a_{in} \overline{D_i^n} = \sum_{j=1}^n (-1)^{i+j} a_{ij} \overline{D_i^j}
+\]
+
+    \begin{itemize}
+\item
+  \textbf{Note}
+
+  \begin{itemize}
+  \item
+    Ưu tiên chọn cột (hoặc hàng) nhiều \(0\). Nếu không có \(0 \to\) kết
+    hợp các tính chất, định lý và hệ quả trước đó \(\to\) sinh ra \(0\).
+  \item
+    Không được dùng \(h_i \leftarrow \alpha h_i\)
+    (\(h_i \leftrightarrow h_j\) hay \(c_i \leftrightarrow c_j\) thì nhớ
+    hệ quả đổi dấu).
+  \item
+    Chọn cột để biến đổi thành ``\(0 \ldots 1\)'' thì dùng phép biến đổi
+    trên hàng và ngược lại.
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Ứng dụng}\label{ux1ee9ng-dux1ee5ng}
+
+    \subsubsection{Khả nghịch}\label{khux1ea3-nghux1ecbch}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(A\) khả nghịch thì
+\end{itemize}
+
+\[
+A^{-1} = \frac{1}{\det(A)} (\text{adj} (A))^T = \frac{1}{\det(A)} C^T
+\]
+
+    trong đó, \(A\) ma trận vuông cấp \(n\) và
+
+    \[
+\text{adj}(A) = C =
+\begin{pmatrix}
+c_{11} & c_{12} & \ldots & c_{1n} \\
+c_{21} & c_{22} & \ldots & c_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+c_{n1} & c_{n2} & \ldots & c_{nn}
+\end{pmatrix}
+= \text{cof}(A) 
+\]
+
+    trong đó, \(c_{ij}\) là phần bù đại số của \(a_{ij}\)
+
+    \[
+c_{ij} = (-1)^{i+j} \overline{D_i^j}
+\]
+
+    \textbf{Thuật toán xác định ma trận khả nghịch và tìm ma trận nghịch đảo
+bằng định thức}
+
+    B1. Tính \(c\) trên hàng (hoặc cột)
+
+B2. Áp dụng công thức tính \(\det(A)\) trên hàng (hoặc cột) bằng công
+thức
+
+\[\det(A) = a_{11} c_{11} + \ldots + a_{1n}c_{1n}\]
+
+B3. (Check khả nghịch)
+
+\begin{itemize}
+\tightlist
+\item
+  Nếu \(\det(A) = 0 \to\) không khả nghịch và kết thúc.
+\item
+  Nếu \(\det(A) \neq 0 \to A\) khả nghịch và chuyển sang bước 4 (nếu cần
+  tính ma trận nghịc đảo)
+\end{itemize}
+
+B4. Tính hết tất cả \(c\) còn lại \(\to \text{adj} (A) = C\)
+
+B5. Tìm \(A^{-1}\) bằng công thức
+
+\[
+A^{-1} = \frac{1}{\det(A)} (\text{adj} (A))^T = \frac{1}{\det(A)} C^T
+\]
+
+    \subsubsection{Hạng}\label{hux1ea1ng}
+
+    \textbf{Thuật toán xác định hạng của ma trận bằng định thức}
+
+    B1. Tính định thức cấp \(1,2,\ldots,n\)
+
+B2. (Kết luận hạng)
+
+\begin{itemize}
+\item
+  Nếu định thức cấp \(i \neq 0 \to\) (hàng (hoặc cột) độc lập tuyến tính
+  \(\to\) dạng bậc thang \(100\%\) có \(n\) hàng \(\neq 0\))
+  \(\to \text{rank} (A) \geq i\)
+\item
+  Nếu định thức cấp \(i = 0 \to \text{rank} (A) = i\)
+\end{itemize}
+
+    \section{Hệ phương trình tuyến
+tính}\label{hux1ec7-phux1b0ux1a1ng-truxecnh-tuyux1ebfn-tuxednh}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(m, n \in \mathbb{N}\), trong đó, \(m\) phương trình, \(n\) ẩn, ta có
+  hệ phương trình tuyến tính tổng quát (1)
+\end{itemize}
+
+    \[
+\begin{cases}
+a_{11}x_{1} + a_{12}x_{2} + \cdots + a_{1n}x_{n} = b_{1} \\
+a_{21}x_{1} + a_{22}x_{2} + \cdots + a_{2n}x_{n} = b_{2} \\
+\quad \vdots \\
+a_{m1}x_{1} + a_{m2}x_{2} + \cdots + a_{mn}x_{n} = b_{m}
+\end{cases}
+\]
+
+    \begin{itemize}
+\item
+  trong đó
+
+  \begin{itemize}
+  \item
+    \(a_{ij}\) là hệ số.
+  \item
+    \(b_i\) là hệ số tự do.
+  \item
+    \(x_j\) là ẩn của hệ.
+  \end{itemize}
+\item
+  Bộ số \((c_1, c_2, \ldots , c_n)\) là nghiệm của (1) nếu thay vào (1)
+  thoả tất cả phương trình.
+\item
+  Giải hệ (1) \(\to\) tìm tập nghiệm của (1).
+\item
+  Hệ pt có nghiệm đgl hệ tương thích.
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  Ma trận hệ số của (1)
+\end{itemize}
+
+\[
+A = \begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  Cột ẩn
+\end{itemize}
+
+\[
+X = \begin{pmatrix}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{pmatrix}
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  Cột hệ số tự do
+\end{itemize}
+
+\[
+b = \begin{pmatrix}
+b_{1} \\
+b_{2} \\
+\vdots \\
+b_{m}
+\end{pmatrix}
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  Ta viết gọn
+\end{itemize}
+
+\[
+AX = b
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  Ma trận đầy đủ (ma trận bổ sung) k/h
+\end{itemize}
+
+\[
+A^* = (A | b)
+\]
+
+    \subsection{Sự tồn tại và tính duy
+nhất}\label{sux1ef1-tux1ed3n-tux1ea1i-vuxe0-tuxednh-duy-nhux1ea5t}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(A^* = (A|b) \to (S|c)\), trong đó \(S\) là dạng bậc thang (hoặc dạng
+  rút gọn) của ma trận \(A^*\)
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Điều kiện nghiệm:}
+
+  \begin{itemize}
+  \item
+    Vô nghiệm \(\to \exists\) hàng có dạng
+    \((0 \ldots 0 | c), \: c_i \neq 0\).
+  \item
+    Vô số nghiệm \(\to\) Phần tử chính \(<\) Số ẩn.
+  \item
+    Có nghiệm duy nhất \(\to\) Phần tử chính \(=\) Số ẩn.
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Định lý Kronecker - Capelli}
+
+  \begin{itemize}
+  \item
+    Hệ vô nghiệm \(\Leftrightarrow \text{rank}(A) < \text{rank}(A^*).\)
+  \item
+    Hệ có nghiệm \(\Leftrightarrow \text{rank}(A) = \text{rank}(A^*)\):
+
+    \begin{itemize}
+    \item
+      Có nghiệm duy nhất \(\to \text{rank}(A) =\) Số ẩn.
+    \item
+      Vô số nghiệm \(\to \text{rank}(A) <\) Số ẩn.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Ẩn phụ thuộc} \(\to\) Là ẩn nằm trong cột chứa PTC trong dạng
+  bậc thang (rút gọn).
+\item
+  \textbf{Ẩn tự do (độc lập)} \(\to\) Các ẩn còn lại.
+\end{itemize}
+
+    \textbf{Note}
+
+\begin{itemize}
+\item
+  Ta kết luận nghiệm theo kiểu
+
+  \begin{itemize}
+  \item
+    \(X = (x_1, x_2 , \ldots , x_n)\).
+  \item
+    \(X = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}\).
+  \item
+    \(\begin{cases} x_1 = 1 \\ x_2 = 2 \\ \vdots \\ x_n = 3 \end{cases}\)
+  \end{itemize}
+\item
+  Nghiệm riêng \(\to\) Đề cho sẵn ẩn tự do bằng mấy.
+\item
+  Nghiệm tổng quát \(\to\) Không cho sẵn ẩn tự do bằng mấy.
+\end{itemize}
+
+    \subsection{Thuật toán Gauss}\label{thuux1eadt-touxe1n-gauss}
+
+    B1. Đưa về \(A^*\)
+
+B2. Đưa \(A^* \to (S|c)\) (Bậc thang)
+
+B3. (Check tồn tại nghiệm)
+
+\begin{itemize}
+\item
+  Nếu không có nghiệm \(\to\) Kết luận.
+\item
+  Nếu có nghiệm \(\to\) Dạng rút gọn \(\to\) KL nghiệm.
+\end{itemize}
+
+    \subsection{Quy tắc Cramer}\label{quy-tux1eafc-cramer}
+
+    \begin{itemize}
+\item
+  Hệ \(AX=b\) đgl \textbf{Hệ Cramer} nếu
+
+  \begin{itemize}
+  \item
+    \(A\) vuông
+  \item
+    \(A\) Khả nghịch
+  \end{itemize}
+\end{itemize}
+
+    Do đó,
+
+    \[
+\begin{split}
+X &= A^{-1} b \\
+\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} &= \frac{1}{\det(A)} C^T \begin{pmatrix}
+b_{1} \\
+b_{2} \\
+\vdots \\
+b_{m}
+\end{pmatrix}
+\end{split}
+\]
+
+    hay \(1 \leq j \leq n\)
+
+    \[
+\begin{split}
+x_j &= \frac{1}{\det (A)} (b_1 c_{1j} + b_2 c_{2j} + \ldots + b_n c_{nj}) \\
+A_j(b) &= \begin{pmatrix}
+a_{11} & \cdots & b_1 & a_{1n} \\
+a_{21} & \cdots & b_2 & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & \cdots & b_m & a_{mn}
+\end{pmatrix}
+\end{split}
+\]
+
+    Do đó ta có
+
+    \[
+D_j = \det (A_j (b)) = b_1 c_{1j} + \ldots + b_m c_{mj}
+\]
+
+    nghiệm của hệ là
+
+    \[
+x_j = \frac{D_j}{D}, \quad 1 \leq j \leq n
+\]
+
+    \begin{itemize}
+\item
+  \textbf{Điều kiện nghiệm:}
+
+  \begin{itemize}
+  \item
+    Nghiệm duy nhất \(x_j = \frac{D_j}{D} \to D \neq 0\).
+  \item
+    Vô nghiệm \(\to D = 0 \land \exists D_j \neq 0\).
+  \item
+    Không kết luật gì về tương thích hệ
+    \(\to D = 0 \land \forall D_j = 0\).
+  \end{itemize}
+\end{itemize}
+
+    \textbf{Thuật toán tìm nghiệm của hệ bằng quy tắc Cramer}
+
+    B1. Tìm \(D\) và \(D_j, \: 1 \leq j \leq n\)
+
+B2. (Check điều kiện nghiệm)
+
+\begin{itemize}
+\item
+  Nếu \(D \neq 0 \to\) KL nghiệm duy nhất
+  \(x_j = \frac{D_j}{D}, 1 \leq j \leq n \to\) Kết thúc.
+\item
+  Nếu \(D = 0 \to\) Sang bước tiếp theo
+\end{itemize}
+
+B3. (Check trường hợp)
+
+\begin{itemize}
+\item
+  Nếu \(\exists D_j \neq 0 \to\) KL vô nghiệm \(\to\) Kết thúc.
+\item
+  Nếu \(\forall D_j = 0 \to\) KL rằng ta không kết luật gì về tương
+  thích hệ \(\to\) Kết thúc.
+\end{itemize}
+
+    \textbf{Note}
+
+\begin{itemize}
+\tightlist
+\item
+  Nếu đề hỏi tìm tham số sao cho hệ có nghiệm thì ta tìm trường hợp vô
+  số và nghiệm duy nhất.
+\end{itemize}
+
+    \subsection{Hệ thuần nhất}\label{hux1ec7-thuux1ea7n-nhux1ea5t}
+
+    \begin{itemize}
+\tightlist
+\item
+  Hệ thuần nhất là hệ (2) như sau
+\end{itemize}
+
+    \[
+AX = 0
+\]
+
+    \begin{itemize}
+\item
+  Nghiệm tầm thường \(\to X = 0 \to \text{rank}(A) = n\).
+\item
+  Vô số nghiệm phụ thuộc vào
+  \(n - \text{rank}(A) \to \text{rank}(A) < n\).
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Nhận xét}
+
+  \begin{itemize}
+  \item
+    Nếu \(x = (x_1, x_2, \ldots , x_n)\) là nghiệm của (2)
+    \(\to tx = (tx_1, tx_2, \ldots , t x_n)\) là nghiệm của (2).
+  \item
+    Nếu \(x = (x_1, x_2, \ldots , x_n)\) và
+    \(y = (y_1, y_2, \ldots , y_n)\) là nghiệm của (2)
+    \(\to x+ y = (x_1 + y_1, x_2 + y_2, \ldots , x_n + y_n)\) là nghiệm
+    của (2).
+  \item
+    \(A\) có \(m <n \to\) Vô số nghiệm.
+  \end{itemize}
+\end{itemize}
+
+    \section{Không gian Vector}\label{khuxf4ng-gian-vector}
+
+    \begin{itemize}
+\item
+  \(V \neq \varnothing\) đgl 1 \textbf{không gian vector}
+  \(\Rightarrow\) được trang bị 2 phép toán:
+
+  \begin{itemize}
+  \item
+    Cộng vector
+    \(+\colon V\times V \longrightarrow V, \quad (u,v)\longmapsto u+v.\)
+  \item
+    Nhân vô hướng
+    \(\cdot \colon \mathbb{K} \times V \longrightarrow V,\quad (\alpha, u) \longmapsto \alpha u.\)
+  \end{itemize}
+\item
+  Thoả mãn các tiên đề sau:
+\end{itemize}
+
+\[
+\begin{split}
+&(1) \quad (u + v) + w = u + (v + w), \quad \forall u,v,w \in V \\
+&(2) \quad u+v=v+u,\quad \forall u,v \in V \\
+&(3) \quad \exists 0 \in V : u+0=u,\quad \forall u \in V \\
+&(4) \quad \forall u \in X,\: \exists u' \in V:u+u'=0 \\
+&(5) \quad \alpha (u + v) = \alpha u + \alpha v,\quad \forall \alpha \in \mathbb{K}, \forall u, v \in V \\
+&(6) \quad (\alpha + \beta)u=\alpha u+\beta u,\quad \forall \alpha ,\beta \in \mathbb{K},\forall u \in V \\
+&(7) \quad \alpha (\beta u) = (\alpha \beta)u,\quad \alpha , \beta \in \mathbb{K},\forall u \in V\\
+&(8) \quad 1u = u,\quad \forall u \in V
+\end{split}
+\]
+
+\begin{itemize}
+\item
+  \textbf{Note}:
+
+  \begin{itemize}
+  \item
+    \textbf{\(\mathbb{K}\)-Không gian vector} \(\leftrightarrow\) Không
+    gian vector trên trường \(\mathbb{K}\).
+  \item
+    \(V\) là không gian vector trên trường
+    \(\mathbb{K} \leftrightarrow v \in V\) là 1 \textbf{vector}.
+  \item
+    \(\alpha \in \mathbb{K} \to\) đgl 1 \textbf{vô hướng}.
+  \item
+    \(0\) trong \((3) \to\) đgl \textbf{vector 0}.
+  \item
+    \(\forall u \in V, u'\) trong \((4) \to\) đgl vector đối của vector
+    \(u, \quad u'=-u\).
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Tính chất}\label{tuxednh-chux1ea5t}
+
+    Cho \(V\) là 1 không gian vector
+
+    \begin{itemize}
+\item
+  Vector 0 là duy nhất.
+\item
+  \(\forall u \in V, \: -u\) là duy nhất.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(u-v=u+(-v).\)
+  \end{itemize}
+\item
+  Giản ước:
+
+  \begin{itemize}
+  \item
+    \(u+w = v+w \Rightarrow u=v.\)
+  \item
+    \(u+v=w \Rightarrow u = w-v.\)
+  \end{itemize}
+\item
+  \(\alpha u = 0 \Rightarrow \alpha = 0 \lor u=0.\)
+\item
+  \((- \alpha )u=\alpha (-u) = -(\alpha u).\)
+\item
+  \(\forall u \in V, \forall \alpha \in \mathbb{K}\) (\(0\) bên dưới là
+  vector 0)
+
+  \begin{itemize}
+  \item
+    \(0u=0.\)
+  \item
+    \(\alpha 0=0.\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Note}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Để c/m \textbf{tính duy nhất} \(\to\) ta c/m cả 2 thoả cùng 1 tính
+    chất.
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Ví dụ minh hoạ}\label{vuxed-dux1ee5-minh-houx1ea1}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{VD1}
+\end{itemize}
+
+\(V=\{\) Vector tự do trong mặt phẳng \(\},+,.\) là 1 không gian vector.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD2}
+\end{itemize}
+
+\(\mathbb{R}^2 = \{ (x,y) | x,y \in \mathbb{R} \}\)
+
+\((x,y)+(x'+y')=(x+x',y+y')\)
+
+\(\alpha (x,y) = (\alpha x, \alpha y)\)
+
+là 1 không gian vector.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD3}
+\end{itemize}
+
+\(n \geq 1, \: \mathbb{K}^n =\{ (x_1, \ldots ,x_n) | x_i \in \mathbb{K} \}\)
+
+\((x_1, \ldots ,x_n)+(y_1,\ldots ,y_n)=(x_1+y_1,\ldots ,x_n+y_n)\)
+
+\(\alpha (x_1,\ldots ,x_n) = (\alpha x_1, \ldots ,\alpha x_n)\)
+
+là 1 không gian vector.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD4}
+\end{itemize}
+
+\(M(m \times n, \mathbb{K}),+,.\) là không gian vector.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD5}
+\end{itemize}
+
+\(\mathbb{K}[x]\) là tập các đa thức biến \(x\) hệ số trong
+\(\mathbb{K}\). \(\mathbb{K}[x]\) là không gian vector trên
+\(\mathbb{K}\) với phép cộng các đa thức và phép nhân 1 số với đa thức.
+(\(0\) là đa thức không)
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD6}
+\end{itemize}
+
+Tập các hàm thực xác định trên \(\mathbb{R}\) là \(\mathbb{R}\)-Không
+gian vector với
+
+\((f+g)(x) = f(x) + g(x)\)
+
+\((\alpha f)(x) = \alpha f(x)\)
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD7}
+\end{itemize}
+
+\(\mathbb{K}\) là 1 không gian vector với các phép toán thông thường
+trên \(\mathbb{R},\: \mathbb{Q},\: \mathbb{R},\: \mathbb{C}.\)
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD8}
+\end{itemize}
+
+\((\mathbb{R} \times \mathbb{R} \to \mathbb{R}, \quad \mathbb{Q} \times \mathbb{R} \to \mathbb{R}) \to \mathbb{R}\)
+là \(\mathbb{Q}\)-không gian vector.
+
+    \subsection{\texorpdfstring{Độc lập tuyến tính \(\&\) phụ thuộc tuyến
+tính}{Độc lập tuyến tính \textbackslash\& phụ thuộc tuyến tính}}\label{ux111ux1ed9c-lux1eadp-tuyux1ebfn-tuxednh-phux1ee5-thuux1ed9c-tuyux1ebfn-tuxednh}
+
+    Cho \(S \subset V\) với \(V\) là không gian vector.
+
+    \subsubsection{Tổ hợp tuyến
+tính}\label{tux1ed5-hux1ee3p-tuyux1ebfn-tuxednh}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Tổ hợp tuyến tính} của các vector trong \(S\) là tổng hữu hạn
+\end{itemize}
+
+\[
+a_1u_1+a_2u_2+\ldots +a_nu_n, \quad a_i\in \mathbb{K},u_i\in S.
+\]
+
+    \subsubsection{Biểu thị tuyến
+tính}\label{biux1ec3u-thux1ecb-tuyux1ebfn-tuxednh}
+
+    \begin{itemize}
+\tightlist
+\item
+  Cho \(v\in V\), \textbf{Biểu thị tuyến tính} là
+\end{itemize}
+
+\[
+v = \alpha _1u_1 + \alpha _2u_2 +\ldots + \alpha _k u_k,\quad \alpha _k \in \mathbb{K},u_k \in S.
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{VDMH}
+\end{itemize}
+
+\(\mathbb{R}^3=S=\{ x_1=(1,2,1), v_2=(1,2,3), u_3=(2,4,1) \}, v=(1,2,2), w=(0,0-3)\),
+\(v\) và \(w\) biểu thị tuyến tính được qua \(S\) không?
+
+\(v = x_1u_1+x_2u_2+x_3u_3\)
+
+\((1,2,3)=x_1(\)
+
+    \subsubsection{Phụ thuộc tuyến
+tính}\label{phux1ee5-thuux1ed9c-tuyux1ebfn-tuxednh}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(S\) là \textbf{phụ thuộc tuyến tính} nếu
+\end{itemize}
+
+\[\exists (\alpha _1, \alpha _2, \ldots , \alpha _k) \neq (0,\ldots 0)\: |\: \alpha _1u_1 + \alpha _2u_2 + \ldots + \alpha _ku_k = 0, \quad u_i\in S.\]
+
+    \subsubsection{Độc lập tuyến
+tính}\label{ux111ux1ed9c-lux1eadp-tuyux1ebfn-tuxednh}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(S\) là \textbf{độc lập tuyến tính} nếu không phụ thuộc tuyến tính,
+  hay
+\end{itemize}
+
+\[
+(\alpha _1u_1 + \alpha _2u_2 + \ldots + \alpha _ku_k = 0) \Rightarrow (\alpha _1 = \alpha _2 = \ldots = \alpha _k = 0) \to \text{ Nghiệm tầm thường}.
+\]
+
+    \subsubsection{VDMH}\label{vdmh}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{VD1}
+\end{itemize}
+
+Trong không gian
+\(\mathbb{R}^3, S = \{ u_1 = (1,2,-1), u_2=(\sim \sim \sim), u_3 = (\sim \sim \sim)\}\)
+
+Xét \(\alpha _1u_1 + \alpha _2u_2 + \alpha _3u_3 = 0\)
+
+\(\alpha _1 (1,2,1)+ \alpha _2 (\sim \sim \sim) + \alpha _3 (\sim \sim \sim) = 0\)
+
+\(\begin{cases} \alpha _1 + 2 \alpha _2+3\alpha _3 = 0 \\ \sim \sim \sim =0\\ \sim \sim \sim=0\end{cases} \Rightarrow A = \begin{pmatrix} \sim \sim \sim \\ \sim \sim \sim \\ \sim \sim \sim \end{pmatrix} \Rightarrow \text{ Vô số nghiệm} \Rightarrow \text{ Phụ thuộc tuyến tính}.\)
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD2}
+\end{itemize}
+
+Trong không gian
+\(\mathbb{R}[x], S = \{ P_1 = 1+x+x^3, P_2 = 1+x+x^2, P_3=1+x, P_4=x+x^3 \}\)
+
+Xét \(x_1P_1 +x_2P_2 +x_3P_3 =0\)
+
+\(x_1(1+x+x^3) + x_2(\sim \sim \sim) + x_3(\sim \sim \sim)=0\)
+
+\(\begin{cases} x_1 + x_2 +x_3 = 0 \\ \sim \sim \sim =0\\ \sim \sim \sim=0\\ \sim \sim \sim=0\end{cases} \Rightarrow \text{ Có nghiệm } (0,0,0,0) \Rightarrow \text{ Độc lập tuyến tính}.\)
+
+(Note: HPT ở trên được lập ra dựa trên bậc, tức mỗi cột tương ứng với
+bậc)
+
+    \subsubsection{Tính chất}\label{tuxednh-chux1ea5t}
+
+    \begin{itemize}
+\item
+  Hệ chỉ gồm 1 vector \(\{ u \}\) phụ thuộc tuyến tính
+  \(\Leftrightarrow u =0\).
+\item
+  \(S\) phụ thuộc tuyến tính
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\Rightarrow\) Mọi hệ chứa \(S\) phụ thuộc tuyến tính.
+  \item
+    \(\Rightarrow\) Mọi hệ vector chứa vector \(0\) đều phụ thuộc tuyến
+    tính.
+  \end{itemize}
+\item
+  \(S\) phụ thuộc tuyến tính, \(S' \supset S \Rightarrow S'\) phụ thuộc
+  tuyến tính.
+\item
+  Hệ vô hạn vector \(S\) độc lập tuyến tính \(\Leftrightarrow\) Hệ con
+  hữu hạn của \(S\) độc lập tuyến tính.
+\end{itemize}
+
+    \subsubsection{Định lý}\label{ux111ux1ecbnh-luxfd}
+
+    \begin{itemize}
+\tightlist
+\item
+  Cho \(S = \{ u_1 , u_2 \ldots , u_k \}, \: k \geq 2\), \(S\)
+  \textbf{phụ thuộc tuyến tính}
+\end{itemize}
+
+\[\Leftrightarrow \exists u_i, 1 \leq i \leq k \: | \: u_i = \alpha _1u_1 + \ldots + \widehat{\alpha _iu_i} + \ldots + \alpha _k u_k.\]
+
+    \begin{itemize}
+\item
+  \textbf{Cách làm bài tìm tổ hợp tuyến tính}
+
+  \begin{itemize}
+  \item
+    B1. Xử lý đến khi ra được hệ phương trình tuyến tính
+  \item
+    B2. Giải ra nghiệm
+  \item
+    B3. Cho \(1\) ẩn \(\neq 0 \to\) Thu được tổ hợp tuyến tính (VD.
+    \(u_1+u_2+u_3 = \sim \to u_1 = \sim\))
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  Cho \(S = \{ u_1 , u_2 \ldots , u_k \}, \: k \geq 2, u_i \neq 0\) ,
+  \(S\) \textbf{phụ thuộc tuyến tính}
+\end{itemize}
+
+\[
+\Leftrightarrow \exists u_i, \: 2 \leq i \leq k \: | \: u_i = \alpha _1 u_1+\ldots +\alpha _{i-1}u_{i-1}.
+\]
+
+(Hơn nữa, có thể chọn \(i\) sao cho \(\{ u_1 , \ldots , u_{i-1} \}\) độc
+lập tuyến tính. (Định lý giúp tìm tập hợp độc lập tuyến tính lớn nhất
+trong 1 tập))
+
+    \subsection{Cơ sở và số
+chiều}\label{cux1a1-sux1edf-vuxe0-sux1ed1-chiux1ec1u}
+
+    Cho \(V\) là \(\mathbb{K}\)-Không gian vector và \(B \subset V\).
+
+    \subsubsection{Hệ sinh}\label{hux1ec7-sinh}
+
+    \begin{itemize}
+\tightlist
+\item
+  Mọi vector trong \(V\) biểu thị tuyến tính được qua \(B \Rightarrow\)
+  Hệ vector \(B\) đgl \textbf{hệ sinh (tập sinh)} của \(V\).
+\end{itemize}
+
+    \subsubsection{Cơ sở}\label{cux1a1-sux1edf}
+
+    \begin{itemize}
+\item
+  \(\begin{cases} B \text{ Hệ sinh của } V \\ B \text{ Độc lập tuyến tính} \end{cases} \Rightarrow\)
+  Hệ vector \(B\) là \textbf{Cơ sở} của \(V\).
+\item
+  Note:
+
+  \begin{itemize}
+  \item
+    \(\mathbb{K}\)-không gian vector, \(\mathbb{C}\)-không gian vector
+    có 1 cơ sở là \(\{ 1 \}\).
+  \item
+    \(\mathbb{C}\) là \(\mathbb{R}\)-không gian vector.
+    \(z=a+bi=a1+bi \Rightarrow \{ 1,i \}\) là 1 hệ sinh.
+    \(a+bi=0 \Leftrightarrow a=0=b \Rightarrow \{ 1,i \}\) là độc lập
+    tuyến tính.
+  \item
+    \(\mathbb{R}\) là \(\mathbb{R}\)-không gian vector với cơ sở là
+    \(\{ 1 \}\).
+  \item
+    \(\mathbb{R}\) là \(\mathbb{Q}\)-không gian vector với cở sở là vô
+    hạn.
+  \end{itemize}
+\end{itemize}
+
+    \paragraph{VDMH}\label{vdmh}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD1}
+\end{itemize}
+
+\(\mathbb{K}^n, \varepsilon = \{ e_1, e_2, \ldots , e_k \}\), trong đó
+\(e_1=(0,\ldots ,1, \ldots ,0)\)
+
+\(\forall x \in \mathbb{K}^n,x=(x_1,x_2,\ldots,x_n)=x_1e_1 + x_2e_2 + \ldots + x_ne_n\)
+
+\(\Rightarrow \varepsilon\) là 1 hệ sinh của \(\mathbb{K}^n\) (*)
+
+\(x_1e_1 + x_2e_2 + \ldots + x_ne_n = 0 \Leftrightarrow (x_1, \ldots , x_n)=(0,\ldots ,0) \Rightarrow x_1=x_2=\ldots =0\)
+
+\(\Rightarrow \varepsilon\) độc lập tuyến tính (**)
+
+Từ (*)(**) \(\Rightarrow \varepsilon\) là 1 cơ sở của \(\mathbb{K}^n\)
+(và là cơ sở chính tắc của \(\mathbb{K}^n\)).
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD2}
+\end{itemize}
+
+\(M(m\times n, \mathbb{K}), \varepsilon = \{ E_{ij}\}_{i=1,m}^{j=1,m}\)
+trong đó
+\(E_{ij}= \begin{pmatrix} & \vdots & \\ \ldots & 1 & \ldots \\ & \vdots & \end{pmatrix}\).
+(C/m tương tự) \(\Rightarrow \varepsilon\) là \(1\) cơ sở của
+\(M(m\times n, \mathbb{K}).\)
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD3}
+\end{itemize}
+
+\(\mathbb{K}[x], \varepsilon = \{1,x,x^2,\ldots ,x^n, \ldots \}.\)
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VD4}
+\end{itemize}
+
+\(\mathbb{K}_n[x], \varepsilon = \{ 1, x, \ldots , x^n \}.\)
+
+    \subsubsection{Độc lập tuyến tính cực
+đại}\label{ux111ux1ed9c-lux1eadp-tuyux1ebfn-tuxednh-cux1ef1c-ux111ux1ea1i}
+
+    Cho \(S = \{ u_1, u_2, \ldots , u_n \} \subset V\)
+
+    \begin{itemize}
+\tightlist
+\item
+  Nếu
+  \(\begin{cases} S \text{ Độc lập tuyến tính} \\ S \varsubsetneq S', S' \text{ Phụ thuộc tuyến tính} \end{cases} \Rightarrow S\)
+  \textbf{Độc lập tuyến tính cực đại}.
+\end{itemize}
+
+    \paragraph{Định lý}\label{ux111ux1ecbnh-luxfd}
+
+    Cho \(S = \{ u_1, u_2, \ldots , u_m \}\)
+
+    \begin{itemize}
+\item
+  Cho \(S \subset V\), các mệnh đề sau là \(\Leftrightarrow\):
+
+  \begin{itemize}
+  \item
+    Hệ \(S\) là 1 \textbf{Cơ sở} của \(V\).
+  \item
+    Hệ \(S\) là Hệ vector \textbf{Độc lập tuyến tính cực đại} của \(V\).
+  \item
+    \(\forall\) vector của \(V\) đề \textbf{Biểu thị tuyến tính} được 1
+    cách \textbf{duy nhất} qua hệ \(S\).
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \(S\) là \textbf{hệ sinh} của \(V\) nếu (1 trong 2 thoả):
+
+  \begin{itemize}
+  \item
+    \(\exists u_i, 1 \leq i \leq m\) \textbf{Tổ hợp tuyến tính} của các
+    vector còn lại trong
+    \(S \Rightarrow \bigg(S' = S \setminus  \{ v \}\bigg).\)
+  \item
+    \(\bigg(V \neq \{0\}\bigg) \Rightarrow V\)
+    \(\exists 1 \textbf{ Cơ sở } \subset S.\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Bổ đề:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Không gian vector \(V\) có \(1\) \textbf{cơ sở} gồm \(n\) vector
+    \(\Rightarrow \forall\) hệ \textbf{Độc lập tuyến tính} trong \(V\)
+    đều chứa không quá \(n\) vector.
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Note:}
+
+  \begin{itemize}
+  \item
+    Cách chứng minh \(A \Rightarrow B\):
+
+    \begin{itemize}
+    \item
+      B1. Đặt \(A\) là giả thuyết \(\to (1)\)
+    \item
+      B2. Xác định điều kiện để có được \(B\) (từ tiên đề/định lý/tính
+      chất/\(\ldots\)) \(\to (2)\)
+    \item
+      B3. C/m \((1) \Rightarrow (2) \to\) C/m xong.
+    \end{itemize}
+  \item
+    Cách biểu diễn \textbf{duy nhất}:
+
+    \begin{itemize}
+    \item
+      B1. Đặt \(\text{Biểu diễn A} = \text{Biểu diễn B}\)
+    \item
+      B2. C/m
+      \(\text{Hệ số của Biểu diễn A} = \text{Hệ số của Biểu diễn B} \to\)
+      C/m xong.
+    \end{itemize}
+  \item
+    Cách xây dựng \textbf{cơ sở}:
+
+    \begin{itemize}
+    \item
+      C1. Từ độc lập tuyến tính \(\to\) Thêm vào \(\to\) Độc lập tuyến
+      tính cực đại.
+    \item
+      C2. Từ hệ sinh \(\to\) Bỏ bớt ra \(\to\) Hệ sinh cực tiểu.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Số chiều}\label{sux1ed1-chiux1ec1u}
+
+    \[
+\dim _{\mathbb{K}} V = n \Leftrightarrow V \text{ có 1 cơ sở gồm } n \text{ vector.}
+\]
+
+\begin{itemize}
+\item
+  \(V \neq \{ 0 \}, V\) không có cơ sở nào gồm hữu hạn vector
+  \(\Rightarrow \dim _{\mathbb{K}} V = \infty.\)
+\item
+  Note: Mọi cơ sở của \(V\) đều có cùng số vector (số chiều là số vector
+  trong cơ sở).
+\item
+  \(\dim \{ 0 \} = 0.\)
+\end{itemize}
+
+    \textbf{VD}
+
+\begin{itemize}
+\item
+  \(\dim _{\mathbb{K}} \mathbb{K}^n = n.\)
+\item
+  \(\dim _{\mathbb{K}} (M (m \times n, \mathbb{K})) = mn.\)
+\item
+  \(\dim _{\mathbb{K}} (\mathbb{K} _n [x]) = n + 1.\)
+\item
+  \(\dim _{\mathbb{K}} (\mathbb{K}[x]) = \infty.\)
+\item
+  \(\dim _{\mathbb{C}} (\mathbb{C}) = 1,\: \dim _{\mathbb{K}} (\mathbb{C}) = 2.\)
+\item
+  \(\dim _{\mathbb{K}} (\mathbb{R}) = 1.\)
+\end{itemize}
+
+    \paragraph{Định lý}\label{ux111ux1ecbnh-luxfd}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(V \neq \{ 0 \}\) đgl không gian hữu hạn sinh (nghĩa là có 1 tập sinh
+  gồm hữu hạn vector) \(\Rightarrow V\) có 1 cơ sở gồm hữu hạn vector.
+\end{itemize}
+
+    \paragraph{Tính chất}\label{tuxednh-chux1ea5t}
+
+    \subparagraph{Mệnh đề 1}\label{mux1ec7nh-ux111ux1ec1-1}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(V \neq \{ 0 \}\) (tương tự)
+\end{itemize}
+
+    \subparagraph{Mệnh đề 2}\label{mux1ec7nh-ux111ux1ec1-2}
+
+    \(V\) là KG vector \(n\)-chiều,
+\(\beta = \{u_1,\ldots , u_n\} \subset V\) (Các mệnh đề sau tương đương)
+
+\begin{itemize}
+\item
+  \(\beta\) là cở sở của \(V\).
+\item
+  \(\beta\) là hệ sinh của \(V\).
+\item
+  \(\beta\) độc lập tuyến tính.
+\end{itemize}
+
+    \subsection{Toạ độ}\label{toux1ea1-ux111ux1ed9}
+
+    \begin{itemize}
+\item
+  Cố định thứ tự của \(B \Rightarrow B = (u_1 , \ldots , u_n )\) là
+  \textbf{cơ sở sắp thứ tự}.
+\item
+  \(B = (u_1 , \ldots , u_n )\) là cơ sở sắp thứ tự của
+  \(\mathbb{K}\)-KG vector \(V\)
+\end{itemize}
+
+\[\forall v \in V, v = \alpha _1 u_1 + \ldots + \alpha _n u_n.\]
+
+\begin{itemize}
+\item
+  \((\alpha _1, \ldots , \alpha _n)\) đgl \textbf{toạ độ} của \(v\) đối
+  với cơ sở \(B\). K/h:
+
+  \begin{itemize}
+  \item
+    \((v)_B = (\alpha _1, \ldots , \alpha _n).\)
+  \item
+    \([v]_B = \begin{pmatrix} \alpha _1 \\ \alpha _2 \\ \vdots \\ \alpha _n \end{pmatrix}\)
+  \item
+    \(v = \alpha _1 u_1 + \ldots + \alpha _n u_n\).
+  \end{itemize}
+\end{itemize}
+
+    \textbf{VD: Tìm toạ độ (4.7a)}
+
+\(((2,3,1))_B = (x_1 , x_2, x_3)\)
+
+\((2,3,1) = x_1 (-1,2,4)+x_2 (\sim ) + x_3 (\sim)\)
+
+\(\begin{cases} \sim = 2 \\ \sim  =3 \\ \sim =1 \end{cases} \Rightarrow \begin{cases} x_1 = -\frac{19}{3} \\ x_2 = -11 \\ x_3 = \frac{20}{3} \end{cases} \Rightarrow ((2,3,1))_B = (-\frac{19}{3}, -11, \frac{20}{3}).\)
+
+    \subsubsection{Tính chất}\label{tuxednh-chux1ea5t}
+
+    Cho \(B = (u_1 , \ldots , u_m)\) là cơ sở của
+\(V, \: v \in V, \: (v)_B = (\alpha _1, \ldots , \alpha _n) \in \mathbb{K} ^n, \: [0] = 0\)
+
+\begin{itemize}
+\item
+  \(\forall u, v \in V \quad [u _ v]_B = [u]_B + [v]_B.\)
+\item
+  \(\forall \alpha \in \mathbb{K} \quad [\alpha u] _B = \alpha [u]_B.\)
+\item
+  \(\forall \alpha , \beta \in \mathbb{K} \quad [\alpha u + \beta v] _B = \alpha [u]_B + \beta [v]_B.\)
+\item
+  \([\alpha _1 u_1 + \ldots + \alpha _n u_n]_B = \alpha _1 [u_1]_B + \ldots + \alpha _n [u_n]_B.\)
+\end{itemize}
+
+    \subsubsection{Mệnh đề}\label{mux1ec7nh-ux111ux1ec1}
+
+    Cho \(B\) là 1 cơ sở của
+\(V, \: S = \{ v_1 , \ldots , v_k \} \subset V.\)
+
+\begin{itemize}
+\item
+  \(S\) độc lập tuyến tính
+  \(\Leftrightarrow \{ [\alpha _1 ]_B,\ldots ,[\alpha _k]_B \}\) độc lập
+  tuyến tính.
+\item
+  \(S\) độc lập tuyến tính
+  \(\Leftrightarrow \text{rank} ([v _1 ]_B \ldots [v _k]_B) = k.\)
+\end{itemize}
+
+    \subsubsection{Định lý}\label{ux111ux1ecbnh-luxfd}
+
+    Cho \(B\) và \(C\) là 2 cơ sở của \(V\)
+
+\begin{itemize}
+\tightlist
+\item
+  \(\exists\) duy nhất ma trận \(A\) vuông, khả nghịch sao cho
+\end{itemize}
+
+\[[v]_B = A [v]_C, \forall v \in V\]
+
+\begin{itemize}
+\tightlist
+\item
+  \(A\) đgl \textbf{ma trận chuyển cơ sở} từ \(B\) sang \(C\),
+  \([v]_B = A [v]_C\) là công thức đổi toạ độ
+\end{itemize}
+
+\[A = P _{B,C} = ([v_1]_B \ldots [v_n]_B)\]
+
+    \subsection{Không gian con - Hạng của hệ
+vector}\label{khuxf4ng-gian-con---hux1ea1ng-cux1ee7a-hux1ec7-vector}
+
+    Cho \(\varnothing \neq E \subset V\)-KG vector
+
+\begin{itemize}
+\tightlist
+\item
+  \(E\) là KG vector cùng với 2 phép toán trên \(V \Rightarrow E\) là
+  \textbf{KG con} của \(V\).
+\end{itemize}
+
+    \textbf{VD}
+
+\begin{itemize}
+\item
+  \(V\) là KG vector
+
+  \begin{itemize}
+  \item
+    \(\{0 \}\) là KG con của \(V\) đgl KG con tầm thường.
+  \item
+    \(V \subset V.\)
+  \end{itemize}
+\item
+  \(\mathbb{R}^3 \quad P=\{ (x,y,0) \mid x,y \in \mathbb{R} \}\) là 1 KG
+  con của \(\mathbb{R}^3\).
+\item
+  \(\mathbb{K}_n [X] \subset \mathbb{K}[X].\)
+\end{itemize}
+
+    \subsubsection{Định lý}\label{ux111ux1ecbnh-luxfd}
+
+    Cho \(\varnothing \neq E \subset V\)-KG vector, \(E\) là KG con của
+\(V \Rightarrow\) thoả điều kiện sau:
+
+\begin{itemize}
+\item
+  \(u+v \in E, \quad \forall u,v \in E.\)
+\item
+  \(\alpha u \in E, \quad \forall u \in E, \forall \alpha \in \mathbb{K}.\)
+\end{itemize}
+
+hoặc
+
+\begin{itemize}
+\tightlist
+\item
+  \((\alpha u + \beta v ) \in E, \quad \forall \alpha, \beta \in \mathbb{K}, \forall u,v \in E.\)
+\end{itemize}
+
+    \textbf{VD}
+
+Cho \(\mathbb{Q} = \{ (x,y,z) x - 2y + z = 0 \}\). C/m \(\mathbb{Q}\) là
+KG con của \(\mathbb{R}^3.\)
+
+Ta có
+\(0-20+0=0 \Rightarrow (0,0,0) \in \mathbb{Q} \Rightarrow \mathbb{Q} \neq \varnothing\)
+
+\(\forall  u= (x,y,z), v=(a,b,c) \Rightarrow x+2y+z=0\) và \(a+2b+c=0\)
+
+Xét \(u+v=(x+a,y+b,z+c)\)
+
+\((x+a)-2(y+b)+(z+c) = (x-2y+z) + (a-2b+c)=0 \Rightarrow u,v \in \mathbb{Q}\)
+
+\(\forall \alpha \in \mathbb{R}, \forall u = (x,y,z) \in \mathbb{Q} \Rightarrow x - 2y + z = 0\)
+
+Xét \(\alpha u = (\alpha x, \alpha y, \alpha z)\)
+
+Vì
+\(\alpha x - 2 \alpha y + \alpha z = \alpha (x+2y +z) = 0 \Rightarrow \alpha u \in \mathbb{Q} \Rightarrow \mathbb{Q}\)
+KG con của \(\mathbb{R}^3.\)
+
+    \begin{itemize}
+\tightlist
+\item
+  Note: Cho 3 toạ độ nếu đi qua gốc toạ độ \(\Rightarrow\) KG con (hình
+  dung hình học).
+\end{itemize}
+
+    \subsubsection{Mệnh đề}\label{mux1ec7nh-ux111ux1ec1}
+
+    \begin{itemize}
+\item
+  Nếu \(E\) là KG con của \(V\)
+
+  \begin{itemize}
+  \item
+    \(\dim V < \infty \Rightarrow \dim E < \infty \land \dim E \leq \dim V.\)
+  \item
+    \(\dim E = \dim V \Rightarrow E = V.\)
+  \end{itemize}
+\item
+  \(\{ v_i \} _{i \in I}\) \(v_i\) là KG con của
+  \(V,\: \forall i \in I.\)
+\item
+  \(\bigcup = \bigcap _{i \in I} v_i\) là KG con của \(V\).
+\end{itemize}
+
+    \subsubsection{Span}\label{span}
+
+    \begin{itemize}
+\item
+  Cho \(X\) là tập con của \(\mathbb{K}\)-KG vector \(V\), giao của tất
+  cả các KG con của \(V \supset X\) là 1 KG con của \(V \supset X\), đgl
+  \textbf{KG con của \(V\) sinh bởi \(X\)}.
+\item
+  K/h: \(\mathcal{L}(X) = \text{Span}(X) = \text{Sp}(X).\)
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Note}
+
+  \begin{itemize}
+  \item
+    \(\mathcal{L} (\{ 0 \}) = \{ 0 \}.\)
+  \item
+    \(\mathcal{L} (\varnothing) = \{ 0 \}.\)
+  \item
+    \(\mathcal{L} (X)\) là KG con nhỏ nhất của \(V \supset X.\)
+  \item
+    \(\mathcal{L} ( \mathcal{L} (X)) = \mathcal{L}(X).\)
+  \item
+    Nếu \(E\) là KG con của \(V, \: \mathcal{L}(E) = E.\)
+  \end{itemize}
+\end{itemize}
+
+    \paragraph{Định lý}\label{ux111ux1ecbnh-luxfd}
+
+    \begin{itemize}
+\tightlist
+\item
+  Cho \(X \subset V\), khi đó
+\end{itemize}
+
+\[
+\mathcal{L} (X) = \Bigg\{ \sum_{\text{hữu hạn}} \alpha _i u_i \mid \alpha _i \in \mathbb{K}, u_i \in X \Bigg\} = \text{Span}(X).
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Hạng của hệ vector \(X\) là số chiều KG con sinh bởi \(X\)
+\end{itemize}
+
+    \subsection{Không gian hàng, cột,
+nghiệm}\label{khuxf4ng-gian-huxe0ng-cux1ed9t-nghiux1ec7m}
+
+    Cho \(A = (a_{ij})_{m \times n} , a_{ij} \in \mathbb{K}\)
+
+\begin{itemize}
+\tightlist
+\item
+  \(\text{Row}A = \text{Span} \{ m \text{ hàng của } A \} \subset \mathbb{K}^n.\)
+\item
+  \(\text{Col}A=\text{Im}A=\text{Span}(A_1, A_2, \ldots ,A_n) \subset \mathbb{K}^m.\)
+\item
+  \(\text{Nul}A=\text{Ker}A = \{ x \in \mathbb{K}^n \mid Ax=0 \}.\)
+\end{itemize}
+
+    \subsubsection{Mệnh đề}\label{mux1ec7nh-ux111ux1ec1}
+
+    Cho \(A\) là ma trận cỡ \(m \times n\)
+
+\[
+\dim A (\text{Row}A) = \dim (\text{Col}A) = r(A).
+\]
+
+\[
+n = \text{rank}A + \dim (\text{Nul}A).
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  Note: Hỏi số chiều \(\to\) thoải mái, hỏi cơ sở \(\to\) tìm hết.
+\end{itemize}
+
+    \subsubsection{VDMH}\label{vdmh}
+
+    \textbf{VD1}
+
+Tìm cơ sở (bài 4.23a)
+
+Ta có
+\(A = \begin{pmatrix} \sim \sim \sim \\ \sim \sim \sim \\ \sim \sim \sim \end{pmatrix}\)
+
+\(\text{Col}A\) sinh bởi \(A_1, A_2, A_3, A_4\)
+
+Xét \(x_1 A_1 + x_2 A_2 + x_3 A_3 + x_4 A_4 = 0\)
+
+\(\Rightarrow \begin{cases} -2 x_1 + 4x_2 + \sim - 4x_4  = 0 \\ \sim \sim \sim = 0 \\ \sim \sim \sim = 0 \end{cases} \to\)
+giải ra dạng bậc thang \(\Rightarrow\) Phụ thuộc tuyến tính.
+
+\(\Rightarrow \{ A_1 , A_2 \}\) là cơ sở của \(\text{Col}A\)
+
+\(\Rightarrow\) row có cơ sở là \(\{ (1,-2,1,2), (0,-2,-5,-3) \}\) (Hàng
+chứa PTC trong dạng bậc thang)
+
+\(x \in \text{Nul}A \Leftrightarrow Ax = 0\)
+
+\(A \to\) dạng rút gọn
+\(\begin{pmatrix} 1 & 0 & 6 & 5 \\ 0 & 1 & \frac{5}{2} & \frac{3}{2} \\ 0 & 0 & 0 & 0 \end{pmatrix} \Rightarrow\)
+Có nghiệm
+\(X = (\sim, \sim, \sim, \sim) \forall x_3, x_4 \in \mathbb{R}\)
+
+Đặt
+\(x_3 = 1, x_4 = \sim \Rightarrow X = \{ (\sim, \sim, \sim, \sim),(\sim, \sim, \sim, \sim) \}\)
+là cơ sở của \(\text{Nul}A\) (Không gian nghiệm).
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Note}: Để kiểm tra không gian con hay không có thể dùng cách
+  này trừ dạng đa thức với ma trận.
+\end{itemize}
+
+    \textbf{VD2} 4.4.12 (Giáo trình)
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  C/m \(H\) là kgian con của \(\mathbb{R}^3\)
+\end{enumerate}
+
+\(\forall u \in H, \exists a,b,c \in \mathbb{R}\) sao cho
+
+\(u = \begin{pmatrix} a - 2b + c \\ a+b-c \\ -3b + 2c \end{pmatrix} = \begin{pmatrix} 1 & -2 & 1 \\ \sim & \sim & \sim \\ \sim & \sim & \sim\end{pmatrix} \begin{pmatrix} a \\ b \\ c \end{pmatrix} \in \text{Col}A \Rightarrow H \subset \text{Col}A\)
+
+\(H \subset \text{Col}A, \forall u \in \text{Col}A \to Ax = u\) có
+nghiệm
+
+\(\to \exists a, b,c \in \mathbb{R}\) sao cho
+\(u=A \begin{pmatrix}a\\b\\c \end{pmatrix} = \begin{pmatrix} \sim \\ \sim \\ \sim \end{pmatrix} \in H \Rightarrow\)
+có \(\text{Col}A \subset H \Rightarrow H = \text{Col}A.\)
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+\end{enumerate}
+
+\(\forall u = (x,y,z) \in \mathbb{K}\)
+
+\(\begin{cases} x - 2y + 3z = 0 \\ 2x - y+z=0 \end{cases} \Rightarrow \begin{pmatrix} 1 & -2 & 3 \\ \sim & \sim & \sim \\ \sim & \sim & \sim \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = B u^T \Rightarrow u \in \text{Nul}B\)
+
+    \subsection{\texorpdfstring{Tổng \(\&\) Tổng trực
+tiếp}{Tổng \textbackslash\& Tổng trực tiếp}}\label{tux1ed5ng-tux1ed5ng-trux1ef1c-tiux1ebfp}
+
+    \begin{itemize}
+\item
+  \(V_1 + V_2 + \ldots + V_m\) là \textbf{KG tổng} của
+  \(V_1, V_2 , \ldots , V_m.\)
+\item
+  Tổng \(V_1 + \ldots + V_m\) đgl \textbf{tổng trực tiếp} nếu
+  \(\forall v \in V_1 + \ldots + V_m\) đều có duy nhất 1 cách phân tích
+  \(V = u_1 + u_2 + \ldots + u_{n-1}, \forall u_i \in V_i\), k/h:
+  \(V_1 \oplus V_2 \oplus \ldots \oplus V_m.\)
+\end{itemize}
+
+    \subsubsection{Mệnh đề}\label{mux1ec7nh-ux111ux1ec1}
+
+    Cho \(V_1, V_2, \ldots , V_m\) là các KG con của \(\mathbb{K}\)-KG
+vector \(V\)
+
+\[
+V_1 + V_2 + \ldots + V_m = \{ u_1 + u_2 + \ldots + u_m \mid u_i \in V_i \}
+\]
+
+là 1 KG con của \(V\).
+
+    \subsubsection{Định lý}\label{ux111ux1ecbnh-luxfd}
+
+    Tổng \(V_1 + \ldots + V_m\) là tổng trực tiếp nếu 1 trong 2 điều kiện
+tương đương sau thoả:
+
+\begin{itemize}
+\item
+  \(V _j \bigcap (\sum_{i \neq j} V_i) = \{ 0 \} \quad 1 \leq j \leq m.\)
+\item
+  \(V _j \bigcap (\sum_{i > j} V_i) = \{ 0 \} \quad 1 \leq j \leq m-1.\)
+\end{itemize}
+
+    \subsubsection{Số chiều không gian
+tổng}\label{sux1ed1-chiux1ec1u-khuxf4ng-gian-tux1ed5ng}
+
+    \paragraph{Định lý}\label{ux111ux1ecbnh-luxfd}
+
+    Cho \(V_1, V_2\) là 2 KG con của \(V\)
+
+\[
+\dim (V_1 + V_2) = \dim V_1 + \dim V_2 - \dim (V_1 \cap V_2).
+\]
+
+    \paragraph{Hệ quả}\label{hux1ec7-quux1ea3}
+
+    \begin{itemize}
+\item
+  \(V_1 = \text{Sp}(S_1), \: V_2 = \text{Sp}(S_2) \Rightarrow V_1 + V_2 = \text{Sp}(S_1 \cup S_2).\)
+\item
+  \(V_1 \cap V_2 = \varnothing \Rightarrow \dim (V_1 + V_2 ) = \dim V_1 + \dim V_2.\)
+\end{itemize}
+
+    \section{Ánh Xạ Tuyến Tính}\label{uxe1nh-xux1ea1-tuyux1ebfn-tuxednh}
+
+    \begin{itemize}
+\item
+  Cho \(U\) và \(V\) là các \(\mathbb{K}\)-KGVT, Ánh xạ \(f:U \to V\)
+  đgl \textbf{AXTT} nếu:
+
+  \begin{itemize}
+  \item
+    \(f(u+v)=f(u)+f(v), \forall u,v \in V.\)
+  \item
+    \(f(\alpha u) = \alpha f(u), \forall \alpha \in \mathbb{K}, \forall u \in U.\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Định lý:} Cho \(U\) và \(V\) là các \(\mathbb{K}\)-KGVT, Ánh
+  xạ \(f:U \to V\) đgl \textbf{AXTT} nếu
+\end{itemize}
+
+\[
+f(\alpha u + \beta v) = \alpha f(u) + \beta f(v) , \forall \alpha , \beta \in \mathbb{K}, \forall u,v \in U
+\]
+
+    \begin{itemize}
+\item
+  \textbf{Tính chất}
+
+  \begin{itemize}
+  \item
+    \(f(0_V) = 0_V.\)
+  \item
+    \(f(-u) = -f(u).\)
+  \item
+    \(f(\alpha _1 u_1 + \ldots + \alpha _k u_k) = \alpha _1 f(u_1) + \ldots + \alpha _k f(u_k).\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Mệnh đề:} \(U\), \(V\), \(W\) là \(\mathbb{K}\)-KGTV, ta có:
+\end{itemize}
+
+\[
+\begin{aligned}
+f &: U \longrightarrow V, && u \longmapsto f(u), \\
+g &: V \longrightarrow W, && v \longmapsto g(v), \\
+g \circ f &: U \longrightarrow W, && u \longmapsto g(f(u)).
+\end{aligned}
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Định lý về Sự xác định của AXTT:} Cho \(U\), \(V\) là các
+  \(\mathbb{K}\)-KGTV, \((u_1, \ldots , u_n)\) là 1 cơ sở của
+  \(U, v_1 , \ldots , v_n \in V\), khi đó \(\exists !\) AXTT
+  \(f : U \to V\) thoả
+\end{itemize}
+
+\[
+f(u_i) = v_i, 1 \leq i \leq n.
+\]
+
+    \subsection{Đơn cấu, Toàn cấu, Đẳng
+cấu}\label{ux111ux1a1n-cux1ea5u-touxe0n-cux1ea5u-ux111ux1eb3ng-cux1ea5u}
+
+    \begin{itemize}
+\item
+  \textbf{Định nghĩa:} \(u\), \(v\) là các \(\mathbb{K}\)-KGTV
+  \(f:U \to V\), gọi là \textbf{đồng cấu}, ta có, \(f\):
+
+  \begin{itemize}
+  \item
+    Đơn ánh \(\to\) \textbf{Đơn cấu}.
+  \item
+    Toàn ánh \(\to\) \textbf{Toàn cấu}.
+  \item
+    Song ánh \(\to\) \textbf{Đẳng cấu}. \(U\) đẳng cấu với \(V\) k/h:
+    \(U \cong V.\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Nhận xét:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(U \cong U.\)
+  \item
+    \(U \cong V \to V \cong U.\)
+  \item
+    \(U \cong V, V \cong W \to U \cong W.\)
+  \end{itemize}
+\end{itemize}
+
+    \textbf{Tính chất Đồng cấu}
+
+    \begin{itemize}
+\item
+  \textbf{Định lý:} \(f : U \to V\) là đồng cấu,
+  \(s = \{ u_1 , \ldots , u_k \}\) Phụ thuộc tuyến tính trong
+  \(U \Rightarrow f(s) = \{ f(u_1), \ldots , f(u_k) \}\) Phụ thuột tuyến
+  tính trong \(V.\)
+
+  \begin{itemize}
+  \item
+    \(f\) đơn cấu \(\Leftrightarrow\) (\(s\) độc lập tuyến tính
+    \(\Rightarrow\) f(s) Độc lập tuyến tính, \(\forall s\)).
+  \item
+    \(f\) toàn cấu \(\Leftrightarrow\) (\(s\) hệ sinh của
+    \(U \Rightarrow f(s)\) là hệ sinh của \(V\)).
+  \item
+    \(f\) đẳng cấu \(\Leftrightarrow\) (\(s\) là cơ sở của
+    \(U \Rightarrow f(s)\) là cơ sở của \(V\)).
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Nhân và Ảnh (Kernel và
+Image)}\label{nhuxe2n-vuxe0-ux1ea3nh-kernel-vuxe0-image}
+
+    \begin{itemize}
+\item
+  \textbf{Định nghĩa:} Cho \(f: U \to V\) là AXTT, E là KG con \(U\), F
+  là KG con \(V\). \(f(E) = \{ f(u) \mid u \in E \}\),
+  \(f^{-1} (F) = \{ u \in U \mid f(u) \in F \} \subset U\)
+
+  \begin{itemize}
+  \item
+    \textbf{Ảnh} của \(f\) là \(f(U) = \text{Im}f.\)
+  \item
+    \textbf{Nhân} của \(f\) là \(f^{-1} (\{ 0_V \}) = \text{Ker}f.\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Định lý:} Cho \(f: U \to V\) là AXTT, E là KG con \(U\), F là
+  KG con \(V\)
+
+  \begin{itemize}
+  \item
+    \(f(E)\) là KG con \(V.\)
+  \item
+    \(f^{-1} (F)\) là KG con \(U.\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Hệ quả:} Cho \(f: U \to V\) là AXTT
+
+  \begin{itemize}
+  \item
+    \(\text{Im}f\) là 1 KG con của \(V.\)
+  \item
+    \(\text{Ker}f\) là 1 KG con của \(U.\) (\(f(U)=0\))
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Định lý:} Cho \(f: U \to V\) là đẳng cấu
+
+  \begin{itemize}
+  \item
+    \(f\) là đơn cấu \(\Leftrightarrow \text{Ker}f = \{ 0_U \}.\)
+  \item
+    \(f\) là toàn cấu \(\Leftrightarrow \text{Im}f = V.\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Định lý:} Cho \(f: U \to V\) là AXTT
+
+  \begin{itemize}
+  \item
+    \(f\) đơn cấu \(\Leftrightarrow r(f) = \dim U.\)
+  \item
+    \(f\) toàn cấu \(\Leftrightarrow r(f) = \dim V.\)
+  \item
+    \(f\) đẳng cấu \(\Leftrightarrow r(f) = \dim U = \dim V.\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Định lý về hạng của AXTT:} Cho \(f: U \to V\) là AXTT, khi đó
+\end{itemize}
+
+\[
+\dim U = \dim (\text{Ker}f ) + \dim (\text{Im}f) = \dim (\text{Ker}f) + \text{rank}(f)
+\]
+
+    \subsection{Ma trận của AXTT}\label{ma-trux1eadn-cux1ee7a-axtt}
+
+    \begin{itemize}
+\item
+  \textbf{Định lý:} Cho \(U\), \(V\) là các KGVT, \(\dim U=n\),
+  \(\dim V = m\), \(\mathcal{B}\) là cơ sở của \(U\), \(\mathcal{C}\) là
+  cơ sở của \(V\).
+
+  \begin{itemize}
+  \item
+    \(\forall\) AXTT \(f:U \to V, \exists !\) ma trận \(A_{m \times n}\)
+    sao cho
+    \([ f(u) ]_{\mathcal{C}} = A [ u ]_{\mathcal{B}}, \forall u \in U.\)
+  \item
+    \(\forall A _{m \times n}\), \(\exists !\) AXTT \(f : U \to V\) thoả
+    ở trên.
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  Note: \(f: \mathbb{K}^n \to \mathbb{K}^m, x \mapsto Ax\).
+  \(\text{Im}f = \text{Col}A\), \(\text{Ker}f = \text{Nul}A.\)
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Định nghĩa:} giáo trình
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Mệnh đề:} giáo trình
+\end{itemize}
+
+\[
+[f]_{\mathcal{B} ',\mathcal{C} '} = Q^{-1} [f]_{\mathcal{B} ,\mathcal{C} } P
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Định lý:} Cho \(A\) ma trận đẳng cấu \(f: U \to V\)
+\end{itemize}
+
+\[
+\text{Im}f \cong \text{Col}A, \text{Ker}f \cong \text{Nul}A \Leftrightarrow \text{rank}f = \text{rank}A
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Hệ quả:} \(f\) Đẳng cấu \(\Leftrightarrow A\) Khả nghịch.
+\end{itemize}
+
+    \subsection{Không gian các đồng
+cấu}\label{khuxf4ng-gian-cuxe1c-ux111ux1ed3ng-cux1ea5u}
+
+    \begin{itemize}
+\item
+  \textbf{Định nghĩa:} Cho \(U\), \(V\) là các \(\mathbb{K}\)-KGVT,
+  \textbf{Không gian các đồng cấu} k/h:
+  \(\text{Hom}(U,V) = \text{Hom}_{\mathbb{K}}(U,V) \neq \varnothing\),
+  \(\text{Hom}(U,V)\) là KGVT với 2 phép toán:
+
+  \begin{itemize}
+  \item
+    Phép cộng: \(\forall f, g \in \text{Hom}(U, V)\)
+
+    \begin{itemize}
+    \item
+      \(f + g : U \to V, u \mapsto f(u) + g(u)\)
+    \item
+      \((f + g)(u) = f(u) +g(u).\)
+    \end{itemize}
+  \item
+    Phép nhân:
+    \(\forall u \in \mathbb{K}, \forall f \in \text{Hom}(U,V)\)
+
+    \begin{itemize}
+    \item
+      \(\alpha f : U \to V, u \mapsto \alpha f(u)\)
+    \item
+      \((\alpha f)(u) = \alpha f(u)\)
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \subsubsection{Cấu trúc không gian đồng
+cấu}\label{cux1ea5u-truxfac-khuxf4ng-gian-ux111ux1ed3ng-cux1ea5u}
+
+    \begin{itemize}
+\item
+  \textbf{Định lý:} \(\dim U = n\), \(\dim V =m\)
+
+  \begin{itemize}
+  \item
+    \(\text{Hom}(U,V) \cong M (m \times n, \mathbb{K}).\)
+  \item
+    \(\text{End}(V) \cong M (n \times n, \mathbb{K})\).
+    \(\text{GL}(U) \cong \text{GL}_n(\mathbb{K}).\) (general linear
+    group)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Mệnh đề:} \(\begin{aligned}
+  f &: U \longrightarrow V, && u \longmapsto f(u), \\
+  g &: V \longrightarrow W, && v \longmapsto g(v), \\
+  g \circ f &: U \longrightarrow W, && u \longmapsto g(f(u)),
+  \end{aligned}\), Gọi \(\mathcal{B}\) là cơ sở của \(U\),
+  \(\mathcal{C}\) là cơ sở của \(V\), \(\mathcal{D}\) là cơ sở của
+  \(W\).
+\end{itemize}
+
+\[
+[g \circ f]_{\mathcal{B},\mathcal{D}} = [g]_{\mathcal{C},\mathcal{D}} [f]_{\mathcal{B} ,\mathcal{C} }
+\]
+
+    \section{Chéo hoá ma trận}\label{chuxe9o-houxe1-ma-trux1eadn}
+
+    \subsection{\texorpdfstring{Giá trị riêng \(\&\) Vector
+riêng}{Giá trị riêng \textbackslash\& Vector riêng}}\label{giuxe1-trux1ecb-riuxeang-vector-riuxeang}
+
+    \begin{itemize}
+\item
+  \textbf{Định nghĩa:} Cho \(A\) vuông cấp \(n\), \(\exists\) vector
+  \(u \in \mathbb{K}^n \setminus \{ 0 \}\) \[A u = \lambda u\]
+
+  \begin{itemize}
+  \item
+    Giá trị \(\lambda\) đgl \textbf{giá trị riêng} của \(A\).
+  \item
+    Vector \(u\) đgl \textbf{vector riêng} của \(A\) ứng với
+    \(\lambda\).
+
+    \begin{itemize}
+    \item
+      \(A (\alpha u) = \alpha (Au) = A (\alpha u), \forall \alpha \in \mathbb{K} \setminus \{ 0 \}\).
+    \item
+      \(A(u+v) = Au + Av = Au + \lambda v = \lambda (u+v), \forall v \in \mathbb{K} \setminus \{ 0 \}\).
+    \item
+      \(Au = \lambda u, Au = \mu u \Rightarrow \lambda u = \mu u \Leftrightarrow (\lambda - \mu) u = 0\).
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Thuật toán tìm giá trị riêng, vector riêng}
+
+  \begin{itemize}
+  \item
+    B1.
+    \(P_A(x) = \det (A - x I_n) = \begin{vmatrix} \ldots \ldots \ldots \\ \ldots \ldots \ldots \\ \ldots \ldots \ldots \end{vmatrix} = 0\).
+  \item
+    B2. Giải \(P_A(x) \to\) nghiệm \(x\), với từng nghiệm \(x\) tương
+    ứng với từng \(\lambda\)
+  \item
+    B3. Thay \(\lambda\) vào \((A - \lambda I_n)=0 \to\) giải tìm nghiệm
+    của \(X\).
+  \item
+    B4. Lặp lại đến khi ko còn \(\lambda\) nào \(\to\) kết luận \(\to\)
+    với mỗi \(\lambda\) là giá trị riêng, \(X\) là các vector riêng của
+    \(A\) ứng với \(\lambda \to\) kết thúc.
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Định lý:} \(A\) có \(k\) giá trị riêng khác nhau
+  (\(k \leq n\)) \(\Rightarrow k\) vector riêng tương ứng \emph{độc lập
+  tuyến tính}.
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Định nghĩa:} Cho \(A\) vuông cấp \(n\), \(\exists\) ma trận
+  \(P\) vuông cấp \(n\) và ma trận chéo \(D\) cấp \(n\) sao cho
+  \[A = PDP^{-1} \Leftrightarrow AP =PD \Leftrightarrow P^{-1} AP = D\]
+
+  \begin{itemize}
+  \item
+    \(A\) đgl \textbf{ma trận chéo hoá được}.
+  \item
+    \(P\) đgl \textbf{ma trận chéo hoá} \(A\).
+  \item
+    \(D\) đgl \textbf{dạng chéo} của \(A\).
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Định lý:} \(A_{m \times n}\) chéo hoá được
+  \(\Leftrightarrow A\) có \(n\) vector riêng \emph{độc lập tuyến tính}.
+\end{itemize}
+
+    \subsection{Ma trận chéo hoá
+được}\label{ma-trux1eadn-chuxe9o-houxe1-ux111ux1b0ux1ee3c}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(E_{\lambda}\) đgl \textbf{không gian riêng} của \(A\) ứng với
+  \(\lambda\)
+\end{itemize}
+
+\[E_{\lambda} = \{ \lambda \in \mathbb{K}^n : (A - \lambda I) X = 0 \} = \text{Nul}(A-\lambda I)\]
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Mệnh đề:} \(A\) có \(k\) giá trị riêng khác nhau
+  \(\lambda _1, \lambda _2, \ldots ,\lambda _k \Rightarrow E_{\lambda _1} + E_{\lambda _2} + \ldots + E_{\lambda _k}\)
+  là \textbf{tổng trực tiếp}.
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Định lý:} \(A\) có \(k\) giá trị riêng khác nhau
+  \(\lambda _1, \lambda _2, \ldots ,\lambda _k \Rightarrow A\)
+  \textbf{chéo hoá được} \(\Leftrightarrow\)
+
+  \begin{itemize}
+  \item
+    \(E_{\lambda _1} \bigoplus E_{\lambda _2} \bigoplus \ldots \bigoplus E_{\lambda _k} = \mathbb{K}^n\)
+  \item
+    \(\sum _{i=1}^k \text{dim}(E_{\lambda _i})=n\)
+  \item
+    \(\sum _{i=1}^k \text{dim}(\text{Nul}(A - \lambda _i I )) = n\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Thuật toán xác định chéo hoá ma trận}
+
+  \begin{itemize}
+  \item
+    B1. (Thuật toán tìm giá trị riêng, vector riêng)
+    \(\to \lambda _1, \lambda _2, \ldots ,\lambda _k \to\) vector
+    \(u_1, u_2, \ldots u_k\) tương ứng với từng
+    \(\lambda _1, \lambda _2, \ldots ,\lambda _k \to\) \textbf{số chiều}
+    của cơ sở không gian riêng \(E_i\) (Bắt đầu với \(E_0\)) tương ứng
+    với từng vector \(u_1, u_2, \ldots u_k\)
+  \item
+    B2. (Check chéo hoá)
+
+    \begin{itemize}
+    \item
+      \(\sum _{i=1}^k \text{dim}(E_{\lambda _i})=n \to A\) Chéo hoá được
+      \(\to\) B3
+    \item
+      \(\sum _{i=1}^k \text{dim}(E_{\lambda _i}) \neq n \to A\) Không
+      chéo hoá được \(\to\) Kết thúc
+    \end{itemize}
+  \item
+    B3. (Kết luận ma trận \(P\) và \(D\))
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Từ vector \(u_1, u_2, \ldots u_k \to\) hợp các vector lại thành 1
+      ma trận (theo cột) \(\to\) \(P\).
+    \item
+      Tương ứng với giá trị \(\lambda _i\) của \(u_i\) trong cột trong
+      \(P \to D = \begin{pmatrix} \lambda _1 & 0 & 0 \\ 0 & \lambda _2 & 0 \\ 0 & 0 & \ddots \end{pmatrix}\).
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Tự đồng cấu}\label{tux1ef1-ux111ux1ed3ng-cux1ea5u}
+
+    \subsubsection{Giá trị riêng và vector
+riêng}\label{giuxe1-trux1ecb-riuxeang-vuxe0-vector-riuxeang}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Định nghĩa:} \(f:V \to V\) là tự đồng cấu,
+  \(\exists v \in V \setminus \{ 0 \}\) \[f(v) = \lambda v\]
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\lambda\) đgl \textbf{giá trị riêng} của \(f\).
+  \item
+    \(v\) đgl \textbf{vector riêng} của \(f\) ứng với \(\lambda\).
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Mệnh đề:} \(\mathcal{B}\) là cơ sở của \(\mathbb{K}\)-KGVT
+  \(V\), \(A=[f]_{\mathcal{B}}\)
+
+  \begin{itemize}
+  \item
+    \(\lambda\) là giá trị riêng của \(f \Leftrightarrow \lambda\) là
+    giá trị riêng của \(A\).
+  \item
+    \(v\) là vector riêng của \(f\) ứng với
+    \(\lambda \Leftrightarrow [v]_{\mathcal{B}}\) là vector riêng của
+    \(A\) ứng với \(\lambda\).
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Note:} Để tìm vector riêng của \(f\) ta tìm
+  \(X = (\ldots , \ldots , \ldots)\) như thông thường rồi lấy tổng của
+  tích với từng \(v_i\) tương ứng
+  (\(v = \ldots v_1 + \ldots v_2 + \ldots v_3 + \ldots\))
+\end{itemize}
+
+    \subsubsection{Chéo hoá}\label{chuxe9o-houxe1}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Định nghĩa:} \(f:V \to V\) là tự đồng cấu, \(\exists\) cơ sở
+  \(\mathcal{C}\) của \(V\) sao cho \([f]_{\mathcal{C}}\) là ma trận
+  chéo \(\Rightarrow f\) đgl \textbf{chéo hoá được}.
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Note:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\mathcal{B} = (u_1 , u_2, u_3) \to\) Thuật toán tìm giá trị riêng,
+    vector riêng
+    \(\to X \to p_1 = (.. , .. ,..), p_2 =..., p_3 = ... \to\) Cơ sở
+    \(\mathcal{C} = (.. u_1 + .. u_2 + .. u_3, .. u_1 + .. u_2 + .. u_3, \ldots) \to [f]_{\mathcal{C}} =\)
+    ma trận giống ma trận \(D\).
+  \end{itemize}
+\end{itemize}
+
+    \section{Không gian vector Euclide}\label{khuxf4ng-gian-vector-euclide}
+
+    \begin{itemize}
+\item
+  \(\mathbb{E}\) là \(\mathbb{R}\)-KGVT, tích vô hướng trên
+  \(\mathbb{E}\) là 1 ánh xạ
+  \(f: \mathbb{E} \times \mathbb{E} \to \mathbb{R}\) thoả:
+
+  \begin{itemize}
+  \item
+    \textbf{Song tuyến tính}:
+
+    \begin{itemize}
+    \item
+      \(f(\alpha _1 u_1 + \alpha _2 u_2, v) = \alpha _1 f(u_1, v) + \alpha _2 f (u_2, v)\)
+    \item
+      \(f(u, \beta_1 v_1 + \beta_2 v_2) = \beta_1 f(u, v_1) + \beta_2 f(u, v_2)\)
+    \end{itemize}
+  \item
+    \textbf{Đối xứng}:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \(f(u, v) = f(v, u) \quad\forall u,v \in \mathbb{E}\)
+    \end{itemize}
+  \item
+    \textbf{Xác định dương}:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \(f(u, u) \geq 0\) và
+      \(f(u, u) = 0 \Leftrightarrow u = 0 \quad\forall u \in \mathbb{E}\)
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \(f: \mathbb{E} \times \mathbb{E} \to \mathbb{R}\) là 1 tích vô hướng,
+  \(\langle u, v \rangle = f(u,v)\) là tích vô hướng của \(u\) và \(v\).
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{KGVT Euclid} \(\mathbb{E}\) là KGVT thực có tích VH.
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  Cho \(\mathbb{E}\) là KGVT Euclid \(\langle, \rangle\),
+\end{itemize}
+
+\[
+\| u \| = \sqrt{\langle u, u \rangle}, \forall u \in \mathbb{E}
+\]
+
+\(\| u \| \geq 0, \forall u \in \mathbb{E}, \| u \| =0 \Leftrightarrow u=0\)
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Mệnh đề}: (Bất đẳng thức Cauchy-Schwarz) trong KGVT Euclid
+  \(\mathbb{E}\)
+\end{itemize}
+
+\[
+| \langle u, v \rangle | \leq \| u \| \| v \| , \forall u,v \in \mathbb{E}
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Định nghĩa}
+\end{itemize}
+
+\[
+\cos \theta = \dfrac{\langle u, v \rangle}{\|u\|\|v\|}, 0 \leq \theta \leq \pi, -1 \leq \dfrac{\langle u, v \rangle}{\|u\|\|v\|} \leq 1
+\]
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}
