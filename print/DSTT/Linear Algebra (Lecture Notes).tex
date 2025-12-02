@@ -81,8 +81,6 @@
     \usepackage{soul}      % strikethrough (\st) support for pandoc >= 3.0.0
     \usepackage{mathrsfs}
     
-    % Define pandocbounded command for image inclusion
-    \providecommand{\pandocbounded}[1]{#1}
 
     
     % Colors for the hyperref package
@@ -548,7 +546,7 @@ gọn}\label{ma-trux1eadn-bux1eadc-thang-ma-trux1eadn-ruxfat-gux1ecdn}
     \subsubsection{Thuật toán cho số phép toán thực hiện nhỏ
 nhất}\label{thuux1eadt-touxe1n-cho-sux1ed1-phuxe9p-touxe1n-thux1ef1c-hiux1ec7n-nhux1ecf-nhux1ea5t}
 
-    \pandocbounded{\includegraphics[keepaspectratio]{pbdsc_algorithm.png}}
+    \includegraphics[keepaspectratio,width=\textwidth]{pbdsc_algorithm.png}
 
     \subsection{Hạng}\label{hux1ea1ng}
 
@@ -3034,6 +3032,316 @@ riêng}\label{giuxe1-trux1ecb-riuxeang-vuxe0-vector-riuxeang}
 \[
 \cos \theta = \dfrac{\langle u, v \rangle}{\|u\|\|v\|}, 0 \leq \theta \leq \pi, -1 \leq \dfrac{\langle u, v \rangle}{\|u\|\|v\|} \leq 1
 \]
+
+    \subsection{Trực giao}\label{trux1ef1c-giao}
+
+    \(u,v\) là \textbf{trực giao} \(u \perp v\) k/h
+\(\langle u,v \rangle = 0\)
+
+    \begin{itemize}
+\item
+  \textbf{Mệnh đề} \(\mathbb{E}\) là KGVT Euclid với
+  \(\langle . , . \rangle\), khi đó
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\| u \| \geq 0, \| u \| = 0 \Leftrightarrow  u=0\)
+  \item
+    \(\| \alpha u \| = \alpha \| u \|, \forall \alpha \in \mathbb{R}, u \in \mathbb{E}\)
+  \item
+    \(\| u + v \| \leq \| u \| + \| v \|, \forall u, v \in \mathbb{E}\)
+  \item
+    \(\| u+v \| ^2 = \| u \| ^2 + \| v \| ^2\)
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Hệ trực giao}\label{hux1ec7-trux1ef1c-giao}
+
+    \begin{itemize}
+\item
+  \textbf{Định nghĩa}: Cho \(\mathbb{E}\) với \(\langle . , . \rangle\),
+  hệ vector \(\{ u_1, \ldots , u_k \}\)
+
+  \begin{itemize}
+  \item
+    \textbf{Hệ trực giao} là hệ vector trong đó
+    \(\langle u_i , u_j \rangle = 0, \quad \forall i \neq j\)
+  \item
+    \textbf{Hệ trực chuẩn} là hệ vector trong đó
+    \(\langle u_i , u_j \rangle = \begin{cases} 0 \quad i \neq j \\ 1 \quad i = j \end{cases} = \delta _{ij}\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Mệnh đề}: Mọi hệ trực giao không chứa vector \(0\) đều độc lập
+  tuyến tính
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Bổ đề} (Trực giao hoá Gram-smith): hệ vector
+  \(\{ u_1, \ldots , u_k \}\), \(\exists\) hệ trực giao
+  \(\{ e_1, \ldots , e_k \}\) sao cho
+  \(\mathcal{L}(u_1 , \ldots , u_k) = \mathcal{L}(e_1 , \ldots , e_k)\)
+\end{itemize}
+
+\[
+\begin{split}
+e_1 &= u_1 \\
+e_2 &= u_2 + \lambda _{21} e_1 \quad \lambda _{21} = - \frac{\langle u_2 , e_1 \rangle}{\langle e_1 , e_1 \rangle} \\
+\vdots \\
+e_{i+1} &= u_{i+1} + \lambda _{i+1, 1} e_1 + \ldots + \lambda _{i+1, i} e_i \quad \lambda _j = - \frac{\langle u_{i+1}, e_j \rangle}{\langle e_j , e_j \rangle}
+\end{split}
+\]
+
+    \begin{itemize}
+\item
+  \textbf{Note}:
+
+  \begin{itemize}
+  \item
+    Chứng minh độc lập tuyến tính \(\to\) áp công thức trên tìm cơ sở
+    trực chuẩn.
+  \item
+    Trực giao \(\to\) chuẩn hoá \(\to\) trực chuẩn.
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Mệnh đề}: \(\mathbb{E}, \langle . , . \rangle\), trong đó
+  \(\mathbb{E}\) là 1 cơ sở trực chuẩn của \(\mathbb{E}\)
+
+  \begin{itemize}
+  \item
+    \((u)_e = (x_1, \ldots , x_n)\), \((v)_e = (y_1 , \ldots , y_n)\)
+  \item
+    \(\langle u,v \rangle = x_1 y_1 + \ldots x_n y_n = \langle (u)_e , (v)_e \rangle _{\mathbb{K}^n}\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Note}: Tính toạn độ \(\to\) Tính tích vô hướng \(\to\) Được
+  kết quả
+\end{itemize}
+
+    \ldots{}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Mệnh đề}: G/s \(\varepsilon\) alf 1 cơ sở trực chuẩn của
+  \(\mathbb{E}\), \(\mathcal{B}\) là 1 cơ sở bất kỳ của \(\mathbb{E}\),
+  khi đó \(\mathcal{B}\) là cơ sở trực chuẩn của
+  \(\mathbb{E} \Leftrightarrow\) ma trận chuyển cơ sở \(\varepsilon\)
+  sang \(\mathcal{B}\) là ma trận trực giao.
+\end{itemize}
+
+\[
+\varepsilon \text{ (Trực chuẩn)} \overset{P}{\to} \mathcal{B}
+\]
+
+    \section{Dạng song tuyến tính và Dạng toàn
+phương}\label{dux1ea1ng-song-tuyux1ebfn-tuxednh-vuxe0-dux1ea1ng-touxe0n-phux1b0ux1a1ng}
+
+    \begin{itemize}
+\item
+  \textbf{Định nghĩa}: Cho \(V\) là KGVT thực, hữu hạn chiều
+
+  \begin{itemize}
+  \item
+    \(f: V \times V \to \mathbb{R}\) đgl 1 dạng song tuyến tính
+
+    \begin{itemize}
+    \item
+      \(f(\alpha_1 u_1 + \alpha_2 u_2, v) = \alpha_1 f(u_1, v) + \alpha_2 f(u_2, v)\)
+      \(\quad \forall u_1, u_2, v \in V\),
+      \(\alpha_1, \alpha_2 \in \mathbb{R}\)
+    \item
+      \(f(u, \beta_1 v_1 + \beta_2 v_2) = \beta_1 f(u, v_1) + \beta_2 f(u, v_2)\)
+      \(\quad \forall u, v_1, v_2 \in V\),
+      \(\beta_1, \beta_2 \in \mathbb{R}\)
+    \end{itemize}
+  \item
+    Dạng song tuyến tính \(f\) trên \(V\) đgl đối xứng
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \(f(u,v) = f(v,u)\), \(\forall u, v \in V\)
+    \end{itemize}
+  \item
+    Dạng song tuyến tính đgl phản đối xứng
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \(f(u,v) = -f(v,u)\), \(\forall u,v \in V\)
+    \end{itemize}
+  \item
+    Dạng song tuyến tính đgl xác định dương
+
+    \begin{itemize}
+    \item
+      \(f(u, u) \geq 0\) \(\quad \forall u\)
+    \item
+      \(f(u,u) = 0 \Leftrightarrow u = 0\)
+    \end{itemize}
+  \item
+    \(f\) đgl dạng song tuyến tính dương (không âm): \(f(u,u) \geq 0\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Định nghĩa}: Cho \(f : V \times V \to \mathbb{R}\) là 1 dạng
+  song tuyến tính đối xứng
+
+  \begin{itemize}
+  \item
+    \(H : V \to \mathbb{R}, \quad H(u) = f(u,u), \: \forall u \in V\)
+  \item
+    \(H\) đgl dạng toàn phương tương ứng với \(f\).
+  \end{itemize}
+\end{itemize}
+
+    \subsection{Ma trận của dạng song tuyến
+tính}\label{ma-trux1eadn-cux1ee7a-dux1ea1ng-song-tuyux1ebfn-tuxednh}
+
+    Cho \(f: V \times V \to \mathbb{R}\) là 1 dạng song tuyến tính,
+\(\mathcal{B} = (x_1 , \ldots , x_n)\) là 1 cơ sở của \(V\)
+
+\(u = x_1u_1 + \ldots + x_n u_n\)
+
+\(v = y_1u_1 + \ldots + u_n u_n\)
+
+\(f(u,v) = f\left(\sum_{i=1}^n x_i u_i, \sum_{j=1}^n y_j u_j\right) = \sum_{i=1}^n \sum_{j=1}^n x_i y_j f(u_i, u_j) = [u]_{\mathcal{B}}^T A [v]_{\mathcal{B}}\)
+
+hay (Biểu thức toạ độ của \(f\)):
+
+\[
+f(u,v) = [u]_{\mathcal{B}}^T A [v]_{\mathcal{B}}, \quad \forall u,v \in V
+\]
+
+trong đó,
+
+\(A\): ma trận của \(f\) đối với cơ sở \(\mathcal{B}\)
+
+\(f\) đối xứng \(\Leftrightarrow A\) đối xứng
+
+\begin{itemize}
+\item
+  \(f\) là dạng song tuyến tính đối xứng
+
+  \begin{itemize}
+  \item
+    \(H : V \to \mathbb{R}, \quad H(u) = f(u,u), \: \forall u \in V\)
+  \item
+    \(H(u) = [v]_{\mathcal{B}}^T A [u]_{\mathcal{B}} \quad \forall u \in V\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Note}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Viết lại \(A\) bằng cách ghi lại hệ số trong \(f(u,v)\)
+  \item
+    \(H(u) \to (u,u) \to (y_1 \to x_1) \to\) gom lại \(\to\) chia đôi để
+    viết vào \(A\)
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Mệnh đề}: \(\mathcal{B}, \mathcal{C}\) là 2 cơ sở của \(V\),
+  \(f\) là dạng song tuyến tính trên \(V\). \(A\) là ma trận của \(f\)
+  đối với cơ sở \(\mathcal{B}\). \(B\) là ma trận của \(f\) đối với cơ
+  sở \(\mathcal{C}\)
+\end{itemize}
+
+\[
+B = C^T AC
+\]
+
+\(C\) là ma trận chuyển cơ sở từ \(\mathcal{B} \to \mathcal{C}\)
+
+    \(\mathcal{B} \overset{C}{\to} \mathcal{C}\)
+
+\([u]_{\mathcal{B}} = C [u]_{\mathcal{C}}\)
+
+\(f(u,v) = [u]_{\mathcal{B}}^T A [v]_{\mathcal{B}} = (C [u]_{\mathcal{C}})^T A (C [v]_{\mathcal{C}}) = [u]_{\mathcal{C}}^T C^T A C [v]_{\mathcal{C}}\)
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Note}: Đưa toàn phương \(\to\) chính tắc
+\end{itemize}
+
+    \begin{itemize}
+\item
+  \textbf{Định nghĩa}: Cho dạng toàn phương \(H : V \to \mathbb{R}\).
+  Nếu đối với 1 cơ sở \(\mathcal{C} =(e_1, \ldots , e_n)\). Biểu thức
+  toạ độ của \(H\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(H(u) = k_1 x_1 ^2 + \ldots + k_n x_n^2\) (*)
+  \item
+    \((u)_{\mathcal{C}} = (x_1 , \ldots , x_n)\)
+  \end{itemize}
+\end{itemize}
+
+khi đó (*) đgl dạng chính tắc của \(H, k \in \{ -1, 0, 1 \}\), cơ sở
+\(\mathcal{C}\) đgl cơ sở chính tắc đối với \(H\)
+
+\[
+H(u) = [u]_{\mathcal{C}}^T \begin{pmatrix} k_1 & & 0 \\ & \ddots & \\ 0 & & k_n \end{pmatrix} [u]_{\mathcal{C}}
+\]
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Note}: Đổi biến \(\to\) ra dạng \(()^2 ()^2 ()^2\) (VD.
+  \(y=\sqrt{k} x\))
+\end{itemize}
+
+    \subsection{Phương pháp chéo hoá trực
+giao}\label{phux1b0ux1a1ng-phuxe1p-chuxe9o-houxe1-trux1ef1c-giao}
+
+    \(H : V \to \mathbb{R}\)
+
+\[
+H(u) = [u]_{\mathcal{B}}^T A [u]_{\mathcal{B}}, \quad \forall u \in V
+\]
+
+\(A\) là ma trận đối xứng
+
+Vì \(A\) là đối xứng. \(Q\)-trực giao, ma trận chéo \(D\)
+
+\[
+D = Q^T A Q
+\]
+
+\(\exists\) cơ sở \(\mathcal{C}\) ma trận chuyển từ
+\(\mathcal{B} \to \mathcal{C}\) là \(Q\)
+
+    \begin{itemize}
+\tightlist
+\item
+  \textbf{Note}: Chéo hoá trực giao \(\to Q \to\) xây dựng cơ sở
+\end{itemize}
 
 
     % Add a bibliography block to the postdoc
