@@ -118,6 +118,14 @@ Desktop.ini
 *~
 
 # ==================================
+# Docusaurus (my-website)
+# ==================================
+# Also covered by my-website/.gitignore; listed here for monorepo clarity at repo root.
+my-website/node_modules/
+my-website/.docusaurus/
+my-website/.cache-loader/
+
+# ==================================
 # Custom user ignored files
 # ==================================
 # Add any personal files/folders you want Git to ignore below:

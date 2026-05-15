@@ -8,6 +8,21 @@
 .docusaurus
 .cache-loader
 
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Tools (toggle if unused)
+.eslintcache
+pnpm-debug.log*
+.pnpm-debug.log*
+bun-debug.log*
+
+# Yarn Berry caches (exclude only cache/state; commit .yarn/releases & .yarn/plugins when you use Yarn 2+)
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
 # Misc
 .DS_Store
 .env.local
